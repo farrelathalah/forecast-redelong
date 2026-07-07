@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forecast Redelong</title>
+  <style>
+    :root {
+      --bg:#040c16; --panel:rgba(255,255,255,.08); --panel2:rgba(255,255,255,.13);
+      --line:rgba(255,255,255,.16); --text:#eff8ff; --muted:#9fb4c9;
+      --cyan:#45e0d0; --blue:#74a9ff; --gold:#ffd166; --red:#ff6b6b;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-3;background:
+      radial-gradient(circle at 12% 18%,rgba(69,224,208,.30),transparent 30%),
+      radial-gradient(circle at 82% 18%,rgba(116,169,255,.24),transparent 32%),
+      radial-gradient(circle at 50% 95%,rgba(255,209,102,.10),transparent 32%),
+      linear-gradient(135deg,#04111e,#08253a 42%,#11183a)}
+    .noise{position:fixed;inset:0;z-index:-2;opacity:.07;pointer-events:none;background-image:
+      linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:64px 64px}
+    a{color:inherit;text-decoration:none}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+      padding:18px min(5vw,64px);background:linear-gradient(180deg,rgba(3,11,20,.86),rgba(3,11,20,.28),transparent);backdrop-filter:blur(12px)}
+    .brand{display:flex;align-items:center;gap:14px}.logo{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 0 36px rgba(69,224,208,.28)}
+    .brand strong{display:block;font-size:18px;letter-spacing:.2px}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:2px;letter-spacing:.8px;text-transform:uppercase}
+    .nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-links a,.button{border:1px solid var(--line);background:rgba(255,255,255,.075);padding:10px 14px;border-radius:999px;color:var(--text);font-size:14px;font-weight:650;backdrop-filter:blur(14px);transition:.22s}
+    .nav-links a:hover,.button:hover{transform:translateY(-2px);background:rgba(255,255,255,.13)}
+    .primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#03111f;border:none}
+    .hero{min-height:100vh;display:grid;align-items:center;padding:120px min(5vw,64px) 80px}
+    .hero-inner{max-width:1220px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.32fr .88fr;gap:32px;align-items:center}
+    .hero-copy{opacity:0;transform:translateY(24px);animation:intro .9s ease forwards .15s}
+    .kicker{display:inline-flex;gap:9px;align-items:center;color:var(--cyan);text-transform:uppercase;font-size:12px;letter-spacing:1.5px;font-weight:800;margin-bottom:20px}
+    .kicker:before{content:"";width:10px;height:10px;border-radius:999px;background:var(--cyan);box-shadow:0 0 20px var(--cyan)}
+    h1{font-size:clamp(44px,7vw,92px);line-height:.94;letter-spacing:-3px;margin:0;max-width:980px}
+    .gradient-text{background:linear-gradient(135deg,#fff,#aeeef0 42%,#9dbdff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{margin:26px 0 0;color:var(--muted);font-size:clamp(17px,2vw,21px);line-height:1.75;max-width:760px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .panel,.hero-panel,.info-card,.location-card,.note{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045));border-radius:30px;backdrop-filter:blur(18px);box-shadow:0 28px 90px rgba(0,0,0,.24)}
+    .hero-panel{padding:26px;opacity:0;transform:translateY(24px) scale(.985);animation:intro .9s ease forwards .34s}
+    @keyframes intro{to{opacity:1;transform:translateY(0) scale(1)}}
+    .metric{border:1px solid var(--line);border-radius:22px;background:rgba(0,0,0,.14);padding:18px;margin-bottom:14px;transition:.24s}
+    .metric:hover{transform:translateY(-3px);background:rgba(255,255,255,.09)}
+    .metric .label{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:1px;font-weight:800}.metric .value{margin-top:8px;font-size:34px;font-weight:850}
+    .scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);color:rgba(255,255,255,.68);text-transform:uppercase;font-size:11px;letter-spacing:2px;animation:pulse 1.7s ease-in-out infinite}
+    .scroll-cue:after{content:"";display:block;width:1px;height:46px;margin:12px auto 0;background:linear-gradient(var(--cyan),transparent)}
+    @keyframes pulse{0%,100%{opacity:.45;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(8px)}}
+    section{padding:88px min(5vw,64px)}.section-inner{max-width:1220px;margin:0 auto}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.section-head p{color:var(--muted);line-height:1.7;max-width:520px;margin:0}
+    h2{font-size:clamp(30px,4vw,54px);line-height:1;letter-spacing:-1.8px;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.info-card,.note{padding:22px}.info-card h3{margin:0 0 10px;font-size:18px}
+    .info-card p,.muted,.note p{color:var(--muted);line-height:1.65;margin:0}.big-number{font-size:44px;font-weight:900;letter-spacing:-1px;margin:10px 0}
+    .locations{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.location-card{padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .location-card h3{font-size:22px;margin:0 0 6px}.eyebrow{color:var(--cyan);text-transform:uppercase;font-size:11px;letter-spacing:1.3px;font-weight:800;margin:0 0 8px}
+    .card-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;min-width:220px}.card-links a{border:1px solid rgba(69,224,208,.25);background:rgba(69,224,208,.10);color:#bafff8;padding:9px 11px;border-radius:999px;font-size:12px;font-weight:800;transition:.2s}
+    .card-links a:hover{transform:translateY(-2px);background:rgba(69,224,208,.18)}
+    .download-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.download-grid a{border:1px solid var(--line);background:rgba(255,255,255,.075);padding:18px;border-radius:22px;font-weight:800;transition:.24s}.download-grid a:hover{transform:translateY(-3px);background:rgba(255,255,255,.13)}
+    .bar-chart{height:220px;display:flex;align-items:end;gap:10px;overflow-x:auto;padding:18px;border:1px solid var(--line);border-radius:24px;background:rgba(0,0,0,.14)}
+    .bar-wrap{min-width:52px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:end;height:185px}.bar{width:28px;border-radius:999px 999px 6px 6px;background:linear-gradient(180deg,var(--cyan),var(--blue));box-shadow:0 8px 24px rgba(69,224,208,.18)}
+    .bar-value{font-size:11px;color:var(--text);margin-bottom:6px}.bar-label{font-size:10px;color:var(--muted);margin-top:8px;max-width:70px;overflow:hidden;text-overflow:ellipsis}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:22px;background:rgba(0,0,0,.12)}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.08);white-space:nowrap}th{text-align:left;color:#bafff8;background:rgba(255,255,255,.06)}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .72s ease,transform .72s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+    footer{padding:42px min(5vw,64px);color:var(--muted);border-top:1px solid var(--line);background:rgba(0,0,0,.16)}.footer-inner{max-width:1220px;margin:0 auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:980px){.hero-inner{grid-template-columns:1fr}.cards,.download-grid{grid-template-columns:repeat(2,1fr)}.locations{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}}
+    @media(max-width:620px){.nav{position:absolute;align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.cards,.download-grid{grid-template-columns:1fr}.location-card{flex-direction:column;align-items:flex-start}.card-links{min-width:0;justify-content:flex-start}h1{letter-spacing:-1.5px}}
+    </style>
+</head>
+<body>
+  <div class="noise"></div>
+  
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <div class="logo"></div>
+        <div>
+          <strong>Forecast Redelong</strong>
+          <span>FORECAST PLTA REDELONG</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="redelong_rain_map.html">Peta Hujan</a>
+        <a href="redelong_overview.html">Overview</a>
+        <a href="plta_redelong/rain_dashboard.html">Dashboard PLTA</a>
+      </div>
+    </nav>
+    
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="kicker">Ensemble Rainfall Forecast</div>
+        <h1><span class="gradient-text">Forecast hujan</span> untuk PLTA Redelong.</h1>
+        <p class="subtitle">
+          Portal prakiraan hujan berbasis multi-source forecast untuk titik PLTA Redelong,
+          GPM catchment, dan grid representatif di wilayah Redelong.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="redelong_rain_map.html">Masuk ke Peta Hujan</a>
+          <a class="button" href="plta_redelong/rain_dashboard.html">Dashboard PLTA Redelong</a>
+          <a class="button" href="#lokasi">Lihat Titik Catchment</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <div class="metric"><div class="label">Titik Catchment</div><div class="value">8</div></div>
+        <div class="metric"><div class="label">Sumber Aktif</div><div class="value">8</div></div>
+        <div class="metric"><div class="label">Baris Forecast</div><div class="value">936</div></div>
+        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-07 15:32 WIB</div></div>
+      </aside>
+    </div>
+    <a class="scroll-cue" href="#ringkasan">Scroll</a>
+  </header>
+
+  <section id="ringkasan">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>Ringkasan hujan.</h2>
+        <p>Ringkasan ini dihitung langsung dari output forecast gabungan, bukan dari dashboard kosong bawaan template.</p>
+      </div>
+      <div class="cards">
+        <article class="info-card reveal"><p class="eyebrow">Rain Max</p><div class="big-number">56.5 mm</div><p>Nilai maksimum hujan dari output gabungan.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Rain P90</p><div class="big-number">1.3 mm</div><p>Persentil 90 untuk membaca skenario atas.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Rain Mean</p><div class="big-number">1.1 mm</div><p>Rata-rata nilai hujan pada seluruh titik dan sumber.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Status</p><div class="big-number" style="font-size:28px">Prototype</div><p>Validasi observasi aktual tetap diperlukan.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokasi">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>Titik forecast.</h2>
+        <p>Dashboard utama per titik sekarang memakai halaman hujan khusus, bukan halaman template yang kosong.</p>
+      </div>
+      <div class="locations">
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Catchment Point</p>
+            <h3>PLTA Redelong</h3>
+            <p class="muted">Lat 4.748139 · Lon 96.977344</p>
+          </div>
+          <div class="card-links">
+            <a href="plta_redelong/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="plta_redelong/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Catchment Point</p>
+            <h3>GPM1</h3>
+            <p class="muted">Lat 4.81572033808049 · Lon 96.877105410688</p>
+          </div>
+          <div class="card-links">
+            <a href="gpm1/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm1/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Catchment Point</p>
+            <h3>GPM2</h3>
+            <p class="muted">Lat 4.811672965065149 · Lon 96.9505347134354</p>
+          </div>
+          <div class="card-links">
+            <a href="gpm2/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm2/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Catchment Point</p>
+            <h3>GPM3</h3>
+            <p class="muted">Lat 4.815409756944025 · Lon 97.009911990332</p>
+          </div>
+          <div class="card-links">
+            <a href="gpm3/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm3/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Catchment Point</p>
+            <h3>GPM4</h3>
+            <p class="muted">Lat 4.778238355009202 · Lon 96.8876539578458</p>
+          </div>
+          <div class="card-links">
+            <a href="gpm4/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm4/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Catchment Point</p>
+            <h3>GPM5</h3>
+            <p class="muted">Lat 4.767312077178135 · Lon 96.94566692384144</p>
+          </div>
+          <div class="card-links">
+            <a href="gpm5/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm5/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Catchment Point</p>
+            <h3>GPM6</h3>
+            <p class="muted">Lat 4.796061970712406 · Lon 97.0098682419131</p>
+          </div>
+          <div class="card-links">
+            <a href="gpm6/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm6/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Catchment Point</p>
+            <h3>GPM Grid TamaTue</h3>
+            <p class="muted">Lat 4.649902718619309 · Lon 96.85017949357464</p>
+          </div>
+          <div class="card-links">
+            <a href="gpm_grid_tamatue/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm_grid_tamatue/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>Output data.</h2>
+        <p>File forecast, ensemble, status sumber, dan GeoJSON dapat diunduh untuk verifikasi atau presentasi.</p>
+      </div>
+      <div class="download-grid reveal">
+        <a href="forecast_all_locations.csv">Forecast CSV</a>
+        <a href="ensemble_all_locations.csv">Ensemble CSV</a>
+        <a href="source_status_all_locations.csv">Source Status</a>
+        <a href="redelong_all_locations.geojson">GeoJSON</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="footer-inner"><span>Forecast Redelong</span><span>FORECAST PLTA REDELONG · Generated 2026-07-07 15:32 WIB</span></div></footer>
+  
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.14 });
+
+      document.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.transitionDelay = `${Math.min(i * 55, 320)}ms`;
+        observer.observe(el);
+      });
+    </script>
+    
+</body>
+</html>

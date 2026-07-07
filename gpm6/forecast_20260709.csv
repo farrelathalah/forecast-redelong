@@ -1,0 +1,41 @@
+tanggal,source_id,provider,target_jam,source_datetime,suhu_C,RH_%,rain_mm,wind_kmh,gap_minutes,point_weight,kategori,raw_condition
+09-07-2026,CMA,Open-Meteo / CMA GRAPES,06:00,2026-07-09 06:00:00,12.7,92.0,0.0,7.9,0.0,0.85,Cerah Berawan,wmo:2
+09-07-2026,CMA,Open-Meteo / CMA GRAPES,09:00,2026-07-09 09:00:00,18.4,60.0,0.0,2.5,0.0,0.85,Berawan,wmo:3
+09-07-2026,CMA,Open-Meteo / CMA GRAPES,12:00,2026-07-09 12:00:00,22.4,42.0,0.0,11.2,0.0,0.85,Berawan,wmo:3
+09-07-2026,CMA,Open-Meteo / CMA GRAPES,15:00,2026-07-09 15:00:00,20.0,61.0,0.0,9.0,0.0,0.85,Berawan,wmo:3
+09-07-2026,CMA,Open-Meteo / CMA GRAPES,18:00,2026-07-09 18:00:00,17.0,89.0,0.5,4.8,0.0,0.85,Hujan Ringan,wmo:53
+09-07-2026,ECMWF,Open-Meteo / ECMWF,06:00,2026-07-09 06:00:00,12.9,74.0,0.0,9.6,0.0,1.2,Berawan,wmo:3
+09-07-2026,ECMWF,Open-Meteo / ECMWF,09:00,2026-07-09 09:00:00,18.9,56.0,0.0,7.0,0.0,1.2,Berawan,wmo:3
+09-07-2026,ECMWF,Open-Meteo / ECMWF,12:00,2026-07-09 12:00:00,23.3,45.0,0.0,2.3,0.0,1.2,Berawan,wmo:3
+09-07-2026,ECMWF,Open-Meteo / ECMWF,15:00,2026-07-09 15:00:00,22.1,59.0,0.0,0.7,0.0,1.2,Cerah Berawan,wmo:2
+09-07-2026,ECMWF,Open-Meteo / ECMWF,18:00,2026-07-09 18:00:00,18.4,87.0,0.1,2.2,0.0,1.2,Hujan Ringan,wmo:51
+09-07-2026,GFS,Open-Meteo / NOAA GFS,06:00,2026-07-09 06:00:00,12.5,74.0,0.0,8.7,0.0,1.0,Berawan,wmo:3
+09-07-2026,GFS,Open-Meteo / NOAA GFS,09:00,2026-07-09 09:00:00,18.9,57.0,0.0,1.5,0.0,1.0,Berawan,wmo:3
+09-07-2026,GFS,Open-Meteo / NOAA GFS,12:00,2026-07-09 12:00:00,23.0,48.0,0.0,4.6,0.0,1.0,Berawan,wmo:3
+09-07-2026,GFS,Open-Meteo / NOAA GFS,15:00,2026-07-09 15:00:00,22.3,54.0,0.0,7.2,0.0,1.0,Cerah Berawan,wmo:1
+09-07-2026,GFS,Open-Meteo / NOAA GFS,18:00,2026-07-09 18:00:00,18.3,83.0,0.2,4.0,0.0,1.0,Hujan Ringan,wmo:51
+09-07-2026,ICON,Open-Meteo / DWD ICON,06:00,2026-07-09 06:00:00,15.9,69.0,0.0,8.5,0.0,1.05,Berawan,wmo:3
+09-07-2026,ICON,Open-Meteo / DWD ICON,09:00,2026-07-09 09:00:00,19.4,65.0,0.0,2.8,0.0,1.05,Berawan,wmo:3
+09-07-2026,ICON,Open-Meteo / DWD ICON,12:00,2026-07-09 12:00:00,23.0,54.0,0.0,1.1,0.0,1.05,Cerah Berawan,wmo:1
+09-07-2026,ICON,Open-Meteo / DWD ICON,15:00,2026-07-09 15:00:00,23.0,57.0,0.0,4.5,0.0,1.05,Berawan,wmo:3
+09-07-2026,ICON,Open-Meteo / DWD ICON,18:00,2026-07-09 18:00:00,18.7,88.0,0.0,5.3,0.0,1.05,Berawan,wmo:3
+09-07-2026,KMA,Open-Meteo / KMA,06:00,2026-07-09 06:00:00,,,,,0.0,0.63,Berawan,wmo:None
+09-07-2026,KMA,Open-Meteo / KMA,09:00,2026-07-09 09:00:00,,,,,0.0,0.63,Berawan,wmo:None
+09-07-2026,KMA,Open-Meteo / KMA,12:00,2026-07-09 12:00:00,,,,,0.0,0.63,Berawan,wmo:None
+09-07-2026,KMA,Open-Meteo / KMA,15:00,2026-07-09 15:00:00,,,,,0.0,0.63,Berawan,wmo:None
+09-07-2026,KMA,Open-Meteo / KMA,18:00,2026-07-09 18:00:00,,,,,0.0,0.63,Berawan,wmo:None
+09-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,06:00,2026-07-09 06:00:00,17.4,68.0,0.0,5.0,0.0,1.1,Berawan,wmo:3
+09-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,09:00,2026-07-09 09:00:00,20.6,64.0,0.0,3.0,0.0,1.1,Berawan,wmo:3
+09-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,12:00,2026-07-09 12:00:00,24.2,61.0,0.0,2.7,0.0,1.1,Cerah Berawan,wmo:2
+09-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,15:00,2026-07-09 15:00:00,23.4,76.0,0.1,3.8,0.0,1.1,Hujan Ringan,wmo:51
+09-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,18:00,2026-07-09 18:00:00,20.8,87.0,0.2,1.6,0.0,1.1,Hujan Ringan,wmo:51
+09-07-2026,METNO,MET Norway,06:00,2026-07-09 06:00:00,12.2,80.4,0.0,9.72,0.0,0.9795,Berawan,cloudy
+09-07-2026,METNO,MET Norway,09:00,2026-07-09 09:00:00,19.4,62.4,0.0,7.2,0.0,0.9795,Cerah Berawan,partlycloudy_day
+09-07-2026,METNO,MET Norway,12:00,2026-07-09 12:00:00,23.1,49.0,0.0,9.36,0.0,0.9795,Cerah Berawan,partlycloudy_day
+09-07-2026,METNO,MET Norway,15:00,2026-07-09 15:00:00,21.5,64.1,0.2,10.08,0.0,0.9795,Hujan Ringan,lightrainshowers_day
+09-07-2026,METNO,MET Norway,18:00,2026-07-09 18:00:00,18.3,84.8,0.3,7.92,0.0,0.9795,Hujan Ringan,rainshowers_day
+09-07-2026,UKMO,Open-Meteo / UK Met Office,06:00,2026-07-09 06:00:00,11.6,87.0,0.0,6.5,0.0,0.95,Cerah Berawan,wmo:2
+09-07-2026,UKMO,Open-Meteo / UK Met Office,09:00,2026-07-09 09:00:00,18.2,61.0,0.0,2.9,0.0,0.95,Berawan,wmo:3
+09-07-2026,UKMO,Open-Meteo / UK Met Office,12:00,2026-07-09 12:00:00,22.0,54.0,0.0,3.6,0.0,0.95,Berawan,wmo:3
+09-07-2026,UKMO,Open-Meteo / UK Met Office,15:00,2026-07-09 15:00:00,22.2,58.0,0.0,7.2,0.0,0.95,Berawan,wmo:3
+09-07-2026,UKMO,Open-Meteo / UK Met Office,18:00,2026-07-09 18:00:00,19.0,82.0,0.0,2.9,0.0,0.95,Cerah Berawan,wmo:2

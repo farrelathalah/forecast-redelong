@@ -1,0 +1,38 @@
+tanggal,source_id,provider,target_jam,source_datetime,suhu_C,RH_%,rain_mm,wind_kmh,gap_minutes,point_weight,kategori,raw_condition
+07-07-2026,CMA,Open-Meteo / CMA GRAPES,06:00,2026-07-07 06:00:00,13.4,92.0,0.0,8.2,0.0,0.85,Cerah,wmo:0
+07-07-2026,CMA,Open-Meteo / CMA GRAPES,09:00,2026-07-07 09:00:00,19.0,55.0,0.0,2.3,0.0,0.85,Cerah,wmo:0
+07-07-2026,CMA,Open-Meteo / CMA GRAPES,12:00,2026-07-07 12:00:00,23.6,38.0,0.0,11.9,0.0,0.85,Cerah,wmo:0
+07-07-2026,CMA,Open-Meteo / CMA GRAPES,15:00,2026-07-07 15:00:00,19.7,78.0,1.8,6.3,0.0,0.85,Hujan Ringan,wmo:80
+07-07-2026,CMA,Open-Meteo / CMA GRAPES,18:00,2026-07-07 18:00:00,16.4,96.0,0.9,1.9,0.0,0.85,Hujan Ringan,wmo:53
+07-07-2026,ECMWF,Open-Meteo / ECMWF,06:00,2026-07-07 06:00:00,13.0,100,0.0,3.6,0.0,1.2,Berawan,wmo:3
+07-07-2026,ECMWF,Open-Meteo / ECMWF,09:00,2026-07-07 09:00:00,18.3,81.0,0.0,0.4,0.0,1.2,Berawan,wmo:3
+07-07-2026,ECMWF,Open-Meteo / ECMWF,12:00,2026-07-07 12:00:00,20.3,73.0,0.6,4.6,0.0,1.2,Hujan Ringan,wmo:53
+07-07-2026,ECMWF,Open-Meteo / ECMWF,15:00,2026-07-07 15:00:00,19.9,77.0,1.1,3.3,0.0,1.2,Hujan Ringan,wmo:55
+07-07-2026,ECMWF,Open-Meteo / ECMWF,18:00,2026-07-07 18:00:00,17.5,93.0,0.4,0.5,0.0,1.2,Hujan Ringan,wmo:51
+07-07-2026,GFS,Open-Meteo / NOAA GFS,06:00,2026-07-07 06:00:00,13.7,98.0,0.0,5.6,0.0,1.0,Cerah Berawan,wmo:2
+07-07-2026,GFS,Open-Meteo / NOAA GFS,09:00,2026-07-07 09:00:00,18.3,86.0,0.1,3.6,0.0,1.0,Hujan Ringan,wmo:51
+07-07-2026,GFS,Open-Meteo / NOAA GFS,12:00,2026-07-07 12:00:00,20.0,82.0,1.3,4.3,0.0,1.0,Hujan Ringan,wmo:80
+07-07-2026,GFS,Open-Meteo / NOAA GFS,15:00,2026-07-07 15:00:00,19.6,86.0,2.1,3.2,0.0,1.0,Hujan Ringan,wmo:80
+07-07-2026,GFS,Open-Meteo / NOAA GFS,18:00,2026-07-07 18:00:00,17.1,96.0,2.2,3.2,0.0,1.0,Hujan Ringan,wmo:80
+07-07-2026,ICON,Open-Meteo / DWD ICON,06:00,2026-07-07 06:00:00,14.9,97.0,0.0,6.5,0.0,1.05,Berawan,wmo:45
+07-07-2026,ICON,Open-Meteo / DWD ICON,09:00,2026-07-07 09:00:00,18.8,86.0,0.0,3.6,0.0,1.05,Berawan,wmo:3
+07-07-2026,ICON,Open-Meteo / DWD ICON,12:00,2026-07-07 12:00:00,22.1,63.0,0.0,3.7,0.0,1.05,Berawan,wmo:3
+07-07-2026,ICON,Open-Meteo / DWD ICON,15:00,2026-07-07 15:00:00,20.9,82.0,0.8,4.9,0.0,1.05,Hujan Lebat,wmo:95
+07-07-2026,ICON,Open-Meteo / DWD ICON,18:00,2026-07-07 18:00:00,19.3,78.0,0.3,5.1,0.0,1.05,Hujan Ringan,wmo:80
+07-07-2026,KMA,Open-Meteo / KMA,06:00,2026-07-07 06:00:00,,,,,0.0,0.63,Berawan,wmo:None
+07-07-2026,KMA,Open-Meteo / KMA,09:00,2026-07-07 09:00:00,,,,,0.0,0.63,Berawan,wmo:None
+07-07-2026,KMA,Open-Meteo / KMA,12:00,2026-07-07 12:00:00,,,,,0.0,0.63,Berawan,wmo:None
+07-07-2026,KMA,Open-Meteo / KMA,15:00,2026-07-07 15:00:00,,,,,0.0,0.63,Berawan,wmo:None
+07-07-2026,KMA,Open-Meteo / KMA,18:00,2026-07-07 18:00:00,,,,,0.0,0.63,Berawan,wmo:None
+07-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,06:00,2026-07-07 06:00:00,16.6,98.0,0.0,5.0,0.0,1.1,Berawan,wmo:3
+07-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,09:00,2026-07-07 09:00:00,20.8,86.0,0.0,1.1,0.0,1.1,Berawan,wmo:3
+07-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,12:00,2026-07-07 12:00:00,24.0,77.0,0.1,5.1,0.0,1.1,Hujan Ringan,wmo:51
+07-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,15:00,2026-07-07 15:00:00,21.1,98.0,6.4,3.3,0.0,1.1,Hujan Sedang,wmo:81
+07-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,18:00,2026-07-07 18:00:00,20.2,96.0,5.0,2.5,0.0,1.1,Hujan Sedang,wmo:81
+07-07-2026,METNO,MET Norway,15:00,2026-07-07 15:00:00,21.0,80.2,0.5,8.28,0.0,1.0,Hujan Ringan,rain
+07-07-2026,METNO,MET Norway,18:00,2026-07-07 18:00:00,19.4,86.4,0.3,6.84,0.0,1.0,Hujan Ringan,rainshowers_day
+07-07-2026,UKMO,Open-Meteo / UK Met Office,06:00,2026-07-07 06:00:00,11.5,97.0,0.0,5.8,0.0,0.95,Cerah,wmo:0
+07-07-2026,UKMO,Open-Meteo / UK Met Office,09:00,2026-07-07 09:00:00,18.0,84.0,0.0,0.4,0.0,0.95,Cerah,wmo:0
+07-07-2026,UKMO,Open-Meteo / UK Met Office,12:00,2026-07-07 12:00:00,21.3,70.0,0.0,5.4,0.0,0.95,Berawan,wmo:3
+07-07-2026,UKMO,Open-Meteo / UK Met Office,15:00,2026-07-07 15:00:00,18.2,99.0,42.1,6.5,0.0,0.95,Hujan Lebat,wmo:95
+07-07-2026,UKMO,Open-Meteo / UK Met Office,18:00,2026-07-07 18:00:00,17.4,99.0,56.5,1.1,0.0,0.95,Hujan Lebat,wmo:82

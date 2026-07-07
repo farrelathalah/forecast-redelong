@@ -1,0 +1,22 @@
+2026-07-07 08:28:58,699 INFO Log file: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260707_152858.log
+2026-07-07 08:28:58,699 INFO Output dir: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4
+2026-07-07 08:28:58,699 INFO Metadata lokasi: slug=gpm4 adm4=11.17.00.0000 bmkg_point=GPM4 area_level=catchment_point proxy_bmkg=True
+2026-07-07 08:28:58,699 INFO Koordinat: lat=4.778238355009202 lon=96.8876539578458 timezone=Asia/Jakarta
+2026-07-07 08:28:58,699 INFO Catatan lokasi: PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run.
+2026-07-07 08:28:58,699 INFO Locations file: /home/runner/work/forecast-redelong/forecast-redelong/locations.json
+2026-07-07 08:28:58,699 INFO Mulai proses untuk lokasi GPM4
+2026-07-07 08:28:58,699 INFO Target date: 2026-07-08
+2026-07-07 08:28:58,699 INFO Target hours: 06:00, 09:00, 12:00, 15:00, 18:00
+2026-07-07 08:28:58,700 INFO Sumber aktif: ECMWF, GFS, ICON, CMA, METEOFRANCE, KMA, UKMO, METNO
+2026-07-07 08:28:58,700 INFO Bobot aktif: BMKG=1.35, CMA=0.85, ECMWF=1.2, GFS=1.0, ICON=1.05, KMA=0.9, METEOFRANCE=1.1, METNO=1.0, UKMO=0.95
+2026-07-07 08:29:18,078 INFO Selesai.
+2026-07-07 08:29:18,078 INFO Sumber sukses: 8/8
+2026-07-07 08:29:18,078 INFO Total forecast point: 40
+2026-07-07 08:29:18,078 INFO CMA: OK (5/5 point) http=200 t=460ms 
+2026-07-07 08:29:18,078 INFO ECMWF: OK (5/5 point) http=200 t=452ms 
+2026-07-07 08:29:18,078 INFO GFS: OK (5/5 point) http=200 t=466ms 
+2026-07-07 08:29:18,078 INFO ICON: OK (5/5 point) http=200 t=478ms 
+2026-07-07 08:29:18,078 INFO KMA: OK (5/5 point) http=200 t=450ms 
+2026-07-07 08:29:18,079 INFO METEOFRANCE: OK (5/5 point) http=200 t=474ms 
+2026-07-07 08:29:18,079 INFO METNO: OK (5/5 point) http=200 t=554ms 
+2026-07-07 08:29:18,079 INFO UKMO: OK (5/5 point) http=200 t=472ms 

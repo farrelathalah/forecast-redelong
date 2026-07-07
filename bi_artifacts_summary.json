@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-07-07T15:32:38.664007+07:00",
+  "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
+  "dim_sources": {
+    "path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/dim_sources.csv",
+    "rows": 9
+  },
+  "dim_locations": {
+    "path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/dim_locations.csv",
+    "rows": 8
+  },
+  "ensemble_fact": {
+    "path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_fact_all_locations.csv",
+    "rows": 120
+  }
+}

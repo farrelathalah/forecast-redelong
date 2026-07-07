@@ -1,0 +1,23 @@
+2026-07-07 08:29:25,810 INFO Log file: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260707_152925.log
+2026-07-07 08:29:25,810 INFO Output dir: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5
+2026-07-07 08:29:25,810 INFO Metadata lokasi: slug=gpm5 adm4=11.17.00.0000 bmkg_point=GPM5 area_level=catchment_point proxy_bmkg=True
+2026-07-07 08:29:25,810 INFO Koordinat: lat=4.767312077178135 lon=96.94566692384144 timezone=Asia/Jakarta
+2026-07-07 08:29:25,810 INFO Catatan lokasi: PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run.
+2026-07-07 08:29:25,810 INFO Locations file: /home/runner/work/forecast-redelong/forecast-redelong/locations.json
+2026-07-07 08:29:25,810 INFO Mulai proses untuk lokasi GPM5
+2026-07-07 08:29:25,810 INFO Target date: 2026-07-07
+2026-07-07 08:29:25,810 INFO Target hours: 06:00, 09:00, 12:00, 15:00, 18:00
+2026-07-07 08:29:25,810 INFO Sumber aktif: ECMWF, GFS, ICON, CMA, METEOFRANCE, KMA, UKMO, METNO
+2026-07-07 08:29:25,811 INFO Bobot aktif: BMKG=1.35, CMA=0.85, ECMWF=1.2, GFS=1.0, ICON=1.05, KMA=0.9, METEOFRANCE=1.1, METNO=1.0, UKMO=0.95
+2026-07-07 08:29:37,958 WARNING ECMWF extra vars gagal, fallback variabel dasar: <urlopen error _ssl.c:999: The handshake operation timed out>
+2026-07-07 08:29:45,662 INFO Selesai.
+2026-07-07 08:29:45,662 INFO Sumber sukses: 8/8
+2026-07-07 08:29:45,662 INFO Total forecast point: 37
+2026-07-07 08:29:45,662 INFO CMA: OK (5/5 point) http=200 t=460ms 
+2026-07-07 08:29:45,662 INFO ECMWF: OK (5/5 point) http=200 t=452ms 
+2026-07-07 08:29:45,662 INFO GFS: OK (5/5 point) http=200 t=473ms 
+2026-07-07 08:29:45,662 INFO ICON: OK (5/5 point) http=200 t=461ms 
+2026-07-07 08:29:45,662 INFO KMA: OK (5/5 point) http=200 t=470ms 
+2026-07-07 08:29:45,662 INFO METEOFRANCE: OK (5/5 point) http=200 t=450ms 
+2026-07-07 08:29:45,662 INFO METNO: OK (2/5 point) http=200 t=375ms 
+2026-07-07 08:29:45,662 INFO UKMO: OK (5/5 point) http=200 t=466ms 

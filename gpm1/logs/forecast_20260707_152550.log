@@ -1,0 +1,23 @@
+2026-07-07 08:25:50,724 INFO Log file: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260707_152550.log
+2026-07-07 08:25:50,724 INFO Output dir: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1
+2026-07-07 08:25:50,724 INFO Metadata lokasi: slug=gpm1 adm4=11.17.00.0000 bmkg_point=GPM1 area_level=catchment_point proxy_bmkg=True
+2026-07-07 08:25:50,724 INFO Koordinat: lat=4.81572033808049 lon=96.877105410688 timezone=Asia/Jakarta
+2026-07-07 08:25:50,724 INFO Catatan lokasi: PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run.
+2026-07-07 08:25:50,724 INFO Locations file: /home/runner/work/forecast-redelong/forecast-redelong/locations.json
+2026-07-07 08:25:50,724 INFO Mulai proses untuk lokasi GPM1
+2026-07-07 08:25:50,724 INFO Target date: 2026-07-08
+2026-07-07 08:25:50,724 INFO Target hours: 06:00, 09:00, 12:00, 15:00, 18:00
+2026-07-07 08:25:50,724 INFO Sumber aktif: ECMWF, GFS, ICON, CMA, METEOFRANCE, KMA, UKMO, METNO
+2026-07-07 08:25:50,724 INFO Bobot aktif: BMKG=1.35, CMA=0.85, ECMWF=1.2, GFS=1.0, ICON=1.05, KMA=0.9, METEOFRANCE=1.1, METNO=1.0, UKMO=0.95
+2026-07-07 08:26:02,871 WARNING ECMWF extra vars gagal, fallback variabel dasar: <urlopen error _ssl.c:999: The handshake operation timed out>
+2026-07-07 08:26:22,175 INFO Selesai.
+2026-07-07 08:26:22,175 INFO Sumber sukses: 8/8
+2026-07-07 08:26:22,175 INFO Total forecast point: 40
+2026-07-07 08:26:22,175 INFO CMA: OK (5/5 point) http=200 t=440ms 
+2026-07-07 08:26:22,175 INFO ECMWF: OK (5/5 point) http=200 t=461ms 
+2026-07-07 08:26:22,175 INFO GFS: OK (5/5 point) http=200 t=464ms 
+2026-07-07 08:26:22,175 INFO ICON: OK (5/5 point) http=200 t=462ms 
+2026-07-07 08:26:22,175 INFO KMA: OK (5/5 point) http=200 t=460ms 
+2026-07-07 08:26:22,175 INFO METEOFRANCE: OK (5/5 point) http=200 t=465ms 
+2026-07-07 08:26:22,175 INFO METNO: OK (5/5 point) http=200 t=329ms 
+2026-07-07 08:26:22,175 INFO UKMO: OK (5/5 point) http=200 t=462ms 

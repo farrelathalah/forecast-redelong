@@ -1,0 +1,82 @@
+{
+  "brand": "Forecast Redelong",
+  "version": "Forecast Redelong v60.4",
+  "nowcast": null,
+  "microclimate": {
+    "profile": "Microclimate lokal",
+    "note": "koreksi lokal awal; akurasi membaik setelah observasi terkumpul",
+    "zone_count": 1,
+    "engine": "diurnal + terrain/personality adjustment"
+  },
+  "source_court": {
+    "status": "Aktif",
+    "agreement": "Tinggi",
+    "summary": "8/8 sumber aktif. Agreement operasional: Tinggi.",
+    "sources": [
+      {
+        "source_id": "CMA",
+        "verdict": "Aktif",
+        "points": "5",
+        "http_status": "200",
+        "latency_ms": "468"
+      },
+      {
+        "source_id": "ECMWF",
+        "verdict": "Aktif",
+        "points": "5",
+        "http_status": "200",
+        "latency_ms": "477"
+      },
+      {
+        "source_id": "GFS",
+        "verdict": "Aktif",
+        "points": "5",
+        "http_status": "200",
+        "latency_ms": "490"
+      },
+      {
+        "source_id": "ICON",
+        "verdict": "Aktif",
+        "points": "5",
+        "http_status": "200",
+        "latency_ms": "486"
+      },
+      {
+        "source_id": "KMA",
+        "verdict": "Aktif",
+        "points": "5",
+        "http_status": "200",
+        "latency_ms": "481"
+      },
+      {
+        "source_id": "METEOFRANCE",
+        "verdict": "Aktif",
+        "points": "5",
+        "http_status": "200",
+        "latency_ms": "547"
+      },
+      {
+        "source_id": "METNO",
+        "verdict": "Aktif",
+        "points": "5",
+        "http_status": "200",
+        "latency_ms": "439"
+      },
+      {
+        "source_id": "UKMO",
+        "verdict": "Aktif",
+        "points": "5",
+        "http_status": "200",
+        "latency_ms": "479"
+      }
+    ]
+  },
+  "map_layers": [
+    "Rain Risk",
+    "Activity Safety",
+    "Heat Stress",
+    "Source Confidence",
+    "Microclimate",
+    "Time Slider"
+  ]
+}
