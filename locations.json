@@ -1,0 +1,102 @@
+{
+  "default_multi_locations": [
+    "plta_redelong",
+    "gpm1",
+    "gpm2",
+    "gpm3",
+    "gpm4",
+    "gpm5",
+    "gpm6",
+    "gpm_grid_tamatue"
+  ],
+  "locations": {
+    "plta_redelong": {
+      "location_name": "PLTA Redelong",
+      "adm4": "11.17.00.0000",
+      "latitude": 4.748139,
+      "longitude": 96.977344,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "PLTA Redelong",
+      "area_level": "catchment_point",
+      "is_proxy_bmkg": true,
+      "note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run."
+    },
+    "gpm1": {
+      "location_name": "GPM1",
+      "adm4": "11.17.00.0000",
+      "latitude": 4.81572033808049,
+      "longitude": 96.877105410688,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "GPM1",
+      "area_level": "catchment_point",
+      "is_proxy_bmkg": true,
+      "note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run."
+    },
+    "gpm2": {
+      "location_name": "GPM2",
+      "adm4": "11.17.00.0000",
+      "latitude": 4.811672965065149,
+      "longitude": 96.9505347134354,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "GPM2",
+      "area_level": "catchment_point",
+      "is_proxy_bmkg": true,
+      "note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run."
+    },
+    "gpm3": {
+      "location_name": "GPM3",
+      "adm4": "11.17.00.0000",
+      "latitude": 4.815409756944025,
+      "longitude": 97.009911990332,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "GPM3",
+      "area_level": "catchment_point",
+      "is_proxy_bmkg": true,
+      "note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run."
+    },
+    "gpm4": {
+      "location_name": "GPM4",
+      "adm4": "11.17.00.0000",
+      "latitude": 4.778238355009202,
+      "longitude": 96.8876539578458,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "GPM4",
+      "area_level": "catchment_point",
+      "is_proxy_bmkg": true,
+      "note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run."
+    },
+    "gpm5": {
+      "location_name": "GPM5",
+      "adm4": "11.17.00.0000",
+      "latitude": 4.767312077178135,
+      "longitude": 96.94566692384144,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "GPM5",
+      "area_level": "catchment_point",
+      "is_proxy_bmkg": true,
+      "note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run."
+    },
+    "gpm6": {
+      "location_name": "GPM6",
+      "adm4": "11.17.00.0000",
+      "latitude": 4.796061970712406,
+      "longitude": 97.0098682419131,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "GPM6",
+      "area_level": "catchment_point",
+      "is_proxy_bmkg": true,
+      "note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run."
+    },
+    "gpm_grid_tamatue": {
+      "location_name": "GPM Grid TamaTue",
+      "adm4": "11.17.00.0000",
+      "latitude": 4.649902718619309,
+      "longitude": 96.85017949357464,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "GPM Grid TamaTue",
+      "area_level": "catchment_point",
+      "is_proxy_bmkg": true,
+      "note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run."
+    }
+  }
+}

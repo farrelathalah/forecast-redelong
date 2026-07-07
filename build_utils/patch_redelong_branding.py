@@ -1,0 +1,84 @@
+﻿from pathlib import Path
+
+ROOT = Path("outputs")
+
+TEXT_REPLACEMENTS = {
+    "LANGIT Sentinel X": "Forecast Redelong Forecast Portal",
+    "LANGIT Sentinel": "Forecast Redelong",
+    "LANGIT Command Center": "Forecast Redelong Command Center",
+    "LANGIT Portal": "Forecast Redelong Portal",
+    "LANGIT": "Forecast Redelong",
+    "Langit": "Forecast Redelong",
+    "Sentinel X": "Forecast Decision Layer",
+    "Sentinel": "Forecast",
+    "Aether": "Ensemble Forecast Layer",
+    "v65": "Redelong",
+    "cinematic": "portal",
+    "Cinematic": "Portal",
+    "Dago, Bandung": "PLTA Redelong",
+    "Dago": "PLTA Redelong",
+    "Jatinangor, Sumedang": "GPM Catchment",
+    "Jatinangor": "GPM Catchment",
+    "Arjawinangun, Cirebon": "Redelong Catchment",
+    "Arjawinangun": "Redelong Catchment",
+    "Bandung": "Bener Meriah",
+    "ITB": "PLTA Redelong",
+    "Marcooo20-D": "farrelathalah",
+    "weather-forecast": "forecast-redelong",
+    "langit_portal_map.html": "redelong_portal_map.html",
+    "langit": "redelong",
+}
+
+FILE_REPLACEMENTS = {
+    "langit": "redelong",
+    "aether": "ensemble",
+    "sentinel": "Forecast",
+    "cinematic": "portal",
+}
+
+TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".md", ".txt", ".csv"}
+
+changed_text = 0
+renamed_files = 0
+
+for path in list(ROOT.rglob("*")):
+    if not path.is_file():
+        continue
+    if path.suffix.lower() not in TEXT_SUFFIXES:
+        continue
+
+    try:
+        text = path.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        continue
+
+    new_text = text
+    for old, new in TEXT_REPLACEMENTS.items():
+        new_text = new_text.replace(old, new)
+
+    if new_text != text:
+        path.write_text(new_text, encoding="utf-8")
+        changed_text += 1
+        print(f"patched text: {path}")
+
+for path in sorted(list(ROOT.rglob("*")), key=lambda p: len(str(p)), reverse=True):
+    if not path.is_file():
+        continue
+
+    new_name = path.name
+    for old, new in FILE_REPLACEMENTS.items():
+        new_name = new_name.replace(old, new)
+
+    if new_name != path.name:
+        target = path.with_name(new_name)
+        if not target.exists():
+            path.rename(target)
+            renamed_files += 1
+            print(f"renamed file: {path} -> {target}")
+
+(ROOT / ".nojekyll").write_text("", encoding="utf-8")
+
+print("SUCCESS")
+print(f"Jumlah file teks diubah: {changed_text}")
+print(f"Jumlah file diganti nama: {renamed_files}")
+

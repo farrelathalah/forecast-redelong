@@ -1,0 +1,84 @@
+﻿name: Forecast Redelong
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 23 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forecast-redelong
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Clean outputs
+        run: |
+          rm -rf outputs
+          mkdir -p outputs
+
+      - name: Generate Redelong locations
+        run: |
+          python build_utils/make_redelong_locations.py
+          python build_utils/fix_redelong_adm4.py
+
+      - name: Run Redelong forecast
+        run: |
+          python weather_ensemble_multi_location.py \
+            --mode forecast \
+            --locations all \
+            --locations-file locations.json \
+            --timezone Asia/Jakarta \
+            --sources ECMWF,GFS,ICON,CMA,METEOFRANCE,KMA,UKMO,METNO \
+            --targets 06:00,09:00,12:00,15:00,18:00 \
+            --forecast-range-days 3 \
+            --http-timeout 12 \
+            --max-retry-http 1 \
+            --max-workers 3 \
+            --max-inflight-per-host 1 \
+            --public-base-url "https://farrelathalah.github.io/forecast-redelong" \
+            --no-save-raw-payloads \
+            --no-debug
+
+      - name: Build template pages
+        run: |
+          python redelong_portal_rebuild.py \
+            --root outputs \
+            --public-base-url "https://farrelathalah.github.io/forecast-redelong"
+
+      - name: Patch legacy branding
+        run: |
+          python build_utils/patch_redelong_branding.py
+
+      - name: Build Forecast Redelong public site
+        run: |
+          python build_utils/make_forecast_redelong_site.py
+
+      - name: Ensure nojekyll
+        run: |
+          touch outputs/.nojekyll
+
+      - name: Deploy to GitHub Pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./outputs
