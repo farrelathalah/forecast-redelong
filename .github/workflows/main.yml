@@ -3,7 +3,8 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 23 * * *"
+    - cron: "17 6 * * *"
+      timezone: "Asia/Jakarta"
 
 permissions:
   contents: write
@@ -47,12 +48,12 @@ jobs:
             --locations all \
             --locations-file locations.json \
             --timezone Asia/Jakarta \
-            --sources ECMWF,GFS,ICON,CMA,METEOFRANCE,KMA,UKMO,METNO \
+            --sources BMKG,ECMWF,GFS,ICON,CMA,METEOFRANCE,KMA,UKMO,METNO \
             --targets 06:00,09:00,12:00,15:00,18:00 \
             --forecast-range-days 3 \
-            --http-timeout 12 \
-            --max-retry-http 1 \
-            --max-workers 3 \
+            --http-timeout 20 \
+            --max-retry-http 2 \
+            --max-workers 2 \
             --max-inflight-per-host 1 \
             --public-base-url "https://farrelathalah.github.io/forecast-redelong" \
             --no-save-raw-payloads \
@@ -71,6 +72,26 @@ jobs:
       - name: Build Forecast Redelong public site
         run: |
           python build_utils/make_forecast_redelong_site.py
+
+      - name: Build Forecast Redelong technical overview
+        run: |
+          python build_utils/make_forecast_redelong_overview.py
+
+      - name: Enhance Forecast Redelong overview
+        run: |
+          python build_utils/enhance_forecast_redelong_overview.py
+
+      - name: Evaluate forecast accuracy
+        run: |
+          python build_utils/evaluate_forecast_accuracy.py
+
+      - name: Add evaluation link
+        run: |
+          python build_utils/link_evaluation_page.py
+
+      - name: Add BMKG attribution
+        run: |
+          python build_utils/add_bmkg_attribution.py
 
       - name: Ensure nojekyll
         run: |
