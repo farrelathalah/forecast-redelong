@@ -12,6 +12,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS = ROOT / "outputs"
 OBS_PATH = ROOT / "data" / "redelong" / "observations" / "rain_observed_daily.csv"
+PROXY_OBS_PATH = ROOT / "data" / "redelong" / "observations" / "rain_proxy_daily.csv"
 FORECAST_PATH = OUTPUTS / "forecast_all_locations.csv"
 WIB = timezone(timedelta(hours=7))
 
@@ -129,7 +130,11 @@ def main() -> None:
 
     fc = read_csv(FORECAST_PATH)
     obs = read_csv(OBS_PATH)
+    obs_mode = "field_observation"
 
+    if obs.empty or "rain_mm_observed" not in obs.columns or not pd.to_numeric(obs.get("rain_mm_observed"), errors="coerce").notna().any():
+        obs = read_csv(PROXY_OBS_PATH)
+        obs_mode = "proxy_observation"
     generated = datetime.now(WIB).strftime("%Y-%m-%d %H:%M WIB")
 
     if fc.empty or obs.empty:
@@ -223,7 +228,7 @@ def main() -> None:
     joined.to_csv(OUTPUTS / "evaluation_joined_daily.csv", index=False)
     metrics.to_csv(OUTPUTS / "evaluation_metrics.csv", index=False)
 
-    write_page(joined, metrics, generated)
+    write_page(joined, metrics, generated, obs_mode)
 
 
 def write_empty_page(message: str, generated: str) -> None:
@@ -257,7 +262,7 @@ def write_empty_page(message: str, generated: str) -> None:
     print("WARNING:", message)
 
 
-def write_page(joined: pd.DataFrame, metrics: pd.DataFrame, generated: str) -> None:
+def write_page(joined: pd.DataFrame, metrics: pd.DataFrame, generated: str, obs_mode: str) -> None:
     best = metrics.sort_values("mae_mm").iloc[0]
 
     metric_rows = ""
@@ -327,9 +332,9 @@ def write_page(joined: pd.DataFrame, metrics: pd.DataFrame, generated: str) -> N
 
   <main>
     <section class="panel">
-      <h1>Evaluasi akurasi forecast.</h1>
+      <h1>Evaluasi akurasi forecast.</h1>\n      <p><strong>Mode evaluasi:</strong> {escape(obs_mode)}</p>
       <p>
-        Halaman ini membandingkan forecast hujan harian dengan data observasi aktual.
+        Halaman ini membandingkan forecast hujan harian dengan data pembanding. Jika data lapangan belum tersedia, sistem dapat memakai proxy observation seperti data satelit atau gridded.
         Angka akurasi hanya dihitung dari pasangan tanggal dan lokasi yang memiliki
         data forecast serta observasi.
       </p>
