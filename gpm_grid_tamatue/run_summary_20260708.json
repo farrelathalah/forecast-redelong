@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-08T09:42:30.260502+07:00",
+  "generated_at": "2026-07-08T15:09:09.952557+07:00",
   "location_slug": "gpm_grid_tamatue",
   "location_name": "GPM Grid TamaTue",
   "bmkg_point_name": "Bale Redelong",
@@ -14,7 +14,7 @@
   "target_date": "2026-07-08",
   "sources_total": 9,
   "sources_success": 9,
-  "points_total": 44,
+  "points_total": 40,
   "sources_active": [
     "BMKG",
     "ECMWF",
@@ -41,7 +41,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "ANEMOS Public Weather v11",
-    "run_id": "gpm_grid_tamatue_20260708_20260708094230",
+    "run_id": "gpm_grid_tamatue_20260708_20260708150909",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/command_center_sentinel_x.html",
@@ -49,6 +49,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x_ledger.sqlite",
     "daily_operational_status": "GREEN",
-    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM Grid TamaTue. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 24.7/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM Grid TamaTue. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 27.8/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
