@@ -83,6 +83,7 @@
         <a href="index.html">Home</a>
         <a href="redelong_rain_map.html">Peta Hujan</a>
         <a href="redelong_overview.html">Overview</a>
+        <a href="evaluation_summary.html">Evaluasi Akurasi</a>
         <a href="plta_redelong/rain_dashboard.html">Dashboard PLTA</a>
       </div>
     </nav>
@@ -106,9 +107,9 @@
 
       <aside class="hero-panel">
         <div class="metric"><div class="label">Titik Catchment</div><div class="value">8</div></div>
-        <div class="metric"><div class="label">Sumber Aktif</div><div class="value">8</div></div>
-        <div class="metric"><div class="label">Baris Forecast</div><div class="value">936</div></div>
-        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-07 15:32 WIB</div></div>
+        <div class="metric"><div class="label">Sumber Aktif</div><div class="value">9</div></div>
+        <div class="metric"><div class="label">Baris Forecast</div><div class="value">1075</div></div>
+        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-08 09:44 WIB</div></div>
       </aside>
     </div>
     <a class="scroll-cue" href="#ringkasan">Scroll</a>
@@ -121,9 +122,9 @@
         <p>Ringkasan ini dihitung langsung dari output forecast gabungan, bukan dari dashboard kosong bawaan template.</p>
       </div>
       <div class="cards">
-        <article class="info-card reveal"><p class="eyebrow">Rain Max</p><div class="big-number">56.5 mm</div><p>Nilai maksimum hujan dari output gabungan.</p></article>
-        <article class="info-card reveal"><p class="eyebrow">Rain P90</p><div class="big-number">1.3 mm</div><p>Persentil 90 untuk membaca skenario atas.</p></article>
-        <article class="info-card reveal"><p class="eyebrow">Rain Mean</p><div class="big-number">1.1 mm</div><p>Rata-rata nilai hujan pada seluruh titik dan sumber.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Rain Max</p><div class="big-number">7.7 mm</div><p>Nilai maksimum hujan dari output gabungan.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Rain P90</p><div class="big-number">0.5 mm</div><p>Persentil 90 untuk membaca skenario atas.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Rain Mean</p><div class="big-number">0.2 mm</div><p>Rata-rata nilai hujan pada seluruh titik dan sumber.</p></article>
         <article class="info-card reveal"><p class="eyebrow">Status</p><div class="big-number" style="font-size:28px">Prototype</div><p>Validasi observasi aktual tetap diperlukan.</p></article>
       </div>
     </div>
@@ -252,7 +253,7 @@
     </div>
   </section>
 
-  <footer><div class="footer-inner"><span>Forecast Redelong</span><span>FORECAST PLTA REDELONG · Generated 2026-07-07 15:32 WIB</span></div></footer>
+  <footer><div class="footer-inner"><span>Forecast Redelong</span><span>FORECAST PLTA REDELONG · Generated 2026-07-08 09:44 WIB</span></div></footer>
   
     <script>
       const observer = new IntersectionObserver((entries) => {
@@ -267,5 +268,19 @@
       });
     </script>
     
+
+<div style="
+  max-width:1180px;
+  margin:32px auto 0;
+  padding:14px 22px;
+  color:rgba(239,248,255,.72);
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  font-size:12px;
+  line-height:1.6;
+">
+  Sumber data prakiraan mencakup BMKG (Badan Meteorologi, Klimatologi, dan Geofisika)
+  serta model prakiraan numerik multi-source yang tersedia pada pipeline Forecast Redelong.
+</div>
+
 </body>
 </html>

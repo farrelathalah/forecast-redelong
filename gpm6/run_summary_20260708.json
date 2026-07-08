@@ -1,21 +1,22 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-07T15:31:19.868966+07:00",
+  "generated_at": "2026-07-08T09:40:28.874447+07:00",
   "location_slug": "gpm6",
   "location_name": "GPM6",
-  "bmkg_point_name": "GPM6",
+  "bmkg_point_name": "Bale Redelong",
   "area_level": "catchment_point",
   "is_proxy_bmkg": true,
-  "location_note": "PLTA Redelong catchment representative point. ADM4 placeholder only; BMKG source not active in this run.",
-  "adm4": "11.17.00.0000",
+  "location_note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point",
+  "adm4": "11.17.05.2002",
   "latitude": 4.796061970712406,
   "longitude": 97.0098682419131,
   "timezone": "Asia/Jakarta",
   "target_date": "2026-07-08",
-  "sources_total": 8,
-  "sources_success": 8,
-  "points_total": 40,
+  "sources_total": 9,
+  "sources_success": 9,
+  "points_total": 44,
   "sources_active": [
+    "BMKG",
     "ECMWF",
     "GFS",
     "ICON",
@@ -40,7 +41,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "ANEMOS Public Weather v11",
-    "run_id": "gpm6_20260708_20260707153119",
+    "run_id": "gpm6_20260708_20260708094028",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/command_center_sentinel_x.html",
@@ -48,6 +49,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_ledger.sqlite",
     "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM6. Status operasional harian YELLOW. Risk window utama: 15:00–15:00. Failure risk tertinggi 38.5/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM6. Status operasional harian YELLOW. Risk window utama: 15:00–15:00. Failure risk tertinggi 41.1/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }

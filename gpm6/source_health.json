@@ -1,61 +1,68 @@
 {
-  "generated_at": "2026-07-07T15:31:39.466293+07:00",
+  "generated_at": "2026-07-08T09:41:56.702757+07:00",
   "sources": {
+    "BMKG": {
+      "ema_success": 1.0,
+      "ema_completeness": 1.0,
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_run_date": "2026-07-10"
+    },
     "CMA": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-09"
+      "last_run_date": "2026-07-10"
     },
     "ECMWF": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-09"
+      "last_run_date": "2026-07-10"
     },
     "GFS": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-09"
+      "last_run_date": "2026-07-10"
     },
     "ICON": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-09"
+      "last_run_date": "2026-07-10"
     },
     "KMA": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-09"
+      "last_run_date": "2026-07-10"
     },
     "METEOFRANCE": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-09"
+      "last_run_date": "2026-07-10"
     },
     "METNO": {
       "ema_success": 1.0,
-      "ema_completeness": 0.9113,
+      "ema_completeness": 0.9704,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-09"
+      "last_run_date": "2026-07-10"
     },
     "UKMO": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-09"
+      "last_run_date": "2026-07-10"
     }
   }
 }
