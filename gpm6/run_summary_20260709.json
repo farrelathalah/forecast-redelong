@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-09T08:56:17.031359+07:00",
+  "generated_at": "2026-07-09T19:32:02.828714+07:00",
   "location_slug": "gpm6",
   "location_name": "GPM6",
   "bmkg_point_name": "Bale Redelong",
@@ -14,7 +14,7 @@
   "target_date": "2026-07-09",
   "sources_total": 9,
   "sources_success": 9,
-  "points_total": 45,
+  "points_total": 37,
   "sources_active": [
     "BMKG",
     "ECMWF",
@@ -41,7 +41,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "ANEMOS Public Weather v11",
-    "run_id": "gpm6_20260709_20260709085617",
+    "run_id": "gpm6_20260709_20260709193202",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/command_center_sentinel_x.html",
@@ -49,6 +49,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_ledger.sqlite",
     "daily_operational_status": "GREEN",
-    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM6. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 26.7/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM6. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 30.1/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }

@@ -170,7 +170,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 10.4,
+        "wind_kmh": 10.2,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -199,7 +199,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 13.4,
+        "wind_kmh": 11.8,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -228,7 +228,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 15.8,
+        "wind_kmh": 15.9,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -257,7 +257,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 17.7,
+        "wind_kmh": 16.6,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -286,210 +286,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 12.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 7.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 6.1,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 8.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 13.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 4.1,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 5.1,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 5.4,
+        "wind_kmh": 11.5,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -547,7 +344,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 10.1,
+        "wind_kmh": 7.1,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -576,7 +373,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 7.3,
+        "wind_kmh": 7.9,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -605,7 +402,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 3.3,
+        "wind_kmh": 13.2,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -634,7 +431,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 7.3,
+        "wind_kmh": 4.3,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -663,7 +460,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 15.7,
+        "wind_kmh": 5.4,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -692,7 +489,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 20.2,
+        "wind_kmh": 6.1,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -721,471 +518,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 13.1,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "limited",
-        "risk_label": "Data terbatas",
-        "condition": "Data terbatas",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 0.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "limited",
-        "risk_label": "Data terbatas",
-        "condition": "Data terbatas",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 0.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "limited",
-        "risk_label": "Data terbatas",
-        "condition": "Data terbatas",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 0.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "limited",
-        "risk_label": "Data terbatas",
-        "condition": "Data terbatas",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 0.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "limited",
-        "risk_label": "Data terbatas",
-        "condition": "Data terbatas",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 0.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 6.6,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 6.3,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 9.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 10.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 8.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 10.44,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 11.88,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 14.04,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 15.12,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 12.24,
-        "wind_dir": 0.0,
-        "cloud_pct": 70.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          96.85017949357464,
-          4.649902718619309
-        ]
-      },
-      "properties": {
-        "location_name": "GPM Grid TamaTue",
-        "slug": "gpm_grid_tamatue",
-        "date": "Kamis, 9 Juli 2026",
-        "date_iso": "2026-07-09",
-        "relative": "Hari ini",
-        "hour": "00:00",
-        "rain_probability": null,
-        "risk_score": 0,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Berawan",
-        "temp_c": null,
-        "humidity_pct": null,
-        "heat_index_c": null,
-        "wind_kmh": 9.4,
+        "wind_kmh": 8.3,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -1243,7 +576,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 18.4,
+        "wind_kmh": 7.7,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -1272,7 +605,7 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 19.1,
+        "wind_kmh": 3.3,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -1301,7 +634,674 @@
         "temp_c": null,
         "humidity_pct": null,
         "heat_index_c": null,
-        "wind_kmh": 10.4,
+        "wind_kmh": 5.8,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 14.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 20.8,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 13.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "limited",
+        "risk_label": "Data terbatas",
+        "condition": "Data terbatas",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 0.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "limited",
+        "risk_label": "Data terbatas",
+        "condition": "Data terbatas",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 0.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "limited",
+        "risk_label": "Data terbatas",
+        "condition": "Data terbatas",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 0.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "limited",
+        "risk_label": "Data terbatas",
+        "condition": "Data terbatas",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 0.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "limited",
+        "risk_label": "Data terbatas",
+        "condition": "Data terbatas",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 0.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 7.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 6.3,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 8.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 9.3,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 8.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 11.52,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 10.08,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 13.68,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 14.76,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 12.24,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 10.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 11.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 19.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 19.8,
+        "wind_dir": 0.0,
+        "cloud_pct": 70.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_name": "GPM Grid TamaTue",
+        "slug": "gpm_grid_tamatue",
+        "date": "Kamis, 9 Juli 2026",
+        "date_iso": "2026-07-09",
+        "relative": "Hari ini",
+        "hour": "00:00",
+        "rain_probability": null,
+        "risk_score": 0,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": null,
+        "humidity_pct": null,
+        "heat_index_c": null,
+        "wind_kmh": 11.9,
         "wind_dir": 0.0,
         "cloud_pct": 70.0
       }
@@ -1621,8 +1621,8 @@
         "humidity_pct": null,
         "heat_index_c": null,
         "wind_kmh": 0.0,
-        "wind_dir": 196.0,
-        "cloud_pct": 85.0
+        "wind_dir": 193.0,
+        "cloud_pct": 86.0
       }
     },
     {
@@ -1650,8 +1650,8 @@
         "humidity_pct": null,
         "heat_index_c": null,
         "wind_kmh": 0.0,
-        "wind_dir": 219.0,
-        "cloud_pct": 98.0
+        "wind_dir": 216.0,
+        "cloud_pct": 91.0
       }
     },
     {
@@ -1679,8 +1679,8 @@
         "humidity_pct": null,
         "heat_index_c": null,
         "wind_kmh": 0.0,
-        "wind_dir": 246.0,
-        "cloud_pct": 83.0
+        "wind_dir": 250.0,
+        "cloud_pct": 66.0
       }
     },
     {
@@ -1708,8 +1708,8 @@
         "humidity_pct": null,
         "heat_index_c": null,
         "wind_kmh": 0.0,
-        "wind_dir": 249.0,
-        "cloud_pct": 66.0
+        "wind_dir": 254.0,
+        "cloud_pct": 46.0
       }
     },
     {
@@ -1738,7 +1738,7 @@
         "heat_index_c": null,
         "wind_kmh": 0.0,
         "wind_dir": 241.0,
-        "cloud_pct": 35.0
+        "cloud_pct": 71.0
       }
     },
     {

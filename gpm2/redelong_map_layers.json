@@ -173,7 +173,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 10.4,
+          "wind_kmh": 7.9,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -202,7 +202,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 4.2,
+          "wind_kmh": 2.6,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -231,7 +231,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 9.0,
+          "wind_kmh": 9.5,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -260,7 +260,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 5.9,
+          "wind_kmh": 4.9,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -289,7 +289,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 2.8,
+          "wind_kmh": 2.6,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -318,268 +318,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 12.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 10.6,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 9.2,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 8.3,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 4.7,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 7.2,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 5.9,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 6.5,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 7.6,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 5.0,
+          "wind_kmh": 11.9,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -637,529 +376,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 5.6,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 6.5,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 7.9,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 4.6,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 4.5,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 2.3,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 2.3,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 2.8,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 1.5,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 10.44,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 11.88,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 11.16,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 13.32,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.9505347134354,
-            4.811672965065149
-          ]
-        },
-        "properties": {
-          "location_name": "GPM2",
-          "slug": "gpm2",
-          "date": "Kamis, 9 Juli 2026",
-          "date_iso": "2026-07-09",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 10.08,
+          "wind_kmh": 7.2,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1217,7 +434,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 9.7,
+          "wind_kmh": 4.8,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1246,7 +463,761 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 13.7,
+          "wind_kmh": 7.4,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 6.1,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 6.8,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 7.8,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 5.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 8.9,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 1.5,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 3.8,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 5.3,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 5.8,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 5.2,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 3.1,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 2.2,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 3.1,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 2.2,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 11.52,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 10.08,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 10.44,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 13.68,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 10.08,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 7.9,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 7.6,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1304,7 +1275,36 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 6.1,
+          "wind_kmh": 10.1,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.9505347134354,
+            4.811672965065149
+          ]
+        },
+        "properties": {
+          "location_name": "GPM2",
+          "slug": "gpm2",
+          "date": "Kamis, 9 Juli 2026",
+          "date_iso": "2026-07-09",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 6.8,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1624,8 +1624,8 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 237.0,
-          "cloud_pct": 68.0
+          "wind_dir": 235.0,
+          "cloud_pct": 74.0
         }
       },
       {
@@ -1653,8 +1653,8 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 246.0,
-          "cloud_pct": 95.0
+          "wind_dir": 259.0,
+          "cloud_pct": 84.0
         }
       },
       {
@@ -1682,8 +1682,8 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 279.0,
-          "cloud_pct": 70.0
+          "wind_dir": 234.0,
+          "cloud_pct": 55.0
         }
       },
       {
@@ -1711,8 +1711,8 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 235.0,
-          "cloud_pct": 53.0
+          "wind_dir": 254.0,
+          "cloud_pct": 44.0
         }
       },
       {
@@ -1740,8 +1740,8 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 250.0,
-          "cloud_pct": 37.0
+          "wind_dir": 195.0,
+          "cloud_pct": 63.0
         }
       },
       {
