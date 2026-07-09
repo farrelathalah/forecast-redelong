@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-07-09T19:23:13.189216+07:00",
+  "generated_at": "2026-07-10T06:28:09.986196+07:00",
   "sources": {
     "BMKG": {
       "ema_success": 1.0,
-      "ema_completeness": 0.8817,
+      "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     },
     "CMA": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     },
     "ECMWF": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     },
     "GFS": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     },
     "ICON": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     },
     "KMA": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     },
     "METEOFRANCE": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     },
     "METNO": {
       "ema_success": 1.0,
-      "ema_completeness": 0.8817,
+      "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     },
     "UKMO": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-07-11"
+      "last_run_date": "2026-07-12"
     }
   }
 }
