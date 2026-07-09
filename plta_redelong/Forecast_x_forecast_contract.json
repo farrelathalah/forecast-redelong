@@ -1,7 +1,7 @@
 {
   "version": "ANEMOS Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-07-08T14:57:23.054088+07:00",
+  "generated_at": "2026-07-09T08:47:00.720488+07:00",
   "location": "PLTA Redelong",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,7 +25,7 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-07-08T14:57:23.049911+07:00",
+    "generated_at": "2026-07-09T08:47:00.715997+07:00",
     "aether_version": "ANEMOS Public Weather v11",
     "location": "PLTA Redelong",
     "mission": "safety_first",
@@ -42,16 +42,16 @@
     "risk_window": "Tidak ada risk window kuat",
     "best_general_activity_window": "09:00",
     "peak_rain_threat_hour": "18:00",
-    "peak_rain_threat_score": 48.6,
+    "peak_rain_threat_score": 26.0,
     "peak_heavy_rain_threat_hour": "18:00",
-    "peak_heavy_rain_threat_score": 13.2,
+    "peak_heavy_rain_threat_score": 4.7,
     "peak_failure_risk_hour": "18:00",
-    "peak_failure_risk_score": 30.5,
+    "peak_failure_risk_score": 29.7,
     "peak_forecast_stress_hour": "18:00",
-    "peak_forecast_stress_score": 31.8,
-    "peak_self_doubt_hour": "12:00",
-    "peak_self_doubt_score": 32.2,
-    "summary_text": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk PLTA Redelong. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 30.5/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "peak_forecast_stress_score": 36.0,
+    "peak_self_doubt_hour": "18:00",
+    "peak_self_doubt_score": 37.6,
+    "summary_text": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk PLTA Redelong. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 29.7/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   },
   "constitution": [
     "Do not assign high trust when source coverage is weak.",
