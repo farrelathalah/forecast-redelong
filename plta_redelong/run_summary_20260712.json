@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-10T06:26:43.368763+07:00",
+  "generated_at": "2026-07-10T17:39:46.886990+07:00",
   "location_slug": "plta_redelong",
   "location_name": "PLTA Redelong",
   "bmkg_point_name": "Bale Redelong",
@@ -41,7 +41,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "ANEMOS Public Weather v11",
-    "run_id": "plta_redelong_20260712_20260710062643",
+    "run_id": "plta_redelong_20260712_20260710173946",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/command_center_sentinel_x.html",
@@ -49,6 +49,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/sentinel_x_ledger.sqlite",
     "daily_operational_status": "GREEN",
-    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk PLTA Redelong. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 22.3/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk PLTA Redelong. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 23.7/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
