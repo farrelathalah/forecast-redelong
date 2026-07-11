@@ -28,7 +28,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 6.8,
+          "wind_kmh": 4.6,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -57,7 +57,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 13.4,
+          "wind_kmh": 4.6,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -86,7 +86,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 13.4,
+          "wind_kmh": 13.2,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -115,7 +115,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 7.5,
+          "wind_kmh": 13.2,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -144,7 +144,36 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 7.5,
+          "wind_kmh": 5.3,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 6.6,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -202,6 +231,122 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
+          "wind_kmh": 6.6,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 5.1,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 1.1,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 6.9,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
           "wind_kmh": 5.9,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
@@ -231,413 +376,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 2.2,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 6.1,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.8,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 8.4,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 4.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 3.7,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 3.4,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 1.5,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 8.6,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 1.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 3.8,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 5.2,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 4.4,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 7.4,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 2.9,
+          "wind_kmh": 3.0,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -724,181 +463,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 1.1,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "limited",
-          "risk_label": "Data terbatas",
-          "condition": "Data terbatas",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 0.0,
-          "wind_dir": 0.0,
-          "cloud_pct": 15.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 4.6,
+          "wind_kmh": 8.0,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -927,7 +492,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 2.8,
+          "wind_kmh": 0.8,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -956,94 +521,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 1.5,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 2.9,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 2.1,
-          "wind_dir": 0.0,
-          "cloud_pct": 70.0
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            96.977344,
-            4.748139
-          ]
-        },
-        "properties": {
-          "location_name": "PLTA Redelong",
-          "slug": "plta_redelong",
-          "date": "Sabtu, 11 Juli 2026",
-          "date_iso": "2026-07-11",
-          "relative": "Hari ini",
-          "hour": "00:00",
-          "rain_probability": null,
-          "risk_score": 0,
-          "risk_class": "safe",
-          "risk_label": "Aman",
-          "condition": "Berawan",
-          "temp_c": null,
-          "humidity_pct": null,
-          "heat_index_c": null,
-          "wind_kmh": 8.28,
+          "wind_kmh": 3.1,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1101,7 +579,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 14.76,
+          "wind_kmh": 3.4,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1130,7 +608,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 16.2,
+          "wind_kmh": 8.2,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1159,7 +637,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 9.0,
+          "wind_kmh": 3.1,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1188,7 +666,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 8.6,
+          "wind_kmh": 3.4,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1217,7 +695,7 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 2.5,
+          "wind_kmh": 5.0,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1246,7 +724,529 @@
           "temp_c": null,
           "humidity_pct": null,
           "heat_index_c": null,
-          "wind_kmh": 5.8,
+          "wind_kmh": 3.6,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "limited",
+          "risk_label": "Data terbatas",
+          "condition": "Data terbatas",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 0.0,
+          "wind_dir": 0.0,
+          "cloud_pct": 15.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 3.6,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 2.6,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 2.7,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 3.3,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 1.8,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 7.2,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 6.48,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 12.96,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 12.24,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 7.92,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 7.6,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 3.2,
+          "wind_dir": 0.0,
+          "cloud_pct": 70.0
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            96.977344,
+            4.748139
+          ]
+        },
+        "properties": {
+          "location_name": "PLTA Redelong",
+          "slug": "plta_redelong",
+          "date": "Sabtu, 11 Juli 2026",
+          "date_iso": "2026-07-11",
+          "relative": "Hari ini",
+          "hour": "00:00",
+          "rain_probability": null,
+          "risk_score": 0,
+          "risk_class": "safe",
+          "risk_label": "Aman",
+          "condition": "Berawan",
+          "temp_c": null,
+          "humidity_pct": null,
+          "heat_index_c": null,
+          "wind_kmh": 6.8,
           "wind_dir": 0.0,
           "cloud_pct": 70.0
         }
@@ -1624,7 +1624,7 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 247.0,
+          "wind_dir": 245.0,
           "cloud_pct": 100.0
         }
       },
@@ -1653,7 +1653,7 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 276.0,
+          "wind_dir": 286.0,
           "cloud_pct": 100.0
         }
       },
@@ -1682,7 +1682,7 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 217.0,
+          "wind_dir": 220.0,
           "cloud_pct": 100.0
         }
       },
@@ -1711,7 +1711,7 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 282.0,
+          "wind_dir": 275.0,
           "cloud_pct": 100.0
         }
       },
@@ -1740,7 +1740,7 @@
           "humidity_pct": null,
           "heat_index_c": null,
           "wind_kmh": 0.0,
-          "wind_dir": 239.0,
+          "wind_dir": 281.0,
           "cloud_pct": 100.0
         }
       },
