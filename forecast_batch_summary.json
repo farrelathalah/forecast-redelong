@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T17:57:24.763134+07:00",
+  "generated_at": "2026-07-14T06:41:20.627461+07:00",
   "mode": "forecast",
   "locations_file": "/home/runner/work/forecast-redelong/forecast-redelong/locations.json",
   "default_multi_locations": [
@@ -20,7 +20,7 @@
       "bmkg_point_name": "Bale Redelong",
       "area_level": "catchment_point",
       "is_proxy_bmkg": true,
-      "target_date": "2026-07-13,2026-07-14,2026-07-15",
+      "target_date": "2026-07-14,2026-07-15,2026-07-16",
       "run_status": "ok",
       "quality_status": "ok",
       "days_ok": 3,
@@ -28,20 +28,12 @@
       "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong",
       "daily_runs": [
         {
-          "target_date": "2026-07-13",
-          "run_status": "ok",
-          "sources_success": 9,
-          "sources_total": 9,
-          "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260713_174305.log"
-        },
-        {
           "target_date": "2026-07-14",
           "run_status": "ok",
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260713_174336.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260714_062545.log"
         },
         {
           "target_date": "2026-07-15",
@@ -49,7 +41,15 @@
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260713_174407.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260714_062618.log"
+        },
+        {
+          "target_date": "2026-07-16",
+          "run_status": "ok",
+          "sources_success": 9,
+          "sources_total": 9,
+          "low_coverage_slots": [],
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260714_062650.log"
         }
       ],
       "error": ""
@@ -60,7 +60,7 @@
       "bmkg_point_name": "Bale Redelong",
       "area_level": "catchment_point",
       "is_proxy_bmkg": true,
-      "target_date": "2026-07-13,2026-07-14,2026-07-15",
+      "target_date": "2026-07-14,2026-07-15,2026-07-16",
       "run_status": "ok",
       "quality_status": "ok",
       "days_ok": 3,
@@ -68,20 +68,12 @@
       "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1",
       "daily_runs": [
         {
-          "target_date": "2026-07-13",
-          "run_status": "ok",
-          "sources_success": 9,
-          "sources_total": 9,
-          "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260713_174438.log"
-        },
-        {
           "target_date": "2026-07-14",
           "run_status": "ok",
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260713_174509.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260714_062722.log"
         },
         {
           "target_date": "2026-07-15",
@@ -89,7 +81,15 @@
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260713_174603.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260714_062755.log"
+        },
+        {
+          "target_date": "2026-07-16",
+          "run_status": "ok",
+          "sources_success": 9,
+          "sources_total": 9,
+          "low_coverage_slots": [],
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260714_062849.log"
         }
       ],
       "error": ""
@@ -100,7 +100,7 @@
       "bmkg_point_name": "Bale Redelong",
       "area_level": "catchment_point",
       "is_proxy_bmkg": true,
-      "target_date": "2026-07-13,2026-07-14,2026-07-15",
+      "target_date": "2026-07-14,2026-07-15,2026-07-16",
       "run_status": "ok",
       "quality_status": "ok",
       "days_ok": 3,
@@ -108,20 +108,12 @@
       "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2",
       "daily_runs": [
         {
-          "target_date": "2026-07-13",
-          "run_status": "ok",
-          "sources_success": 9,
-          "sources_total": 9,
-          "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260713_174634.log"
-        },
-        {
           "target_date": "2026-07-14",
           "run_status": "ok",
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260713_174705.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260714_062922.log"
         },
         {
           "target_date": "2026-07-15",
@@ -129,7 +121,15 @@
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260713_174736.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260714_062954.log"
+        },
+        {
+          "target_date": "2026-07-16",
+          "run_status": "ok",
+          "sources_success": 9,
+          "sources_total": 9,
+          "low_coverage_slots": [],
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260714_063049.log"
         }
       ],
       "error": ""
@@ -140,7 +140,7 @@
       "bmkg_point_name": "Bale Redelong",
       "area_level": "catchment_point",
       "is_proxy_bmkg": true,
-      "target_date": "2026-07-13,2026-07-14,2026-07-15",
+      "target_date": "2026-07-14,2026-07-15,2026-07-16",
       "run_status": "ok",
       "quality_status": "ok",
       "days_ok": 3,
@@ -148,20 +148,12 @@
       "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3",
       "daily_runs": [
         {
-          "target_date": "2026-07-13",
-          "run_status": "ok",
-          "sources_success": 9,
-          "sources_total": 9,
-          "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260713_174808.log"
-        },
-        {
           "target_date": "2026-07-14",
           "run_status": "ok",
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260713_174902.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260714_063121.log"
         },
         {
           "target_date": "2026-07-15",
@@ -169,7 +161,15 @@
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260713_174933.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260714_063216.log"
+        },
+        {
+          "target_date": "2026-07-16",
+          "run_status": "ok",
+          "sources_success": 9,
+          "sources_total": 9,
+          "low_coverage_slots": [],
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260714_063249.log"
         }
       ],
       "error": ""
@@ -180,7 +180,7 @@
       "bmkg_point_name": "Bale Redelong",
       "area_level": "catchment_point",
       "is_proxy_bmkg": true,
-      "target_date": "2026-07-13,2026-07-14,2026-07-15",
+      "target_date": "2026-07-14,2026-07-15,2026-07-16",
       "run_status": "ok",
       "quality_status": "ok",
       "days_ok": 3,
@@ -188,20 +188,12 @@
       "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4",
       "daily_runs": [
         {
-          "target_date": "2026-07-13",
-          "run_status": "ok",
-          "sources_success": 9,
-          "sources_total": 9,
-          "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260713_175005.log"
-        },
-        {
           "target_date": "2026-07-14",
           "run_status": "ok",
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260713_175036.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260714_063321.log"
         },
         {
           "target_date": "2026-07-15",
@@ -209,7 +201,15 @@
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260713_175107.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260714_063353.log"
+        },
+        {
+          "target_date": "2026-07-16",
+          "run_status": "ok",
+          "sources_success": 9,
+          "sources_total": 9,
+          "low_coverage_slots": [],
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260714_063449.log"
         }
       ],
       "error": ""
@@ -220,7 +220,7 @@
       "bmkg_point_name": "Bale Redelong",
       "area_level": "catchment_point",
       "is_proxy_bmkg": true,
-      "target_date": "2026-07-13,2026-07-14,2026-07-15",
+      "target_date": "2026-07-14,2026-07-15,2026-07-16",
       "run_status": "ok",
       "quality_status": "ok",
       "days_ok": 3,
@@ -228,20 +228,12 @@
       "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5",
       "daily_runs": [
         {
-          "target_date": "2026-07-13",
-          "run_status": "ok",
-          "sources_success": 9,
-          "sources_total": 9,
-          "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260713_175201.log"
-        },
-        {
           "target_date": "2026-07-14",
           "run_status": "ok",
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260713_175232.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260714_063521.log"
         },
         {
           "target_date": "2026-07-15",
@@ -249,7 +241,15 @@
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260713_175302.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260714_063554.log"
+        },
+        {
+          "target_date": "2026-07-16",
+          "run_status": "ok",
+          "sources_success": 9,
+          "sources_total": 9,
+          "low_coverage_slots": [],
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260714_063648.log"
         }
       ],
       "error": ""
@@ -260,7 +260,7 @@
       "bmkg_point_name": "Bale Redelong",
       "area_level": "catchment_point",
       "is_proxy_bmkg": true,
-      "target_date": "2026-07-13,2026-07-14,2026-07-15",
+      "target_date": "2026-07-14,2026-07-15,2026-07-16",
       "run_status": "ok",
       "quality_status": "ok",
       "days_ok": 3,
@@ -268,20 +268,12 @@
       "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6",
       "daily_runs": [
         {
-          "target_date": "2026-07-13",
-          "run_status": "ok",
-          "sources_success": 9,
-          "sources_total": 9,
-          "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260713_175355.log"
-        },
-        {
           "target_date": "2026-07-14",
           "run_status": "ok",
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260713_175427.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260714_063720.log"
         },
         {
           "target_date": "2026-07-15",
@@ -289,7 +281,15 @@
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260713_175458.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260714_063752.log"
+        },
+        {
+          "target_date": "2026-07-16",
+          "run_status": "ok",
+          "sources_success": 9,
+          "sources_total": 9,
+          "low_coverage_slots": [],
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260714_063826.log"
         }
       ],
       "error": ""
@@ -300,7 +300,7 @@
       "bmkg_point_name": "Bale Redelong",
       "area_level": "catchment_point",
       "is_proxy_bmkg": true,
-      "target_date": "2026-07-13,2026-07-14,2026-07-15",
+      "target_date": "2026-07-14,2026-07-15,2026-07-16",
       "run_status": "ok",
       "quality_status": "ok",
       "days_ok": 3,
@@ -308,20 +308,12 @@
       "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue",
       "daily_runs": [
         {
-          "target_date": "2026-07-13",
-          "run_status": "ok",
-          "sources_success": 9,
-          "sources_total": 9,
-          "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260713_175530.log"
-        },
-        {
           "target_date": "2026-07-14",
           "run_status": "ok",
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260713_175600.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260714_063920.log"
         },
         {
           "target_date": "2026-07-15",
@@ -329,7 +321,15 @@
           "sources_success": 9,
           "sources_total": 9,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260713_175653.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260714_063954.log"
+        },
+        {
+          "target_date": "2026-07-16",
+          "run_status": "ok",
+          "sources_success": 9,
+          "sources_total": 9,
+          "low_coverage_slots": [],
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260714_064026.log"
         }
       ],
       "error": ""
@@ -338,30 +338,30 @@
   "brand": "ANEMOS",
   "forecast_range_days": 3,
   "forecast_dates": [
-    "2026-07-13",
     "2026-07-14",
-    "2026-07-15"
+    "2026-07-15",
+    "2026-07-16"
   ],
   "locations_ok": 8,
   "combined_outputs": {
     "ensemble_all_locations": {
       "latest_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_all_locations.csv",
-      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_all_locations_20260713_175724.csv",
+      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_all_locations_20260714_064120.csv",
       "rows": 120
     },
     "ensemble_long_all_locations": {
       "latest_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_long_all_locations.csv",
-      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_long_all_locations_20260713_175724.csv",
+      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_long_all_locations_20260714_064120.csv",
       "rows": 120
     },
     "forecast_all_locations": {
       "latest_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/forecast_all_locations.csv",
-      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/forecast_all_locations_20260713_175724.csv",
-      "rows": 1032
+      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/forecast_all_locations_20260714_064120.csv",
+      "rows": 1080
     },
     "source_status_all_locations": {
       "latest_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/source_status_all_locations.csv",
-      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/source_status_all_locations_20260713_175724.csv",
+      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/source_status_all_locations_20260714_064120.csv",
       "rows": 216
     }
   }
