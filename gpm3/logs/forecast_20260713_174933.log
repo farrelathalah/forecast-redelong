@@ -1,0 +1,23 @@
+2026-07-13 10:49:33,434 INFO Log file: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260713_174933.log
+2026-07-13 10:49:33,434 INFO Output dir: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3
+2026-07-13 10:49:33,434 INFO Metadata lokasi: slug=gpm3 adm4=11.17.05.2002 bmkg_point=Bale Redelong area_level=catchment_point proxy_bmkg=True
+2026-07-13 10:49:33,434 INFO Koordinat: lat=4.815409756944025 lon=97.009911990332 timezone=Asia/Jakarta
+2026-07-13 10:49:33,434 INFO Catatan lokasi: Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point
+2026-07-13 10:49:33,434 INFO Locations file: /home/runner/work/forecast-redelong/forecast-redelong/locations.json
+2026-07-13 10:49:33,434 INFO Mulai proses untuk lokasi GPM3
+2026-07-13 10:49:33,434 INFO Target date: 2026-07-15
+2026-07-13 10:49:33,435 INFO Target hours: 06:00, 09:00, 12:00, 15:00, 18:00
+2026-07-13 10:49:33,435 INFO Sumber aktif: BMKG, ECMWF, GFS, ICON, CMA, METEOFRANCE, KMA, UKMO, METNO
+2026-07-13 10:49:33,435 INFO Bobot aktif: BMKG=1.35, CMA=0.85, ECMWF=1.2, GFS=1.0, ICON=1.05, KMA=0.9, METEOFRANCE=1.1, METNO=1.0, UKMO=0.95
+2026-07-13 10:50:05,557 INFO Selesai.
+2026-07-13 10:50:05,557 INFO Sumber sukses: 9/9
+2026-07-13 10:50:05,557 INFO Total forecast point: 45
+2026-07-13 10:50:05,557 INFO BMKG: OK (5/5 point) http=200 t=45ms 
+2026-07-13 10:50:05,558 INFO CMA: OK (5/5 point) http=200 t=593ms 
+2026-07-13 10:50:05,558 INFO ECMWF: OK (5/5 point) http=200 t=560ms 
+2026-07-13 10:50:05,558 INFO GFS: OK (5/5 point) http=200 t=503ms 
+2026-07-13 10:50:05,558 INFO ICON: OK (5/5 point) http=200 t=502ms 
+2026-07-13 10:50:05,558 INFO KMA: OK (5/5 point) http=200 t=593ms 
+2026-07-13 10:50:05,558 INFO METEOFRANCE: OK (5/5 point) http=200 t=559ms 
+2026-07-13 10:50:05,558 INFO METNO: OK (5/5 point) http=200 t=485ms 
+2026-07-13 10:50:05,558 INFO UKMO: OK (5/5 point) http=200 t=558ms 
