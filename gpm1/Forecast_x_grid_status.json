@@ -1,7 +1,12 @@
 {
   "status": "ok",
-  "errors": [],
+  "errors": [
+    {
+      "point": "northwest",
+      "error": "HTTP Error 503: Service Unavailable"
+    }
+  ],
   "points_requested": 9,
   "radius_km": 3.0,
-  "generated_at": "2026-07-14T14:25:42.621116+07:00"
+  "generated_at": "2026-07-15T06:30:06.470570+07:00"
 }
