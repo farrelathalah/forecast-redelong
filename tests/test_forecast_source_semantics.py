@@ -35,6 +35,10 @@ class ForecastSourceSemanticsTest(unittest.TestCase):
         self.assertIsNone(points["06:00"].rain_mm)
         self.assertEqual("Hujan Ringan", points["06:00"].category)
 
+    def test_active_quantitative_sources_use_equal_base_weights(self):
+        for source in {"CMA", "ECMWF", "GFS", "ICON", "METEOFRANCE", "UKMO"}:
+            self.assertEqual(1.0, forecast.SOURCE_BASE_WEIGHTS[source], source)
+
     def test_open_meteo_preview_requests_requested_forecast_range(self):
         args = SimpleNamespace(
             latitude=4.748139,

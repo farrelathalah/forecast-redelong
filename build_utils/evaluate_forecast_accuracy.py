@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import math
 from datetime import datetime, timezone, timedelta
@@ -256,8 +256,21 @@ def main(
         obs_mode = "proxy_observation"
     generated = datetime.now(WIB).strftime("%Y-%m-%d %H:%M WIB")
 
-    if fc.empty or obs.empty:
-        write_empty_page("Forecast atau observasi belum tersedia.", generated, outputs)
+    if fc.empty:
+        write_empty_page(
+            "Data forecast belum tersedia. Jalankan forecast terlebih dahulu.",
+            generated,
+            outputs,
+        )
+        return
+    if obs.empty:
+        write_empty_page(
+            "Data observasi yang sesuai belum tersedia. Metrik evaluasi akan "
+            "ditampilkan setelah tersedia pasangan forecast dan observasi pada "
+            "tanggal serta lokasi yang sama.",
+            generated,
+            outputs,
+        )
         return
 
     loc_col_obs = pick_col(obs, ["location_slug", "slug", "location_id", "location"], ["location"])

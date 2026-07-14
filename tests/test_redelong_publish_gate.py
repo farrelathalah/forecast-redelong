@@ -35,6 +35,13 @@ class RedelongPublishGateTest(unittest.TestCase):
         ]
         write_csv(root / "forecast_all_locations.csv", forecast_rows)
         write_csv(
+            root / "dim_sources.csv",
+            [
+                {"source_id": source, "base_weight": 1.0}
+                for source in sorted(QUANTITATIVE_SOURCES)
+            ],
+        )
+        write_csv(
             root / "operational_source_status.csv",
             [
                 {"source_id": source, "qc_status": "valid", "completeness_pct": 100.0}
@@ -178,6 +185,30 @@ class RedelongPublishGateTest(unittest.TestCase):
             self.assertTrue(ok, report["errors"])
             self.assertEqual(report["metrics"]["operational_sources_valid"], retained)
             self.assertEqual(len(report["metrics"]["quantitative_sources_missing"]), 3)
+
+    def test_unequal_weights_and_bad_branding_are_blocked(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            write_csv(
+                outputs / "dim_sources.csv",
+                [
+                    {
+                        "source_id": source,
+                        "base_weight": 1.2 if source == "ECMWF" else 1.0,
+                    }
+                    for source in sorted(QUANTITATIVE_SOURCES)
+                ],
+            )
+            (outputs / "index.html").write_text(
+                "<h1>Forecast Redelong Redelong.1</h1>", encoding="utf-8"
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertFalse(ok)
+            self.assertTrue(any("Bobot awal" in error for error in report["errors"]))
+            self.assertTrue(any("Branding rusak" in error for error in report["errors"]))
 
 
 if __name__ == "__main__":

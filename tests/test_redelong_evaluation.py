@@ -97,6 +97,29 @@ class RedelongEvaluationTest(unittest.TestCase):
             self.assertIn("menjumlahkan setiap model lebih dahulu", html)
             self.assertIn("24/24", html)
 
+    def test_evaluator_explains_when_only_observations_are_missing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            outputs = root / "outputs"
+            outputs.mkdir()
+            forecast = outputs / "forecast_all_locations.csv"
+            observation = root / "rain_observed_daily.csv"
+            proxy = root / "rain_proxy_daily.csv"
+
+            pd.DataFrame(self._forecast_rows()).to_csv(forecast, index=False)
+            pd.DataFrame(columns=["date", "location_slug", "rain_mm_observed"]).to_csv(
+                observation, index=False
+            )
+            pd.DataFrame(columns=["date", "location_slug", "rain_mm_observed"]).to_csv(
+                proxy, index=False
+            )
+
+            main(outputs, forecast, observation, proxy)
+
+            html = (outputs / "evaluation_summary.html").read_text(encoding="utf-8")
+            self.assertIn("Data observasi yang sesuai belum tersedia", html)
+            self.assertNotIn("Forecast atau observasi belum tersedia", html)
+
 
 if __name__ == "__main__":
     unittest.main()

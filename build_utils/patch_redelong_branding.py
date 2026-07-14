@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 
 ROOT = Path("outputs")
 
@@ -7,6 +7,8 @@ TEXT_REPLACEMENTS = {
     # brand text.  ``window.Forecast Redelong_CONFIG`` is invalid JavaScript.
     "window.Forecast Redelong_CONFIG": "window.REDELONG_CONFIG",
     "window.LANGIT_CONFIG": "window.REDELONG_CONFIG",
+    "LANGIT v65.1": "Forecast Redelong v1.0",
+    "LANGIT v65": "Forecast Redelong v1.0",
     "LANGIT Sentinel X": "Forecast Redelong Forecast Portal",
     "LANGIT Sentinel": "Forecast Redelong",
     "LANGIT Command Center": "Forecast Redelong Command Center",
@@ -16,7 +18,6 @@ TEXT_REPLACEMENTS = {
     "Sentinel X": "Forecast Decision Layer",
     "Sentinel": "Forecast",
     "Aether": "Ensemble Forecast Layer",
-    "v65": "Redelong",
     "cinematic": "portal",
     "Cinematic": "Portal",
     "Dago, Bandung": "PLTA Redelong",

@@ -214,6 +214,40 @@ def check_portal_semantics(outputs: Path, errors: list[str], metrics: dict[str, 
 SCRIPT_RE = re.compile(r"<script\b([^>]*)>(.*?)</script\s*>", re.I | re.S)
 
 
+def check_branding_and_weights(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
+    bad_brand_tokens = {
+        "Forecast Redelong Redelong.1",
+        "Forecast Redelong Redelong",
+    }
+    bad_brand_files: list[str] = []
+    for path in sorted(outputs.glob("*.html")) + sorted(outputs.glob("*/*.html")):
+        content = path.read_text(encoding="utf-8", errors="replace")
+        if any(token in content for token in bad_brand_tokens):
+            bad_brand_files.append(str(path.relative_to(outputs)))
+    if bad_brand_files:
+        errors.append(
+            "Branding rusak masih ditemukan pada: " + ", ".join(bad_brand_files[:10])
+        )
+    metrics["branding_bad_file_count"] = len(bad_brand_files)
+
+    source_rows = read_csv(outputs / "dim_sources.csv")
+    by_source = {row.get("source_id"): row for row in source_rows}
+    unequal: dict[str, Any] = {}
+    for source in sorted(QUANTITATIVE_SOURCES):
+        weight = number((by_source.get(source) or {}).get("base_weight"))
+        if weight is None or abs(weight - 1.0) > 1e-9:
+            unequal[source] = weight
+    if unequal:
+        errors.append(
+            "Bobot awal model kuantitatif belum sama 1.0: "
+            + ", ".join(f"{source}={weight}" for source, weight in unequal.items())
+        )
+    metrics["quantitative_base_weights"] = {
+        source: number((by_source.get(source) or {}).get("base_weight"))
+        for source in sorted(QUANTITATIVE_SOURCES)
+    }
+
+
 def check_inline_javascript(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
     node = shutil.which("node")
     if not node:
@@ -258,6 +292,7 @@ def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     check_operational_products(outputs, errors, metrics)
     check_spatial_contract(outputs, errors)
     check_portal_semantics(outputs, errors, metrics)
+    check_branding_and_weights(outputs, errors, metrics)
     check_inline_javascript(outputs, errors, metrics)
     report = {
         "schema_version": "forecast-redelong-publish-gate-v2",

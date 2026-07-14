@@ -124,15 +124,17 @@ BMKG_HTTP_HEADERS = {
     "Connection": "close",
 }
 SOURCE_BASE_WEIGHTS = {
-    "BMKG": 1.35,
-    "ECMWF": 1.20,
-    "METEOFRANCE": 1.10,
-    "ICON": 1.05,
+    # Six active quantitative members use equal prior weights until local
+    # forecast-observation verification supports a different scheme.
+    "BMKG": 1.35,  # categorical guidance only; excluded from rain_mm consensus
+    "ECMWF": 1.00,
+    "METEOFRANCE": 1.00,
+    "ICON": 1.00,
     "GFS": 1.00,
-    "METNO": 1.00,
-    "UKMO": 0.95,
-    "KMA": 0.90,
-    "CMA": 0.85,
+    "METNO": 1.00,  # inactive in the operational quantitative consensus
+    "UKMO": 1.00,
+    "KMA": 0.90,    # inactive until operational fields are available
+    "CMA": 1.00,
 }
 OPEN_METEO_SOURCES = [
     {
