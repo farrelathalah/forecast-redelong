@@ -2,6 +2,12 @@
 
 on:
   workflow_dispatch:
+    inputs:
+      validate_only:
+        description: "Build and validate without publishing to GitHub Pages"
+        required: false
+        default: false
+        type: boolean
   schedule:
     - cron: "17 23,0,1 * * *"
 
@@ -30,10 +36,30 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Run internal self-test
+        run: |
+          python weather_ensemble_multi_location.py \
+            --mode self-test \
+            --locations plta_redelong \
+            --locations-file locations.json \
+            --no-save-raw-payloads \
+            --no-debug
+
       - name: Clean outputs
         run: |
           rm -rf outputs
           mkdir -p outputs
+
+      - name: Restore forecast archive from GitHub Pages
+        run: |
+          git fetch origin gh-pages --depth=1 || true
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git worktree add --detach /tmp/forecast-gh-pages origin/gh-pages
+            if [ -d /tmp/forecast-gh-pages/archive ]; then
+              cp -a /tmp/forecast-gh-pages/archive outputs/
+            fi
+            git worktree remove --force /tmp/forecast-gh-pages
+          fi
 
       - name: Generate Redelong locations
         run: |
@@ -47,13 +73,16 @@ jobs:
             --locations all \
             --locations-file locations.json \
             --timezone Asia/Jakarta \
-            --sources BMKG,ECMWF,GFS,ICON,CMA,METEOFRANCE,KMA,UKMO,METNO \
-            --targets 06:00,09:00,12:00,15:00,18:00 \
-            --forecast-range-days 3 \
+            --sources BMKG,ECMWF,GFS,ICON,CMA,METEOFRANCE,UKMO \
+            --per-hour \
+            --forecast-range-days 4 \
             --http-timeout 20 \
             --max-retry-http 2 \
             --max-workers 2 \
             --max-inflight-per-host 1 \
+            --disable-circuit-breaker \
+            --no-aether-extra-vars \
+            --disable-grid-sampling \
             --public-base-url "https://farrelathalah.github.io/forecast-redelong" \
             --no-save-raw-payloads \
             --no-debug
@@ -80,6 +109,14 @@ jobs:
         run: |
           python build_utils/enhance_forecast_redelong_overview.py
 
+      - name: Add BMKG attribution
+        run: |
+          python build_utils/add_bmkg_attribution.py
+
+      - name: Build operator-facing Redelong products
+        run: |
+          python build_utils/build_redelong_operational.py --outputs outputs
+
       - name: Evaluate forecast accuracy
         run: |
           python build_utils/evaluate_forecast_accuracy.py
@@ -88,15 +125,24 @@ jobs:
         run: |
           python build_utils/link_evaluation_page.py
 
-      - name: Add BMKG attribution
+      - name: Validate publish quality gate
         run: |
-          python build_utils/add_bmkg_attribution.py
+          python build_utils/validate_redelong_publish.py --outputs outputs
 
       - name: Ensure nojekyll
         run: |
           touch outputs/.nojekyll
 
+      - name: Upload validation preview
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.validate_only == true }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: forecast-redelong-validation-${{ github.run_number }}
+          path: outputs
+          retention-days: 7
+
       - name: Deploy to GitHub Pages branch
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.validate_only != true }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

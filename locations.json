@@ -17,9 +17,14 @@
       "longitude": 96.977344,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Bale Redelong",
-      "area_level": "catchment_point",
+      "area_level": "outlet_reference",
       "is_proxy_bmkg": true,
-      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for Forecast Redelong"
+      "weight_km2": 0.0,
+      "include_in_catchment": false,
+      "operational_role": "outlet_reference",
+      "spatial_source": "plta_point",
+      "spatial_note": "Titik referensi PLTA; tidak diberi bobot luas.",
+      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for Forecast Redelong Spatial role: outlet_reference. Titik referensi PLTA; tidak diberi bobot luas."
     },
     "gpm1": {
       "location_name": "GPM1",
@@ -28,9 +33,14 @@
       "longitude": 96.877105410688,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Bale Redelong",
-      "area_level": "catchment_point",
+      "area_level": "provisional_catchment",
       "is_proxy_bmkg": true,
-      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point"
+      "weight_km2": 17.032478649534006,
+      "include_in_catchment": true,
+      "operational_role": "provisional_catchment",
+      "spatial_source": "catchment_polygon",
+      "spatial_note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi.",
+      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point Spatial role: provisional_catchment. Area analisis provisional; menunggu konfirmasi batas DAS resmi."
     },
     "gpm2": {
       "location_name": "GPM2",
@@ -39,9 +49,14 @@
       "longitude": 96.9505347134354,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Bale Redelong",
-      "area_level": "catchment_point",
+      "area_level": "provisional_catchment",
       "is_proxy_bmkg": true,
-      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point"
+      "weight_km2": 36.205470363871,
+      "include_in_catchment": true,
+      "operational_role": "provisional_catchment",
+      "spatial_source": "catchment_polygon",
+      "spatial_note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi.",
+      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point Spatial role: provisional_catchment. Area analisis provisional; menunggu konfirmasi batas DAS resmi."
     },
     "gpm3": {
       "location_name": "GPM3",
@@ -50,9 +65,14 @@
       "longitude": 97.009911990332,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Bale Redelong",
-      "area_level": "catchment_point",
+      "area_level": "provisional_catchment",
       "is_proxy_bmkg": true,
-      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point"
+      "weight_km2": 6.215359000406671,
+      "include_in_catchment": true,
+      "operational_role": "provisional_catchment",
+      "spatial_source": "catchment_polygon",
+      "spatial_note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi.",
+      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point Spatial role: provisional_catchment. Area analisis provisional; menunggu konfirmasi batas DAS resmi."
     },
     "gpm4": {
       "location_name": "GPM4",
@@ -61,9 +81,14 @@
       "longitude": 96.8876539578458,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Bale Redelong",
-      "area_level": "catchment_point",
+      "area_level": "provisional_catchment",
       "is_proxy_bmkg": true,
-      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point"
+      "weight_km2": 16.520953743420993,
+      "include_in_catchment": true,
+      "operational_role": "provisional_catchment",
+      "spatial_source": "catchment_polygon",
+      "spatial_note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi.",
+      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point Spatial role: provisional_catchment. Area analisis provisional; menunggu konfirmasi batas DAS resmi."
     },
     "gpm5": {
       "location_name": "GPM5",
@@ -72,9 +97,14 @@
       "longitude": 96.94566692384144,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Bale Redelong",
-      "area_level": "catchment_point",
+      "area_level": "provisional_catchment",
       "is_proxy_bmkg": true,
-      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point"
+      "weight_km2": 60.517204595084536,
+      "include_in_catchment": true,
+      "operational_role": "provisional_catchment",
+      "spatial_source": "catchment_polygon",
+      "spatial_note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi.",
+      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point Spatial role: provisional_catchment. Area analisis provisional; menunggu konfirmasi batas DAS resmi."
     },
     "gpm6": {
       "location_name": "GPM6",
@@ -83,9 +113,14 @@
       "longitude": 97.0098682419131,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Bale Redelong",
-      "area_level": "catchment_point",
+      "area_level": "provisional_catchment",
       "is_proxy_bmkg": true,
-      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point"
+      "weight_km2": 1.3088789813792416,
+      "include_in_catchment": true,
+      "operational_role": "provisional_catchment",
+      "spatial_source": "catchment_polygon",
+      "spatial_note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi.",
+      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point Spatial role: provisional_catchment. Area analisis provisional; menunggu konfirmasi batas DAS resmi."
     },
     "gpm_grid_tamatue": {
       "location_name": "GPM Grid TamaTue",
@@ -94,9 +129,14 @@
       "longitude": 96.85017949357464,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Bale Redelong",
-      "area_level": "catchment_point",
+      "area_level": "external_comparison",
       "is_proxy_bmkg": true,
-      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment grid"
+      "weight_km2": 122.53410732308288,
+      "include_in_catchment": false,
+      "operational_role": "external_comparison",
+      "spatial_source": "catchment_polygon",
+      "spatial_note": "Grid terpisah dan terlalu jauh untuk langsung diasumsikan berkontribusi; hanya titik pembanding sampai konektivitas DAS dikonfirmasi.",
+      "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment grid Spatial role: external_comparison. Grid terpisah dan terlalu jauh untuk langsung diasumsikan berkontribusi; hanya titik pembanding sampai konektivitas DAS dikonfirmasi."
     }
   }
 }

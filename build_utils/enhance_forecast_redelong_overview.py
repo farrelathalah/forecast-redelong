@@ -31,8 +31,9 @@ extra = f"""
   <article class="panel full">
     <h2>Konteks sistem</h2>
     <p>
-      Forecast Redelong disusun sebagai portal prakiraan hujan untuk area PLTA Redelong
-      dan titik-titik catchment di sekitarnya. Sistem ini tidak hanya menampilkan angka
+      Forecast Redelong disusun sebagai portal prakiraan hujan untuk area PLTA Redelong.
+      GPM1–GPM6 membentuk area analisis catchment provisional, PLTA menjadi titik referensi
+      outlet, dan Grid TamaTue dipertahankan hanya sebagai pembanding eksternal. Sistem ini tidak hanya menampilkan angka
       prakiraan, tetapi juga menyusun data menjadi bentuk yang lebih mudah dibaca melalui
       peta, dashboard lokasi, dan file keluaran yang dapat diperiksa ulang. Dengan susunan
       ini, pengguna dapat melihat gambaran umum dari homepage, membaca sebaran spasial
@@ -49,14 +50,16 @@ extra = f"""
   <article class="panel">
     <h2>Pendekatan multi-source</h2>
     <p>
-      Sistem menggunakan beberapa sumber prakiraan numerik agar pembacaan kondisi tidak
-      bergantung pada satu model saja. Setiap model cuaca dapat memiliki karakter berbeda:
+      Konsensus kuantitatif menggunakan ECMWF, GFS, ICON, CMA, Meteo-France, dan UKMO
+      dengan bobot sama agar pembacaan kondisi tidak bergantung pada satu model saja.
+      Setiap model cuaca dapat memiliki karakter berbeda:
       ada model yang cenderung lebih basah, ada yang lebih konservatif, dan ada yang lebih
       baik untuk rentang waktu tertentu. Dengan menggabungkan beberapa sumber, sistem dapat
       memberikan gambaran yang lebih kaya tentang kemungkinan kondisi hujan.
     </p>
     <p style="margin-top:14px">
-      Perbedaan antar sumber justru penting untuk diperhatikan. Ketika banyak sumber
+      BMKG ditampilkan terpisah sebagai panduan kategoris, bukan diubah menjadi nilai
+      rain_mm. Perbedaan antar sumber justru penting untuk diperhatikan. Ketika banyak sumber
       menunjukkan sinyal hujan yang serupa, interpretasi menjadi lebih kuat. Sebaliknya,
       ketika sumber-sumber berbeda jauh, hasil forecast perlu dibaca dengan lebih hati-hati
       karena ketidakpastian antar model sedang lebih besar.
@@ -66,16 +69,15 @@ extra = f"""
   <article class="panel">
     <h2>Interpretasi nilai hujan</h2>
     <p>
-      Nilai hujan pada sistem ini diringkas dengan beberapa indikator agar pembacaan tidak
-      hanya bergantung pada satu angka. Rata-rata dapat membantu melihat kecenderungan umum,
-      nilai maksimum menunjukkan skenario paling tinggi yang muncul, sedangkan persentil
-      tinggi seperti P90 memberi gambaran tentang sisi atas dari distribusi prakiraan.
+      Portal per titik menyediakan Mean, Max, dan P90 untuk screening data yang sedang
+      ditampilkan. Modul Operasional DAS menyediakan ringkasan yang lebih tepat untuk
+      keputusan waktu: akumulasi area 24/48/72 jam dan rentang P10–P90 antar-model pada
+      periode yang sama.
     </p>
     <p style="margin-top:14px">
-      Dengan cara ini, pengguna dapat membedakan antara kondisi umum dan potensi risiko.
-      Misalnya, rata-rata hujan yang rendah tetapi P90 cukup tinggi dapat menunjukkan bahwa
-      sebagian besar prakiraan relatif ringan, tetapi tetap ada beberapa kemungkinan skenario
-      yang lebih basah dan perlu diperhatikan.
+      P10–P90 tersebut adalah rentang skenario dari model deterministik, bukan probabilitas
+      kejadian yang sudah dikalibrasi. Nilai kosong berarti coverage waktu atau model belum
+      cukup; nilai itu tidak boleh diganti atau dibaca sebagai 0 mm.
     </p>
   </article>
 
@@ -84,15 +86,15 @@ extra = f"""
     <ul>
       <li>
         <strong>Rain Mean</strong>
-        <span>Rata-rata nilai hujan dari data forecast. Indikator ini berguna untuk membaca kecenderungan umum, tetapi bisa menyamarkan nilai tinggi yang hanya muncul pada sebagian sumber atau waktu tertentu.</span>
+        <span>Pada produk operasional, rata-rata konsensus model untuk titik atau periode yang sama. Indikator ini membantu membaca kecenderungan umum tetapi tetap harus dilihat bersama rentang antar-model.</span>
       </li>
       <li>
         <strong>Rain Max</strong>
-        <span>Nilai hujan tertinggi yang muncul di dalam data. Indikator ini berguna untuk melihat batas ekstrem dari output forecast, tetapi dapat dipengaruhi oleh satu nilai yang sangat tinggi.</span>
+        <span>Nilai tertinggi pada kumpulan data yang sedang ditampilkan. Indikator ini berguna untuk screening, tetapi dapat dipengaruhi oleh satu model atau waktu yang sangat tinggi.</span>
       </li>
       <li>
         <strong>Rain P90</strong>
-        <span>Nilai persentil 90. Artinya sebagian besar nilai prakiraan berada di bawah angka ini, sementara sebagian kecil sisanya berada di atasnya. Indikator ini membantu membaca skenario atas tanpa hanya bergantung pada satu nilai maksimum.</span>
+        <span>Pada modul operasional, batas atas rentang antar-model deterministik untuk periode yang sama. Nilai ini membantu membaca skenario lebih basah, tetapi bukan peluang 90% dan belum terkalibrasi sebagai probabilitas.</span>
       </li>
     </ul>
   </article>
@@ -100,14 +102,13 @@ extra = f"""
   <article class="panel full">
     <h2>Makna persentil 90 dalam pembacaan risiko</h2>
     <p>
-      Persentil 90 atau P90 dapat dipahami sebagai batas atas yang masih representatif dari
-      kumpulan nilai prakiraan. Jika terdapat banyak nilai hujan dari beberapa sumber model
-      dan beberapa waktu target, P90 menunjukkan nilai yang berada di bagian atas distribusi,
-      tetapi tidak langsung mengambil nilai paling ekstrem. Secara sederhana, sekitar 90%
-      nilai berada di bawah atau sama dengan P90, sedangkan sekitar 10% nilai berada di atasnya.
+      Dalam modul operasional, P90 dihitung pada kumpulan hasil model untuk lokasi dan periode
+      valid yang sebanding. P90 menunjukkan sisi atas perbedaan antar-model tanpa langsung
+      memakai nilai maksimum. Karena anggotanya adalah model deterministik, P90 tidak boleh
+      diterjemahkan sebagai peluang 90% hujan akan terjadi.
     </p>
     <p style="margin-top:14px">
-      Dalam konteks monitoring hujan, P90 berguna karena hujan yang berisiko sering kali
+      Dalam konteks monitoring hujan, P90 berguna karena skenario yang lebih basah sering kali
       tidak terlihat jelas jika hanya membaca rata-rata. Rata-rata dapat terlihat sedang,
       tetapi P90 yang lebih tinggi memberi sinyal bahwa ada skenario basah yang perlu
       diperhatikan. Sebaliknya, jika Mean, P90, dan Max sama-sama rendah, maka sinyal hujan
@@ -125,9 +126,9 @@ extra = f"""
   <article class="panel">
     <h2>Membaca peta hujan</h2>
     <p>
-      Peta hujan digunakan untuk melihat sebaran nilai antar titik. Titik PLTA Redelong
-      menjadi lokasi utama, sedangkan titik GPM dan grid representatif membantu memberi
-      konteks pada area catchment. Jika beberapa titik menunjukkan nilai P90 yang lebih tinggi,
+      Peta hujan digunakan untuk melihat sebaran nilai antar titik. Tampilan awal difokuskan
+      pada PLTA dan GPM1–GPM6. TamaTue tersedia sebagai layer pembanding yang dapat dinyalakan,
+      tetapi tidak memengaruhi agregasi area. Jika beberapa titik menunjukkan nilai P90 yang lebih tinggi,
       area tersebut dapat dipahami sebagai bagian yang memiliki sinyal hujan lebih kuat pada
       output forecast.
     </p>
@@ -165,7 +166,7 @@ extra = f"""
       dasar ensemble yang digunakan.
     </p>
     <p style="margin-top:14px">
-      Pada kondisi ideal, beberapa sumber aktif memberikan data untuk titik dan waktu target
+      Pada kondisi ideal, enam model kuantitatif aktif memberikan data untuk titik dan waktu target
       yang sama. Jika cakupan sumber tidak lengkap, hasil masih dapat dibaca, tetapi interpretasi
       perlu dibuat lebih hati-hati. Karena itu, status sumber bukan hanya catatan teknis,
       melainkan bagian dari penilaian kualitas output.
@@ -175,11 +176,11 @@ extra = f"""
   <article class="panel">
     <h2>Posisi BMKG pada versi ini</h2>
     <p>
-      Pada versi ini, sumber BMKG belum dijadikan input aktif karena kode administrasi ADM4
-      untuk masing-masing titik catchment belum difinalkan. Pipeline tetap menyimpan informasi
-      lokasi dan placeholder agar struktur sistem siap dikembangkan. Setelah kode ADM4 yang
-      tepat tersedia, integrasi BMKG dapat menjadi salah satu peningkatan penting karena dapat
-      menambah konteks lokal pada sistem forecast.
+      Pada versi ini, BMKG aktif sebagai panduan kategoris resmi untuk referensi Bale Redelong.
+      Kategori BMKG tidak dikonversi menjadi rain_mm dan tidak dicampurkan ke konsensus numerik,
+      sehingga perbedaan makna data tetap terjaga. KMA dinonaktifkan karena data operasionalnya
+      tidak tersedia, sedangkan MET Norway tidak dihitung sebagai anggota independen untuk
+      menghindari penghitungan ganda informasi model yang berkaitan dengan ECMWF.
     </p>
   </article>
 
@@ -229,6 +230,11 @@ extra = f"""
       Nilai pada dashboard akan lebih kuat jika dibaca bersama informasi observasi, kondisi
       lapangan, dan update terbaru dari sumber resmi. Semakin lengkap sumber pembanding yang
       tersedia, semakin baik pula kualitas interpretasi terhadap forecast yang dihasilkan.
+    </p>
+    <p style="margin-top:14px">
+      Volume hujan bruto yang ditampilkan bukan prediksi debit atau inflow. Konversi menuju
+      debit memerlukan data luas DAS resmi, infiltrasi, kelembapan awal, routing, waktu tempuh,
+      kondisi waduk, serta observasi debit untuk kalibrasi.
     </p>
   </article>
 </section>
