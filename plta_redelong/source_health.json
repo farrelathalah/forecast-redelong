@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-14T06:27:22.723816+07:00",
+  "generated_at": "2026-07-14T14:23:47.333626+07:00",
   "sources": {
     "BMKG": {
       "ema_success": 1.0,
-      "ema_completeness": 1.0,
+      "ema_completeness": 0.9408,
       "consecutive_failures": 0,
       "last_error": "",
       "last_run_date": "2026-07-16"
@@ -52,7 +52,7 @@
     },
     "METNO": {
       "ema_success": 1.0,
-      "ema_completeness": 1.0,
+      "ema_completeness": 0.9408,
       "consecutive_failures": 0,
       "last_error": "",
       "last_run_date": "2026-07-16"
