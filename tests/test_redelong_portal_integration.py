@@ -100,6 +100,68 @@ class RedelongPortalIntegrationTest(unittest.TestCase):
             self.assertNotIn("window.LANGIT_CONFIG", target_text)
             self.assertFalse((location / "langit_3day.html").exists())
 
+    def test_fresh_accuracy_page_replaces_stale_compatibility_alias(self) -> None:
+        script = Path(__file__).resolve().parents[1] / "build_utils" / "patch_redelong_branding.py"
+        with tempfile.TemporaryDirectory() as tmp:
+            workdir = Path(tmp)
+            location = workdir / "outputs" / "plta_redelong"
+            location.mkdir(parents=True)
+            (location / "sentinel_x_accuracy_public.html").write_text(
+                '<a href="../index.html"><span>FR</span> LANGIT accuracy</a>',
+                encoding="utf-8",
+            )
+            (location / "Forecast_x_accuracy_public.html").write_text(
+                "<html>Forecast Redelong Redelong stale accuracy</html>", encoding="utf-8"
+            )
+            (location / "sentinel_x_report.html").write_text(
+                "<html>ANEMOS Sentinel X report</html>", encoding="utf-8"
+            )
+            (location / "command_center_sentinel_x.html").write_text(
+                "<html>ANEMOS Sentinel command center</html>", encoding="utf-8"
+            )
+            for legacy_name in (
+                "anemos_app.html",
+                "anemos_today.html",
+                "anemos_3day.html",
+                "anemos_activity.html",
+                "anemos_commute_advice.html",
+                "anemos_laundry_advice.html",
+                "langit_model_court.html",
+                "langit_map.html",
+            ):
+                (location / legacy_name).write_text(
+                    "<html>superseded compatibility page</html>", encoding="utf-8"
+                )
+
+            result = subprocess.run(
+                [sys.executable, str(script)],
+                cwd=workdir,
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            target = location / "Forecast_x_accuracy_public.html"
+            self.assertIn("<span>FR</span>", target.read_text(encoding="utf-8"))
+            self.assertNotIn(
+                "Forecast Redelong Redelong", target.read_text(encoding="utf-8")
+            )
+            self.assertFalse((location / "sentinel_x_accuracy_public.html").exists())
+            self.assertFalse((location / "Forecast_x_report.html").exists())
+            self.assertFalse((location / "command_center_Forecast_x.html").exists())
+            for legacy_name in (
+                "anemos_app.html",
+                "anemos_today.html",
+                "anemos_3day.html",
+                "anemos_activity.html",
+                "anemos_commute_advice.html",
+                "anemos_laundry_advice.html",
+                "redelong_model_court.html",
+                "redelong_map.html",
+            ):
+                self.assertFalse((location / legacy_name).exists(), legacy_name)
+
     def test_portal_uses_actual_dates_hours_and_ensemble_quality(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             location = Path(tmp) / "plta_redelong"

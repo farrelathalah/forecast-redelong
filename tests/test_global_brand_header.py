@@ -32,6 +32,26 @@ class GlobalBrandHeaderTest(unittest.TestCase):
         self.assertIn("Evaluasi Forecast", evaluation)
         self.assertIn("Ringkasan Operasional DAS", operational)
 
+    def test_fullscreen_maps_and_validation_status_have_home_linked_fr(self):
+        portal = (ROOT / "redelong_portal_rebuild.py").read_text(encoding="utf-8")
+        operational = (ROOT / "build_utils/build_redelong_operational.py").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn('class="map-brand" data-fr-brand="true"', portal)
+        self.assertIn('"../index.html",', portal)
+        self.assertIn('data-fr-brand="true" href="index.html"', operational)
+        self.assertIn("Forecast Redelong</b><small>Status Validasi", operational)
+
+    def test_obsolete_anemos_sentinel_pages_are_not_published(self):
+        patcher = (ROOT / "build_utils/patch_redelong_branding.py").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn('"Forecast_x_report.html"', patcher)
+        self.assertIn('"command_center_Forecast_x.html"', patcher)
+        self.assertIn("removed obsolete public HTML", patcher)
+
 
 if __name__ == "__main__":
     unittest.main()
