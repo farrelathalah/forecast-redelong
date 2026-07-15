@@ -3365,11 +3365,11 @@ JS_V65 = r'''
 def v65_nav(api: Dict[str, Any], active: str, root: bool = False) -> str:
     if root:
         items = [("Lokasi", "index.html", "locations"), ("Peta", "langit_portal_map.html", "map")]
-        subtitle = f"Portal · {VERSION}"
+        subtitle = "Monitoring Hujan PLTA Redelong"
         href = "index.html"
     else:
         items = [("Hari ini", "langit_app.html", "today"), ("3 hari ke depan", "langit_3day.html", "3day"), ("Panduan Aktivitas", "langit_activity.html", "activity"), ("Peta", "langit_map_room.html", "map")]
-        subtitle = f'{api["location_name"]} · {VERSION}'
+        subtitle = api["location_name"]
         href = "../index.html"
     links_arr = []
     for label, url, key in items:
