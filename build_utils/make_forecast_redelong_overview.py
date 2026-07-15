@@ -12,6 +12,12 @@ OUTPUTS = ROOT / "outputs"
 LOCATIONS_JSON = ROOT / "locations.json"
 WIB = timezone(timedelta(hours=7))
 
+ROLE_LABELS = {
+    "outlet_reference": "Titik referensi PLTA · tidak dibobot",
+    "provisional_catchment": "Area analisis provisional · masuk agregasi",
+    "external_comparison": "Pembanding eksternal · tidak masuk agregasi",
+}
+
 
 def read_locations() -> dict:
     if not LOCATIONS_JSON.exists():
@@ -56,11 +62,11 @@ def main() -> None:
 
     locations = read_locations()
     success, total, source_count = status_summary()
-    rows = forecast_rows()
     generated = datetime.now(WIB).strftime("%Y-%m-%d %H:%M WIB")
+    catchment_count = sum(bool(loc.get("include_in_catchment")) for loc in locations.values())
 
     location_items = "\n".join(
-        f"<li><strong>{loc.get('location_name', slug)}</strong><span>{loc.get('latitude', '-')}, {loc.get('longitude', '-')}</span></li>"
+        f"<li><div><strong>{loc.get('location_name', slug)}</strong><small>{ROLE_LABELS.get(str(loc.get('operational_role')), 'Titik forecast')}</small></div><span>{loc.get('latitude', '-')}, {loc.get('longitude', '-')}</span></li>"
         for slug, loc in locations.items()
     )
 
@@ -246,6 +252,12 @@ def main() -> None:
       font-size:13px;
       text-align:right;
     }}
+    li small {{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:5px;
+    }}
     .tag-row {{
       display:flex;
       gap:10px;
@@ -305,6 +317,7 @@ def main() -> None:
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="redelong_rain_map.html">Peta Hujan</a>
+      <a href="redelong_operational.html">Operasional DAS</a>
       <a href="plta_redelong/rain_dashboard.html">Dashboard PLTA</a>
     </div>
   </nav>
@@ -322,6 +335,7 @@ def main() -> None:
         </p>
         <div class="links">
           <a href="redelong_rain_map.html">Buka Peta Hujan</a>
+          <a href="redelong_operational.html">Ringkasan Operasional DAS</a>
           <a href="plta_redelong/rain_dashboard.html">Dashboard PLTA Redelong</a>
           <a href="forecast_all_locations.csv">Download Forecast CSV</a>
         </div>
@@ -329,20 +343,20 @@ def main() -> None:
 
       <aside class="panel stats">
         <div class="metric">
-          <div class="label">Titik Lokasi</div>
+          <div class="label">Titik Forecast</div>
           <div class="value">{len(locations)}</div>
         </div>
         <div class="metric">
-          <div class="label">Sumber Terdaftar</div>
+          <div class="label">Masuk Agregasi Catchment</div>
+          <div class="value">{catchment_count}</div>
+        </div>
+        <div class="metric">
+          <div class="label">Sumber Tercatat</div>
           <div class="value">{source_count}</div>
         </div>
         <div class="metric">
           <div class="label">Status Request</div>
           <div class="value">{success}/{total}</div>
-        </div>
-        <div class="metric">
-          <div class="label">Baris Forecast</div>
-          <div class="value">{rows}</div>
         </div>
       </aside>
     </section>
@@ -361,10 +375,9 @@ def main() -> None:
       <article class="panel">
         <h2>Sumber forecast</h2>
         <p>
-          Sistem menggunakan beberapa sumber prakiraan numerik non-BMKG, seperti
-          ECMWF, GFS, ICON, CMA, Meteo-France, KMA, UKMO, dan MET Norway melalui
-          pipeline yang tersedia. Jika satu sumber gagal, output masih dapat
-          dibangun dari sumber lain yang berhasil.
+          Konsensus hujan kuantitatif memakai ECMWF, GFS, ICON, CMA, Meteo-France,
+          dan UKMO dengan bobot sama. BMKG disajikan terpisah sebagai panduan
+          kategoris resmi. KMA dan MET Norway tidak masuk konsensus operasional.
         </p>
         <div class="tag-row">
           <span class="tag">ECMWF</span>
@@ -372,32 +385,34 @@ def main() -> None:
           <span class="tag">ICON</span>
           <span class="tag">CMA</span>
           <span class="tag">METEOFRANCE</span>
-          <span class="tag">KMA</span>
           <span class="tag">UKMO</span>
-          <span class="tag">METNO</span>
+          <span class="tag">BMKG · kategoris</span>
+          <span class="tag warn">KMA · nonaktif</span>
+          <span class="tag warn">METNO · tidak dihitung</span>
         </div>
       </article>
 
       <article class="panel">
         <h2>Cara membaca output</h2>
         <p>
-          Rain Max menunjukkan nilai hujan maksimum dari data forecast. Rain P90
-          menunjukkan skenario atas atau persentil 90. Rain Mean menunjukkan
-          rata-rata nilai hujan. Nilai ini dipakai untuk screening awal, bukan
-          keputusan kritikal tunggal.
+          Dashboard per titik dipakai untuk screening cepat. Ringkasan Operasional
+          DAS dipakai untuk membaca akumulasi area 24/48/72 jam, coverage sumber,
+          dan rentang P10–P90 antar-model. Rentang itu belum merupakan probabilitas
+          terkalibrasi dan tidak boleh dibaca sebagai kepastian kejadian.
         </p>
       </article>
 
       <article class="panel">
         <h2>Status BMKG dan validasi</h2>
         <p>
-          BMKG belum diaktifkan karena kode ADM4 per titik catchment masih memakai
-          placeholder. Akurasi numerik belum diklaim dalam persen karena perlu
-          backtesting terhadap observasi aktual, misalnya data hujan PLTA, AWS,
-          GPM, atau data stasiun terdekat.
+          BMKG sudah diambil sebagai panduan kategoris untuk referensi Bale
+          Redelong, tetapi tidak dikonversi menjadi rain_mm dan tidak dicampurkan
+          ke konsensus numerik. Akurasi belum diklaim karena masih memerlukan
+          pasangan forecast–observation yang sebanding menurut lokasi, waktu valid,
+          lead time, dan periode akumulasi.
         </p>
         <div class="tag-row">
-          <span class="tag warn">BMKG belum aktif</span>
+          <span class="tag">BMKG aktif · kategoris</span>
           <span class="tag warn">Akurasi belum diklaim</span>
           <span class="tag warn">Perlu observasi aktual</span>
         </div>
@@ -417,6 +432,8 @@ def main() -> None:
           verifikasi atau pengembangan lanjutan.
         </p>
         <div class="links">
+          <a href="operational_windows.csv">operational_windows.csv</a>
+          <a href="operational_source_status.csv">operational_source_status.csv</a>
           <a href="forecast_all_locations.csv">forecast_all_locations.csv</a>
           <a href="ensemble_all_locations.csv">ensemble_all_locations.csv</a>
           <a href="source_status_all_locations.csv">source_status_all_locations.csv</a>

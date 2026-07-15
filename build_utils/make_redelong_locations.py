@@ -30,6 +30,20 @@ def pick_column(df: pd.DataFrame, candidates: list[str]) -> str:
     )
 
 
+def optional_column(df: pd.DataFrame, candidates: list[str]) -> str | None:
+    lower_map = {c.lower(): c for c in df.columns}
+    for candidate in candidates:
+        if candidate.lower() in lower_map:
+            return lower_map[candidate.lower()]
+    return None
+
+
+def as_bool(value, default: bool = False) -> bool:
+    if pd.isna(value):
+        return default
+    return str(value).strip().lower() in {"1", "true", "yes", "y", "ya"}
+
+
 def main() -> None:
     if not IN_CSV.exists():
         raise FileNotFoundError(f"Tidak ada file: {IN_CSV}")
@@ -39,6 +53,11 @@ def main() -> None:
     name_col = pick_column(df, ["point_name", "name", "location_name", "lokasi", "Location", "Nama"])
     lat_col = pick_column(df, ["latitude", "lat", "Latitude", "LAT", "y", "Y"])
     lon_col = pick_column(df, ["longitude", "lon", "Longitude", "LON", "lng", "x", "X"])
+    weight_col = optional_column(df, ["weight_km2", "area_km2", "luas_km2"])
+    role_col = optional_column(df, ["operational_role", "role", "peran"])
+    include_col = optional_column(df, ["include_in_catchment", "included", "digunakan"])
+    source_col = optional_column(df, ["source", "sumber"])
+    note_col = optional_column(df, ["note", "catatan"])
 
     locations = {}
     default_multi_locations = []
@@ -63,9 +82,14 @@ def main() -> None:
             "longitude": lon,
             "timezone": "Asia/Jakarta",
             "bmkg_point_name": name,
-            "area_level": "catchment_point",
+            "area_level": str(row[role_col]).strip() if role_col else "catchment_point",
             "is_proxy_bmkg": True,
-            "note": "PLTA Redelong catchment representative point. BMKG ADM4 code not assigned yet."
+            "weight_km2": float(row[weight_col]) if weight_col and not pd.isna(row[weight_col]) else 0.0,
+            "include_in_catchment": as_bool(row[include_col]) if include_col else False,
+            "operational_role": str(row[role_col]).strip() if role_col else "reference_point",
+            "spatial_source": str(row[source_col]).strip() if source_col else "",
+            "spatial_note": str(row[note_col]).strip() if note_col and not pd.isna(row[note_col]) else "",
+            "note": "PLTA Redelong representative point. BMKG ADM4 code not assigned yet."
         }
 
         default_multi_locations.append(slug)

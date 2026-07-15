@@ -36,7 +36,9 @@ for slug, loc in data["locations"].items():
     loc["note"] = (
         "Forecast Redelong representative point. "
         f"BMKG ADM4 reference: {m['adm4']} ({m['bmkg_reference_name']}). "
-        f"{m['adm4_note']}"
+        f"{m['adm4_note']} "
+        f"Spatial role: {loc.get('operational_role', 'reference_point')}. "
+        f"{loc.get('spatial_note', '')}"
     )
 
 if missing:

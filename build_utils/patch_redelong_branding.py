@@ -1,8 +1,14 @@
-﻿from pathlib import Path
+from pathlib import Path
 
 ROOT = Path("outputs")
 
 TEXT_REPLACEMENTS = {
+    # Protect the JavaScript configuration identifier before replacing visible
+    # brand text.  ``window.Forecast Redelong_CONFIG`` is invalid JavaScript.
+    "window.Forecast Redelong_CONFIG": "window.REDELONG_CONFIG",
+    "window.LANGIT_CONFIG": "window.REDELONG_CONFIG",
+    "LANGIT v65.1": "Forecast Redelong v1.0",
+    "LANGIT v65": "Forecast Redelong v1.0",
     "LANGIT Sentinel X": "Forecast Redelong Forecast Portal",
     "LANGIT Sentinel": "Forecast Redelong",
     "LANGIT Command Center": "Forecast Redelong Command Center",
@@ -12,7 +18,6 @@ TEXT_REPLACEMENTS = {
     "Sentinel X": "Forecast Decision Layer",
     "Sentinel": "Forecast",
     "Aether": "Ensemble Forecast Layer",
-    "v65": "Redelong",
     "cinematic": "portal",
     "Cinematic": "Portal",
     "Dago, Bandung": "PLTA Redelong",
@@ -27,6 +32,11 @@ TEXT_REPLACEMENTS = {
     "weather-forecast": "forecast-redelong",
     "langit_portal_map.html": "redelong_portal_map.html",
     "langit": "redelong",
+}
+
+INVALID_JAVASCRIPT_TOKENS = {
+    "window.Forecast Redelong_CONFIG",
+    "window.LANGIT_CONFIG",
 }
 
 FILE_REPLACEMENTS = {
@@ -61,6 +71,10 @@ for path in list(ROOT.rglob("*")):
         changed_text += 1
         print(f"patched text: {path}")
 
+    for token in INVALID_JAVASCRIPT_TOKENS:
+        if token in new_text:
+            raise RuntimeError(f"Invalid JavaScript token remains in {path}: {token}")
+
 for path in sorted(list(ROOT.rglob("*")), key=lambda p: len(str(p)), reverse=True):
     if not path.is_file():
         continue
@@ -71,7 +85,15 @@ for path in sorted(list(ROOT.rglob("*")), key=lambda p: len(str(p)), reverse=Tru
 
     if new_name != path.name:
         target = path.with_name(new_name)
-        if not target.exists():
+        # The portal rebuild writes fresh ``langit_*`` pages, while the forecast
+        # engine may leave older ``redelong_*`` files behind.  The fresh portal
+        # page is canonical and must replace the stale alias; otherwise links
+        # such as redelong_3day.html keep opening the old/blank page.
+        if "langit" in path.name:
+            path.replace(target)
+            renamed_files += 1
+            print(f"synced portal page: {path} -> {target}")
+        elif not target.exists():
             path.rename(target)
             renamed_files += 1
             print(f"renamed file: {path} -> {target}")
@@ -81,4 +103,3 @@ for path in sorted(list(ROOT.rglob("*")), key=lambda p: len(str(p)), reverse=Tru
 print("SUCCESS")
 print(f"Jumlah file teks diubah: {changed_text}")
 print(f"Jumlah file diganti nama: {renamed_files}")
-

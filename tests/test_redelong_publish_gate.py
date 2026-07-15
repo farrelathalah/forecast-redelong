@@ -1,0 +1,215 @@
+from __future__ import annotations
+
+import csv
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+from build_utils.validate_redelong_publish import (
+    EXPECTED_LOCATIONS,
+    QUANTITATIVE_SOURCES,
+    validate,
+)
+
+
+def write_csv(path: Path, rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+class RedelongPublishGateTest(unittest.TestCase):
+    def make_valid_outputs(self, root: Path) -> None:
+        forecast_rows = [
+            {
+                "location_slug": location,
+                "target_date": "2026-07-13",
+                "target_jam": "00:00",
+                "source_id": source,
+            }
+            for location in sorted(EXPECTED_LOCATIONS)
+            for source in sorted(QUANTITATIVE_SOURCES)
+        ]
+        write_csv(root / "forecast_all_locations.csv", forecast_rows)
+        write_csv(
+            root / "dim_sources.csv",
+            [
+                {"source_id": source, "base_weight": 1.0}
+                for source in sorted(QUANTITATIVE_SOURCES)
+            ],
+        )
+        write_csv(
+            root / "operational_source_status.csv",
+            [
+                {"source_id": source, "qc_status": "valid", "completeness_pct": 100.0}
+                for source in sorted(QUANTITATIVE_SOURCES)
+            ],
+        )
+        write_csv(
+            root / "operational_windows.csv",
+            [
+                {
+                    "horizon_hours": horizon,
+                    "data_status": "cukup",
+                    "model_count": 6,
+                    "rain_mean_mm": 5.0,
+                }
+                for horizon in (24, 48, 72)
+            ],
+        )
+        for name in [
+            "redelong_operational.html",
+            "redelong_operational.json",
+            "operational_3hour.csv",
+            "operational_per_point_24h.csv",
+            "bmkg_guidance.csv",
+        ]:
+            (root / name).write_text("ok", encoding="utf-8")
+
+        (root / "redelong_operational_points.geojson").write_text(
+            json.dumps(
+                {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "geometry": {"type": "Point", "coordinates": [96.85, 4.65]},
+                            "properties": {
+                                "location_slug": "gpm_grid_tamatue",
+                                "operational_role": "external_comparison",
+                                "include_in_catchment": False,
+                            },
+                        }
+                    ],
+                }
+            ),
+            encoding="utf-8",
+        )
+
+        for slug in EXPECTED_LOCATIONS:
+            directory = root / slug
+            directory.mkdir()
+            days = []
+            for day in (13, 14, 15):
+                days.append(
+                    {
+                        "date_iso": f"2026-07-{day:02d}",
+                        "risk_class": "watch",
+                        "valid_points": 24,
+                        "hours": [{"hour": f"{hour:02d}:00"} for hour in range(24)],
+                    }
+                )
+            (directory / "redelong_api_v1.json").write_text(
+                json.dumps({"days": days}), encoding="utf-8"
+            )
+            (directory / "redelong_app.html").write_text(
+                "<script>window.REDELONG_CONFIG = {}; (() => { const ok = true; })();</script>",
+                encoding="utf-8",
+            )
+        (root / "index.html").write_text(
+            "<script>(() => { const portal = true; })();</script>", encoding="utf-8"
+        )
+
+    def test_valid_run_passes_and_broken_javascript_is_blocked(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+
+            ok, report = validate(outputs)
+            self.assertTrue(ok, report["errors"])
+            self.assertEqual(report["status"], "pass")
+
+            (outputs / "index.html").write_text(
+                "<script>window.Forecast Redelong_CONFIG = {};</script>", encoding="utf-8"
+            )
+            ok, report = validate(outputs)
+            self.assertFalse(ok)
+            self.assertTrue(any("JavaScript" in error for error in report["errors"]))
+
+    def test_tamatue_cannot_enter_catchment(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            geo_path = outputs / "redelong_operational_points.geojson"
+            payload = json.loads(geo_path.read_text(encoding="utf-8"))
+            payload["features"][0]["properties"]["include_in_catchment"] = True
+            geo_path.write_text(json.dumps(payload), encoding="utf-8")
+
+            ok, report = validate(outputs)
+            self.assertFalse(ok)
+            self.assertTrue(any("TamaTue" in error for error in report["errors"]))
+
+    def test_three_valid_models_can_publish_when_other_sources_are_unavailable(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            retained = sorted(QUANTITATIVE_SOURCES)[:3]
+
+            forecast_rows = []
+            with (outputs / "forecast_all_locations.csv").open(
+                "r", encoding="utf-8", newline=""
+            ) as handle:
+                forecast_rows = [
+                    row for row in csv.DictReader(handle) if row["source_id"] in retained
+                ]
+            write_csv(outputs / "forecast_all_locations.csv", forecast_rows)
+            write_csv(
+                outputs / "operational_source_status.csv",
+                [
+                    {
+                        "source_id": source,
+                        "qc_status": "valid" if source in retained else "data_tidak_cukup",
+                        "completeness_pct": 100.0 if source in retained else 0.0,
+                    }
+                    for source in sorted(QUANTITATIVE_SOURCES)
+                ],
+            )
+            write_csv(
+                outputs / "operational_windows.csv",
+                [
+                    {
+                        "horizon_hours": horizon,
+                        "data_status": "cukup",
+                        "model_count": 3,
+                        "rain_mean_mm": 5.0,
+                    }
+                    for horizon in (24, 48, 72)
+                ],
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertTrue(ok, report["errors"])
+            self.assertEqual(report["metrics"]["operational_sources_valid"], retained)
+            self.assertEqual(len(report["metrics"]["quantitative_sources_missing"]), 3)
+
+    def test_unequal_weights_and_bad_branding_are_blocked(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            write_csv(
+                outputs / "dim_sources.csv",
+                [
+                    {
+                        "source_id": source,
+                        "base_weight": 1.2 if source == "ECMWF" else 1.0,
+                    }
+                    for source in sorted(QUANTITATIVE_SOURCES)
+                ],
+            )
+            (outputs / "index.html").write_text(
+                "<h1>Forecast Redelong Redelong.1</h1>", encoding="utf-8"
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertFalse(ok)
+            self.assertTrue(any("Bobot awal" in error for error in report["errors"]))
+            self.assertTrue(any("Branding rusak" in error for error in report["errors"]))
+
+
+if __name__ == "__main__":
+    unittest.main()

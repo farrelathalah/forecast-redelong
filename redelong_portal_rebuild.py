@@ -28,6 +28,7 @@ from zoneinfo import ZoneInfo
 BRAND = "LANGIT"
 VERSION = "LANGIT v65.1"
 TZ_NAME = "Asia/Jakarta"
+MIN_PORTAL_VALID_HOURS = 20
 DISCLAIMER = "Bukan informasi resmi BMKG. Untuk cuaca ekstrem, pantau peringatan dini BMKG dan kondisi setempat."
 ID_BOUNDS = [[-11.25, 94.0], [6.45, 141.25]]
 MONTH_ID = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
@@ -322,21 +323,69 @@ def condition_label(hh: str, rain: Any, temp: Any, rh: Any, heat: Any, valid: bo
 
 
 def row_to_hour(row: Dict[str, Any], fallback_date: Optional[dt.date] = None, fallback_relative: str = "Hari ini") -> Dict[str, Any]:
-    hh = hour(pick(row, "hour", "jam", "time", "local_time", "target_hour", "target_time", "datetime", "timestamp", default="00:00"))
-    d = parse_date(pick(row, "date", "tanggal", "target_date", "valid_date", "forecast_date", "datetime", "timestamp")) or fallback_date
-    temp = num(pick(row, "temp_c", "temperature_c", "temperature_2m_c", "avg_temperature_c", "t2m", "suhu"))
-    rh = num(pick(row, "humidity_pct", "relative_humidity", "relative_humidity_2m", "rh", "kelembapan"))
-    heat = num(pick(row, "heat_index_c", "apparent_temperature_c", "feels_like_c", "terasa"), temp)
-    rain = prob(pick(row, "rain_probability", "rain_probability_raw", "precip_probability", "precipitation_probability", "pop", "hujan"))
-    wind = num(pick(row, "wind_kmh", "wind_speed_kmh", "wind_speed_10m_kmh", "angin"))
-    base_score = clamp(pick(row, "risk_score", "score", "risk", default=0), default=0)
+    hh = hour(pick(row, "target_jam", "hour", "jam", "time", "local_time", "target_hour", "target_time", "datetime", "timestamp", default="00:00"))
+    d = parse_date(pick(row, "target_date", "date", "tanggal", "valid_date", "forecast_date", "datetime", "timestamp")) or fallback_date
+    temp = num(pick(row, "temp_p50", "temp_micro_p50", "suhu_C", "temp_c", "temperature_c", "temperature_2m_c", "avg_temperature_c", "t2m", "suhu"))
+    rh = num(pick(row, "rh_p50", "rh_micro_p50", "RH_%", "humidity_pct", "relative_humidity", "relative_humidity_2m", "rh", "kelembapan"))
+    heat = num(pick(row, "heat_index_p50", "apparent_temperature_c", "heat_index_c", "feels_like_c", "terasa"), temp)
+    # rain_mm is intentionally not treated as a probability.  The portal uses
+    # the calibrated/probabilistic field produced by Sentinel X.
+    rain = prob(pick(row, "prob_rain", "forecast_rain_prob", "rain_probability", "rain_probability_raw", "precip_probability", "precipitation_probability", "pop", "hujan"))
+    wind = num(pick(row, "wind_p50", "wind_kmh", "wind_speed_kmh", "wind_speed_10m_kmh", "angin"))
+    threat_scores = [
+        num(pick(row, "risk_score", "score", "risk"), 0),
+        num(pick(row, "rain_threat_score"), 0),
+        num(pick(row, "heavy_rain_threat_score"), 0),
+        num(pick(row, "wind_threat_score"), 0),
+        num(pick(row, "heat_discomfort_threat_score"), 0),
+        num(pick(row, "low_visibility_threat_score"), 0),
+        num(pick(row, "thunderstorm_proxy_threat_score"), 0),
+    ]
+    base_score = max(x or 0 for x in threat_scores)
     score = max(base_score, rain or 0, heat_risk(heat, temp, rh), wind_risk(wind))
-    valid = any(x is not None for x in [temp, rh, heat, rain, wind])
+    has_data = any(x is not None for x in [temp, rh, heat, rain, wind])
+
+    source_count = num(pick(row, "sources_used", "model_count"), None)
+    coverage = num(pick(row, "coverage_fraction", "source_coverage"), None)
+    if coverage is not None and coverage > 1:
+        coverage = coverage / 100.0
+    trust = text(pick(row, "trust_level", default="")).upper()
+    operational_status = text(pick(row, "operational_status", default="")).upper()
+    coverage_status = text(pick(row, "coverage_status", "data_status", default="")).lower()
+    has_quality_metadata = any(
+        value not in (None, "")
+        for value in [source_count, coverage, trust, operational_status, coverage_status]
+    )
+    quality_ok = has_data
+    quality_reasons: List[str] = []
+    if has_quality_metadata:
+        if source_count is not None and source_count < 3:
+            quality_ok = False
+            quality_reasons.append("kurang dari 3 sumber")
+        if coverage is not None and coverage < 0.50:
+            quality_ok = False
+            quality_reasons.append("coverage sumber rendah")
+        if trust in {"DO_NOT_TRUST", "UNTRUSTED", "BLACK"}:
+            quality_ok = False
+            quality_reasons.append("trust level tidak layak")
+        if operational_status in {"BLACK", "FAILED", "FAIL"}:
+            quality_ok = False
+            quality_reasons.append("status operasional tidak layak")
+        if coverage_status in {"terbatas", "data_tidak_cukup", "hari_tidak_lengkap", "periode_tidak_lengkap"}:
+            quality_ok = False
+            quality_reasons.append("data tidak lengkap")
+    # A source-level fallback row is not an ensemble and must not be labelled
+    # safe merely because temperature or humidity is present.
+    if text(pick(row, "source_id", default="")) and source_count is None:
+        quality_ok = False
+        quality_reasons.append("baris sumber tunggal")
+
+    valid = bool(has_data and quality_ok)
     cls = text(pick(row, "risk_class", "risk_level", default="")).lower()
     cls = cls if cls in {"safe", "watch", "rain", "danger", "limited"} else risk_class(score, valid)
     if not valid:
         cls = "limited"
-    cond = text(pick(row, "condition", "weather", "cuaca", "summary", default=""))
+    cond = text(pick(row, "dominant_category", "kategori", "condition", "weather", "cuaca", "summary", default=""))
     if not cond or cond.lower() in {"aman", "dipantau", "safe", "watch"}:
         cond = condition_label(hh, rain, temp, rh, heat, valid)
         w_val = num(wind, 0)
@@ -350,6 +399,9 @@ def row_to_hour(row: Dict[str, Any], fallback_date: Optional[dt.date] = None, fa
         "hour": hh, "temp_c": temp, "humidity_pct": rh, "heat_index_c": heat,
         "rain_probability": rain, "wind_kmh": wind, "risk_score": round(score),
         "risk_class": cls, "risk_label": risk_label(cls), "condition": cond, "valid": valid,
+        "has_data": has_data, "source_count": int(source_count) if source_count is not None else None,
+        "coverage_fraction": coverage, "trust_level": trust, "operational_status": operational_status,
+        "quality_note": "; ".join(dict.fromkeys(quality_reasons)),
         "wind_dir": num(pick(row, "wind_direction_deg", "wind_direction", "wind_dir", "arah_angin")),
         "cloud_pct": num(pick(row, "cloud_cover_pct", "cloud_cover", "cloud_p50", "cloud_pct", "awan")),
     }
@@ -362,7 +414,7 @@ def default_hours(base_date: dt.date, relative: str) -> List[Dict[str, Any]]:
 def best_windows(hours: List[Dict[str, Any]]) -> List[str]:
     good = sorted({hour_int(x["hour"]) for x in hours if x.get("valid") and x.get("risk_class") == "safe"})
     if not good:
-        good = sorted({hour_int(x["hour"]) for x in hours if x.get("risk_class") in {"safe", "watch"}})
+        good = sorted({hour_int(x["hour"]) for x in hours if x.get("valid") and x.get("risk_class") in {"safe", "watch"}})
     if not good:
         return []
     blocks: List[Tuple[int, int]] = []
@@ -408,10 +460,24 @@ def period_summaries(hours: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 def summarize_day(relative: str, date_value: dt.date, rows: List[Dict[str, Any]]) -> Dict[str, Any]:
     rows = sorted(rows or default_hours(date_value, relative), key=lambda x: hour_int(x["hour"]))
     valid = [x for x in rows if x.get("valid")]
+    valid_hour_count = len({x.get("hour") for x in valid})
+    day_complete = valid_hour_count >= MIN_PORTAL_VALID_HOURS
+    if not day_complete:
+        rows = [
+            {
+                **x,
+                "valid": False,
+                "risk_class": "limited",
+                "risk_label": risk_label("limited"),
+                "quality_note": text(x.get("quality_note"), "jam forecast belum lengkap"),
+            }
+            for x in rows
+        ]
+        valid = []
     basis = valid or rows
     peak = max(basis, key=lambda z: prob(z.get("rain_probability"), -1) if prob(z.get("rain_probability"), None) is not None else -1) if basis else {}
     worst = max(basis, key=lambda z: clamp(z.get("risk_score"), default=0)) if basis else {}
-    cls = "limited" if not valid else worst.get("risk_class", "watch")
+    cls = "limited" if not day_complete else worst.get("risk_class", "watch")
     score = 35 if cls == "limited" else clamp(worst.get("risk_score"), default=0)
     return {
         "relative": relative, "date_iso": date_value.isoformat(), "date_label": fmt_date(date_value),
@@ -420,12 +486,14 @@ def summarize_day(relative: str, date_value: dt.date, rows: List[Dict[str, Any]]
         "peak_rain_probability": prob(peak.get("rain_probability"), None),
         "peak_rain_hour": text(peak.get("hour"), "—"),
         "risk_score": round(score), "risk_class": cls, "risk_label": risk_label(cls),
-        "condition": text(worst.get("condition"), "Data terbatas" if cls == "limited" else "Berawan"),
+        "condition": "Data terbatas" if cls == "limited" else text(worst.get("condition"), "Berawan"),
         "avg_temp_c": mean(x.get("temp_c") for x in valid),
         "avg_rh": mean(x.get("humidity_pct") for x in valid),
         "max_heat_c": maximum(x.get("heat_index_c") for x in valid),
         "max_wind_kmh": maximum(x.get("wind_kmh") for x in valid),
-        "safe_windows": best_windows(rows), "valid_points": len(valid),
+        "safe_windows": best_windows(rows), "valid_points": valid_hour_count,
+        "expected_points": 24, "data_completeness_pct": round(valid_hour_count / 24 * 100, 1),
+        "data_quality_note": "Data cukup untuk ringkasan harian." if day_complete else f"Hanya {valid_hour_count}/24 jam yang lolos quality control.",
     }
 
 
@@ -510,6 +578,75 @@ def safe_find_file(directory: Path, filename: str) -> Path:
     return directory / filename
 
 
+def load_preferred_hourly_rows(directory: Path) -> List[Dict[str, Any]]:
+    """Load the decision-layer rows without mixing products or dates.
+
+    The engine writes one full-hour Sentinel X file per forecast date.  Those
+    rows contain probability, ensemble coverage, and trust metadata required by
+    the portal.  ``forecast.csv`` is source-level and is therefore only a last
+    fallback; treating it as a ready-made portal series caused duplicate hours
+    and false safe labels.
+    """
+    products = list(directory.iterdir()) if directory.exists() else []
+    for prefix in ("sentinel_x", "forecast_x"):
+        pattern = re.compile(rf"^{prefix}_(20\d{{6}})\.csv$", re.I)
+        dated_files = sorted(
+            (path for path in products if path.is_file() and pattern.match(path.name)),
+            key=lambda path: path.name.lower(),
+        )
+        combined: List[Dict[str, Any]] = []
+        for path in dated_files:
+            combined.extend(read_csv(path))
+        if combined:
+            return combined
+
+    for name in [
+        "sentinel_x.csv",
+        "Forecast_x.csv",
+        "langit_hourly_intelligence.csv",
+        "redelong_hourly_intelligence.csv",
+        "anemos_hourly_compact.csv",
+        "anemos_risk_timeline.csv",
+        "forecast.csv",
+        "forecast_all_locations.csv",
+    ]:
+        rows = read_csv(safe_find_file(directory, name))
+        if rows:
+            return rows
+    return []
+
+
+def relative_day_label(date_value: dt.date, reference_date: dt.date) -> str:
+    delta = (date_value - reference_date).days
+    if delta == 0:
+        return "Hari ini"
+    if delta == 1:
+        return "Besok"
+    if delta == 2:
+        return "Lusa"
+    if delta > 0:
+        return f"H+{delta}"
+    return "Arsip"
+
+
+def deduplicate_portal_hours(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    selected: Dict[str, Dict[str, Any]] = {}
+
+    def rank(item: Dict[str, Any]) -> Tuple[float, float, float, float]:
+        return (
+            1.0 if item.get("valid") else 0.0,
+            1.0 if item.get("has_data") else 0.0,
+            float(num(item.get("source_count"), 0) or 0),
+            float(num(item.get("coverage_fraction"), 0) or 0),
+        )
+
+    for item in rows:
+        key = text(item.get("hour"), "00:00")
+        if key not in selected or rank(item) > rank(selected[key]):
+            selected[key] = item
+    return sorted(selected.values(), key=lambda item: hour_int(item.get("hour")))
+
+
 def metadata_by_slug(root: Path) -> Dict[str, Dict[str, Any]]:
     meta: Dict[str, Dict[str, Any]] = {}
     for name in ["dim_locations.csv", "locations.csv", "dim_location.csv"]:
@@ -530,7 +667,7 @@ def location_dirs(root: Path) -> List[Path]:
     if not root.exists():
         return []
     out = []
-    sentinel_files = ["anemos_app.html", "langit_hourly_intelligence.csv", "anemos_hourly_compact.csv", "langit_api_v1.json", "anemos_api_v1.json", "forecast.csv", "forecast_all_locations.csv"]
+    sentinel_files = ["anemos_app.html", "langit_hourly_intelligence.csv", "redelong_hourly_intelligence.csv", "anemos_hourly_compact.csv", "langit_api_v1.json", "redelong_api_v1.json", "anemos_api_v1.json", "sentinel_x.csv", "Forecast_x.csv", "forecast.csv", "forecast_all_locations.csv"]
     for p in root.iterdir():
         if p.is_dir() and any(safe_find_file(p, s).exists() for s in sentinel_files):
             out.append(p)
@@ -588,7 +725,7 @@ def split_rows_into_days(rows: List[Dict[str, Any]], base_date: dt.date) -> List
     current: List[Dict[str, Any]] = []
     last_h = -1
     for r in rows:
-        h = hour_int(pick(r, "hour", "jam", "time", "local_time", "datetime", "timestamp", default="00:00"))
+        h = hour_int(pick(r, "target_jam", "hour", "jam", "time", "local_time", "datetime", "timestamp", default="00:00"))
         if current and h < last_h:
             chunks.append(current)
             current = []
@@ -601,7 +738,7 @@ def split_rows_into_days(rows: List[Dict[str, Any]], base_date: dt.date) -> List
 
 def load_location_api(directory: Path, meta: Dict[str, Any]) -> Dict[str, Any]:
     raw_api: Dict[str, Any] = {}
-    for name in ["langit_api_v1.json", "anemos_api_v1.json", "api.json"]:
+    for name in ["langit_api_v1.json", "redelong_api_v1.json", "anemos_api_v1.json", "api.json"]:
         file_path = safe_find_file(directory, name)
         if file_path.exists():
             raw_api = read_json(file_path, {}) or {}
@@ -620,29 +757,32 @@ def load_location_api(directory: Path, meta: Dict[str, Any]) -> Dict[str, Any]:
             if len(coords) >= 2:
                 lon = num(coords[0], lon)
                 lat = num(coords[1], lat)
-    rows: List[Dict[str, Any]] = []
-    for fname in ["langit_hourly_intelligence.csv", "anemos_hourly_compact.csv", "anemos_risk_timeline.csv", "forecast.csv", "forecast_all_locations.csv"]:
-        rows = read_csv(safe_find_file(directory, fname))
-        if rows:
-            break
+    rows = load_preferred_hourly_rows(directory)
     if not rows and raw_api:
         rows = rows_from_api(raw_api)
-    base_date = local_now().date()
+    reference_date = local_now().date()
     d0 = parse_date(raw_api.get("target_date") or raw_api.get("date") or raw_api.get("generated_at") or raw_api.get("updated_at"))
     if d0:
-        base_date = d0
-    chunks = split_rows_into_days(rows, base_date)
-    relatives = ["Hari ini", "Besok", "Lusa"]
+        reference_date = d0
+    chunks = split_rows_into_days(rows, reference_date)
+    first_chunk_date = None
+    if chunks:
+        first_chunk_date = parse_date(pick(chunks[0][0], "target_date", "date", "tanggal", "valid_date", "forecast_date", "datetime", "timestamp"))
+    base_date = first_chunk_date or reference_date
     days = []
     for i in range(3):
-        date_value = base_date + dt.timedelta(days=i)
         chunk = chunks[i] if i < len(chunks) else []
-        parsed = [row_to_hour(r, date_value, relatives[i]) for r in chunk] if chunk else default_hours(date_value, relatives[i])
-        days.append(summarize_day(relatives[i], date_value, parsed))
+        actual_date = None
+        if chunk:
+            actual_date = parse_date(pick(chunk[0], "target_date", "date", "tanggal", "valid_date", "forecast_date", "datetime", "timestamp"))
+        date_value = actual_date or (base_date + dt.timedelta(days=i))
+        relative = relative_day_label(date_value, reference_date)
+        parsed = deduplicate_portal_hours([row_to_hour(r, date_value, relative) for r in chunk]) if chunk else default_hours(date_value, relative)
+        days.append(summarize_day(relative, date_value, parsed))
     
     # Enrich days with cloud cover and wind direction from sentinel_x.csv
     sentinel_map = {}
-    for fname in ["sentinel_x.csv", "sentinel_x_all_locations.csv"]:
+    for fname in ["sentinel_x.csv", "Forecast_x.csv", "sentinel_x_all_locations.csv", "Forecast_x_all_locations.csv"]:
         spath = safe_find_file(directory, fname)
         if spath.exists():
             for sr in read_csv(spath):
@@ -2347,7 +2487,7 @@ JS_V65 = r'''
   'use strict';
 
   // Retrieve dynamic configuration injected from backend engine
-  const config = window.LANGIT_CONFIG || {};
+  const config = window.REDELONG_CONFIG || {};
 
   // Safe SessionStorage wrapper to prevent incognito/private mode crashes
   const safeStorage = {
@@ -3277,7 +3417,7 @@ def v65_document(api: Dict[str, Any], active: str, title: str, body: str, root: 
         "condition": api.get("today", {}).get("condition", "Berawan") if api.get("today") else "Berawan",
         "is_portal": root
     }
-    config_js = f"window.LANGIT_CONFIG = {json.dumps(config, ensure_ascii=False)};"
+    config_js = f"window.REDELONG_CONFIG = {json.dumps(config, ensure_ascii=False)};"
 
     return f'''<!doctype html><html lang="id"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

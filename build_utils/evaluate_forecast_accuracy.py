@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import math
 from datetime import datetime, timezone, timedelta
@@ -15,6 +15,16 @@ OBS_PATH = ROOT / "data" / "redelong" / "observations" / "rain_observed_daily.cs
 PROXY_OBS_PATH = ROOT / "data" / "redelong" / "observations" / "rain_proxy_daily.csv"
 FORECAST_PATH = OUTPUTS / "forecast_all_locations.csv"
 WIB = timezone(timedelta(hours=7))
+QUANTITATIVE_SOURCES = {
+    "CMA",
+    "ECMWF",
+    "GFS",
+    "ICON",
+    "METEOFRANCE",
+    "UKMO",
+}
+MIN_HOURS_PER_SOURCE_DAY = 20
+MIN_MODELS_PER_DAY = 3
 
 
 def read_csv(path: Path) -> pd.DataFrame:
@@ -125,34 +135,149 @@ def fmt(v, digits=2) -> str:
         return "-"
 
 
-def main() -> None:
-    OUTPUTS.mkdir(parents=True, exist_ok=True)
+def build_daily_forecast(fc: pd.DataFrame) -> tuple[pd.DataFrame, str | None]:
+    """Build comparable 24-hour rainfall totals from source-level forecasts.
 
-    fc = read_csv(FORECAST_PATH)
-    obs = read_csv(OBS_PATH)
+    Forecast Redelong stores one row per source, location, and valid hour.  A
+    daily observation must therefore be compared with a daily sum for each
+    quantitative model first, followed by an across-model consensus.  Averaging
+    raw source-hour rows would mix time and model dimensions and understate the
+    daily rainfall total.
+    """
+
+    if fc.empty:
+        return pd.DataFrame(), "Forecast belum tersedia."
+
+    loc_col = pick_col(fc, ["location_slug", "slug", "location_id", "location"], ["location"])
+    date_col = pick_date_col(fc)
+    hour_col = pick_col(
+        fc,
+        ["target_jam", "hour", "jam", "target_time", "local_time"],
+        ["jam", "hour"],
+    )
+    source_col = pick_col(fc, ["source_id", "source", "model"], ["source", "model"])
+    rain_col = pick_col(
+        fc,
+        ["rain_mm", "precipitation_mm", "precipitation", "hujan_mm"],
+        ["rain", "precip", "hujan"],
+    )
+
+    required = {
+        "lokasi forecast": loc_col,
+        "tanggal forecast": date_col,
+        "jam forecast": hour_col,
+        "sumber forecast": source_col,
+        "hujan forecast": rain_col,
+    }
+    missing = [label for label, value in required.items() if value is None]
+    if missing:
+        return pd.DataFrame(), "Kolom forecast tidak lengkap: " + ", ".join(missing)
+
+    work = fc[[loc_col, date_col, hour_col, source_col, rain_col]].copy()
+    work.columns = ["location_slug", "date", "hour", "source_id", "rain_mm"]
+    work["location_slug"] = work["location_slug"].astype(str).str.strip()
+    work["source_id"] = work["source_id"].astype(str).str.upper().str.strip()
+    work["date"] = normalize_date(work["date"])
+    work["valid_time"] = pd.to_datetime(
+        work["date"].astype(str) + " " + work["hour"].astype(str),
+        errors="coerce",
+    )
+    work["rain_mm"] = pd.to_numeric(work["rain_mm"], errors="coerce")
+    work = work[
+        work["source_id"].isin(QUANTITATIVE_SOURCES)
+        & work["rain_mm"].between(0.0, 300.0)
+    ].dropna(subset=["location_slug", "date", "valid_time", "rain_mm"])
+
+    if work.empty:
+        return pd.DataFrame(), "Belum ada data hujan numerik dari model kuantitatif."
+
+    # Resolve accidental duplicate rows without double-counting an hour.
+    hourly = (
+        work.groupby(
+            ["location_slug", "date", "source_id", "valid_time"],
+            as_index=False,
+        )["rain_mm"]
+        .mean()
+    )
+    source_daily = (
+        hourly.groupby(["location_slug", "date", "source_id"], as_index=False)
+        .agg(
+            rain_daily_mm=("rain_mm", "sum"),
+            hours_available=("valid_time", "nunique"),
+        )
+    )
+    source_daily = source_daily[
+        source_daily["hours_available"] >= MIN_HOURS_PER_SOURCE_DAY
+    ]
+    if source_daily.empty:
+        return (
+            pd.DataFrame(),
+            "Belum ada forecast harian dengan sedikitnya "
+            f"{MIN_HOURS_PER_SOURCE_DAY}/24 jam per model.",
+        )
+
+    daily = (
+        source_daily.groupby(["location_slug", "date"], as_index=False)
+        .agg(
+            rain_forecast_mean=("rain_daily_mm", "mean"),
+            rain_forecast_p90=(
+                "rain_daily_mm",
+                lambda values: float(np.nanquantile(values, 0.90)),
+            ),
+            rain_forecast_max=("rain_daily_mm", "max"),
+            forecast_models=("source_id", "nunique"),
+            minimum_hours_per_model=("hours_available", "min"),
+        )
+    )
+    daily = daily[daily["forecast_models"] >= MIN_MODELS_PER_DAY]
+    if daily.empty:
+        return (
+            pd.DataFrame(),
+            "Forecast harian belum memiliki sedikitnya "
+            f"{MIN_MODELS_PER_DAY} model lengkap pada tanggal dan lokasi yang sama.",
+        )
+    return daily, None
+
+
+def main(
+    outputs: Path = OUTPUTS,
+    forecast_path: Path = FORECAST_PATH,
+    observation_path: Path = OBS_PATH,
+    proxy_observation_path: Path = PROXY_OBS_PATH,
+) -> None:
+    outputs.mkdir(parents=True, exist_ok=True)
+
+    fc = read_csv(forecast_path)
+    obs = read_csv(observation_path)
     obs_mode = "field_observation"
 
     if obs.empty or "rain_mm_observed" not in obs.columns or not pd.to_numeric(obs.get("rain_mm_observed"), errors="coerce").notna().any():
-        obs = read_csv(PROXY_OBS_PATH)
+        obs = read_csv(proxy_observation_path)
         obs_mode = "proxy_observation"
     generated = datetime.now(WIB).strftime("%Y-%m-%d %H:%M WIB")
 
-    if fc.empty or obs.empty:
-        write_empty_page("Forecast atau observasi belum tersedia.", generated)
+    if fc.empty:
+        write_empty_page(
+            "Data forecast belum tersedia. Jalankan forecast terlebih dahulu.",
+            generated,
+            outputs,
+        )
         return
-
-    loc_col_fc = pick_col(fc, ["location_slug", "slug", "location_id", "location"], ["location"])
-    date_col_fc = pick_date_col(fc)
-    rain_col_fc = pick_rain_col(fc)
+    if obs.empty:
+        write_empty_page(
+            "Data observasi yang sesuai belum tersedia. Metrik evaluasi akan "
+            "ditampilkan setelah tersedia pasangan forecast dan observasi pada "
+            "tanggal serta lokasi yang sama.",
+            generated,
+            outputs,
+        )
+        return
 
     loc_col_obs = pick_col(obs, ["location_slug", "slug", "location_id", "location"], ["location"])
     date_col_obs = pick_col(obs, ["date", "tanggal", "observed_date"], ["date", "tanggal"])
     rain_col_obs = pick_col(obs, ["rain_mm_observed", "observed_rain_mm", "rain_mm", "hujan_mm"], ["rain"])
 
     required = {
-        "forecast location": loc_col_fc,
-        "forecast date": date_col_fc,
-        "forecast rain": rain_col_fc,
         "observation location": loc_col_obs,
         "observation date": date_col_obs,
         "observation rain": rain_col_obs,
@@ -160,30 +285,18 @@ def main() -> None:
 
     missing = [k for k, v in required.items() if v is None]
     if missing:
-        write_empty_page("Kolom tidak lengkap: " + ", ".join(missing), generated)
+        write_empty_page("Kolom tidak lengkap: " + ", ".join(missing), generated, outputs)
         return
 
-    fc_work = fc[[loc_col_fc, date_col_fc, rain_col_fc]].copy()
-    fc_work.columns = ["location_slug", "date", "rain_mm_forecast"]
-    fc_work["date"] = normalize_date(fc_work["date"])
-    fc_work["rain_mm_forecast"] = pd.to_numeric(fc_work["rain_mm_forecast"], errors="coerce")
+    fc_daily, forecast_message = build_daily_forecast(fc)
+    if fc_daily.empty:
+        write_empty_page(forecast_message or "Forecast harian belum tersedia.", generated, outputs)
+        return
 
     obs_work = obs[[loc_col_obs, date_col_obs, rain_col_obs]].copy()
     obs_work.columns = ["location_slug", "date", "rain_mm_observed"]
     obs_work["date"] = normalize_date(obs_work["date"])
     obs_work["rain_mm_observed"] = pd.to_numeric(obs_work["rain_mm_observed"], errors="coerce")
-
-    fc_daily = (
-        fc_work
-        .dropna(subset=["location_slug", "date", "rain_mm_forecast"])
-        .groupby(["location_slug", "date"], as_index=False)
-        .agg(
-            rain_forecast_mean=("rain_mm_forecast", "mean"),
-            rain_forecast_p90=("rain_mm_forecast", lambda x: float(np.nanquantile(x, 0.90))),
-            rain_forecast_max=("rain_mm_forecast", "max"),
-            forecast_points=("rain_mm_forecast", "count"),
-        )
-    )
 
     obs_daily = (
         obs_work
@@ -198,7 +311,11 @@ def main() -> None:
     joined = pd.merge(obs_daily, fc_daily, on=["location_slug", "date"], how="inner")
 
     if joined.empty:
-        write_empty_page("Belum ada tanggal dan lokasi yang match antara forecast dan observasi.", generated)
+        write_empty_page(
+            "Belum ada tanggal dan lokasi yang match antara forecast 24 jam lengkap dan observasi.",
+            generated,
+            outputs,
+        )
         return
 
     metrics_rows = []
@@ -225,13 +342,13 @@ def main() -> None:
 
     metrics = pd.DataFrame(metrics_rows)
 
-    joined.to_csv(OUTPUTS / "evaluation_joined_daily.csv", index=False)
-    metrics.to_csv(OUTPUTS / "evaluation_metrics.csv", index=False)
+    joined.to_csv(outputs / "evaluation_joined_daily.csv", index=False)
+    metrics.to_csv(outputs / "evaluation_metrics.csv", index=False)
 
-    write_page(joined, metrics, generated, obs_mode)
+    write_page(joined, metrics, generated, obs_mode, outputs)
 
 
-def write_empty_page(message: str, generated: str) -> None:
+def write_empty_page(message: str, generated: str, outputs: Path = OUTPUTS) -> None:
     html = f"""<!doctype html>
 <html lang="id">
 <head>
@@ -258,11 +375,17 @@ def write_empty_page(message: str, generated: str) -> None:
 </body>
 </html>
 """
-    (OUTPUTS / "evaluation_summary.html").write_text(html, encoding="utf-8")
+    (outputs / "evaluation_summary.html").write_text(html, encoding="utf-8")
     print("WARNING:", message)
 
 
-def write_page(joined: pd.DataFrame, metrics: pd.DataFrame, generated: str, obs_mode: str) -> None:
+def write_page(
+    joined: pd.DataFrame,
+    metrics: pd.DataFrame,
+    generated: str,
+    obs_mode: str,
+    outputs: Path = OUTPUTS,
+) -> None:
     best = metrics.sort_values("mae_mm").iloc[0]
 
     metric_rows = ""
@@ -291,6 +414,8 @@ def write_page(joined: pd.DataFrame, metrics: pd.DataFrame, generated: str, obs_
           <td>{fmt(row["rain_forecast_mean"])}</td>
           <td>{fmt(row["rain_forecast_p90"])}</td>
           <td>{fmt(row["rain_forecast_max"])}</td>
+          <td>{int(row["forecast_models"])}</td>
+          <td>{int(row["minimum_hours_per_model"])}/24</td>
         </tr>
         """
 
@@ -332,11 +457,14 @@ def write_page(joined: pd.DataFrame, metrics: pd.DataFrame, generated: str, obs_
 
   <main>
     <section class="panel">
-      <h1>Evaluasi akurasi forecast.</h1>\n      <p><strong>Mode evaluasi:</strong> {escape(obs_mode)}</p>
+      <h1>Evaluasi akurasi forecast.</h1>
+      <p><strong>Mode evaluasi:</strong> {escape(obs_mode)}</p>
       <p>
-        Halaman ini membandingkan forecast hujan harian dengan data pembanding. Jika data lapangan belum tersedia, sistem dapat memakai proxy observation seperti data satelit atau gridded.
-        Angka akurasi hanya dihitung dari pasangan tanggal dan lokasi yang memiliki
-        data forecast serta observasi.
+        Halaman ini membandingkan akumulasi forecast 24 jam dengan data pembanding
+        harian pada tanggal dan lokasi yang sama. Forecast harian dihitung dengan
+        menjumlahkan setiap model lebih dahulu, lalu membentuk konsensus antar-model.
+        BMKG kategoris, model kosong, dan hari dengan coverage kurang dari
+        {MIN_HOURS_PER_SOURCE_DAY}/24 jam tidak masuk perhitungan.
       </p>
       <div class="grid">
         <div class="metric"><div class="label">Sampel Evaluasi</div><div class="value">{int(best["n_samples"])}</div></div>
@@ -380,6 +508,8 @@ def write_page(joined: pd.DataFrame, metrics: pd.DataFrame, generated: str, obs_
               <th>Forecast Mean</th>
               <th>Forecast P90</th>
               <th>Forecast Max</th>
+              <th>Model valid</th>
+              <th>Coverage minimum</th>
             </tr>
           </thead>
           <tbody>{sample_rows}</tbody>
@@ -393,11 +523,11 @@ def write_page(joined: pd.DataFrame, metrics: pd.DataFrame, generated: str, obs_
 </html>
 """
 
-    (OUTPUTS / "evaluation_summary.html").write_text(html, encoding="utf-8")
+    (outputs / "evaluation_summary.html").write_text(html, encoding="utf-8")
     print("SUCCESS")
     print("Evaluation written:")
-    print("-", OUTPUTS / "evaluation_metrics.csv")
-    print("-", OUTPUTS / "evaluation_summary.html")
+    print("-", outputs / "evaluation_metrics.csv")
+    print("-", outputs / "evaluation_summary.html")
 
 
 if __name__ == "__main__":

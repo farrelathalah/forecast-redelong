@@ -124,15 +124,17 @@ BMKG_HTTP_HEADERS = {
     "Connection": "close",
 }
 SOURCE_BASE_WEIGHTS = {
-    "BMKG": 1.35,
-    "ECMWF": 1.20,
-    "METEOFRANCE": 1.10,
-    "ICON": 1.05,
+    # Six active quantitative members use equal prior weights until local
+    # forecast-observation verification supports a different scheme.
+    "BMKG": 1.35,  # categorical guidance only; excluded from rain_mm consensus
+    "ECMWF": 1.00,
+    "METEOFRANCE": 1.00,
+    "ICON": 1.00,
     "GFS": 1.00,
-    "METNO": 1.00,
-    "UKMO": 0.95,
-    "KMA": 0.90,
-    "CMA": 0.85,
+    "METNO": 1.00,  # inactive in the operational quantitative consensus
+    "UKMO": 1.00,
+    "KMA": 0.90,    # inactive until operational fields are available
+    "CMA": 1.00,
 }
 OPEN_METEO_SOURCES = [
     {
@@ -1309,7 +1311,7 @@ def extract_bmkg_points(target_date, payload, args):
             temp_c, rh_pct, rain_mm, wind_kmh, flags = validate_point_values(
                 safe_float(item.get("t")),
                 safe_float(item.get("hu")),
-                bmkg_rain_proxy_mm(item.get("weather_desc")),
+                None,
                 safe_float(item.get("ws")),
             )
             candidates.append(
@@ -1321,7 +1323,7 @@ def extract_bmkg_points(target_date, payload, args):
                     "wind_kmh": wind_kmh,
                     "raw_condition": item.get("weather_desc") or "",
                     "category": bmkg_to_kategori(item.get("weather_desc")),
-                    "flags": flags + (["rain_proxy"] if rain_mm is not None else []),
+                    "flags": flags,
                 }
             )
 
@@ -1739,11 +1741,12 @@ def fetch_bmkg_forecast(target_date, config, args):
 
 
 def fetch_open_meteo_forecast(target_date, config, args):
+    forecast_days = max(3, min(16, int(getattr(args, "forecast_range_days", 3) or 3)))
     params = {
         "latitude": args.latitude,
         "longitude": args.longitude,
         "timezone": args.timezone,
-        "forecast_days": 3,
+        "forecast_days": forecast_days,
         "hourly": ",".join(aether_open_meteo_variables(args, include_extra=getattr(args, "aether_extra_vars", False))),
     }
     if config.get("models"):
@@ -1885,11 +1888,12 @@ def preview_request_url(config, args):
     if kind == "bmkg":
         return build_url(BMKG_API_URL, {"adm4": args.adm4})
     if kind == "open_meteo":
+        forecast_days = max(3, min(16, int(getattr(args, "forecast_range_days", 3) or 3)))
         params = {
             "latitude": args.latitude,
             "longitude": args.longitude,
             "timezone": args.timezone,
-            "forecast_days": 3,
+            "forecast_days": forecast_days,
             "hourly": ",".join(
                 [
                     "temperature_2m",
@@ -3405,9 +3409,10 @@ def run_self_tests(args):
     assert next(item for item in ALL_SOURCE_CONFIGS if item["source_id"] == "KMA")["models"] == "kma_seamless"
     assert next(item for item in ALL_SOURCE_CONFIGS if item["source_id"] == "UKMO")["models"] == "ukmo_seamless"
     resolved = resolve_requested_locations(fake_cli)
-    assert [item.slug for item in resolved] == DEFAULT_MULTI_LOCATION_SLUGS
-    assert LOCATION_PRESETS["jatinangor"].adm4 == "32.11.15.2002"
-    assert LOCATION_PRESETS["arjawinangun"].adm4 == "32.09.24.2004"
+    assert [item.slug for item in resolved] == ACTIVE_DEFAULT_MULTI_LOCATION_SLUGS
+    embedded_presets = embedded_location_presets()
+    assert embedded_presets["jatinangor"].adm4 == "32.11.15.2002"
+    assert embedded_presets["arjawinangun"].adm4 == "32.09.24.2004"
     temp_locations_path = ""
     try:
         with tempfile.NamedTemporaryFile(
@@ -6310,8 +6315,15 @@ def main():
             raise ValueError("Mode import-observations hanya mendukung satu lokasi per run.")
         import_observations_for_location(args, locations[0])
     elif args.mode == "self-test":
-        self_test_for_locations(args, locations)
-        assert aether_self_test()
+        self_test_rows = self_test_for_locations(args, locations)
+        aether_ok = bool(aether_self_test())
+        failed = [row for row in self_test_rows if row.get("status") != "ok"]
+        if failed or not aether_ok:
+            batch_warning(
+                f"Self-test gagal: {len(failed)} lokasi bermasalah; "
+                f"Sentinel core={'ok' if aether_ok else 'gagal'}."
+            )
+            sys.exit(3)
         batch_info("LANGIT Sentinel X self-test selesai.")
     else:
         raise ValueError(f"Mode tidak dikenali: {args.mode}")
