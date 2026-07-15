@@ -1,0 +1,197 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.977344,
+          4.748139
+        ]
+      },
+      "properties": {
+        "location_slug": "plta_redelong",
+        "name": "PLTA Redelong",
+        "operational_role": "outlet_reference",
+        "include_in_catchment": false,
+        "area_km2": 0.0,
+        "distance_from_plta_km": 0.0,
+        "rain_24h_mean_mm": 4.166666666666667,
+        "rain_24h_p10_mm": 0.75,
+        "rain_24h_p90_mm": 7.5,
+        "model_count": 6,
+        "data_status": "cukup",
+        "note": "Titik referensi PLTA; tidak diberi bobot luas."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.877105410688,
+          4.81572033808049
+        ]
+      },
+      "properties": {
+        "location_slug": "gpm1",
+        "name": "GPM1",
+        "operational_role": "provisional_catchment",
+        "include_in_catchment": true,
+        "area_km2": 17.032478649534006,
+        "distance_from_plta_km": 13.41,
+        "rain_24h_mean_mm": 1.95,
+        "rain_24h_p10_mm": 0.1,
+        "rain_24h_p90_mm": 4.0,
+        "model_count": 6,
+        "data_status": "cukup",
+        "note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.9505347134354,
+          4.811672965065149
+        ]
+      },
+      "properties": {
+        "location_slug": "gpm2",
+        "name": "GPM2",
+        "operational_role": "provisional_catchment",
+        "include_in_catchment": true,
+        "area_km2": 36.205470363871,
+        "distance_from_plta_km": 7.66,
+        "rain_24h_mean_mm": 3.4666666666666663,
+        "rain_24h_p10_mm": 0.75,
+        "rain_24h_p90_mm": 6.9,
+        "model_count": 6,
+        "data_status": "cukup",
+        "note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.009911990332,
+          4.815409756944025
+        ]
+      },
+      "properties": {
+        "location_slug": "gpm3",
+        "name": "GPM3",
+        "operational_role": "provisional_catchment",
+        "include_in_catchment": true,
+        "area_km2": 6.215359000406671,
+        "distance_from_plta_km": 8.31,
+        "rain_24h_mean_mm": 3.4666666666666663,
+        "rain_24h_p10_mm": 0.75,
+        "rain_24h_p90_mm": 6.9,
+        "model_count": 6,
+        "data_status": "cukup",
+        "note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.8876539578458,
+          4.778238355009202
+        ]
+      },
+      "properties": {
+        "location_slug": "gpm4",
+        "name": "GPM4",
+        "operational_role": "provisional_catchment",
+        "include_in_catchment": true,
+        "area_km2": 16.520953743420993,
+        "distance_from_plta_km": 10.49,
+        "rain_24h_mean_mm": 1.95,
+        "rain_24h_p10_mm": 0.1,
+        "rain_24h_p90_mm": 4.0,
+        "model_count": 6,
+        "data_status": "cukup",
+        "note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.94566692384144,
+          4.767312077178135
+        ]
+      },
+      "properties": {
+        "location_slug": "gpm5",
+        "name": "GPM5",
+        "operational_role": "provisional_catchment",
+        "include_in_catchment": true,
+        "area_km2": 60.517204595084536,
+        "distance_from_plta_km": 4.11,
+        "rain_24h_mean_mm": 3.4666666666666663,
+        "rain_24h_p10_mm": 0.75,
+        "rain_24h_p90_mm": 6.9,
+        "model_count": 6,
+        "data_status": "cukup",
+        "note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          97.0098682419131,
+          4.796061970712406
+        ]
+      },
+      "properties": {
+        "location_slug": "gpm6",
+        "name": "GPM6",
+        "operational_role": "provisional_catchment",
+        "include_in_catchment": true,
+        "area_km2": 1.3088789813792416,
+        "distance_from_plta_km": 6.43,
+        "rain_24h_mean_mm": 3.9666666666666663,
+        "rain_24h_p10_mm": 0.75,
+        "rain_24h_p90_mm": 7.3,
+        "model_count": 6,
+        "data_status": "cukup",
+        "note": "Area analisis provisional; menunggu konfirmasi batas DAS resmi."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.85017949357464,
+          4.649902718619309
+        ]
+      },
+      "properties": {
+        "location_slug": "gpm_grid_tamatue",
+        "name": "GPM Grid TamaTue",
+        "operational_role": "external_comparison",
+        "include_in_catchment": false,
+        "area_km2": 122.53410732308288,
+        "distance_from_plta_km": 17.83,
+        "rain_24h_mean_mm": 1.1666666666666667,
+        "rain_24h_p10_mm": 0.0,
+        "rain_24h_p90_mm": 3.1500000000000004,
+        "model_count": 6,
+        "data_status": "cukup",
+        "note": "Grid terpisah dan terlalu jauh untuk langsung diasumsikan berkontribusi; hanya titik pembanding sampai konektivitas DAS dikonfirmasi."
+      }
+    }
+  ]
+}

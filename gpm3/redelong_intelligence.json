@@ -11,70 +11,56 @@
   "source_court": {
     "status": "Aktif",
     "agreement": "Tinggi",
-    "summary": "9/9 sumber aktif. Agreement operasional: Tinggi.",
+    "summary": "6/7 sumber aktif. Agreement operasional: Tinggi.",
     "sources": [
       {
         "source_id": "BMKG",
-        "verdict": "Aktif",
-        "points": "5",
-        "http_status": "200",
-        "latency_ms": "61"
+        "verdict": "Dipantau",
+        "points": "0",
+        "http_status": "",
+        "latency_ms": "109"
       },
       {
         "source_id": "CMA",
         "verdict": "Aktif",
-        "points": "5",
+        "points": "24",
         "http_status": "200",
-        "latency_ms": "597"
+        "latency_ms": "552"
       },
       {
         "source_id": "ECMWF",
         "verdict": "Aktif",
-        "points": "5",
+        "points": "24",
         "http_status": "200",
-        "latency_ms": "635"
+        "latency_ms": "570"
       },
       {
         "source_id": "GFS",
         "verdict": "Aktif",
-        "points": "5",
+        "points": "24",
         "http_status": "200",
-        "latency_ms": "626"
+        "latency_ms": "550"
       },
       {
         "source_id": "ICON",
         "verdict": "Aktif",
-        "points": "5",
+        "points": "24",
         "http_status": "200",
-        "latency_ms": "602"
-      },
-      {
-        "source_id": "KMA",
-        "verdict": "Aktif",
-        "points": "5",
-        "http_status": "200",
-        "latency_ms": "616"
+        "latency_ms": "552"
       },
       {
         "source_id": "METEOFRANCE",
         "verdict": "Aktif",
-        "points": "5",
+        "points": "24",
         "http_status": "200",
-        "latency_ms": "601"
-      },
-      {
-        "source_id": "METNO",
-        "verdict": "Aktif",
-        "points": "5",
-        "http_status": "200",
-        "latency_ms": "961"
+        "latency_ms": "556"
       },
       {
         "source_id": "UKMO",
         "verdict": "Aktif",
-        "points": "5",
+        "points": "24",
         "http_status": "200",
-        "latency_ms": "1110"
+        "latency_ms": "653"
       }
     ]
   },

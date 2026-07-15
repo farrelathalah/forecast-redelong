@@ -1,0 +1,136 @@
+{
+  "schema_version": "forecast-redelong-publish-gate-v2",
+  "status": "pass",
+  "errors": [],
+  "metrics": {
+    "forecast_rows": 5136,
+    "locations_found": 8,
+    "quantitative_sources_found": [
+      "CMA",
+      "ECMWF",
+      "GFS",
+      "ICON",
+      "METEOFRANCE",
+      "UKMO"
+    ],
+    "quantitative_source_count": 6,
+    "quantitative_sources_missing": [],
+    "operational_sources_valid": [
+      "CMA",
+      "ECMWF",
+      "GFS",
+      "ICON",
+      "METEOFRANCE",
+      "UKMO"
+    ],
+    "operational_sources_not_valid": {},
+    "portal": {
+      "gpm1": {
+        "dates": [
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17"
+        ],
+        "valid_points": [
+          24,
+          24,
+          24
+        ]
+      },
+      "gpm2": {
+        "dates": [
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17"
+        ],
+        "valid_points": [
+          24,
+          24,
+          24
+        ]
+      },
+      "gpm3": {
+        "dates": [
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17"
+        ],
+        "valid_points": [
+          24,
+          24,
+          24
+        ]
+      },
+      "gpm4": {
+        "dates": [
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17"
+        ],
+        "valid_points": [
+          24,
+          24,
+          24
+        ]
+      },
+      "gpm5": {
+        "dates": [
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17"
+        ],
+        "valid_points": [
+          24,
+          24,
+          24
+        ]
+      },
+      "gpm6": {
+        "dates": [
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17"
+        ],
+        "valid_points": [
+          24,
+          24,
+          24
+        ]
+      },
+      "gpm_grid_tamatue": {
+        "dates": [
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17"
+        ],
+        "valid_points": [
+          24,
+          24,
+          24
+        ]
+      },
+      "plta_redelong": {
+        "dates": [
+          "2026-07-15",
+          "2026-07-16",
+          "2026-07-17"
+        ],
+        "valid_points": [
+          24,
+          24,
+          24
+        ]
+      }
+    },
+    "branding_bad_file_count": 0,
+    "quantitative_base_weights": {
+      "CMA": 1.0,
+      "ECMWF": 1.0,
+      "GFS": 1.0,
+      "ICON": 1.0,
+      "METEOFRANCE": 1.0,
+      "UKMO": 1.0
+    },
+    "html_javascript_files_checked": 76
+  }
+}

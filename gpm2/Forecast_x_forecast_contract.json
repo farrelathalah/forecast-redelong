@@ -1,7 +1,7 @@
 {
   "version": "ANEMOS Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-07-15T06:32:07.650609+07:00",
+  "generated_at": "2026-07-15T08:38:19.620071+07:00",
   "location": "GPM2",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,12 +25,12 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-07-15T06:32:07.647296+07:00",
+    "generated_at": "2026-07-15T08:38:19.610984+07:00",
     "aether_version": "ANEMOS Public Weather v11",
     "location": "GPM2",
     "mission": "safety_first",
-    "daily_operational_status": "RED",
-    "dominant_atmospheric_mode": "HEAVY_RAIN_WATCH",
+    "daily_operational_status": "YELLOW",
+    "dominant_atmospheric_mode": "HUMID_STABLE_MORNING",
     "location_personality": {
       "personality": "generic_hyperlocal",
       "convective_sensitivity": "medium",
@@ -39,19 +39,19 @@
       "forecast_difficulty": "medium",
       "notes": "Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
     },
-    "risk_window": "15:00–18:00",
+    "risk_window": "11:00–18:00",
     "best_general_activity_window": "09:00",
-    "peak_rain_threat_hour": "15:00",
-    "peak_rain_threat_score": 86.8,
-    "peak_heavy_rain_threat_hour": "15:00",
-    "peak_heavy_rain_threat_score": 61.4,
-    "peak_failure_risk_hour": "15:00",
-    "peak_failure_risk_score": 58.5,
-    "peak_forecast_stress_hour": "15:00",
-    "peak_forecast_stress_score": 65.9,
-    "peak_self_doubt_hour": "15:00",
-    "peak_self_doubt_score": 55.3,
-    "summary_text": "Forecast membaca hari ini sebagai HEAVY_RAIN_WATCH untuk GPM2. Status operasional harian RED. Risk window utama: 15:00–18:00. Failure risk tertinggi 58.5/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "peak_rain_threat_hour": "16:00",
+    "peak_rain_threat_score": 79.4,
+    "peak_heavy_rain_threat_hour": "14:00",
+    "peak_heavy_rain_threat_score": 25.6,
+    "peak_failure_risk_hour": "14:00",
+    "peak_failure_risk_score": 47.0,
+    "peak_forecast_stress_hour": "14:00",
+    "peak_forecast_stress_score": 46.1,
+    "peak_self_doubt_hour": "14:00",
+    "peak_self_doubt_score": 43.6,
+    "summary_text": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM2. Status operasional harian YELLOW. Risk window utama: 11:00–18:00. Failure risk tertinggi 47.0/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   },
   "constitution": [
     "Do not assign high trust when source coverage is weak.",

@@ -1642,7 +1642,7 @@ a { color: inherit; text-decoration: none; }
 <header class="nav-bar">
   <a class="nav-brand" href="../index.html">
     <span class="nav-logo"></span>
-    <span><span class="nav-title">Forecast Redelong</span><span class="nav-sub">GPM5 · Forecast Redelong Redelong.1</span></span>
+    <span><span class="nav-title">Forecast Redelong</span><span class="nav-sub">GPM5 · Forecast Redelong v1.0</span></span>
   </a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="nav-links"><a class="nav-link " href="redelong_app.html">Hari ini</a><a class="nav-link " href="redelong_3day.html">3 hari ke depan</a><a class="nav-link " href="redelong_activity.html">Panduan Aktivitas</a><a class="nav-link " href="redelong_map_room.html">Peta</a></nav>
@@ -1678,7 +1678,7 @@ a { color: inherit; text-decoration: none; }
 <footer class="footer">
   <div class="container">
     <div class="footer-brand">Forecast Redelong</div>
-    <div class="footer-version">Forecast Redelong Redelong.1 · Diperbarui 15 Juli, 20:00 WIB</div>
+    <div class="footer-version">Forecast Redelong v1.0 · Diperbarui 15 Juli, 20:00 WIB</div>
     <div class="footer-links">
       <a class="footer-link" href="keandalan_data.html">Keandalan data</a>
       <a class="footer-link" href="akurasi_data.html">Akurasi</a>
@@ -1688,13 +1688,13 @@ a { color: inherit; text-decoration: none; }
   </div>
 </footer>
 </main>
-<script>window.Forecast Redelong_CONFIG = {"location_name": "GPM5", "location_slug": "gpm5", "latitude": 4.767312077178135, "longitude": 96.94566692384144, "altitude": 832, "risk_class": "safe", "condition": "Berawan", "is_portal": false};</script>
+<script>window.REDELONG_CONFIG = {"location_name": "GPM5", "location_slug": "gpm5", "latitude": 4.767312077178135, "longitude": 96.94566692384144, "altitude": 832, "risk_class": "rain", "condition": "Hujan Ringan", "is_portal": false};</script>
 <script>
 (function(){
   'use strict';
 
   // Retrieve dynamic configuration injected from backend engine
-  const config = window.Forecast Redelong_CONFIG || {};
+  const config = window.REDELONG_CONFIG || {};
 
   // Safe SessionStorage wrapper to prevent incognito/private mode crashes
   const safeStorage = {
@@ -2305,7 +2305,7 @@ a { color: inherit; text-decoration: none; }
   // --- Apple Vision Pro Spatial Coordinates Zoom Scanner ---
   function runSpatialZoomScanner() {
     const isMainPage = document.querySelector('.hero') !== null;
-    const sessionKey = 'redelong_Redelong_spatial_scanner_run';
+    const sessionKey = 'redelong_v65_spatial_scanner_run';
     
     if (!isMainPage || safeStorage.getItem(sessionKey) || prefersReducedMotion) {
       // Clean up scanner markup and display page immediately if already run or reduced motion

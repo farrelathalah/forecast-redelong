@@ -54,6 +54,8 @@
     .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.info-card,.note{padding:22px}.info-card h3{margin:0 0 10px;font-size:18px}
     .info-card p,.muted,.note p{color:var(--muted);line-height:1.65;margin:0}.big-number{font-size:44px;font-weight:900;letter-spacing:-1px;margin:10px 0}
     .locations{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.location-card{padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .location-card.external-comparison{border-color:rgba(255,209,102,.42);background:linear-gradient(180deg,rgba(255,209,102,.11),rgba(255,255,255,.045))}
+    .location-card.external-comparison .eyebrow{color:var(--gold)}
     .location-card h3{font-size:22px;margin:0 0 6px}.eyebrow{color:var(--cyan);text-transform:uppercase;font-size:11px;letter-spacing:1.3px;font-weight:800;margin:0 0 8px}
     .card-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;min-width:220px}.card-links a{border:1px solid rgba(69,224,208,.25);background:rgba(69,224,208,.10);color:#bafff8;padding:9px 11px;border-radius:999px;font-size:12px;font-weight:800;transition:.2s}
     .card-links a:hover{transform:translateY(-2px);background:rgba(69,224,208,.18)}
@@ -84,6 +86,7 @@
         <a href="redelong_rain_map.html">Peta Hujan</a>
         <a href="redelong_overview.html">Overview</a>
         <a href="evaluation_summary.html">Evaluasi Akurasi</a>
+        <a href="redelong_operational.html">Operasional DAS</a>
         <a href="plta_redelong/rain_dashboard.html">Dashboard PLTA</a>
       </div>
     </nav>
@@ -92,24 +95,25 @@
   <header class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-copy">
-        <div class="kicker">Ensemble Rainfall Forecast</div>
+        <div class="kicker">Prakiraan Hujan Multi-Model</div>
         <h1><span class="gradient-text">Forecast hujan</span> untuk PLTA Redelong.</h1>
         <p class="subtitle">
-          Portal prakiraan hujan berbasis multi-source forecast untuk titik PLTA Redelong,
-          GPM catchment, dan grid representatif di wilayah Redelong.
+          Portal untuk melihat prakiraan di PLTA, area analisis provisional GPM1–GPM6,
+          serta TamaTue sebagai pembanding eksternal.
         </p>
         <div class="actions">
           <a class="button primary" href="redelong_rain_map.html">Masuk ke Peta Hujan</a>
           <a class="button" href="plta_redelong/rain_dashboard.html">Dashboard PLTA Redelong</a>
+          <a class="button" href="redelong_operational.html">Ringkasan Operasional DAS</a>
           <a class="button" href="#lokasi">Lihat Titik Catchment</a>
         </div>
       </div>
 
       <aside class="hero-panel">
-        <div class="metric"><div class="label">Titik Catchment</div><div class="value">8</div></div>
-        <div class="metric"><div class="label">Sumber Aktif</div><div class="value">9</div></div>
-        <div class="metric"><div class="label">Baris Forecast</div><div class="value">1080</div></div>
-        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-15 06:43 WIB</div></div>
+        <div class="metric"><div class="label">Titik Forecast</div><div class="value">8</div></div>
+        <div class="metric"><div class="label">Masuk Agregasi Catchment</div><div class="value">6</div></div>
+        <div class="metric"><div class="label">Model Hujan Numerik</div><div class="value">6</div></div>
+        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-15 08:42 WIB</div></div>
       </aside>
     </div>
     <a class="scroll-cue" href="#ringkasan">Scroll</a>
@@ -118,14 +122,14 @@
   <section id="ringkasan">
     <div class="section-inner">
       <div class="section-head reveal">
-        <h2>Ringkasan hujan.</h2>
-        <p>Ringkasan ini dihitung langsung dari output forecast gabungan, bukan dari dashboard kosong bawaan template.</p>
+        <h2>Cara membaca sistem.</h2>
+        <p>Ringkasan angka hujan operasional tersedia pada halaman Operasional DAS. Halaman ini menjelaskan struktur dan batas penggunaannya.</p>
       </div>
       <div class="cards">
-        <article class="info-card reveal"><p class="eyebrow">Rain Max</p><div class="big-number">40.6 mm</div><p>Nilai maksimum hujan dari output gabungan.</p></article>
-        <article class="info-card reveal"><p class="eyebrow">Rain P90</p><div class="big-number">1.0 mm</div><p>Persentil 90 untuk membaca skenario atas.</p></article>
-        <article class="info-card reveal"><p class="eyebrow">Rain Mean</p><div class="big-number">0.7 mm</div><p>Rata-rata nilai hujan pada seluruh titik dan sumber.</p></article>
-        <article class="info-card reveal"><p class="eyebrow">Status</p><div class="big-number" style="font-size:28px">Prototype</div><p>Validasi observasi aktual tetap diperlukan.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Horizon Operasi</p><div class="big-number">72 jam</div><p>Akumulasi 24, 48, dan 72 jam dihitung dari forecast per jam.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Konsensus Numerik</p><div class="big-number">6 model</div><p>CMA, ECMWF, GFS, ICON, Météo-France, dan UKMO dengan bobot sama.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Panduan Resmi</p><div class="big-number" style="font-size:28px">BMKG</div><p>Ditampilkan sebagai kategori cuaca dan tidak diubah menjadi rain_mm.</p></article>
+        <article class="info-card reveal"><p class="eyebrow">Status Validasi</p><div class="big-number" style="font-size:28px">Berjalan</div><p>Belum ada klaim akurasi sebelum pasangan forecast dan observasi mencukupi.</p></article>
       </div>
     </div>
   </section>
@@ -133,103 +137,119 @@
   <section id="lokasi">
     <div class="section-inner">
       <div class="section-head reveal">
-        <h2>Titik forecast.</h2>
-        <p>Dashboard utama per titik sekarang memakai halaman hujan khusus, bukan halaman template yang kosong.</p>
+        <h2>Peran titik forecast.</h2>
+        <p>GPM1–GPM6 dipakai untuk agregasi area provisional. PLTA adalah titik referensi outlet, sedangkan TamaTue hanya pembanding eksternal.</p>
       </div>
       <div class="locations">
         
         <article class="location-card reveal">
           <div>
-            <p class="eyebrow">Catchment Point</p>
+            <p class="eyebrow">Titik referensi PLTA</p>
             <h3>PLTA Redelong</h3>
             <p class="muted">Lat 4.748139 · Lon 96.977344</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Titik referensi PLTA; tidak diberi bobot luas.</p>
           </div>
           <div class="card-links">
             <a href="plta_redelong/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="plta_redelong/redelong_app.html">Prakiraan Interaktif</a>
             <a href="plta_redelong/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
         
         <article class="location-card reveal">
           <div>
-            <p class="eyebrow">Catchment Point</p>
+            <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM1</h3>
             <p class="muted">Lat 4.81572033808049 · Lon 96.877105410688</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
             <a href="gpm1/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm1/redelong_app.html">Prakiraan Interaktif</a>
             <a href="gpm1/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
         
         <article class="location-card reveal">
           <div>
-            <p class="eyebrow">Catchment Point</p>
+            <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM2</h3>
             <p class="muted">Lat 4.811672965065149 · Lon 96.9505347134354</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
             <a href="gpm2/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm2/redelong_app.html">Prakiraan Interaktif</a>
             <a href="gpm2/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
         
         <article class="location-card reveal">
           <div>
-            <p class="eyebrow">Catchment Point</p>
+            <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM3</h3>
             <p class="muted">Lat 4.815409756944025 · Lon 97.009911990332</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
             <a href="gpm3/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm3/redelong_app.html">Prakiraan Interaktif</a>
             <a href="gpm3/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
         
         <article class="location-card reveal">
           <div>
-            <p class="eyebrow">Catchment Point</p>
+            <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM4</h3>
             <p class="muted">Lat 4.778238355009202 · Lon 96.8876539578458</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
             <a href="gpm4/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm4/redelong_app.html">Prakiraan Interaktif</a>
             <a href="gpm4/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
         
         <article class="location-card reveal">
           <div>
-            <p class="eyebrow">Catchment Point</p>
+            <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM5</h3>
             <p class="muted">Lat 4.767312077178135 · Lon 96.94566692384144</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
             <a href="gpm5/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm5/redelong_app.html">Prakiraan Interaktif</a>
             <a href="gpm5/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
         
         <article class="location-card reveal">
           <div>
-            <p class="eyebrow">Catchment Point</p>
+            <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM6</h3>
             <p class="muted">Lat 4.796061970712406 · Lon 97.0098682419131</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
             <a href="gpm6/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm6/redelong_app.html">Prakiraan Interaktif</a>
             <a href="gpm6/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
         
-        <article class="location-card reveal">
+        <article class="location-card reveal external-comparison">
           <div>
-            <p class="eyebrow">Catchment Point</p>
+            <p class="eyebrow">Pembanding eksternal</p>
             <h3>GPM Grid TamaTue</h3>
             <p class="muted">Lat 4.649902718619309 · Lon 96.85017949357464</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Grid terpisah dan terlalu jauh untuk langsung diasumsikan berkontribusi; hanya titik pembanding sampai konektivitas DAS dikonfirmasi.</p>
           </div>
           <div class="card-links">
             <a href="gpm_grid_tamatue/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="gpm_grid_tamatue/redelong_app.html">Prakiraan Interaktif</a>
             <a href="gpm_grid_tamatue/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
@@ -253,7 +273,7 @@
     </div>
   </section>
 
-  <footer><div class="footer-inner"><span>Forecast Redelong</span><span>FORECAST PLTA REDELONG · Generated 2026-07-15 06:43 WIB</span></div></footer>
+  <footer><div class="footer-inner"><span>Forecast Redelong</span><span>FORECAST PLTA REDELONG · Generated 2026-07-15 08:42 WIB</span></div></footer>
   
     <script>
       const observer = new IntersectionObserver((entries) => {

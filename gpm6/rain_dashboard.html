@@ -54,6 +54,8 @@
     .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.info-card,.note{padding:22px}.info-card h3{margin:0 0 10px;font-size:18px}
     .info-card p,.muted,.note p{color:var(--muted);line-height:1.65;margin:0}.big-number{font-size:44px;font-weight:900;letter-spacing:-1px;margin:10px 0}
     .locations{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.location-card{padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .location-card.external-comparison{border-color:rgba(255,209,102,.42);background:linear-gradient(180deg,rgba(255,209,102,.11),rgba(255,255,255,.045))}
+    .location-card.external-comparison .eyebrow{color:var(--gold)}
     .location-card h3{font-size:22px;margin:0 0 6px}.eyebrow{color:var(--cyan);text-transform:uppercase;font-size:11px;letter-spacing:1.3px;font-weight:800;margin:0 0 8px}
     .card-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;min-width:220px}.card-links a{border:1px solid rgba(69,224,208,.25);background:rgba(69,224,208,.10);color:#bafff8;padding:9px 11px;border-radius:999px;font-size:12px;font-weight:800;transition:.2s}
     .card-links a:hover{transform:translateY(-2px);background:rgba(69,224,208,.18)}
@@ -82,6 +84,7 @@
       <a href="../index.html">Home</a>
       <a href="../redelong_rain_map.html">Peta Hujan</a>
       <a href="../redelong_overview.html">Overview</a>
+      <a href="../redelong_operational.html">Operasional DAS</a>
     </div>
   </nav>
 
@@ -93,14 +96,16 @@
         <p class="subtitle">Dashboard hujan khusus titik GPM6, dibangun langsung dari data forecast CSV.</p>
         <div class="actions">
           <a class="button primary" href="../redelong_rain_map.html">Lihat Peta Hujan</a>
+          <a class="button" href="redelong_app.html">Prakiraan Interaktif</a>
+          <a class="button" href="redelong_3day.html">Prakiraan 3 Hari</a>
           <a class="button" href="../forecast_all_locations.csv">Download CSV</a>
         </div>
       </div>
       <aside class="hero-panel">
-        <div class="metric"><div class="label">Rain Max</div><div class="value">40.6 mm</div></div>
-        <div class="metric"><div class="label">Rain P90</div><div class="value">1.4 mm</div></div>
-        <div class="metric"><div class="label">Rain Mean</div><div class="value">0.9 mm</div></div>
-        <div class="metric"><div class="label">Sumber</div><div class="value">9</div></div>
+        <div class="metric"><div class="label">Hujan Jam Tertinggi</div><div class="value">40.6 mm</div></div>
+        <div class="metric"><div class="label">P90 Model-Jam</div><div class="value">1.4 mm</div></div>
+        <div class="metric"><div class="label">Rata-rata Model-Jam</div><div class="value">0.9 mm</div></div>
+        <div class="metric"><div class="label">Model Numerik</div><div class="value">6</div></div>
       </aside>
     </div>
     <a class="scroll-cue" href="#grafik">Scroll</a>
@@ -109,8 +114,8 @@
   <section id="grafik">
     <div class="section-inner">
       <div class="section-head reveal">
-        <h2>Grafik hujan.</h2>
-        <p>Grafik ini menampilkan ringkasan nilai hujan dari forecast yang tersedia untuk titik ini.</p>
+        <h2>Grafik hujan per jam.</h2>
+        <p>Kartu dan grafik di halaman titik merangkum nilai model per jam, bukan akumulasi harian. Gunakan halaman Operasional DAS untuk akumulasi 24/48/72 jam.</p>
       </div>
       <div class="panel reveal" style="padding:22px"><div class="bar-chart">
             <div class="bar-wrap">
@@ -132,7 +137,7 @@
     <div class="table-wrap">
       <table>
         <thead><tr><th>target_date</th><th>tanggal</th><th>timezone</th><th>source_id</th><th>rain_mm</th><th>suhu_C</th><th>wind_kmh</th></tr></thead>
-        <tbody><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>0.0</td><td>18.0</td><td>1.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>0.0</td><td>22.0</td><td>2.7</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>0.0</td><td>24.0</td><td>4.1</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>0.0</td><td>22.0</td><td>10.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>0.0</td><td>19.0</td><td>2.7</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>13.3</td><td>6.3</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>20.2</td><td>2.6</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.4</td><td>11.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>1.4</td><td>19.8</td><td>5.6</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>1.0</td><td>16.1</td><td>0.7</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ECMWF</td><td>0.0</td><td>13.3</td><td>6.9</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ECMWF</td><td>0.0</td><td>18.2</td><td>1.0</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ECMWF</td><td>0.1</td><td>21.3</td><td>3.5</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ECMWF</td><td>0.2</td><td>20.5</td><td>2.5</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ECMWF</td><td>0.0</td><td>18.3</td><td>1.4</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>GFS</td><td>0.0</td><td>14.3</td><td>7.6</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>GFS</td><td>0.0</td><td>18.9</td><td>1.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>GFS</td><td>0.0</td><td>22.5</td><td>5.1</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>GFS</td><td>1.5</td><td>20.2</td><td>6.3</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>GFS</td><td>0.2</td><td>17.2</td><td>3.3</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ICON</td><td>0.0</td><td>15.3</td><td>6.6</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ICON</td><td>0.0</td><td>20.0</td><td>1.3</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ICON</td><td>0.0</td><td>22.1</td><td>4.9</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ICON</td><td>2.2</td><td>19.5</td><td>8.1</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>ICON</td><td>0.3</td><td>17.9</td><td>1.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>KMA</td><td>-</td><td>-</td><td>-</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>KMA</td><td>-</td><td>-</td><td>-</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>KMA</td><td>-</td><td>-</td><td>-</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>KMA</td><td>-</td><td>-</td><td>-</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>KMA</td><td>-</td><td>-</td><td>-</td></tr></tbody>
+        <tbody><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>5.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>5.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>5.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>7.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>7.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>7.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>3.0</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>3.0</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>3.0</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>18.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>18.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>18.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>18.0</td><td>1.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>15.4</td><td>2.4</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>15.2</td><td>2.9</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>14.9</td><td>3.0</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>14.4</td><td>3.4</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>14.2</td><td>3.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>14.1</td><td>4.6</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>14.1</td><td>5.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>15.0</td><td>4.8</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>17.3</td><td>2.2</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>20.3</td><td>3.3</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>22.5</td><td>6.4</td></tr><tr><td>2026-07-15</td><td>15-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>23.2</td><td>8.4</td></tr></tbody>
       </table>
     </div>
     </div>
