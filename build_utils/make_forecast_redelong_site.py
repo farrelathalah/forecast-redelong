@@ -373,10 +373,10 @@ def brand_nav(active: str = "") -> str:
     return """
     <nav class="nav">
       <a class="brand" href="index.html">
-        <div class="logo"></div>
+        <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em">FR</div>
         <div>
           <strong>Forecast Redelong</strong>
-          <span>FORECAST PLTA REDELONG</span>
+          <span>Monitoring Hujan PLTA Redelong</span>
         </div>
       </a>
       <div class="nav-links">
@@ -544,10 +544,10 @@ def make_location_dashboard(slug, loc, loc_df, rain_col, source_col, time_cols, 
   <div class="noise"></div>
   <nav class="nav">
     <a class="brand" href="../index.html">
-      <div class="logo"></div>
+      <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em">FR</div>
       <div>
         <strong>Forecast Redelong</strong>
-        <span>FORECAST PLTA REDELONG</span>
+        <span>{escape(name)}</span>
       </div>
     </a>
     <div class="nav-links">

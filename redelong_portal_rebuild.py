@@ -1049,6 +1049,14 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 14px;
   flex-shrink: 0;
+  text-decoration: none;
+}
+.nav-brand > span:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.08;
+  min-width: 0;
 }
 .nav-logo {
   width: 36px;
@@ -1060,20 +1068,19 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   transition: transform 0.5s var(--ease-spring);
   flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
 }
 .nav-brand:hover .nav-logo {
   transform: rotate(180deg) scale(1.1);
 }
 .nav-logo::after {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  width: 40%;
-  height: 40%;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.4);
-  filter: blur(2px);
+  content: none;
 }
 .nav-title {
   font-family: var(--font-display);
@@ -3379,7 +3386,7 @@ def v65_nav(api: Dict[str, Any], active: str, root: bool = False) -> str:
     links = "".join(links_arr)
     return f'''<header class="nav-bar">
   <a class="nav-brand" href="{href}">
-    <span class="nav-logo"></span>
+    <span class="nav-logo" aria-hidden="true">FR</span>
     <span><span class="nav-title">{BRAND}</span><span class="nav-sub">{esc(subtitle)}</span></span>
   </a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
