@@ -99,7 +99,7 @@ class OperationalBuilderTest(unittest.TestCase):
             self.assertFalse(tama_feature["properties"]["include_in_catchment"])
             dashboard = (outputs / "redelong_operational.html").read_text(encoding="utf-8")
             self.assertIn("tidak dimasukkan", dashboard)
-            self.assertIn("Engineering weather intelligence", dashboard)
+            self.assertIn("Ringkasan Operasional DAS", dashboard)
             self.assertIn("class='rain-chart'", dashboard)
             self.assertNotRegex(dashboard.lower(), r"\bnan\b")
             self.assertEqual((outputs / "index.html").read_text(encoding="utf-8"), "legacy")

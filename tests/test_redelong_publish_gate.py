@@ -21,6 +21,15 @@ def write_csv(path: Path, rows: list[dict]) -> None:
         writer.writerows(rows)
 
 
+def branded_html(href: str, script: str = "") -> str:
+    return (
+        "<!doctype html><html><body>"
+        f'<a data-fr-brand="true" href="{href}"><span>FR</span>'
+        "<b>Forecast Redelong</b></a>"
+        f"{script}</body></html>"
+    )
+
+
 class RedelongPublishGateTest(unittest.TestCase):
     def make_valid_outputs(self, root: Path) -> None:
         forecast_rows = [
@@ -67,7 +76,8 @@ class RedelongPublishGateTest(unittest.TestCase):
             "operational_per_point_24h.csv",
             "bmkg_guidance.csv",
         ]:
-            (root / name).write_text("ok", encoding="utf-8")
+            content = branded_html("index.html") if name.endswith(".html") else "ok"
+            (root / name).write_text(content, encoding="utf-8")
 
         (root / "redelong_operational_points.geojson").write_text(
             json.dumps(
@@ -106,11 +116,26 @@ class RedelongPublishGateTest(unittest.TestCase):
                 json.dumps({"days": days}), encoding="utf-8"
             )
             (directory / "redelong_app.html").write_text(
-                "<script>window.REDELONG_CONFIG = {}; (() => { const ok = true; })();</script>",
+                branded_html(
+                    "../index.html",
+                    "<script>window.REDELONG_CONFIG = {}; (() => { const ok = true; })();</script>",
+                ),
                 encoding="utf-8",
             )
+            (directory / "redelong_map_room.html").write_text(
+                branded_html("../index.html"), encoding="utf-8"
+            )
         (root / "index.html").write_text(
-            "<script>(() => { const portal = true; })();</script>", encoding="utf-8"
+            branded_html(
+                "index.html", "<script>(() => { const portal = true; })();</script>"
+            ),
+            encoding="utf-8",
+        )
+        (root / "redelong_portal_map.html").write_text(
+            branded_html("index.html"), encoding="utf-8"
+        )
+        (root / "validation_status.html").write_text(
+            branded_html("index.html"), encoding="utf-8"
         )
 
     def test_valid_run_passes_and_broken_javascript_is_blocked(self) -> None:
@@ -209,6 +234,39 @@ class RedelongPublishGateTest(unittest.TestCase):
             self.assertFalse(ok)
             self.assertTrue(any("Bobot awal" in error for error in report["errors"]))
             self.assertTrue(any("Branding rusak" in error for error in report["errors"]))
+
+    def test_missing_fr_and_obsolete_public_brands_are_blocked(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            (outputs / "legacy.html").write_text(
+                "<h1>ANEMOS Sentinel X</h1>", encoding="utf-8"
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertFalse(ok)
+            self.assertTrue(any("Monogram FR" in error for error in report["errors"]))
+            self.assertTrue(any("ANEMOS" in error for error in report["errors"]))
+            self.assertTrue(any("Sentinel" in error for error in report["errors"]))
+
+    def test_map_room_and_validation_brand_links_are_enforced(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            (outputs / "gpm4" / "redelong_map_room.html").write_text(
+                branded_html("redelong_app.html"), encoding="utf-8"
+            )
+            (outputs / "validation_status.html").write_text(
+                branded_html("missing-home.html"), encoding="utf-8"
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertFalse(ok)
+            self.assertTrue(any("halaman peta" in error for error in report["errors"]))
+            self.assertTrue(any("validation_status" in error for error in report["errors"]))
+            self.assertTrue(any("Link monogram FR" in error for error in report["errors"]))
 
 
 if __name__ == "__main__":

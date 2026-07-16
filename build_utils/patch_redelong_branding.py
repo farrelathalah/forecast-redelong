@@ -15,6 +15,8 @@ TEXT_REPLACEMENTS = {
     "LANGIT Portal": "Forecast Redelong Portal",
     "LANGIT": "Forecast Redelong",
     "Langit": "Forecast Redelong",
+    "ANEMOS": "Forecast Redelong",
+    "Anemos": "Forecast Redelong",
     "Sentinel X": "Forecast Decision Layer",
     "Sentinel": "Forecast",
     "Aether": "Ensemble Forecast Layer",
@@ -48,8 +50,41 @@ FILE_REPLACEMENTS = {
 
 TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".md", ".txt", ".csv"}
 
+# These two HTML families are compatibility products from the forecast engine.
+# The active public portal does not link to them and their content duplicates
+# redelong_app.html / redelong_3day.html while retaining obsolete branding.
+# Removing them here keeps the numerical engine untouched and prevents them
+# from being copied to GitHub Pages.
+LEGACY_PUBLIC_HTML_NAMES = {
+    "Forecast_x_report.html",
+    "command_center_Forecast_x.html",
+    # Also clean stale files when this script is run against a reused output
+    # directory instead of the workflow's normal clean build.
+    "sentinel_x_report.html",
+    "command_center_sentinel_x.html",
+    # Superseded engine UI aliases.  The current portal links to
+    # redelong_app.html, redelong_3day.html, redelong_activity.html, and
+    # redelong_map_room.html instead.
+    "anemos_app.html",
+    "anemos_today.html",
+    "anemos_3day.html",
+    "anemos_activity.html",
+    "anemos_commute_advice.html",
+    "anemos_laundry_advice.html",
+    "langit_model_court.html",
+    "redelong_model_court.html",
+    "langit_map.html",
+    "redelong_map.html",
+}
+
+# The portal rebuild writes this compatibility filename with the current FR
+# header.  It must win over an older already-renamed copy when outputs are
+# reused locally or restored from another artifact.
+CANONICAL_COMPATIBILITY_SOURCES = {"sentinel_x_accuracy_public.html"}
+
 changed_text = 0
 renamed_files = 0
+removed_legacy_html = 0
 
 for path in list(ROOT.rglob("*")):
     if not path.is_file():
@@ -89,7 +124,7 @@ for path in sorted(list(ROOT.rglob("*")), key=lambda p: len(str(p)), reverse=Tru
         # engine may leave older ``redelong_*`` files behind.  The fresh portal
         # page is canonical and must replace the stale alias; otherwise links
         # such as redelong_3day.html keep opening the old/blank page.
-        if "langit" in path.name:
+        if "langit" in path.name or path.name in CANONICAL_COMPATIBILITY_SOURCES:
             path.replace(target)
             renamed_files += 1
             print(f"synced portal page: {path} -> {target}")
@@ -98,8 +133,15 @@ for path in sorted(list(ROOT.rglob("*")), key=lambda p: len(str(p)), reverse=Tru
             renamed_files += 1
             print(f"renamed file: {path} -> {target}")
 
+for path in sorted(ROOT.rglob("*.html")):
+    if path.name in LEGACY_PUBLIC_HTML_NAMES:
+        path.unlink()
+        removed_legacy_html += 1
+        print(f"removed obsolete public HTML: {path}")
+
 (ROOT / ".nojekyll").write_text("", encoding="utf-8")
 
 print("SUCCESS")
 print(f"Jumlah file teks diubah: {changed_text}")
 print(f"Jumlah file diganti nama: {renamed_files}")
+print(f"Jumlah halaman lama dihentikan: {removed_legacy_html}")

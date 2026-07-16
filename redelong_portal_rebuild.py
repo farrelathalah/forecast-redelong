@@ -1049,6 +1049,14 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 14px;
   flex-shrink: 0;
+  text-decoration: none;
+}
+.nav-brand > span:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.08;
+  min-width: 0;
 }
 .nav-logo {
   width: 36px;
@@ -1060,20 +1068,19 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   transition: transform 0.5s var(--ease-spring);
   flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
 }
 .nav-brand:hover .nav-logo {
   transform: rotate(180deg) scale(1.1);
 }
 .nav-logo::after {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  width: 40%;
-  height: 40%;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.4);
-  filter: blur(2px);
+  content: none;
 }
 .nav-title {
   font-family: var(--font-display);
@@ -3379,7 +3386,7 @@ def v65_nav(api: Dict[str, Any], active: str, root: bool = False) -> str:
     links = "".join(links_arr)
     return f'''<header class="nav-bar">
   <a class="nav-brand" href="{href}">
-    <span class="nav-logo"></span>
+    <span class="nav-logo" aria-hidden="true">FR</span>
     <span><span class="nav-title">{BRAND}</span><span class="nav-sub">{esc(subtitle)}</span></span>
   </a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -3748,11 +3755,20 @@ def v65_geo_for_api(api: Dict[str, Any]) -> Dict[str, Any]:
                 },
             })
     return {"type": "FeatureCollection", "features": features}
-def v65_map_page(title: str, geojson: Dict[str, Any], back_href: str) -> str:
+def v65_map_page(
+    title: str,
+    geojson: Dict[str, Any],
+    back_href: str,
+    home_href: Optional[str] = None,
+) -> str:
     data = json.dumps(geojson, ensure_ascii=False)
+    home_href = home_href or back_href
     css = r'''html,body,#map{height:100%;margin:0;background:#030712;color:#f8fbff;font-family:'Inter',system-ui,-apple-system,sans-serif;overflow:hidden}
 #particle-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:800}
-.hud{position:absolute;z-index:1000;left:24px;top:24px;width:min(340px,calc(100% - 48px));padding:24px;border-radius:24px;background:rgba(7,14,30,0.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 24px 80px rgba(0,0,0,0.5),inset 0 1px 1px rgba(255,255,255,0.1);animation:slideIn 0.6s cubic-bezier(0.16,1,0.3,1) both}
+.map-brand{position:absolute;z-index:1100;left:14px;top:14px;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#075985,#0ea5e9 65%,#67e8f9);border:1px solid rgba(255,255,255,.28);box-shadow:0 12px 30px rgba(2,132,199,.34);color:#fff;text-decoration:none;font-family:'Outfit','Inter',system-ui,sans-serif;font-size:11px;font-weight:900;letter-spacing:-.04em;transition:transform .2s ease,box-shadow .2s ease}
+.map-brand:hover,.map-brand:focus-visible{transform:translateY(-2px);box-shadow:0 16px 34px rgba(2,132,199,.45);outline:none}
+.map-brand:focus-visible{box-shadow:0 0 0 3px rgba(125,211,252,.45),0 16px 34px rgba(2,132,199,.45)}
+.hud{position:absolute;z-index:1000;left:68px;top:14px;width:min(340px,calc(100% - 92px));padding:24px;border-radius:24px;background:rgba(7,14,30,0.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 24px 80px rgba(0,0,0,0.5),inset 0 1px 1px rgba(255,255,255,0.1);animation:slideIn 0.6s cubic-bezier(0.16,1,0.3,1) both}
 .hud-brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:10px;letter-spacing:0.1em;color:#32b7ff;text-transform:uppercase}
 .hud-version{font-family:'Outfit',sans-serif;font-weight:600;font-size:10px;color:rgba(255,255,255,0.3)}
 .hud h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin:12px 0 4px;color:#fff}
@@ -3801,7 +3817,8 @@ def v65_map_page(title: str, geojson: Dict[str, Any], back_href: str) -> str:
 @keyframes slideIn{from{transform:translateX(-20px);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes slideUp{from{transform:translate(-50%,20px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
 @media(max-width:768px){
-  .hud{left:12px;top:12px;width:calc(100% - 24px);padding:16px;border-radius:20px}
+  .map-brand{left:10px;top:10px;width:40px;height:40px;border-radius:12px}
+  .hud{left:60px;top:10px;width:calc(100% - 70px);padding:16px;border-radius:20px}
   .timeline-container{bottom:16px;width:calc(100% - 24px);padding:10px;border-radius:20px}
   .legend{right:12px;bottom:96px;width:120px;padding:12px;border-radius:16px}
 }
@@ -4348,6 +4365,7 @@ if (window.self !== window.top) {
   <style>{css}</style>
 </head>
 <body>
+  <a class="map-brand" data-fr-brand="true" href="{esc(home_href)}" target="_top" aria-label="Kembali ke beranda Forecast Redelong">FR</a>
   <div id="map"></div>
   <canvas id="particle-canvas"></canvas>
   {hud_html}
@@ -4784,7 +4802,12 @@ def rebuild(root: Path, public_base_url: str = "") -> int:
         acc_html = v65_accuracy_page(api, d)
         write_text(d / "akurasi_data.html", acc_html)
         write_text(d / "sentinel_x_accuracy_public.html", acc_html)
-        map_html = v65_map_page(f"LANGIT Map — {api['location_name']}", gj, "langit_app.html")
+        map_html = v65_map_page(
+            f"LANGIT Map — {api['location_name']}",
+            gj,
+            "langit_app.html",
+            "../index.html",
+        )
         write_text(d / "langit_map_room.html", map_html)
         # Overwrite legacy pages/utilities
         write_text(d / "langit_planner.html", v65_planner_page(api))
@@ -4793,7 +4816,10 @@ def rebuild(root: Path, public_base_url: str = "") -> int:
     pgeo = v65_portal_geo(apis)
     write_json(root / "langit_all_locations.geojson", pgeo)
     write_json(root / "langit_portal_manifest.json", {"brand": BRAND, "version": VERSION, "generated_at": fmt_update(), "public_base_url": public_base_url, "locations": [{"slug": a["location_slug"], "name": a["location_name"]} for a in apis]})
-    write_text(root / "langit_portal_map.html", v65_map_page("LANGIT Portal Map", pgeo, "index.html"))
+    write_text(
+        root / "langit_portal_map.html",
+        v65_map_page("LANGIT Portal Map", pgeo, "index.html", "index.html"),
+    )
     write_text(root / "index.html", v65_portal_page(apis, root))
     print(f"OK: {VERSION} rebuild selesai. lokasi={len(apis)}")
     return verify(root)

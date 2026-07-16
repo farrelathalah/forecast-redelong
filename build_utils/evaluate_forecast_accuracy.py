@@ -356,6 +356,12 @@ def write_empty_page(message: str, generated: str, outputs: Path = OUTPUTS) -> N
   <title>Evaluasi Akurasi · Forecast Redelong</title>
   <style>
     body{{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:#eff8ff;background:#04111e}}
+    .topbar{{display:flex;align-items:center;padding:18px min(5vw,64px);border-bottom:1px solid rgba(255,255,255,.15);background:rgba(3,11,20,.78)}}
+    .brand{{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}}
+    .brand-mark{{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#8b5cf6 55%,#10b981);display:grid;place-items:center;color:#fff;font-size:11px;font-weight:900;letter-spacing:-.04em}}
+    .brand-copy{{display:flex;flex-direction:column;line-height:1.08}}
+    .brand-copy strong{{font-size:18px}}
+    .brand-copy span{{color:#9fb4c9;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-top:3px}}
     main{{max-width:980px;margin:0 auto;padding:70px 22px}}
     .panel{{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);border-radius:28px;padding:28px}}
     a{{color:#45e0d0}}
@@ -363,6 +369,12 @@ def write_empty_page(message: str, generated: str, outputs: Path = OUTPUTS) -> N
   </style>
 </head>
 <body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">FR</span>
+      <span class="brand-copy"><strong>Forecast Redelong</strong><span>Evaluasi Forecast</span></span>
+    </a>
+  </header>
   <main>
     <div class="panel">
       <h1>Evaluasi Akurasi Forecast Redelong</h1>
@@ -429,7 +441,7 @@ def write_page(
     body{{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 20% 10%,rgba(69,224,208,.22),transparent 32%),linear-gradient(135deg,#04111e,#08253a 45%,#11183a)}}
     a{{color:inherit;text-decoration:none}}
     nav{{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:18px min(5vw,64px);background:rgba(3,11,20,.78);border-bottom:1px solid var(--line);position:sticky;top:0;backdrop-filter:blur(14px)}}
-    .brand strong{{display:block;font-size:18px}}.brand span{{display:block;color:var(--muted);font-size:12px;letter-spacing:.8px;text-transform:uppercase}}
+    .brand{{display:flex;align-items:center;gap:12px}}.brand-mark{{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#8b5cf6 55%,#10b981);display:grid!important;place-items:center;color:#fff!important;font-size:11px!important;font-weight:900;letter-spacing:-.04em!important}}.brand-copy{{display:flex!important;flex-direction:column;line-height:1.08}}.brand-copy strong{{display:block;font-size:18px}}.brand-copy span{{display:block;color:var(--muted);font-size:12px;letter-spacing:.8px;text-transform:uppercase;margin-top:3px}}
     .links{{display:flex;gap:10px;flex-wrap:wrap}}.links a{{border:1px solid var(--line);background:rgba(255,255,255,.075);padding:10px 14px;border-radius:999px;font-size:14px;font-weight:650}}
     main{{max-width:1180px;margin:0 auto;padding:58px 22px 70px}}
     .panel{{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045));border-radius:30px;padding:28px;margin-bottom:18px;box-shadow:0 28px 90px rgba(0,0,0,.22)}}
@@ -445,8 +457,8 @@ def write_page(
 <body>
   <nav>
     <a class="brand" href="index.html">
-      <strong>Forecast Redelong</strong>
-      <span>FORECAST PLTA REDELONG</span>
+      <span class="brand-mark" aria-hidden="true">FR</span>
+      <span class="brand-copy"><strong>Forecast Redelong</strong><span>Evaluasi Forecast</span></span>
     </a>
     <div class="links">
       <a href="index.html">Home</a>

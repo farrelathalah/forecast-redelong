@@ -308,10 +308,10 @@ def main() -> None:
 <body>
   <nav class="nav">
     <a class="brand" href="index.html">
-      <div class="logo"></div>
+      <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em">FR</div>
       <div>
         <strong>Forecast Redelong</strong>
-        <span>FORECAST PLTA REDELONG</span>
+        <span>Overview Teknis</span>
       </div>
     </a>
     <div class="nav-links">

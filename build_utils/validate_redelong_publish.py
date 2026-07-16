@@ -15,8 +15,10 @@ import json
 import re
 import shutil
 import subprocess
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
+from urllib.parse import unquote, urlsplit
 
 
 QUANTITATIVE_SOURCES = {"CMA", "ECMWF", "GFS", "ICON", "METEOFRANCE", "UKMO"}
@@ -32,6 +34,65 @@ EXPECTED_LOCATIONS = {
 }
 MIN_MODELS = 3
 MIN_VALID_PORTAL_HOURS = 20
+
+# Every retained public HTML page currently needs an interactive FR monogram.
+# Keep any future exception here with a specific rationale so it is visible in
+# publish_validation.json and reviewable in source control.
+PUBLIC_HTML_FR_EXCEPTIONS: dict[str, str] = {}
+
+
+class _AnchorTextParser(HTMLParser):
+    """Collect anchor hrefs and their visible text using only the stdlib."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.links: list[dict[str, Any]] = []
+        self._open_links: list[dict[str, Any]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() != "a":
+            return
+        link: dict[str, Any] = {
+            "href": dict(attrs).get("href") or "",
+            "text": [],
+        }
+        self.links.append(link)
+        self._open_links.append(link)
+
+    def handle_data(self, data: str) -> None:
+        for link in self._open_links:
+            link["text"].append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() == "a" and self._open_links:
+            self._open_links.pop()
+
+
+def public_html_files(outputs: Path) -> list[Path]:
+    return sorted(path for path in outputs.rglob("*.html") if path.is_file())
+
+
+def fr_link_hrefs(content: str) -> list[str]:
+    parser = _AnchorTextParser()
+    parser.feed(content)
+    return [
+        str(link["href"])
+        for link in parser.links
+        if re.search(r"\bFR\b", " ".join(link["text"]), flags=re.I)
+    ]
+
+
+def local_href_target(page: Path, href: str) -> Path | None:
+    parsed = urlsplit(href.strip())
+    if parsed.scheme or parsed.netloc or not parsed.path:
+        return None
+    path_text = unquote(parsed.path)
+    if path_text.startswith("/"):
+        return None
+    target = page.parent / path_text
+    if path_text.endswith("/"):
+        target = target / "index.html"
+    return target.resolve()
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -214,13 +275,113 @@ def check_portal_semantics(outputs: Path, errors: list[str], metrics: dict[str, 
 SCRIPT_RE = re.compile(r"<script\b([^>]*)>(.*?)</script\s*>", re.I | re.S)
 
 
+def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
+    html_files = public_html_files(outputs)
+    missing_fr: list[str] = []
+    broken_fr_links: list[str] = []
+    anemos_files: list[str] = []
+    sentinel_files: list[str] = []
+    branded_files: list[str] = []
+    output_root = outputs.resolve()
+
+    for path in html_files:
+        relative = path.relative_to(outputs).as_posix()
+        content = path.read_text(encoding="utf-8", errors="replace")
+        hrefs = fr_link_hrefs(content)
+        if hrefs:
+            branded_files.append(relative)
+        elif relative not in PUBLIC_HTML_FR_EXCEPTIONS:
+            missing_fr.append(relative)
+
+        for href in hrefs:
+            target = local_href_target(path, href)
+            if target is None:
+                broken_fr_links.append(f"{relative} -> {href or '(kosong)'}")
+                continue
+            try:
+                target.relative_to(output_root)
+            except ValueError:
+                broken_fr_links.append(f"{relative} -> {href} (di luar outputs)")
+                continue
+            if not target.is_file():
+                broken_fr_links.append(f"{relative} -> {href} (target tidak ada)")
+
+        if "anemos" in relative.lower() or re.search(r"\bANEMOS\b", content, flags=re.I):
+            anemos_files.append(relative)
+        if re.search(r"\bSentinel(?:\s+X)?\b", content, flags=re.I):
+            sentinel_files.append(relative)
+
+    if missing_fr:
+        errors.append(
+            "Monogram FR interaktif belum ada pada: " + ", ".join(missing_fr[:20])
+        )
+    if broken_fr_links:
+        errors.append(
+            "Link monogram FR tidak valid pada: " + ", ".join(broken_fr_links[:20])
+        )
+    if anemos_files:
+        errors.append(
+            "Brand ANEMOS masih muncul pada output publik: " + ", ".join(anemos_files[:20])
+        )
+    if sentinel_files:
+        errors.append(
+            "Brand Sentinel masih muncul pada output publik: " + ", ".join(sentinel_files[:20])
+        )
+
+    expected_map_homes = {
+        "redelong_portal_map.html": "index.html",
+        **{
+            f"{slug}/redelong_map_room.html": "../index.html"
+            for slug in sorted(EXPECTED_LOCATIONS)
+        },
+    }
+    map_brand_errors: list[str] = []
+    for relative, expected_href in expected_map_homes.items():
+        path = outputs / relative
+        if not path.is_file():
+            map_brand_errors.append(f"{relative} (halaman tidak ada)")
+            continue
+        hrefs = fr_link_hrefs(path.read_text(encoding="utf-8", errors="replace"))
+        if expected_href not in hrefs:
+            map_brand_errors.append(
+                f"{relative} (FR harus menuju {expected_href})"
+            )
+    if map_brand_errors:
+        errors.append(
+            "Brand/back-link halaman peta tidak valid: " + ", ".join(map_brand_errors)
+        )
+
+    validation_path = outputs / "validation_status.html"
+    validation_brand_ok = False
+    if validation_path.is_file():
+        validation_content = validation_path.read_text(encoding="utf-8", errors="replace")
+        validation_brand_ok = (
+            "Forecast Redelong" in validation_content
+            and "index.html" in fr_link_hrefs(validation_content)
+        )
+    if not validation_brand_ok:
+        errors.append(
+            "validation_status.html harus memakai brand Forecast Redelong dan FR menuju index.html"
+        )
+
+    metrics["public_html_count"] = len(html_files)
+    metrics["public_html_fr_branded_count"] = len(branded_files)
+    metrics["public_html_fr_exceptions"] = PUBLIC_HTML_FR_EXCEPTIONS
+    metrics["public_html_missing_fr"] = missing_fr
+    metrics["public_html_broken_fr_links"] = broken_fr_links
+    metrics["public_html_anemos_files"] = anemos_files
+    metrics["public_html_sentinel_files"] = sentinel_files
+    metrics["map_room_branding_ok"] = not map_brand_errors
+    metrics["validation_status_branding_ok"] = validation_brand_ok
+
+
 def check_branding_and_weights(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
     bad_brand_tokens = {
         "Forecast Redelong Redelong.1",
         "Forecast Redelong Redelong",
     }
     bad_brand_files: list[str] = []
-    for path in sorted(outputs.glob("*.html")) + sorted(outputs.glob("*/*.html")):
+    for path in public_html_files(outputs):
         content = path.read_text(encoding="utf-8", errors="replace")
         if any(token in content for token in bad_brand_tokens):
             bad_brand_files.append(str(path.relative_to(outputs)))
@@ -254,7 +415,7 @@ def check_inline_javascript(outputs: Path, errors: list[str], metrics: dict[str,
         errors.append("Node.js tidak tersedia untuk memeriksa sintaks JavaScript")
         return
 
-    html_files = sorted(outputs.glob("*.html")) + sorted(outputs.glob("*/*.html"))
+    html_files = public_html_files(outputs)
     checked = 0
     for path in html_files:
         content = path.read_text(encoding="utf-8", errors="replace")
@@ -292,10 +453,11 @@ def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     check_operational_products(outputs, errors, metrics)
     check_spatial_contract(outputs, errors)
     check_portal_semantics(outputs, errors, metrics)
+    check_public_branding(outputs, errors, metrics)
     check_branding_and_weights(outputs, errors, metrics)
     check_inline_javascript(outputs, errors, metrics)
     report = {
-        "schema_version": "forecast-redelong-publish-gate-v2",
+        "schema_version": "forecast-redelong-publish-gate-v3",
         "status": "pass" if not errors else "fail",
         "errors": errors,
         "metrics": metrics,
