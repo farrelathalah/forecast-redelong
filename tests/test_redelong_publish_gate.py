@@ -137,7 +137,8 @@ class RedelongPublishGateTest(unittest.TestCase):
             )
         (root / "index.html").write_text(
             branded_html(
-                "index.html", "<script>(() => { const portal = true; })();</script>"
+                "index.html",
+                '<a href="redelong_globe.html">Globe</a><script>(() => { const portal = true; })();</script>',
             ),
             encoding="utf-8",
         )
@@ -149,6 +150,71 @@ class RedelongPublishGateTest(unittest.TestCase):
         )
         (root / "evaluation_summary.html").write_text(
             branded_html("index.html"), encoding="utf-8"
+        )
+        (root / "redelong_globe.html").write_text(
+            branded_html(
+                "index.html",
+                "<meta name='forecast-redelong-page' content='forecast-redelong-globe-history-v1'><script>(() => { const projection = {type:'globe'}; })();</script>",
+            ),
+            encoding="utf-8",
+        )
+        zone_features = [
+            {
+                "type": "Feature",
+                "properties": {
+                    "name": f"GPM{index}",
+                    "area_km2": 137.8 / 6,
+                    "include_in_catchment": True,
+                    "role": "catchment_zone",
+                },
+                "geometry": {"type": "Polygon", "coordinates": []},
+            }
+            for index in range(1, 7)
+        ]
+        zone_features.append(
+            {
+                "type": "Feature",
+                "properties": {
+                    "name": "GPM Grid TamaTue",
+                    "area_km2": 122.5,
+                    "include_in_catchment": False,
+                    "role": "external_comparison",
+                },
+                "geometry": {"type": "Polygon", "coordinates": []},
+            }
+        )
+        (root / "redelong_analysis_zones.geojson").write_text(
+            json.dumps({"type": "FeatureCollection", "features": zone_features}),
+            encoding="utf-8",
+        )
+        (root / "redelong_historical_stations.geojson").write_text(
+            json.dumps(
+                {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "properties": {"publication": "metadata_only"},
+                            "geometry": {"type": "Point", "coordinates": [97, 5]},
+                        }
+                        for _ in range(7)
+                    ],
+                }
+            ),
+            encoding="utf-8",
+        )
+        history_sources = {f"gpm{index}": {} for index in range(1, 7)}
+        history_annual = [
+            {"location_slug": slug, "year": year, "complete": True}
+            for slug in history_sources
+            for year in range(2000, 2024)
+        ]
+        (root / "gpm_history_summary.json").write_text(
+            json.dumps({"sources": history_sources, "annual": history_annual}),
+            encoding="utf-8",
+        )
+        (root / "gpm_daily_history.csv").write_text(
+            "date,location_slug,rain_mm\n", encoding="utf-8"
         )
         (root / "evaluation_status.json").write_text(
             json.dumps(

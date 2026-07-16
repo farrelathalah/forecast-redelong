@@ -636,6 +636,86 @@ def check_inline_javascript(outputs: Path, errors: list[str], metrics: dict[str,
     metrics["html_javascript_files_checked"] = checked
 
 
+def check_geospatial_history(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
+    required = [
+        "redelong_globe.html",
+        "redelong_analysis_zones.geojson",
+        "redelong_historical_stations.geojson",
+        "gpm_history_summary.json",
+        "gpm_daily_history.csv",
+    ]
+    missing = [name for name in required if not (outputs / name).is_file()]
+    if missing:
+        errors.append("Produk globe/histori hilang: " + ", ".join(missing))
+        return
+
+    globe = (outputs / "redelong_globe.html").read_text(
+        encoding="utf-8", errors="replace"
+    )
+    if "forecast-redelong-globe-history-v1" not in globe or "type:'globe'" not in globe:
+        errors.append("redelong_globe.html tidak memuat kontrak globe 3D")
+    home = (outputs / "index.html").read_text(encoding="utf-8", errors="replace")
+    if "redelong_globe.html" not in home:
+        errors.append("Homepage belum memiliki tautan ke globe dan histori")
+
+    zones = read_json(outputs / "redelong_analysis_zones.geojson", {}) or {}
+    features = zones.get("features", []) if isinstance(zones, dict) else []
+    included = [
+        feature
+        for feature in features
+        if feature.get("properties", {}).get("include_in_catchment") is True
+    ]
+    external = [
+        feature
+        for feature in features
+        if feature.get("properties", {}).get("role") == "external_comparison"
+    ]
+    area = sum(
+        float(feature.get("properties", {}).get("area_km2") or 0)
+        for feature in included
+    )
+    if len(included) != 6 or not 137.0 <= area <= 139.0:
+        errors.append("Globe harus memuat enam zona Redelong dengan luas sekitar 137,80 km²")
+    if not any(
+        feature.get("properties", {}).get("name") == "GPM Grid TamaTue"
+        and feature.get("properties", {}).get("include_in_catchment") is False
+        for feature in external
+    ):
+        errors.append("Layer globe harus mempertahankan TamaTue sebagai pembanding eksternal")
+
+    history = read_json(outputs / "gpm_history_summary.json", {}) or {}
+    sources = history.get("sources", {}) if isinstance(history, dict) else {}
+    annual = history.get("annual", []) if isinstance(history, dict) else []
+    complete_years = {
+        slug: sum(
+            1
+            for row in annual
+            if row.get("location_slug") == slug and row.get("complete") is True
+        )
+        for slug in sorted(sources)
+    }
+    if sorted(sources) != [f"gpm{index}" for index in range(1, 7)]:
+        errors.append("Histori publik harus mencakup GPM1 sampai GPM6")
+    if any(years < 24 for years in complete_years.values()):
+        errors.append("Setiap zona GPM harus memiliki sedikitnya 24 tahun histori lengkap")
+
+    stations = read_json(outputs / "redelong_historical_stations.geojson", {}) or {}
+    station_features = stations.get("features", []) if isinstance(stations, dict) else []
+    if len(station_features) < 7:
+        errors.append("Katalog globe harus memuat metadata stasiun BMKG dan PU")
+    if any(
+        feature.get("properties", {}).get("publication") != "metadata_only"
+        for feature in station_features
+    ):
+        errors.append("Globe publik tidak boleh menerbitkan ulang data mentah BMKG/PU")
+
+    metrics["geospatial_history_zones"] = len(features)
+    metrics["geospatial_history_catchment_zones"] = len(included)
+    metrics["geospatial_history_catchment_area_km2"] = round(area, 3)
+    metrics["geospatial_history_complete_years"] = complete_years
+    metrics["geospatial_history_station_metadata_count"] = len(station_features)
+
+
 def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     errors: list[str] = []
     metrics: dict[str, Any] = {}
@@ -647,6 +727,7 @@ def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     check_branding_and_weights(outputs, errors, metrics)
     check_usability_basics(outputs, errors, metrics)
     check_evaluation_status(outputs, errors, metrics)
+    check_geospatial_history(outputs, errors, metrics)
     check_inline_javascript(outputs, errors, metrics)
     report = {
         "schema_version": "forecast-redelong-publish-gate-v4",

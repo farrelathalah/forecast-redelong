@@ -57,6 +57,30 @@ sedangkan CSV/JSON di dashboard diperbarui otomatis pada setiap run. `index.html
 tetap menjadi portal utama dengan peta, overview, dan dashboard per titik; builder
 operasional tidak menimpanya.
 
+## Globe 3D dan histori hujan
+
+`build_utils/build_redelong_globe_history.py` membuat
+`redelong_globe.html`, sebuah explorer spasial yang menggabungkan:
+
+- globe interaktif dan fokus kamera ke Redelong;
+- polygon GPM1–GPM6 dari paket geospasial proyek;
+- forecast operasional terbaru dan jaringan titik forecast;
+- klimatologi bulanan serta grafik tahunan GPM IMERG Final;
+- metadata stasiun pembanding BMKG dan PU.
+
+Histori GPM yang dipakai mencakup 2000–2024, dengan 24 tahun kalender lengkap
+untuk setiap GPM1–GPM6 (2000–2023). Tahun 2024 tetap tersedia sebagai tahun
+parsial dan tidak dipakai dalam statistik tahunan lengkap. Data harian publik
+tersedia sebagai `gpm_daily_history.csv`.
+
+Batas polygon berasal dari `PLTA Redelong CLIP.shp` pada paket data yang
+diberikan untuk proyek. Jumlah luas GPM1–GPM6 adalah sekitar 137,80 km², tetapi
+statusnya tetap **batas area analisis yang menunggu konfirmasi engineering**,
+bukan klaim batas DAS resmi. Data mentah stasiun BMKG/PU tidak diterbitkan ulang
+di GitHub Pages; portal hanya membawa metadata lokasi dan cakupan waktunya.
+Inventaris, provenance, dan pembatasan publikasi dijelaskan dalam
+`docs/GEOSPATIAL_HISTORY_DATA.md`.
+
 Forecast dijalankan setiap jam untuk empat hari kalender agar horizon 72 jam
 sejak waktu penerbitan tetap lengkap. Halaman tiga hari interaktif tetap
 dipertahankan, sedangkan ringkasan operasional tersedia sebagai modul tambahan.
@@ -80,6 +104,7 @@ python weather_ensemble_multi_location.py `
   --forecast-range-days 4
 
 python build_utils/build_redelong_operational.py --outputs outputs
+python build_utils/build_redelong_globe_history.py --outputs outputs
 python build_utils/evaluate_forecast_accuracy.py
 python build_utils/validate_redelong_publish.py --outputs outputs
 python -m unittest discover -s tests -v

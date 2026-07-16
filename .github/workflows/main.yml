@@ -120,6 +120,10 @@ jobs:
         run: |
           python build_utils/build_redelong_operational.py --outputs outputs
 
+      - name: Build Redelong 3D globe and historical explorer
+        run: |
+          python build_utils/build_redelong_globe_history.py --outputs outputs
+
       - name: Refresh mature satellite validation proxies
         run: |
           python build_utils/refresh_validation_observations.py --outputs outputs
