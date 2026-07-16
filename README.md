@@ -4,6 +4,33 @@ Sistem otomatis prakiraan hujan multi-model untuk mendukung monitoring PLTA
 Redelong. Produk utama menggunakan waktu WIB dan menyajikan hujan per jam,
 akumulasi 3 jam, serta akumulasi area 24/48/72 jam.
 
+Platform mulai digeneralisasi menjadi jaringan multi-site. PLTA Redelong tetap
+menjadi site operasional utama, sedangkan PLTM Besai Kemu sudah memiliki
+forecast titik empat hari dan explorer histori provisional. Registry yang dapat
+ditambah tanpa mengubah engine berada di `config/sites.json`.
+
+## Jaringan multi-site dan Besai Kemu
+
+`build_utils/build_multisite_catalog.py` membuat `site_network.html`, globe 3D
+yang menampilkan seluruh site beserta status kesiapan datanya. Site yang sudah
+memiliki paket proyek dan site yang baru bersumber dari referensi publik tidak
+ditampilkan seolah memiliki tingkat kepastian yang sama.
+
+Paket awal PLTM Besai Kemu menggunakan:
+
+- titik referensi publik `-4.87997, 104.50453` dan ADM4 Kemu
+  `18.08.03.2017`;
+- forecast BMKG serta enam model kuantitatif yang sama dengan Redelong;
+- 16.436 hari histori NASA POWER Daily untuk 1981–2025;
+- halaman `besai_kemu.html` dengan forecast empat hari, grafik tahunan, dan
+  klimatologi bulanan.
+
+Koordinat Besai Kemu masih berstatus provisional sampai posisi intake atau weir
+dikonfirmasi oleh tim aset. Batas DAS belum didelineasi dan luasnya sengaja
+dibiarkan kosong. Karena itu sistem memblokir klaim volume hujan dan debit untuk
+Besai Kemu. NASA POWER juga ditulis sebagai proxy meteorologi gridded, bukan
+observasi penakar hujan di site.
+
 ## Status area analisis
 
 - PLTA Redelong adalah titik referensi/outlet dan tidak diberi bobot luas.
@@ -105,6 +132,8 @@ python weather_ensemble_multi_location.py `
 
 python build_utils/build_redelong_operational.py --outputs outputs
 python build_utils/build_redelong_globe_history.py --outputs outputs
+python build_utils/build_besai_portal.py --outputs outputs
+python build_utils/build_multisite_catalog.py --outputs outputs
 python build_utils/evaluate_forecast_accuracy.py
 python build_utils/validate_redelong_publish.py --outputs outputs
 python -m unittest discover -s tests -v
@@ -118,6 +147,10 @@ menulis ke branch `gh-pages`. Jika seluruh langkah lulus, hasil `outputs/`
 tersedia sebagai artifact bernama `forecast-redelong-validation-*` selama tujuh
 hari. Schedule dan trigger Google Apps Script yang tidak mengirim input ini
 tetap memakai nilai default `false`, sehingga alur publikasi rutin tidak berubah.
+
+Push ke branch `feature/**` atau `validation/**` juga otomatis menjalankan build,
+quality gate, dan upload artifact validasi tanpa melakukan deployment. Dengan
+demikian pengujian branch tidak lagi membutuhkan klik manual pada Actions.
 
 ## Validasi forecast
 

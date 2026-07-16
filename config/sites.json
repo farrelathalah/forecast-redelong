@@ -1,0 +1,84 @@
+{
+  "schema_version": "forecast-hydro-sites-v1",
+  "default_site": "plta_redelong",
+  "sites": {
+    "plta_redelong": {
+      "display_name": "PLTA Redelong",
+      "plant_type": "PLTA",
+      "timezone": "Asia/Jakarta",
+      "latitude": 4.748139,
+      "longitude": 96.977344,
+      "province": "Aceh",
+      "regency": "Bener Meriah",
+      "village": "Bale Redelong",
+      "adm4": "11.17.05.2002",
+      "capacity_mw": 18.0,
+      "operational_status": "development",
+      "site_status": "verified_from_project_package",
+      "coordinate_source": "PLTA Redelong.kmz from project package",
+      "coordinate_source_url": null,
+      "catchment": {
+        "status": "indicative_project_boundary_pending_engineering_confirmation",
+        "area_km2": 137.800345,
+        "source": "Batas_DAS_Redelong_MainStructure.geojson, dissolved from submitted GPM1-GPM6 shapefile",
+        "note": "Matches the 137.8 km2 GRANIF 2025 re-delineation note in the project package; not labelled as an official legal basin boundary."
+      },
+      "historical_sources": [
+        "NASA_GPM_IMERG_Final",
+        "CHIRPS",
+        "NASA_POWER",
+        "BMKG_metadata",
+        "PU_station_metadata"
+      ],
+      "forecast_sources": [
+        "BMKG",
+        "ECMWF",
+        "GFS",
+        "ICON",
+        "CMA",
+        "METEOFRANCE",
+        "UKMO"
+      ],
+      "public_entry": "redelong_globe.html"
+    },
+    "pltm_besai_kemu": {
+      "display_name": "PLTM Besai Kemu",
+      "plant_type": "PLTM run-of-river",
+      "timezone": "Asia/Jakarta",
+      "latitude": -4.87997,
+      "longitude": 104.50453,
+      "province": "Lampung",
+      "regency": "Way Kanan",
+      "district": "Banjit",
+      "village": "Kemu",
+      "adm4": "18.08.03.2017",
+      "capacity_mw": 7.0,
+      "operational_status": "commercial_operation_since_2024",
+      "site_status": "provisional_public_source_pending_asset_confirmation",
+      "coordinate_source": "World Bank ESMAP Small Hydro Resource Mapping in Indonesia, Annex I",
+      "coordinate_source_url": "https://documents.worldbank.org/curated/en/891911506073273340/pdf/119859-ESM-P145273-PUBLIC-IndonesiaSmallHydropowerMappingReportWBESMAPMarch.pdf",
+      "catchment": {
+        "status": "not_yet_delineated",
+        "area_km2": null,
+        "source": "HydroBASINS or MERIT Hydro candidate after outlet verification",
+        "note": "Do not publish rainfall volume or discharge until the intake or weir outlet and watershed boundary are verified."
+      },
+      "historical_sources": [
+        "CHIRPS_candidate",
+        "NASA_POWER_candidate",
+        "NASA_GPM_IMERG_candidate",
+        "NOAA_GSOD_station_screening"
+      ],
+      "forecast_sources": [
+        "BMKG",
+        "ECMWF",
+        "GFS",
+        "ICON",
+        "CMA",
+        "METEOFRANCE",
+        "UKMO"
+      ],
+      "public_entry": "besai_kemu.html"
+    }
+  }
+}

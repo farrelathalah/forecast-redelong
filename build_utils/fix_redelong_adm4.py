@@ -27,6 +27,10 @@ missing = []
 
 for slug, loc in data["locations"].items():
     if slug not in mapping:
+        # Independent sites carry their own verified/provisional ADM4 mapping
+        # in config/sites.json and must not inherit Bale Redelong's code.
+        if loc.get("site_scope") and loc.get("adm4"):
+            continue
         missing.append(slug)
         continue
 

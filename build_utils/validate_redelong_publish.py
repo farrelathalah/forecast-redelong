@@ -33,6 +33,7 @@ EXPECTED_LOCATIONS = {
     "gpm6",
     "gpm_grid_tamatue",
 }
+EXPECTED_MULTISITE_FORECAST_LOCATIONS = EXPECTED_LOCATIONS | {"pltm_besai_kemu"}
 MIN_MODELS = 3
 MIN_VALID_PORTAL_HOURS = 20
 GLOBAL_EXPERIENCE_MARKER = "fr-global-experience-v1"
@@ -143,7 +144,7 @@ def check_forecast_contract(outputs: Path, errors: list[str], metrics: dict[str,
         return
 
     locations = {row.get("location_slug", "") for row in rows}
-    missing_locations = sorted(EXPECTED_LOCATIONS - locations)
+    missing_locations = sorted(EXPECTED_MULTISITE_FORECAST_LOCATIONS - locations)
     if missing_locations:
         errors.append("Lokasi forecast kurang: " + ", ".join(missing_locations))
 
@@ -164,7 +165,7 @@ def check_forecast_contract(outputs: Path, errors: list[str], metrics: dict[str,
         )
 
     metrics["forecast_rows"] = len(rows)
-    metrics["locations_found"] = len(locations & EXPECTED_LOCATIONS)
+    metrics["locations_found"] = len(locations & EXPECTED_MULTISITE_FORECAST_LOCATIONS)
     metrics["quantitative_sources_found"] = found_sources
     metrics["quantitative_source_count"] = len(found_sources)
     metrics["quantitative_sources_missing"] = missing_sources
@@ -716,6 +717,70 @@ def check_geospatial_history(outputs: Path, errors: list[str], metrics: dict[str
     metrics["geospatial_history_station_metadata_count"] = len(station_features)
 
 
+def check_multisite_catalog(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
+    required = [
+        "site_catalog.json",
+        "site_network.html",
+        "besai_kemu.html",
+        "besai_kemu_history.json",
+        "besai_kemu_forecast.json",
+        "besai_kemu_history_daily.csv",
+    ]
+    missing = [name for name in required if not (outputs / name).is_file()]
+    if missing:
+        errors.append("Produk jaringan multi-site hilang: " + ", ".join(missing))
+        return
+
+    catalog = read_json(outputs / "site_catalog.json", {}) or {}
+    sites = catalog.get("sites", {}) if isinstance(catalog, dict) else {}
+    expected = {"plta_redelong", "pltm_besai_kemu"}
+    absent = sorted(expected - set(sites))
+    if absent:
+        errors.append("Katalog multi-site belum memuat: " + ", ".join(absent))
+
+    besai = sites.get("pltm_besai_kemu", {})
+    catchment = besai.get("catchment", {}) if isinstance(besai, dict) else {}
+    if not str(besai.get("site_status", "")).startswith("provisional"):
+        errors.append("Besai Kemu harus tetap berstatus provisional sebelum verifikasi engineering")
+    if catchment.get("area_km2") is not None:
+        errors.append("Besai Kemu belum boleh memuat luas DAS sebelum delineasi terverifikasi")
+    if catchment.get("status") != "not_yet_delineated":
+        errors.append("Status batas DAS Besai Kemu harus not_yet_delineated")
+
+    network = (outputs / "site_network.html").read_text(
+        encoding="utf-8", errors="replace"
+    )
+    if "forecast-hydro-multisite-network-v1" not in network or "type:'globe'" not in network:
+        errors.append("Halaman jaringan belum menggunakan globe multi-site yang aktif")
+    if "PLTA Redelong" not in network or "PLTM Besai Kemu" not in network:
+        errors.append("Halaman jaringan belum menampilkan kedua site")
+    if 'href="index.html"' not in network:
+        errors.append("Halaman jaringan belum memiliki link kembali ke homepage")
+
+    homepage = (outputs / "index.html").read_text(encoding="utf-8", errors="replace")
+    if 'href="site_network.html"' not in homepage:
+        errors.append("Homepage belum memiliki tautan ke globe jaringan site")
+
+    history = read_json(outputs / "besai_kemu_history.json", {}) or {}
+    if history.get("observation_type") != "gridded_meteorological_proxy":
+        errors.append("Histori Besai harus dilabeli sebagai proxy meteorologi gridded")
+    history_rows = int(number(history.get("daily_rows")) or 0)
+    if history_rows < 16000:
+        errors.append("Histori Besai belum memuat sedikitnya 16.000 hari")
+
+    forecast = read_json(outputs / "besai_kemu_forecast.json", []) or []
+    if not isinstance(forecast, list) or not forecast:
+        errors.append("Forecast publik Besai Kemu belum tersedia")
+    elif any(int(number(day.get("model_count")) or 0) < MIN_MODELS for day in forecast):
+        errors.append("Forecast Besai Kemu memiliki hari dengan kurang dari tiga model")
+
+    metrics["multisite_catalog_sites"] = len(sites)
+    metrics["multisite_besai_status"] = besai.get("site_status")
+    metrics["multisite_besai_boundary_status"] = catchment.get("status")
+    metrics["multisite_besai_history_days"] = history_rows
+    metrics["multisite_besai_forecast_days"] = len(forecast) if isinstance(forecast, list) else 0
+
+
 def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     errors: list[str] = []
     metrics: dict[str, Any] = {}
@@ -728,9 +793,10 @@ def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     check_usability_basics(outputs, errors, metrics)
     check_evaluation_status(outputs, errors, metrics)
     check_geospatial_history(outputs, errors, metrics)
+    check_multisite_catalog(outputs, errors, metrics)
     check_inline_javascript(outputs, errors, metrics)
     report = {
-        "schema_version": "forecast-redelong-publish-gate-v4",
+        "schema_version": "forecast-hydro-publish-gate-v5",
         "status": "pass" if not errors else "fail",
         "errors": errors,
         "metrics": metrics,

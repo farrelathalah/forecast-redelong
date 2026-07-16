@@ -10,6 +10,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 IN_CSV = ROOT / "data" / "redelong" / "catchment_points.csv"
 OUT_JSON = ROOT / "locations.json"
+SITE_REGISTRY = ROOT / "config" / "sites.json"
 
 
 def slugify(text: str) -> str:
@@ -93,6 +94,39 @@ def main() -> None:
         }
 
         default_multi_locations.append(slug)
+
+    # Add independent plants from the multi-site registry without allowing
+    # them into Redelong's catchment calculation.  Each plant remains a single
+    # forecast reference until its own verified watershed points are added.
+    if SITE_REGISTRY.exists():
+        registry = json.loads(SITE_REGISTRY.read_text(encoding="utf-8"))
+        for slug, site in registry.get("sites", {}).items():
+            if slug in locations or slug == "plta_redelong":
+                continue
+            locations[slug] = {
+                "location_name": site["display_name"],
+                "adm4": site["adm4"],
+                "latitude": float(site["latitude"]),
+                "longitude": float(site["longitude"]),
+                "timezone": site.get("timezone", "Asia/Jakarta"),
+                "bmkg_point_name": site.get("village", site["display_name"]),
+                "area_level": "independent_site_reference",
+                "is_proxy_bmkg": True,
+                "weight_km2": 0.0,
+                "include_in_catchment": False,
+                "operational_role": "independent_site_reference",
+                "spatial_source": site.get("coordinate_source", "multi-site registry"),
+                "spatial_note": (
+                    "Titik site provisional; tidak masuk agregasi DAS Redelong dan "
+                    "belum digunakan untuk menghitung volume hujan atau debit."
+                ),
+                "site_scope": slug,
+                "note": (
+                    f"{site['display_name']} forecast reference. BMKG ADM4 reference: "
+                    f"{site['adm4']}. Coordinate status: {site.get('site_status', 'unknown')}."
+                ),
+            }
+            default_multi_locations.append(slug)
 
     payload = {
         "default_multi_locations": default_multi_locations,

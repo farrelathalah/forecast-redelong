@@ -7,6 +7,8 @@ import unittest
 from pathlib import Path
 
 from build_utils.apply_global_experience import apply_all
+from build_utils.build_besai_portal import build as build_besai_portal
+from build_utils.build_multisite_catalog import build as build_multisite_catalog
 from build_utils.validate_redelong_publish import (
     EXPECTED_LOCATIONS,
     QUANTITATIVE_SOURCES,
@@ -40,9 +42,11 @@ class RedelongPublishGateTest(unittest.TestCase):
                 "target_jam": "00:00",
                 "source_id": source,
             }
-            for location in sorted(EXPECTED_LOCATIONS)
+            for location in sorted(EXPECTED_LOCATIONS | {"pltm_besai_kemu"})
             for source in sorted(QUANTITATIVE_SOURCES)
         ]
+        for row in forecast_rows:
+            row["rain_mm"] = 1.0
         write_csv(root / "forecast_all_locations.csv", forecast_rows)
         write_csv(
             root / "dim_sources.csv",
@@ -243,6 +247,8 @@ class RedelongPublishGateTest(unittest.TestCase):
             json.dumps({"status": "no_eligible_archive", "missing_pairs": 0}),
             encoding="utf-8",
         )
+        build_besai_portal(root)
+        build_multisite_catalog(root)
         apply_all(root)
 
     def test_valid_run_passes_and_broken_javascript_is_blocked(self) -> None:
