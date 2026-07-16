@@ -293,13 +293,33 @@ def check_evaluation_status(outputs: Path, errors: list[str], metrics: dict[str,
     matched_dates = int(number(status.get("matched_unique_dates")) or 0)
     event_dates = int(number(status.get("observed_event_dates_ge_1mm")) or 0)
     can_claim = status.get("can_claim_field_accuracy") is True
+    can_report_proxy = status.get("can_report_preliminary_proxy_skill") is True
     if can_claim and mode != "field_observation":
         errors.append("Validasi proxy tidak boleh mengklaim akurasi lapangan")
+    if mode == "proxy_observation":
+        if status.get("observation_reference") != "proxy_satellite_gridded":
+            errors.append("Validasi proxy harus mendokumentasikan referensi satelit gridded")
+        if status.get("site_gauge_required") is not False:
+            errors.append("Validasi proxy tidak boleh bergantung pada penakar hujan site")
     if can_claim and matched_dates < 30:
         errors.append("Klaim awal akurasi lapangan memerlukan sedikitnya 30 tanggal unik")
     if can_claim and event_dates < 10:
         errors.append("Klaim awal akurasi lapangan memerlukan sedikitnya 10 tanggal hujan")
+    if can_report_proxy and matched_dates < 30:
+        errors.append("Status skill proxy awal memerlukan sedikitnya 30 tanggal unik")
+    if can_report_proxy and event_dates < 10:
+        errors.append("Status skill proxy awal memerlukan sedikitnya 10 tanggal hujan")
     metric_rows = read_csv(outputs / "evaluation_metrics.csv")
+    joined_rows = read_csv(outputs / "evaluation_joined_daily.csv")
+    joined_sources = sorted(
+        {
+            str(row.get("observation_source", "")).strip()
+            for row in joined_rows
+            if str(row.get("observation_source", "")).strip()
+        }
+    )
+    if len(joined_sources) > 1:
+        errors.append("Satu evaluasi tidak boleh mencampur beberapa sumber proxy")
     if matched == 0 and metric_rows:
         errors.append("Metrik evaluasi tidak boleh terisi tanpa pasangan forecast–observation")
     if matched > 0:
@@ -313,6 +333,9 @@ def check_evaluation_status(outputs: Path, errors: list[str], metrics: dict[str,
     metrics["evaluation_matched_location_days"] = matched
     metrics["evaluation_matched_unique_dates"] = matched_dates
     metrics["evaluation_can_claim_field_accuracy"] = can_claim
+    metrics["evaluation_can_report_preliminary_proxy_skill"] = can_report_proxy
+    metrics["evaluation_observation_sources"] = status.get("observation_sources", [])
+    metrics["evaluation_joined_observation_sources"] = joined_sources
     metrics["validation_proxy_refresh_status"] = proxy_refresh.get("status")
     metrics["validation_proxy_missing_pairs"] = proxy_refresh.get("missing_pairs")
 
@@ -364,11 +387,14 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     experience_missing: list[str] = []
     spin_missing: list[str] = []
     rain_missing: list[str] = []
+    decorative_separator_files: list[str] = []
     output_root = outputs.resolve()
 
     for path in html_files:
         relative = path.relative_to(outputs).as_posix()
         content = path.read_text(encoding="utf-8", errors="replace")
+        if re.search(r"[•·]|&(?:bull|middot);", content, flags=re.I):
+            decorative_separator_files.append(relative)
         hrefs = fr_link_hrefs(content)
         if hrefs:
             branded_files.append(relative)
@@ -436,6 +462,11 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
         errors.append(
             "Efek atmosfer hujan belum ada pada: " + ", ".join(rain_missing[:20])
         )
+    if decorative_separator_files:
+        errors.append(
+            "Pemisah titik tengah masih muncul pada output publik: "
+            + ", ".join(decorative_separator_files[:20])
+        )
 
     expected_map_homes = {
         "redelong_portal_map.html": "index.html",
@@ -483,6 +514,7 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     metrics["public_html_experience_missing"] = experience_missing
     metrics["public_html_spin_missing"] = spin_missing
     metrics["public_html_rain_missing"] = rain_missing
+    metrics["public_html_decorative_separator_files"] = decorative_separator_files
     metrics["global_experience_ok"] = not (
         experience_missing or spin_missing or rain_missing
     )

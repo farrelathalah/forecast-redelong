@@ -51,14 +51,14 @@ class ValidationProxyRefreshTest(unittest.TestCase):
                         "date": target_date.isoformat(),
                         "location_slug": "plta_redelong",
                         "rain_mm_observed": 11.0,
-                        "source": "CHIRPS via ClimateSERV",
-                        "observation_type": "proxy_satellite_gridded",
+                        "source": "GPM IMERG via ClimateSERV",
+                        "observation_type": "proxy_satellite_near_real_time",
                     }
                 ]
             )
 
             with patch(
-                "build_utils.refresh_validation_observations.download_chirps",
+                "build_utils.refresh_validation_observations.download_imerg",
                 return_value=downloaded,
             ) as download:
                 first = refresh(outputs)
@@ -68,9 +68,10 @@ class ValidationProxyRefreshTest(unittest.TestCase):
             self.assertEqual(second["status"], "up_to_date")
             self.assertEqual(download.call_count, 1)
             saved = pd.read_csv(
-                outputs / "validation_archive" / "rain_proxy_daily_chirps.csv"
+                outputs / "validation_archive" / "rain_proxy_daily_primary.csv"
             )
             self.assertEqual(len(saved), 1)
+            self.assertEqual(first["primary_proxy"], "GPM IMERG via ClimateSERV")
 
 
 if __name__ == "__main__":

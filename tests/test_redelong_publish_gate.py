@@ -156,8 +156,12 @@ class RedelongPublishGateTest(unittest.TestCase):
                     "schema_version": "forecast-redelong-validation-v2",
                     "state": "menunggu_pasangan",
                     "observation_mode": "proxy_observation",
+                    "observation_reference": "proxy_satellite_gridded",
+                    "observation_sources": [],
+                    "site_gauge_required": False,
                     "matched_location_days": 0,
                     "can_claim_field_accuracy": False,
+                    "can_report_preliminary_proxy_skill": False,
                 }
             ),
             encoding="utf-8",
@@ -309,6 +313,24 @@ class RedelongPublishGateTest(unittest.TestCase):
             self.assertTrue(any("halaman peta" in error for error in report["errors"]))
             self.assertTrue(any("validation_status" in error for error in report["errors"]))
             self.assertTrue(any("Link monogram FR" in error for error in report["errors"]))
+
+    def test_decorative_middle_dot_is_blocked_from_public_html(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            index_path = outputs / "index.html"
+            content = index_path.read_text(encoding="utf-8")
+            index_path.write_text(
+                content.replace("Forecast Redelong", "Forecast Redelong • PLTA", 1),
+                encoding="utf-8",
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertFalse(ok)
+            self.assertTrue(
+                any("Pemisah titik tengah" in error for error in report["errors"])
+            )
 
 
 if __name__ == "__main__":

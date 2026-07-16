@@ -475,6 +475,7 @@ def validation_status(
     observation_rows: int,
     joined: pd.DataFrame,
     generated: str,
+    observation_sources: list[str] | None = None,
 ) -> dict:
     n = int(len(joined))
     observed_events = int((joined.get("rain_mm_observed", pd.Series(dtype=float)) >= 1.0).sum())
@@ -490,14 +491,22 @@ def validation_status(
         and matched_dates >= MIN_DATES_FOR_PRELIMINARY_FIELD_CLAIM
         and event_dates >= MIN_EVENT_DATES_FOR_PRELIMINARY_FIELD_CLAIM
     )
+    proxy_reference_mode = obs_mode == "proxy_observation"
+    can_report_preliminary_proxy_skill = bool(
+        proxy_reference_mode
+        and matched_dates >= MIN_DATES_FOR_PRELIMINARY_FIELD_CLAIM
+        and event_dates >= MIN_EVENT_DATES_FOR_PRELIMINARY_FIELD_CLAIM
+    )
     if n == 0:
         state = "menunggu_pasangan"
     elif can_claim:
         state = "validasi_lapangan_awal"
     elif field_mode:
         state = "indikatif_sampel_terbatas"
+    elif can_report_preliminary_proxy_skill:
+        state = "validasi_proxy_awal"
     else:
-        state = "validasi_proxy_indikatif"
+        state = "validasi_proxy_sampel_terbatas"
     reason = (
         "Belum ada pasangan forecast arsip dan observasi yang telah matang."
         if n == 0
@@ -512,7 +521,11 @@ def validation_status(
         "generated_at_wib": generated,
         "state": state,
         "observation_mode": obs_mode,
+        "observation_reference": "proxy_satellite_gridded" if proxy_reference_mode else "site_gauge",
+        "observation_sources": observation_sources or [],
+        "site_gauge_required": False,
         "can_claim_field_accuracy": can_claim,
+        "can_report_preliminary_proxy_skill": can_report_preliminary_proxy_skill,
         "reason": reason,
         "archive": archive_stats,
         "eligible_forecast_daily_rows": int(forecast_rows),
@@ -524,7 +537,8 @@ def validation_status(
         "minimum_field_dates_for_preliminary_claim": MIN_DATES_FOR_PRELIMINARY_FIELD_CLAIM,
         "minimum_field_event_dates_for_preliminary_claim": MIN_EVENT_DATES_FOR_PRELIMINARY_FIELD_CLAIM,
         "limitations": [
-            "CHIRPS/IMERG adalah proxy gridded, bukan penakar hujan di site.",
+            "IMERG/CHIRPS adalah referensi proxy gridded, bukan penakar hujan di site.",
+            "Metrik yang diterbitkan adalah skill terhadap produk referensi, bukan akurasi lapangan.",
             "Satu issue awal per hari dipilih agar retry manual tidak menggandakan sampel.",
             "Ambang klaim awal dihitung dari tanggal unik, bukan jumlah titik yang saling berkorelasi.",
             "Hanya total harian dengan sedikitnya 20/24 jam per model dan minimal tiga model dihitung.",
@@ -559,11 +573,16 @@ def main(
 ) -> None:
     outputs.mkdir(parents=True, exist_ok=True)
     archive_root = archive_root or (outputs / "archive")
-    proxy_observation_path = proxy_observation_path or (
-        outputs / "validation_archive" / "rain_proxy_daily_chirps.csv"
-    )
-    if not proxy_observation_path.exists():
-        proxy_observation_path = PROXY_OBS_PATH
+    if proxy_observation_path is None:
+        proxy_candidates = [
+            outputs / "validation_archive" / "rain_proxy_daily_primary.csv",
+            outputs / "validation_archive" / "rain_proxy_daily_imerg.csv",
+            outputs / "validation_archive" / "rain_proxy_daily_chirps.csv",
+            PROXY_OBS_PATH,
+        ]
+        proxy_observation_path = next(
+            (path for path in proxy_candidates if path.exists()), PROXY_OBS_PATH
+        )
     fc = read_csv(forecast_path)
     obs = read_csv(observation_path)
     obs_mode = "field_observation"
@@ -589,6 +608,15 @@ def main(
         evaluation_forecast = pd.DataFrame()
 
     obs_daily, observation_message = prepare_observations(obs)
+    observation_sources = []
+    if "observation_source" in obs_daily:
+        observation_sources = sorted(
+            {
+                str(value)
+                for value in obs_daily["observation_source"].dropna()
+                if str(value).strip()
+            }
+        )
     if not evaluation_forecast.empty and not obs_daily.empty:
         joined = pd.merge(
             obs_daily,
@@ -607,6 +635,7 @@ def main(
         observation_rows=len(obs_daily),
         joined=joined,
         generated=generated,
+        observation_sources=observation_sources,
     )
     write_validation_files(outputs, joined, metrics, status)
 
@@ -655,7 +684,7 @@ def write_empty_page(
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <title>Status Validasi · Forecast Redelong</title>
+  <title>Status Validasi, Forecast Redelong</title>
   <style>
     body{{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:#eff8ff;background:#04111e}}
     .topbar{{display:flex;align-items:center;padding:18px min(5vw,64px);border-bottom:1px solid rgba(255,255,255,.15);background:rgba(3,11,20,.78)}}
@@ -683,14 +712,14 @@ def write_empty_page(
   <main>
     <div class="panel">
       <h1>Status Validasi Forecast Redelong</h1>
-      <p class="notice"><strong>Belum boleh mengklaim akurasi lapangan.</strong> {escape(message)}</p>
+      <p class="notice"><strong>Validasi proxy belum memiliki pasangan matang yang cukup.</strong> {escape(message)}</p>
       <div class="grid">
         <div class="metric"><b>{runs}</b><span>run forecast diarsipkan</span></div>
         <div class="metric"><b>{eligible}</b><span>forecast harian layak dibandingkan</span></div>
         <div class="metric"><b>{observations}</b><span>observasi/proxy harian</span></div>
         <div class="metric"><b>{matched}</b><span>pasangan lokasi-hari</span></div>
       </div>
-      <p>Sistem hanya menghitung total 24 jam yang sebanding, memilih satu issue awal per hari agar retry tidak menggandakan sampel, serta memisahkan proxy satelit dari observasi lapangan.</p>
+      <p>Karena site tidak memiliki penakar hujan, evaluasi berjalan otomatis terhadap referensi satelit gridded. Sistem hanya menghitung total 24 jam yang sebanding, memilih satu issue awal per hari agar retry tidak menggandakan sampel, dan tidak menyebut hasilnya sebagai akurasi lapangan.</p>
       <p><a href="index.html">Kembali ke Home</a></p>
       <p>Generated {escape(generated)}</p>
     </div>
@@ -754,7 +783,7 @@ def write_page(
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <title>Validasi Forecast · Forecast Redelong</title>
+  <title>Validasi Forecast, Forecast Redelong</title>
   <style>
     :root{{--bg:#040c16;--panel:rgba(255,255,255,.08);--line:rgba(255,255,255,.15);--text:#eff8ff;--muted:#9fb4c9;--cyan:#45e0d0;--blue:#74a9ff}}
     body{{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 20% 10%,rgba(69,224,208,.22),transparent 32%),linear-gradient(135deg,#04111e,#08253a 45%,#11183a)}}
@@ -788,12 +817,13 @@ def write_page(
 
   <main>
     <section class="panel">
-      <h1>Validasi forecast.</h1>
+      <h1>Validasi terhadap referensi proxy.</h1>
       <p><strong>Mode evaluasi:</strong> {escape(obs_mode)}</p>
       <p><strong>Status:</strong> {escape(str(status.get('state', 'indikatif')))}. {escape(str(status.get('reason', '')))}</p>
       <p>
-        Halaman ini membandingkan akumulasi forecast 24 jam dengan data pembanding
-        harian pada tanggal dan lokasi yang sama. Forecast harian dihitung dengan
+        Halaman ini membandingkan akumulasi forecast 24 jam dengan referensi
+        satelit gridded pada tanggal dan lokasi yang sama. Ini bukan pengukuran
+        langsung di site. Forecast harian dihitung dengan
         menjumlahkan setiap model lebih dahulu, lalu membentuk konsensus antar-model.
         BMKG kategoris, model kosong, dan hari dengan coverage kurang dari
         {MIN_HOURS_PER_SOURCE_DAY}/24 jam tidak masuk perhitungan.

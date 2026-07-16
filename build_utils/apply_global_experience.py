@@ -103,6 +103,23 @@ RAIN_SCRIPT = r"""
 """.strip()
 
 
+def normalize_public_separators(content: str) -> tuple[str, int]:
+    """Replace decorative middle dots with ordinary Indonesian punctuation.
+
+    Several older builders used a middle dot as a visual separator.  With the
+    display font used by the three-day page it looks like a large circle in the
+    middle of a sentence.  The final public-build pass normalises both literal
+    characters and their HTML entities so generated pages and JavaScript labels
+    read naturally in every browser.
+    """
+
+    count = len(re.findall(r"[•·]|&(?:bull|middot);", content, flags=re.I))
+    if not count:
+        return content, 0
+    content = re.sub(r"\s*(?:[•·]|&(?:bull|middot);)\s*", ", ", content, flags=re.I)
+    return content, count
+
+
 def _add_attr(attrs: str, name: str, value: str = "true") -> str:
     if re.search(rf"\b{re.escape(name)}\s*=", attrs, flags=re.I):
         return attrs
@@ -146,6 +163,7 @@ def mark_fr_anchors(content: str) -> tuple[str, int]:
 
 
 def apply_to_html(content: str) -> tuple[str, int, str]:
+    content, _ = normalize_public_separators(content)
     if EXPERIENCE_MARKER in content:
         brands = len(re.findall(r'data-fr-global-brand=["\']true', content, re.I))
         native_rain = bool(
@@ -215,9 +233,16 @@ def apply_to_html(content: str) -> tuple[str, int, str]:
 
 def apply_all(outputs: Path) -> dict[str, int]:
     pages = sorted(path for path in outputs.rglob("*.html") if path.is_file())
-    stats = {"pages": 0, "brands": 0, "native_rain": 0, "global_rain": 0}
+    stats = {
+        "pages": 0,
+        "brands": 0,
+        "native_rain": 0,
+        "global_rain": 0,
+        "separators_replaced": 0,
+    }
     for path in pages:
         original = path.read_text(encoding="utf-8", errors="replace")
+        _, separator_count = normalize_public_separators(original)
         try:
             updated, brands, rain_mode = apply_to_html(original)
         except ValueError as exc:
@@ -225,6 +250,7 @@ def apply_all(outputs: Path) -> dict[str, int]:
         path.write_text(updated, encoding="utf-8")
         stats["pages"] += 1
         stats["brands"] += brands
+        stats["separators_replaced"] += separator_count
         if rain_mode in {"native+global", "global"}:
             stats["global_rain"] += 1
         if rain_mode == "native+global":
@@ -241,7 +267,8 @@ def main() -> None:
     print(
         "Global experience applied: "
         f"pages={stats['pages']} brands={stats['brands']} "
-        f"native_rain={stats['native_rain']} global_rain={stats['global_rain']}"
+        f"native_rain={stats['native_rain']} global_rain={stats['global_rain']} "
+        f"separators_replaced={stats['separators_replaced']}"
     )
 
 

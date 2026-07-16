@@ -471,10 +471,10 @@ def choose_main_proxy(
     # Jangan campur beberapa proxy dalam satu metric.
     # Pilih satu sumber utama agar metrik konsisten.
     # NASA POWER default-nya tidak dijadikan main proxy karena hanya fallback sekunder.
-    if not chirps.empty:
-        return "CHIRPS", chirps
     if not imerg.empty:
         return "IMERG", imerg
+    if not chirps.empty:
+        return "CHIRPS", chirps
     if allow_power_main and not power.empty:
         return "NASA_POWER", power
 

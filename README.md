@@ -104,13 +104,15 @@ model dan minimal tiga model kuantitatif yang masuk evaluasi.
 Ambang awal menggunakan jumlah tanggal unik, bukan jumlah titik lokasi, agar
 titik-titik yang mengalami cuaca sama tidak dianggap sebagai sampel independen.
 
-Workflow mencoba melengkapi tanggal yang telah matang menggunakan CHIRPS satu
-kali per hari dan menyimpannya di `outputs/validation_archive/`. Kegagalan
-layanan proxy tidak menghentikan publikasi forecast. CHIRPS tetap diperlakukan
-sebagai proxy gridded, bukan observasi penakar hujan di site; karena itu hasil
-proxy tidak boleh disebut akurasi lapangan. Status mesin dapat dibaca pada
-`evaluation_status.json`, sedangkan pasangan dan metrik berada pada
-`evaluation_joined_daily.csv` dan `evaluation_metrics.csv`.
+Workflow mencoba melengkapi tanggal yang telah matang menggunakan GPM IMERG satu
+kali per hari dan menyimpannya di `outputs/validation_archive/`. CHIRPS disimpan
+sebagai pembanding tertunda jika IMERG belum tersedia. Kedua sumber tidak pernah
+dicampur dalam satu nilai hujan. Kegagalan layanan proxy tidak menghentikan
+publikasi forecast. Karena site tidak memiliki penakar hujan, metrik dinyatakan
+sebagai skill terhadap referensi proxy gridded dan tidak disebut akurasi
+lapangan. Status mesin dapat dibaca pada `evaluation_status.json`, sedangkan
+pasangan dan metrik berada pada `evaluation_joined_daily.csv` dan
+`evaluation_metrics.csv`.
 
 ## Pemeriksaan scheduler
 

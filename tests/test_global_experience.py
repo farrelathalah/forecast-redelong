@@ -8,6 +8,7 @@ from build_utils.apply_global_experience import (
     EXPERIENCE_MARKER,
     apply_all,
     apply_to_html,
+    normalize_public_separators,
 )
 
 
@@ -57,6 +58,13 @@ class GlobalExperienceTest(unittest.TestCase):
             self.assertEqual(first["pages"], 1)
             self.assertEqual(second["pages"], 1)
             self.assertEqual(first_content, second_content)
+
+    def test_middle_dot_separators_are_replaced_with_commas(self) -> None:
+        source = "Hari ini • Kamis · 16 Juli &middot; WIB &bull; selesai"
+        result, count = normalize_public_separators(source)
+
+        self.assertEqual(count, 4)
+        self.assertEqual(result, "Hari ini, Kamis, 16 Juli, WIB, selesai")
 
 
 if __name__ == "__main__":
