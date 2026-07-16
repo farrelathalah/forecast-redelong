@@ -12,6 +12,7 @@ import argparse
 import csv
 import datetime as dt
 import json
+import math
 import re
 import shutil
 import subprocess
@@ -34,6 +35,7 @@ EXPECTED_LOCATIONS = {
 }
 MIN_MODELS = 3
 MIN_VALID_PORTAL_HOURS = 20
+GLOBAL_EXPERIENCE_MARKER = "fr-global-experience-v1"
 
 # Every retained public HTML page currently needs an interactive FR monogram.
 # Keep any future exception here with a specific rationale so it is visible in
@@ -220,7 +222,7 @@ def check_operational_products(outputs: Path, errors: list[str], metrics: dict[s
             errors.append(f"Produk operasional hilang/kosong: {name}")
 
 
-def check_spatial_contract(outputs: Path, errors: list[str]) -> None:
+def check_spatial_contract(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
     payload = read_json(outputs / "redelong_operational_points.geojson", {}) or {}
     features = payload.get("features", []) if isinstance(payload, dict) else []
     tama = next(
@@ -236,6 +238,83 @@ def check_spatial_contract(outputs: Path, errors: list[str]) -> None:
         return
     if tama.get("include_in_catchment") is not False or tama.get("operational_role") != "external_comparison":
         errors.append("TamaTue harus tetap external_comparison dan tidak masuk agregasi catchment")
+    plta_feature = next(
+        (
+            feature
+            for feature in features
+            if feature.get("properties", {}).get("location_slug") == "plta_redelong"
+        ),
+        None,
+    )
+    tama_feature = next(
+        (
+            feature
+            for feature in features
+            if feature.get("properties", {}).get("location_slug") == "gpm_grid_tamatue"
+        ),
+        None,
+    )
+    distance = None
+    try:
+        plta_lon, plta_lat = plta_feature["geometry"]["coordinates"]
+        tama_lon, tama_lat = tama_feature["geometry"]["coordinates"]
+        p1, p2 = math.radians(plta_lat), math.radians(tama_lat)
+        dp = math.radians(tama_lat - plta_lat)
+        dl = math.radians(tama_lon - plta_lon)
+        a = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+        distance = 2 * 6371.0088 * math.asin(math.sqrt(a))
+    except (TypeError, KeyError, ValueError):
+        errors.append("Jarak PLTA–TamaTue tidak dapat diverifikasi dari GeoJSON operasional")
+    metrics["plta_tamatue_straight_line_km"] = round(distance, 2) if distance is not None else None
+    metrics["tamatue_role"] = tama.get("operational_role")
+    metrics["tamatue_in_catchment"] = tama.get("include_in_catchment")
+
+
+def check_evaluation_status(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
+    required = [
+        "evaluation_summary.html",
+        "evaluation_status.json",
+        "evaluation_joined_daily.csv",
+        "evaluation_metrics.csv",
+        "validation_archive/proxy_refresh_status.json",
+    ]
+    missing = [name for name in required if not (outputs / name).is_file()]
+    if missing:
+        errors.append("Produk validasi hilang: " + ", ".join(missing))
+        return
+    status = read_json(outputs / "evaluation_status.json", {}) or {}
+    proxy_refresh = read_json(
+        outputs / "validation_archive" / "proxy_refresh_status.json", {}
+    ) or {}
+    if status.get("schema_version") != "forecast-redelong-validation-v2":
+        errors.append("evaluation_status.json tidak memakai schema validasi v2")
+    mode = status.get("observation_mode")
+    matched = int(number(status.get("matched_location_days")) or 0)
+    matched_dates = int(number(status.get("matched_unique_dates")) or 0)
+    event_dates = int(number(status.get("observed_event_dates_ge_1mm")) or 0)
+    can_claim = status.get("can_claim_field_accuracy") is True
+    if can_claim and mode != "field_observation":
+        errors.append("Validasi proxy tidak boleh mengklaim akurasi lapangan")
+    if can_claim and matched_dates < 30:
+        errors.append("Klaim awal akurasi lapangan memerlukan sedikitnya 30 tanggal unik")
+    if can_claim and event_dates < 10:
+        errors.append("Klaim awal akurasi lapangan memerlukan sedikitnya 10 tanggal hujan")
+    metric_rows = read_csv(outputs / "evaluation_metrics.csv")
+    if matched == 0 and metric_rows:
+        errors.append("Metrik evaluasi tidak boleh terisi tanpa pasangan forecast–observation")
+    if matched > 0:
+        overall = [row for row in metric_rows if row.get("scope") == "overall"]
+        if len(overall) < 3:
+            errors.append("Metrik overall mean/P90/max belum lengkap")
+        if any(int(number(row.get("n_samples")) or 0) != matched for row in overall):
+            errors.append("Jumlah sampel metrik overall tidak konsisten dengan status validasi")
+    metrics["evaluation_state"] = status.get("state")
+    metrics["evaluation_observation_mode"] = mode
+    metrics["evaluation_matched_location_days"] = matched
+    metrics["evaluation_matched_unique_dates"] = matched_dates
+    metrics["evaluation_can_claim_field_accuracy"] = can_claim
+    metrics["validation_proxy_refresh_status"] = proxy_refresh.get("status")
+    metrics["validation_proxy_missing_pairs"] = proxy_refresh.get("missing_pairs")
 
 
 def check_portal_semantics(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
@@ -282,6 +361,9 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     anemos_files: list[str] = []
     sentinel_files: list[str] = []
     branded_files: list[str] = []
+    experience_missing: list[str] = []
+    spin_missing: list[str] = []
+    rain_missing: list[str] = []
     output_root = outputs.resolve()
 
     for path in html_files:
@@ -311,6 +393,20 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
         if re.search(r"\bSentinel(?:\s+X)?\b", content, flags=re.I):
             sentinel_files.append(relative)
 
+        if GLOBAL_EXPERIENCE_MARKER not in content or "data-fr-global-brand" not in content:
+            experience_missing.append(relative)
+        if "data-fr-spin-target" not in content:
+            spin_missing.append(relative)
+        native_rain = bool(
+            re.search(r'id=["\'](?:atmo-canvas|particle-canvas)["\']', content, flags=re.I)
+        )
+        global_rain = (
+            'id="fr-global-rain"' in content
+            and 'data-fr-rain-effect="true"' in content
+        )
+        if not global_rain:
+            rain_missing.append(relative)
+
     if missing_fr:
         errors.append(
             "Monogram FR interaktif belum ada pada: " + ", ".join(missing_fr[:20])
@@ -326,6 +422,19 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     if sentinel_files:
         errors.append(
             "Brand Sentinel masih muncul pada output publik: " + ", ".join(sentinel_files[:20])
+        )
+    if experience_missing:
+        errors.append(
+            "Global FR experience belum diterapkan pada: "
+            + ", ".join(experience_missing[:20])
+        )
+    if spin_missing:
+        errors.append(
+            "Target animasi putar FR belum ada pada: " + ", ".join(spin_missing[:20])
+        )
+    if rain_missing:
+        errors.append(
+            "Efek atmosfer hujan belum ada pada: " + ", ".join(rain_missing[:20])
         )
 
     expected_map_homes = {
@@ -371,6 +480,12 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     metrics["public_html_broken_fr_links"] = broken_fr_links
     metrics["public_html_anemos_files"] = anemos_files
     metrics["public_html_sentinel_files"] = sentinel_files
+    metrics["public_html_experience_missing"] = experience_missing
+    metrics["public_html_spin_missing"] = spin_missing
+    metrics["public_html_rain_missing"] = rain_missing
+    metrics["global_experience_ok"] = not (
+        experience_missing or spin_missing or rain_missing
+    )
     metrics["map_room_branding_ok"] = not map_brand_errors
     metrics["validation_status_branding_ok"] = validation_brand_ok
 
@@ -407,6 +522,49 @@ def check_branding_and_weights(outputs: Path, errors: list[str], metrics: dict[s
         source: number((by_source.get(source) or {}).get("base_weight"))
         for source in sorted(QUANTITATIVE_SOURCES)
     }
+
+
+def check_usability_basics(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
+    missing_language: list[str] = []
+    missing_viewport: list[str] = []
+    missing_title: list[str] = []
+    inaccessible_fr: list[str] = []
+    for path in public_html_files(outputs):
+        relative = path.relative_to(outputs).as_posix()
+        content = path.read_text(encoding="utf-8", errors="replace")
+        if not re.search(r"<html\b[^>]*\blang=[\"']id[\"']", content, flags=re.I):
+            missing_language.append(relative)
+        if not re.search(r"<meta\b[^>]*\bname=[\"']viewport[\"']", content, flags=re.I):
+            missing_viewport.append(relative)
+        title = re.search(r"<title\b[^>]*>(.*?)</title\s*>", content, flags=re.I | re.S)
+        if not title or not re.sub(r"<[^>]+>", "", title.group(1)).strip():
+            missing_title.append(relative)
+        for anchor in re.finditer(
+            r"<a\b(?P<attrs>[^>]*)>(?P<body>.*?)</a\s*>",
+            content,
+            flags=re.I | re.S,
+        ):
+            visible = re.sub(r"<[^>]+>", " ", anchor.group("body"))
+            if re.search(r"\bFR\b", visible, flags=re.I) and not re.search(
+                r"\baria-label\s*=", anchor.group("attrs"), flags=re.I
+            ):
+                inaccessible_fr.append(relative)
+                break
+    for label, files in [
+        ("atribut bahasa Indonesia", missing_language),
+        ("meta viewport mobile", missing_viewport),
+        ("judul halaman", missing_title),
+        ("label aksesibel pada FR", inaccessible_fr),
+    ]:
+        if files:
+            errors.append(f"Audit kemudahan pakai: {label} belum ada pada " + ", ".join(files[:20]))
+    metrics["usability_missing_language"] = missing_language
+    metrics["usability_missing_viewport"] = missing_viewport
+    metrics["usability_missing_title"] = missing_title
+    metrics["usability_inaccessible_fr"] = inaccessible_fr
+    metrics["usability_basics_ok"] = not (
+        missing_language or missing_viewport or missing_title or inaccessible_fr
+    )
 
 
 def check_inline_javascript(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
@@ -451,13 +609,15 @@ def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     metrics: dict[str, Any] = {}
     check_forecast_contract(outputs, errors, metrics)
     check_operational_products(outputs, errors, metrics)
-    check_spatial_contract(outputs, errors)
+    check_spatial_contract(outputs, errors, metrics)
     check_portal_semantics(outputs, errors, metrics)
     check_public_branding(outputs, errors, metrics)
     check_branding_and_weights(outputs, errors, metrics)
+    check_usability_basics(outputs, errors, metrics)
+    check_evaluation_status(outputs, errors, metrics)
     check_inline_javascript(outputs, errors, metrics)
     report = {
-        "schema_version": "forecast-redelong-publish-gate-v3",
+        "schema_version": "forecast-redelong-publish-gate-v4",
         "status": "pass" if not errors else "fail",
         "errors": errors,
         "metrics": metrics,

@@ -573,10 +573,11 @@ def make_location_dashboard(slug, loc, loc_df, rain_col, source_col, time_cols, 
       </div>
       <aside class="hero-panel">
         <div class="metric"><div class="label">Hujan Jam Tertinggi</div><div class="value">{stats["rain_max"]} mm</div></div>
-        <div class="metric"><div class="label">P90 Model-Jam</div><div class="value">{stats["rain_p90"]} mm</div></div>
+        <div class="metric"><div class="label">Nilai Tinggi (P90)</div><div class="value">{stats["rain_p90"]} mm</div></div>
         <div class="metric"><div class="label">Rata-rata Model-Jam</div><div class="value">{stats["rain_mean"]} mm</div></div>
         <div class="metric"><div class="label">Model Numerik</div><div class="value">{stats["sources"]}</div></div>
       </aside>
+      <p style="max-width:520px;color:var(--muted);font-size:12px;line-height:1.6;margin:12px 0 0">P90 adalah batas nilai tinggi antar-model dan jam: sekitar 90% nilai berada di bawahnya. Ini bukan peluang hujan 90% dan bukan akumulasi 24 jam.</p>
     </div>
     <a class="scroll-cue" href="#grafik">Scroll</a>
   </header>

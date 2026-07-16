@@ -58,6 +58,9 @@ jobs:
             if [ -d /tmp/forecast-gh-pages/archive ]; then
               cp -a /tmp/forecast-gh-pages/archive outputs/
             fi
+            if [ -d /tmp/forecast-gh-pages/validation_archive ]; then
+              cp -a /tmp/forecast-gh-pages/validation_archive outputs/
+            fi
             git worktree remove --force /tmp/forecast-gh-pages
           fi
 
@@ -117,6 +120,10 @@ jobs:
         run: |
           python build_utils/build_redelong_operational.py --outputs outputs
 
+      - name: Refresh mature CHIRPS validation proxy
+        run: |
+          python build_utils/refresh_validation_observations.py --outputs outputs
+
       - name: Evaluate forecast accuracy
         run: |
           python build_utils/evaluate_forecast_accuracy.py
@@ -124,6 +131,10 @@ jobs:
       - name: Add evaluation link
         run: |
           python build_utils/link_evaluation_page.py
+
+      - name: Apply shared FR interaction and rain atmosphere
+        run: |
+          python build_utils/apply_global_experience.py --outputs outputs
 
       - name: Validate publish quality gate
         run: |

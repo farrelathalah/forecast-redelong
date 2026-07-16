@@ -94,6 +94,31 @@ tersedia sebagai artifact bernama `forecast-redelong-validation-*` selama tujuh
 hari. Schedule dan trigger Google Apps Script yang tidak mengirim input ini
 tetap memakai nilai default `false`, sehingga alur publikasi rutin tidak berubah.
 
+## Validasi forecast
+
+Validasi memakai forecast yang benar-benar telah diarsipkan berdasarkan issue
+time. Satu issue paling awal per tanggal dipilih agar retry manual tidak
+menggandakan sampel. Total hujan dibandingkan per lokasi dan hari, lalu hasil
+dipisahkan menjadi H+1, H+2, dan H+3. Hanya hari dengan sedikitnya 20/24 jam per
+model dan minimal tiga model kuantitatif yang masuk evaluasi.
+Ambang awal menggunakan jumlah tanggal unik, bukan jumlah titik lokasi, agar
+titik-titik yang mengalami cuaca sama tidak dianggap sebagai sampel independen.
+
+Workflow mencoba melengkapi tanggal yang telah matang menggunakan CHIRPS satu
+kali per hari dan menyimpannya di `outputs/validation_archive/`. Kegagalan
+layanan proxy tidak menghentikan publikasi forecast. CHIRPS tetap diperlakukan
+sebagai proxy gridded, bukan observasi penakar hujan di site; karena itu hasil
+proxy tidak boleh disebut akurasi lapangan. Status mesin dapat dibaca pada
+`evaluation_status.json`, sedangkan pasangan dan metrik berada pada
+`evaluation_joined_daily.csv` dan `evaluation_metrics.csv`.
+
+## Pemeriksaan scheduler
+
+Status `Completed` pada Google Apps Script hanya menyatakan fungsi telah selesai.
+Keberhasilan dispatch dibuktikan oleh HTTP 204 dari GitHub dan munculnya run baru
+pada Actions untuk commit `main` saat itu. Jika fungsi sengaja mencegah run
+duplikat pada hari yang sama, log harus menyebutkan bahwa dispatch dilewati.
+
 ## Batas penggunaan
 
 Sistem ini masih merupakan decision-support prototype. Akurasi forecast belum

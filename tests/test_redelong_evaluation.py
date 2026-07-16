@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import tempfile
 import unittest
+import json
 from pathlib import Path
 
 import pandas as pd
 
 from build_utils.evaluate_forecast_accuracy import (
     QUANTITATIVE_SOURCES,
+    build_archive_daily_forecasts,
     build_daily_forecast,
     main,
 )
@@ -119,6 +121,59 @@ class RedelongEvaluationTest(unittest.TestCase):
             html = (outputs / "evaluation_summary.html").read_text(encoding="utf-8")
             self.assertIn("Data observasi yang sesuai belum tersedia", html)
             self.assertNotIn("Forecast atau observasi belum tersedia", html)
+            self.assertEqual(
+                html,
+                (outputs / "validation_status.html").read_text(encoding="utf-8"),
+            )
+
+    def test_archive_validation_deduplicates_manual_retries_by_issue_date(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = Path(tmp) / "archive"
+            for stamp, issue in [
+                ("20260714T063000+0700", "2026-07-14T06:30:00+07:00"),
+                ("20260714T090000+0700", "2026-07-14T09:00:00+07:00"),
+            ]:
+                run = archive / "2026" / "07" / stamp
+                run.mkdir(parents=True)
+                (run / "archive_metadata.json").write_text(
+                    json.dumps({"issue_time_wib": issue}), encoding="utf-8"
+                )
+                pd.DataFrame(self._forecast_rows()).to_csv(
+                    run / "forecast_all_locations.csv", index=False
+                )
+
+            daily, stats = build_archive_daily_forecasts(archive)
+
+            self.assertEqual(stats["archive_runs_found"], 2)
+            self.assertEqual(stats["eligible_archive_daily_rows_before_dedup"], 2)
+            self.assertEqual(stats["eligible_archive_daily_rows"], 1)
+            self.assertEqual(len(daily), 1)
+            self.assertEqual(int(daily.iloc[0]["lead_day"]), 1)
+            self.assertTrue(str(daily.iloc[0]["issue_time_wib"]).startswith("2026-07-14T06:30"))
+
+    def test_archive_validation_does_not_extend_past_declared_forecast_end(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            archive = Path(tmp) / "archive"
+            run = archive / "2026" / "07" / "run"
+            run.mkdir(parents=True)
+            (run / "archive_metadata.json").write_text(
+                json.dumps(
+                    {
+                        "issue_time_wib": "2026-07-14T06:30:00+07:00",
+                        "forecast_end_wib": "2026-07-15T10:00:00+07:00",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            pd.DataFrame(self._forecast_rows()).to_csv(
+                run / "forecast_all_locations.csv", index=False
+            )
+
+            daily, stats = build_archive_daily_forecasts(archive)
+
+            self.assertTrue(daily.empty)
+            self.assertEqual(stats["archive_runs_found"], 1)
+            self.assertEqual(stats["archive_runs_eligible"], 0)
 
 
 if __name__ == "__main__":

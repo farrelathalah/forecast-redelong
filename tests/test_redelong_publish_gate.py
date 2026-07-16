@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from build_utils.apply_global_experience import apply_all
 from build_utils.validate_redelong_publish import (
     EXPECTED_LOCATIONS,
     QUANTITATIVE_SOURCES,
@@ -23,7 +24,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 def branded_html(href: str, script: str = "") -> str:
     return (
-        "<!doctype html><html><body>"
+        '<!doctype html><html lang="id"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forecast Redelong</title></head><body>'
         f'<a data-fr-brand="true" href="{href}"><span>FR</span>'
         "<b>Forecast Redelong</b></a>"
         f"{script}</body></html>"
@@ -86,6 +87,15 @@ class RedelongPublishGateTest(unittest.TestCase):
                     "features": [
                         {
                             "type": "Feature",
+                            "geometry": {"type": "Point", "coordinates": [96.977344, 4.748139]},
+                            "properties": {
+                                "location_slug": "plta_redelong",
+                                "operational_role": "outlet_reference",
+                                "include_in_catchment": False,
+                            },
+                        },
+                        {
+                            "type": "Feature",
                             "geometry": {"type": "Point", "coordinates": [96.85, 4.65]},
                             "properties": {
                                 "location_slug": "gpm_grid_tamatue",
@@ -137,6 +147,33 @@ class RedelongPublishGateTest(unittest.TestCase):
         (root / "validation_status.html").write_text(
             branded_html("index.html"), encoding="utf-8"
         )
+        (root / "evaluation_summary.html").write_text(
+            branded_html("index.html"), encoding="utf-8"
+        )
+        (root / "evaluation_status.json").write_text(
+            json.dumps(
+                {
+                    "schema_version": "forecast-redelong-validation-v2",
+                    "state": "menunggu_pasangan",
+                    "observation_mode": "proxy_observation",
+                    "matched_location_days": 0,
+                    "can_claim_field_accuracy": False,
+                }
+            ),
+            encoding="utf-8",
+        )
+        (root / "evaluation_joined_daily.csv").write_text(
+            "date,location_slug\n", encoding="utf-8"
+        )
+        (root / "evaluation_metrics.csv").write_text(
+            "scope,forecast_metric,n_samples\n", encoding="utf-8"
+        )
+        (root / "validation_archive").mkdir()
+        (root / "validation_archive" / "proxy_refresh_status.json").write_text(
+            json.dumps({"status": "no_eligible_archive", "missing_pairs": 0}),
+            encoding="utf-8",
+        )
+        apply_all(root)
 
     def test_valid_run_passes_and_broken_javascript_is_blocked(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -160,7 +197,12 @@ class RedelongPublishGateTest(unittest.TestCase):
             self.make_valid_outputs(outputs)
             geo_path = outputs / "redelong_operational_points.geojson"
             payload = json.loads(geo_path.read_text(encoding="utf-8"))
-            payload["features"][0]["properties"]["include_in_catchment"] = True
+            tama = next(
+                feature
+                for feature in payload["features"]
+                if feature["properties"]["location_slug"] == "gpm_grid_tamatue"
+            )
+            tama["properties"]["include_in_catchment"] = True
             geo_path.write_text(json.dumps(payload), encoding="utf-8")
 
             ok, report = validate(outputs)
