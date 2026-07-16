@@ -1,4 +1,4 @@
-# ANEMOS Public Weather v11 — Forecast Constitution
+# Forecast Redelong Public Weather v11 — Forecast Constitution
 
 1. Do not assign high trust when source coverage is weak.
 2. Do not hide source disagreement; disagreement is a risk signal.

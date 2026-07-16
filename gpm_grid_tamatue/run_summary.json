@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-16T06:31:08.765916+07:00",
+  "generated_at": "2026-07-16T07:55:24.319960+07:00",
   "location_slug": "gpm_grid_tamatue",
   "location_name": "GPM Grid TamaTue",
   "bmkg_point_name": "Bale Redelong",
@@ -57,8 +57,8 @@
   "low_coverage_slots": [],
   "run_status": "ok",
   "sentinel_x": {
-    "version": "ANEMOS Public Weather v11",
-    "run_id": "gpm_grid_tamatue_20260719_20260716063108",
+    "version": "Forecast Redelong Public Weather v11",
+    "run_id": "gpm_grid_tamatue_20260719_20260716075524",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/command_center_sentinel_x.html",
@@ -66,6 +66,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x_ledger.sqlite",
     "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM Grid TamaTue. Status operasional harian YELLOW. Risk window utama: 14:00–16:00. Failure risk tertinggi 35.4/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM Grid TamaTue. Status operasional harian YELLOW. Risk window utama: 14:00–16:00. Failure risk tertinggi 34.9/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }

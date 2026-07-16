@@ -1,9 +1,9 @@
 {
-  "schema_version": "forecast-redelong-publish-gate-v2",
+  "schema_version": "forecast-redelong-publish-gate-v3",
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 5152,
+    "forecast_rows": 5144,
     "locations_found": 8,
     "quantitative_sources_found": [
       "CMA",
@@ -122,6 +122,15 @@
         ]
       }
     },
+    "public_html_count": 80,
+    "public_html_fr_branded_count": 80,
+    "public_html_fr_exceptions": {},
+    "public_html_missing_fr": [],
+    "public_html_broken_fr_links": [],
+    "public_html_anemos_files": [],
+    "public_html_sentinel_files": [],
+    "map_room_branding_ok": true,
+    "validation_status_branding_ok": true,
     "branding_bad_file_count": 0,
     "quantitative_base_weights": {
       "CMA": 1.0,

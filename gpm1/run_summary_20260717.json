@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-16T06:26:18.998577+07:00",
+  "generated_at": "2026-07-16T07:50:10.933912+07:00",
   "location_slug": "gpm1",
   "location_name": "GPM1",
   "bmkg_point_name": "Bale Redelong",
@@ -57,8 +57,8 @@
   "low_coverage_slots": [],
   "run_status": "ok",
   "sentinel_x": {
-    "version": "ANEMOS Public Weather v11",
-    "run_id": "gpm1_20260717_20260716062618",
+    "version": "Forecast Redelong Public Weather v11",
+    "run_id": "gpm1_20260717_20260716075010",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/command_center_sentinel_x.html",
@@ -66,6 +66,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/sentinel_x_ledger.sqlite",
     "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM1. Status operasional harian YELLOW. Risk window utama: 13:00–21:00. Failure risk tertinggi 53.9/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM1. Status operasional harian YELLOW. Risk window utama: 13:00–22:00. Failure risk tertinggi 53.4/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
