@@ -231,6 +231,10 @@ class RedelongPublishGateTest(unittest.TestCase):
                     "site_gauge_required": False,
                     "matched_location_days": 0,
                     "can_claim_field_accuracy": False,
+                    "end_to_end_validation": {
+                        "status": "collecting_archive",
+                        "matched_pairs": 0,
+                    },
                     "can_report_preliminary_proxy_skill": False,
                 }
             ),
@@ -245,6 +249,69 @@ class RedelongPublishGateTest(unittest.TestCase):
         (root / "validation_archive").mkdir()
         (root / "validation_archive" / "proxy_refresh_status.json").write_text(
             json.dumps({"status": "no_eligible_archive", "missing_pairs": 0}),
+            encoding="utf-8",
+        )
+        discharge_forecast = [
+            {
+                "lead_day": lead,
+                "discharge_scenario_low_m3s": 5.0,
+                "discharge_forecast_m3s": 7.0,
+                "discharge_scenario_high_m3s": 10.0,
+            }
+            for lead in (1, 2, 3)
+        ]
+        discharge_validation = [
+            {"lead_day": lead, "n_samples": 1000, "nse": 0.7}
+            for lead in (1, 2, 3)
+        ]
+        (root / "redelong_discharge.json").write_text(
+            json.dumps(
+                {
+                    "status": "provisional_proxy_calibrated",
+                    "can_claim_field_accuracy": False,
+                    "forecast": discharge_forecast,
+                    "validation": discharge_validation,
+                }
+            ),
+            encoding="utf-8",
+        )
+        write_csv(root / "redelong_discharge_forecast.csv", discharge_forecast)
+        write_csv(root / "redelong_discharge_validation.csv", discharge_validation)
+        write_csv(
+            root / "redelong_discharge_hindcast_pairs.csv",
+            [{"lead_day": 1, "discharge_proxy_observed_m3s": 7, "discharge_modelled_m3s": 7}],
+        )
+        (root / "redelong_discharge_end_to_end_pairs.csv").write_text(
+            "issue_time_wib,valid_date,lead_day\n", encoding="utf-8"
+        )
+        (root / "redelong_discharge_end_to_end_validation.csv").write_text(
+            "lead_day,n_samples\n", encoding="utf-8"
+        )
+        (root / "redelong_discharge.html").write_text(
+            branded_html("index.html").replace(
+                "</head>",
+                "<meta name='forecast-hydro-page' content='forecast-redelong-discharge-v1'></head>",
+            ).replace("</body>", "<p>Belum field-calibrated</p></body>"),
+            encoding="utf-8",
+        )
+        hydrology = root / "hydrology"
+        hydrology.mkdir()
+        (hydrology / "glofas_discharge_metadata.json").write_text(
+            json.dumps(
+                {
+                    "source": "GloFAS v4 via Open-Meteo Flood API",
+                    "observation_type": "simulated_gridded_discharge_proxy",
+                    "history_rows": 9000,
+                    "selected_grid_coordinate": [4.725006, 96.975006],
+                }
+            ),
+            encoding="utf-8",
+        )
+        operational_path = root / "redelong_operational.html"
+        operational_path.write_text(
+            operational_path.read_text(encoding="utf-8").replace(
+                "</body>", '<a href="redelong_discharge.html">Forecast debit</a></body>'
+            ),
             encoding="utf-8",
         )
         build_besai_portal(root)

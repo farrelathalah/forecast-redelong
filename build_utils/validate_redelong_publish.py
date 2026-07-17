@@ -781,6 +781,74 @@ def check_multisite_catalog(outputs: Path, errors: list[str], metrics: dict[str,
     metrics["multisite_besai_forecast_days"] = len(forecast) if isinstance(forecast, list) else 0
 
 
+def check_discharge_products(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
+    required = [
+        "redelong_discharge.html",
+        "redelong_discharge.json",
+        "redelong_discharge_forecast.csv",
+        "redelong_discharge_validation.csv",
+        "redelong_discharge_hindcast_pairs.csv",
+        "redelong_discharge_end_to_end_pairs.csv",
+        "redelong_discharge_end_to_end_validation.csv",
+        "hydrology/glofas_discharge_metadata.json",
+    ]
+    missing = [name for name in required if not (outputs / name).is_file()]
+    if missing:
+        errors.append("Produk forecast debit hilang: " + ", ".join(missing))
+        return
+
+    payload = read_json(outputs / "redelong_discharge.json", {}) or {}
+    if payload.get("status") != "provisional_proxy_calibrated":
+        errors.append("Forecast debit harus berstatus provisional_proxy_calibrated")
+    if payload.get("can_claim_field_accuracy") is not False:
+        errors.append("Forecast debit proxy tidak boleh mengklaim akurasi lapangan")
+    end_to_end = payload.get("end_to_end_validation", {})
+    if end_to_end.get("status") == "preliminary_proxy_skill" and int(
+        number(end_to_end.get("matched_pairs")) or 0
+    ) < 30:
+        errors.append("Skill debit end-to-end memerlukan sedikitnya 30 pasangan matang")
+    forecast = payload.get("forecast", []) if isinstance(payload, dict) else []
+    leads = {int(number(row.get("lead_day")) or 0) for row in forecast}
+    if leads != {1, 2, 3}:
+        errors.append("Forecast debit harus memuat lead 1, 2, dan 3 hari")
+    for row in forecast:
+        low = number(row.get("discharge_scenario_low_m3s"))
+        mean = number(row.get("discharge_forecast_m3s"))
+        high = number(row.get("discharge_scenario_high_m3s"))
+        if low is None or mean is None or high is None or not (0 <= low <= mean <= high):
+            errors.append("Rentang forecast debit tidak valid atau tidak monoton")
+            break
+
+    validation = payload.get("validation", []) if isinstance(payload, dict) else []
+    validation_leads = {int(number(row.get("lead_day")) or 0) for row in validation}
+    if validation_leads != {1, 2, 3}:
+        errors.append("Validasi debit harus dipisahkan untuk lead 1-3 hari")
+    if any(int(number(row.get("n_samples")) or 0) < 365 for row in validation):
+        errors.append("Validasi debit memerlukan sedikitnya 365 sampel per lead")
+
+    metadata = read_json(outputs / "hydrology" / "glofas_discharge_metadata.json", {}) or {}
+    if metadata.get("observation_type") != "simulated_gridded_discharge_proxy":
+        errors.append("Referensi GloFAS harus dilabeli sebagai simulated gridded proxy")
+    if int(number(metadata.get("history_rows")) or 0) < 8000:
+        errors.append("Seri GloFAS untuk kalibrasi debit kurang dari 8.000 hari")
+
+    page = (outputs / "redelong_discharge.html").read_text(encoding="utf-8", errors="replace")
+    if "forecast-redelong-discharge-v1" not in page or "Belum field-calibrated" not in page:
+        errors.append("Halaman debit belum memuat kontrak dan disclaimer proxy")
+    operational = (outputs / "redelong_operational.html").read_text(encoding="utf-8", errors="replace")
+    if "redelong_discharge.html" not in operational:
+        errors.append("Dashboard operasional belum menautkan forecast debit")
+
+    metrics["discharge_status"] = payload.get("status")
+    metrics["discharge_forecast_leads"] = sorted(leads)
+    metrics["discharge_validation_samples"] = {
+        str(row.get("lead_day")): int(number(row.get("n_samples")) or 0)
+        for row in validation
+    }
+    metrics["discharge_reference"] = metadata.get("source")
+    metrics["discharge_reference_grid"] = metadata.get("selected_grid_coordinate")
+
+
 def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     errors: list[str] = []
     metrics: dict[str, Any] = {}
@@ -794,9 +862,10 @@ def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     check_evaluation_status(outputs, errors, metrics)
     check_geospatial_history(outputs, errors, metrics)
     check_multisite_catalog(outputs, errors, metrics)
+    check_discharge_products(outputs, errors, metrics)
     check_inline_javascript(outputs, errors, metrics)
     report = {
-        "schema_version": "forecast-hydro-publish-gate-v5",
+        "schema_version": "forecast-hydro-publish-gate-v6",
         "status": "pass" if not errors else "fail",
         "errors": errors,
         "metrics": metrics,
