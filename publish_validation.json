@@ -1,9 +1,9 @@
 {
-  "schema_version": "forecast-hydro-publish-gate-v5",
+  "schema_version": "forecast-hydro-publish-gate-v6",
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 5786,
+    "forecast_rows": 5777,
     "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
@@ -125,8 +125,8 @@
         ]
       }
     },
-    "public_html_count": 92,
-    "public_html_fr_branded_count": 92,
+    "public_html_count": 93,
+    "public_html_fr_branded_count": 93,
     "public_html_fr_exceptions": {},
     "public_html_missing_fr": [],
     "public_html_broken_fr_links": [],
@@ -161,7 +161,7 @@
     "evaluation_can_report_preliminary_proxy_skill": false,
     "evaluation_observation_sources": [],
     "evaluation_joined_observation_sources": [],
-    "validation_proxy_refresh_status": "proxy_pending",
+    "validation_proxy_refresh_status": "already_attempted_today",
     "validation_proxy_missing_pairs": 8,
     "geospatial_history_zones": 7,
     "geospatial_history_catchment_zones": 6,
@@ -180,6 +180,22 @@
     "multisite_besai_boundary_status": "not_yet_delineated",
     "multisite_besai_history_days": 16436,
     "multisite_besai_forecast_days": 4,
-    "html_javascript_files_checked": 92
+    "discharge_status": "provisional_proxy_calibrated",
+    "discharge_forecast_leads": [
+      1,
+      2,
+      3
+    ],
+    "discharge_validation_samples": {
+      "1": 2538,
+      "2": 2537,
+      "3": 2536
+    },
+    "discharge_reference": "GloFAS v4 via Open-Meteo Flood API",
+    "discharge_reference_grid": [
+      4.725006,
+      96.975006
+    ],
+    "html_javascript_files_checked": 93
   }
 }

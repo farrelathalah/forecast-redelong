@@ -1,0 +1,24 @@
+{
+  "schema_version": "forecast-redelong-glofas-proxy-v1",
+  "source": "GloFAS v4 via Open-Meteo Flood API",
+  "source_url": "https://open-meteo.com/en/docs/flood-api",
+  "upstream_source": "Copernicus Emergency Management Service Global Flood Awareness System (GloFAS v4)",
+  "usage_note": "Open-Meteo public access is suitable for prototype/non-commercial use; confirm the applicable licence or use an approved Copernicus service before corporate production deployment.",
+  "observation_type": "simulated_gridded_discharge_proxy",
+  "request_coordinate": [
+    4.748139,
+    96.977344
+  ],
+  "selected_grid_coordinate": [
+    4.725006,
+    96.975006
+  ],
+  "selected_grid_elevation_m": 1093.0,
+  "timezone": "Asia/Jakarta",
+  "history_start": "2000-01-01",
+  "history_end": "2026-07-16",
+  "history_rows": 9694,
+  "current_rows": 24,
+  "unit": "m3/s",
+  "disclaimer": "GloFAS is a simulated gridded river-discharge product, not an AWLR or direct discharge observation at PLTA Redelong. Grid-to-river matching and licensing must be confirmed before production operational use."
+}
