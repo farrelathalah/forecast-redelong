@@ -3,7 +3,7 @@
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 5724,
+    "forecast_rows": 5772,
     "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
@@ -30,9 +30,9 @@
     "portal": {
       "gpm1": {
         "dates": [
-          "2026-07-17",
           "2026-07-18",
-          "2026-07-19"
+          "2026-07-19",
+          "2026-07-20"
         ],
         "valid_points": [
           24,
@@ -42,9 +42,9 @@
       },
       "gpm2": {
         "dates": [
-          "2026-07-17",
           "2026-07-18",
-          "2026-07-19"
+          "2026-07-19",
+          "2026-07-20"
         ],
         "valid_points": [
           24,
@@ -54,9 +54,9 @@
       },
       "gpm3": {
         "dates": [
-          "2026-07-17",
           "2026-07-18",
-          "2026-07-19"
+          "2026-07-19",
+          "2026-07-20"
         ],
         "valid_points": [
           24,
@@ -66,9 +66,9 @@
       },
       "gpm4": {
         "dates": [
-          "2026-07-17",
           "2026-07-18",
-          "2026-07-19"
+          "2026-07-19",
+          "2026-07-20"
         ],
         "valid_points": [
           24,
@@ -78,9 +78,9 @@
       },
       "gpm5": {
         "dates": [
-          "2026-07-17",
           "2026-07-18",
-          "2026-07-19"
+          "2026-07-19",
+          "2026-07-20"
         ],
         "valid_points": [
           24,
@@ -90,9 +90,9 @@
       },
       "gpm6": {
         "dates": [
-          "2026-07-17",
           "2026-07-18",
-          "2026-07-19"
+          "2026-07-19",
+          "2026-07-20"
         ],
         "valid_points": [
           24,
@@ -102,9 +102,9 @@
       },
       "gpm_grid_tamatue": {
         "dates": [
-          "2026-07-17",
           "2026-07-18",
-          "2026-07-19"
+          "2026-07-19",
+          "2026-07-20"
         ],
         "valid_points": [
           24,
@@ -114,9 +114,9 @@
       },
       "plta_redelong": {
         "dates": [
-          "2026-07-17",
           "2026-07-18",
-          "2026-07-19"
+          "2026-07-19",
+          "2026-07-20"
         ],
         "valid_points": [
           24,
@@ -161,8 +161,8 @@
     "evaluation_can_report_preliminary_proxy_skill": false,
     "evaluation_observation_sources": [],
     "evaluation_joined_observation_sources": [],
-    "validation_proxy_refresh_status": "already_attempted_today",
-    "validation_proxy_missing_pairs": 8,
+    "validation_proxy_refresh_status": "proxy_pending",
+    "validation_proxy_missing_pairs": 16,
     "geospatial_history_zones": 7,
     "geospatial_history_catchment_zones": 6,
     "geospatial_history_catchment_area_km2": 137.799,
