@@ -1,7 +1,7 @@
 {
   "version": "Forecast Redelong Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-07-17T09:13:58.532090+07:00",
+  "generated_at": "2026-07-17T14:38:45.192323+07:00",
   "location": "GPM Grid TamaTue",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,7 +25,7 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-07-17T09:13:58.524114+07:00",
+    "generated_at": "2026-07-17T14:38:45.183006+07:00",
     "aether_version": "Forecast Redelong Public Weather v11",
     "location": "GPM Grid TamaTue",
     "mission": "safety_first",
@@ -39,19 +39,19 @@
       "forecast_difficulty": "medium",
       "notes": "Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
     },
-    "risk_window": "15:00–19:00",
+    "risk_window": "14:00–22:00",
     "best_general_activity_window": "10:00",
-    "peak_rain_threat_hour": "19:00",
-    "peak_rain_threat_score": 68.4,
-    "peak_heavy_rain_threat_hour": "14:00",
-    "peak_heavy_rain_threat_score": 15.2,
-    "peak_failure_risk_hour": "14:00",
-    "peak_failure_risk_score": 40.2,
-    "peak_forecast_stress_hour": "14:00",
-    "peak_forecast_stress_score": 42.0,
-    "peak_self_doubt_hour": "14:00",
-    "peak_self_doubt_score": 39.5,
-    "summary_text": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM Grid TamaTue. Status operasional harian YELLOW. Risk window utama: 15:00–19:00. Failure risk tertinggi 40.2/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "peak_rain_threat_hour": "16:00",
+    "peak_rain_threat_score": 63.5,
+    "peak_heavy_rain_threat_hour": "21:00",
+    "peak_heavy_rain_threat_score": 15.8,
+    "peak_failure_risk_hour": "21:00",
+    "peak_failure_risk_score": 46.3,
+    "peak_forecast_stress_hour": "21:00",
+    "peak_forecast_stress_score": 52.4,
+    "peak_self_doubt_hour": "21:00",
+    "peak_self_doubt_score": 48.9,
+    "summary_text": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM Grid TamaTue. Status operasional harian YELLOW. Risk window utama: 14:00–22:00. Failure risk tertinggi 46.3/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   },
   "constitution": [
     "Do not assign high trust when source coverage is weak.",

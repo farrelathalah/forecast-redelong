@@ -1,8 +1,8 @@
 tanggal,source_id,provider,success,base_weight,health_factor,effective_base_weight,points_collected,target_points,http_status,duration_ms,error_content_type,error_snippet,payload_saved_path,error
-20-07-2026,BMKG,BMKG,no,1.35,0.9935,1.3412,0,24,,92,,,,BMKG tidak mengembalikan kandidat untuk target date
-20-07-2026,CMA,Open-Meteo / CMA GRAPES,yes,1.0,1.0,1.0,24,24,200,600,,,,
-20-07-2026,ECMWF,Open-Meteo / ECMWF,yes,1.0,1.0,1.0,24,24,200,646,,,,
-20-07-2026,GFS,Open-Meteo / NOAA GFS,yes,1.0,1.0,1.0,24,24,200,611,,,,
-20-07-2026,ICON,Open-Meteo / DWD ICON,yes,1.0,1.0,1.0,24,24,200,599,,,,
-20-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,yes,1.0,1.0,1.0,24,24,200,754,,,,
-20-07-2026,UKMO,Open-Meteo / UK Met Office,yes,1.0,1.0,1.0,24,24,200,622,,,,
+20-07-2026,BMKG,BMKG,no,1.35,0.9889,1.335,0,24,,94,,,,BMKG tidak mengembalikan kandidat untuk target date
+20-07-2026,CMA,Open-Meteo / CMA GRAPES,yes,1.0,1.0,1.0,24,24,200,559,,,,
+20-07-2026,ECMWF,Open-Meteo / ECMWF,yes,1.0,1.0,1.0,24,24,200,591,,,,
+20-07-2026,GFS,Open-Meteo / NOAA GFS,yes,1.0,1.0,1.0,24,24,200,600,,,,
+20-07-2026,ICON,Open-Meteo / DWD ICON,yes,1.0,1.0,1.0,24,24,200,551,,,,
+20-07-2026,METEOFRANCE,Open-Meteo / Meteo-France,yes,1.0,1.0,1.0,24,24,200,561,,,,
+20-07-2026,UKMO,Open-Meteo / UK Met Office,yes,1.0,1.0,1.0,24,24,200,585,,,,
