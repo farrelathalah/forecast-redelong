@@ -1,4 +1,4 @@
-﻿# Forecast Redelong
+# Forecast Redelong
 
 Sistem otomatis prakiraan hujan multi-model untuk mendukung monitoring PLTA
 Redelong. Produk utama menggunakan waktu WIB dan menyajikan hujan per jam,
@@ -78,6 +78,11 @@ Setelah forecast selesai, `build_utils/build_redelong_operational.py` membuat:
 - `redelong_operational.json`: API statis;
 - `archive/<tahun>/<bulan>/<issue_time>/`: arsip forecast untuk validasi.
 
+Modul hidrologi tambahan membuat `redelong_discharge.html` dan
+`redelong_discharge_forecast.csv`. Metode, sumber proxy, pemisahan hindcast dan
+validasi end-to-end, serta batas penggunaannya dijelaskan dalam
+`docs/RAINFALL_TO_DISCHARGE.md`.
+
 Seluruh output CSV memakai header yang eksplisit dan dapat dibuka langsung di
 Excel. Workbook `.xlsx` berformat khusus dapat dibuat sebagai snapshot laporan,
 sedangkan CSV/JSON di dashboard diperbarui otomatis pada setiap run. `index.html`
@@ -131,6 +136,8 @@ python weather_ensemble_multi_location.py `
   --forecast-range-days 4
 
 python build_utils/build_redelong_operational.py --outputs outputs
+python build_utils/fetch_glofas_discharge.py --outputs outputs
+python build_utils/build_redelong_discharge.py --outputs outputs
 python build_utils/build_redelong_globe_history.py --outputs outputs
 python build_utils/build_besai_portal.py --outputs outputs
 python build_utils/build_multisite_catalog.py --outputs outputs
@@ -183,6 +190,7 @@ duplikat pada hari yang sama, log harus menyebutkan bahwa dispatch dilewati.
 
 Sistem ini masih merupakan decision-support prototype. Akurasi forecast belum
 dapat diklaim sebelum tersedia pasangan forecast–observation yang cukup.
-Volume hujan bruto dihitung dengan `P(mm) × A(km²) × 1000`, tetapi bukan prediksi
-debit atau inflow karena belum memasukkan infiltrasi, kelembapan awal, routing,
-waktu tempuh, dan operasi waduk.
+Volume hujan bruto dihitung dengan `P(mm) × A(km²) × 1000`. Forecast debit yang
+ditambahkan adalah model proxy harian yang dikalibrasi terhadap GloFAS, bukan
+inflow atau debit lapangan terukur. Model belum memasukkan operasi waduk/intake,
+routing sub-harian, kehilangan air, maupun batas turbin.

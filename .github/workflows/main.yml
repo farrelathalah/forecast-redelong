@@ -1,4 +1,4 @@
-﻿name: Forecast Redelong
+name: Forecast Redelong
 
 on:
   push:
@@ -124,6 +124,14 @@ jobs:
       - name: Build operator-facing Redelong products
         run: |
           python build_utils/build_redelong_operational.py --outputs outputs
+
+      - name: Fetch GloFAS discharge calibration proxy
+        run: |
+          python build_utils/fetch_glofas_discharge.py --outputs outputs
+
+      - name: Build rainfall-to-discharge forecast
+        run: |
+          python build_utils/build_redelong_discharge.py --outputs outputs
 
       - name: Build Redelong 3D globe and historical explorer
         run: |
