@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Overview · Forecast Redelong</title>
+  <title>Overview, Forecast Redelong</title>
   <style>
     :root {
       --bg:#040c16;
@@ -232,11 +232,37 @@
       li span { text-align:left; }
     }
   </style>
+<meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
 </head>
 <body>
   <nav class="nav">
-    <a class="brand" href="index.html">
-      <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em">FR</div>
+    <a class="brand" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong">
+      <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em" data-fr-spin-target="true">FR</div>
       <div>
         <strong>Forecast Redelong</strong>
         <span>Overview Teknis</span>
@@ -273,7 +299,7 @@
       <aside class="panel stats">
         <div class="metric">
           <div class="label">Titik Forecast</div>
-          <div class="value">8</div>
+          <div class="value">9</div>
         </div>
         <div class="metric">
           <div class="label">Masuk Agregasi Catchment</div>
@@ -285,7 +311,7 @@
         </div>
         <div class="metric">
           <div class="label">Status Request</div>
-          <div class="value">216/224</div>
+          <div class="value">243/252</div>
         </div>
       </aside>
     </section>
@@ -315,9 +341,9 @@
           <span class="tag">CMA</span>
           <span class="tag">METEOFRANCE</span>
           <span class="tag">UKMO</span>
-          <span class="tag">BMKG · kategoris</span>
-          <span class="tag warn">KMA · nonaktif</span>
-          <span class="tag warn">METNO · tidak dihitung</span>
+          <span class="tag">BMKG, kategoris</span>
+          <span class="tag warn">KMA, nonaktif</span>
+          <span class="tag warn">METNO, tidak dihitung</span>
         </div>
       </article>
 
@@ -341,7 +367,7 @@
           lead time, dan periode akumulasi.
         </p>
         <div class="tag-row">
-          <span class="tag">BMKG aktif · kategoris</span>
+          <span class="tag">BMKG aktif, kategoris</span>
           <span class="tag warn">Akurasi belum diklaim</span>
           <span class="tag warn">Perlu observasi aktual</span>
         </div>
@@ -350,14 +376,15 @@
       <article class="panel full">
         <h2>Cakupan lokasi</h2>
         <ul>
-          <li><div><strong>PLTA Redelong</strong><small>Titik referensi PLTA · tidak dibobot</small></div><span>4.748139, 96.977344</span></li>
-<li><div><strong>GPM1</strong><small>Area analisis provisional · masuk agregasi</small></div><span>4.81572033808049, 96.877105410688</span></li>
-<li><div><strong>GPM2</strong><small>Area analisis provisional · masuk agregasi</small></div><span>4.811672965065149, 96.9505347134354</span></li>
-<li><div><strong>GPM3</strong><small>Area analisis provisional · masuk agregasi</small></div><span>4.815409756944025, 97.009911990332</span></li>
-<li><div><strong>GPM4</strong><small>Area analisis provisional · masuk agregasi</small></div><span>4.778238355009202, 96.8876539578458</span></li>
-<li><div><strong>GPM5</strong><small>Area analisis provisional · masuk agregasi</small></div><span>4.767312077178135, 96.94566692384144</span></li>
-<li><div><strong>GPM6</strong><small>Area analisis provisional · masuk agregasi</small></div><span>4.796061970712406, 97.0098682419131</span></li>
-<li><div><strong>GPM Grid TamaTue</strong><small>Pembanding eksternal · tidak masuk agregasi</small></div><span>4.649902718619309, 96.85017949357464</span></li>
+          <li><div><strong>PLTA Redelong</strong><small>Titik referensi PLTA, tidak dibobot</small></div><span>4.748139, 96.977344</span></li>
+<li><div><strong>GPM1</strong><small>Area analisis provisional, masuk agregasi</small></div><span>4.81572033808049, 96.877105410688</span></li>
+<li><div><strong>GPM2</strong><small>Area analisis provisional, masuk agregasi</small></div><span>4.811672965065149, 96.9505347134354</span></li>
+<li><div><strong>GPM3</strong><small>Area analisis provisional, masuk agregasi</small></div><span>4.815409756944025, 97.009911990332</span></li>
+<li><div><strong>GPM4</strong><small>Area analisis provisional, masuk agregasi</small></div><span>4.778238355009202, 96.8876539578458</span></li>
+<li><div><strong>GPM5</strong><small>Area analisis provisional, masuk agregasi</small></div><span>4.767312077178135, 96.94566692384144</span></li>
+<li><div><strong>GPM6</strong><small>Area analisis provisional, masuk agregasi</small></div><span>4.796061970712406, 97.0098682419131</span></li>
+<li><div><strong>GPM Grid TamaTue</strong><small>Pembanding eksternal, tidak masuk agregasi</small></div><span>4.649902718619309, 96.85017949357464</span></li>
+<li><div><strong>PLTM Besai Kemu</strong><small>Titik forecast</small></div><span>-4.87997, 104.50453</span></li>
         </ul>
       </article>
 
@@ -594,7 +621,7 @@
 <!-- FORECAST_REDELONG_CONTEXT_END -->
 
 <footer>
-      Forecast Redelong · FORECAST PLTA REDELONG · Generated 2026-07-17 06:33 WIB
+      Forecast Redelong, FORECAST PLTA REDELONG, Generated 2026-07-17 08:01 WIB
     </footer>
   </main>
 
@@ -611,5 +638,54 @@
   serta model prakiraan numerik multi-source yang tersedia pada pipeline Forecast Redelong.
 </div>
 
+<canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>

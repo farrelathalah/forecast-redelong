@@ -1,10 +1,10 @@
 {
-  "schema_version": "forecast-redelong-publish-gate-v3",
+  "schema_version": "forecast-hydro-publish-gate-v5",
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 5152,
-    "locations_found": 8,
+    "forecast_rows": 5786,
+    "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
       "ECMWF",
@@ -24,6 +24,9 @@
       "UKMO"
     ],
     "operational_sources_not_valid": {},
+    "plta_tamatue_straight_line_km": 17.83,
+    "tamatue_role": "external_comparison",
+    "tamatue_in_catchment": false,
     "portal": {
       "gpm1": {
         "dates": [
@@ -122,13 +125,18 @@
         ]
       }
     },
-    "public_html_count": 80,
-    "public_html_fr_branded_count": 80,
+    "public_html_count": 92,
+    "public_html_fr_branded_count": 92,
     "public_html_fr_exceptions": {},
     "public_html_missing_fr": [],
     "public_html_broken_fr_links": [],
     "public_html_anemos_files": [],
     "public_html_sentinel_files": [],
+    "public_html_experience_missing": [],
+    "public_html_spin_missing": [],
+    "public_html_rain_missing": [],
+    "public_html_decorative_separator_files": [],
+    "global_experience_ok": true,
     "map_room_branding_ok": true,
     "validation_status_branding_ok": true,
     "branding_bad_file_count": 0,
@@ -140,6 +148,38 @@
       "METEOFRANCE": 1.0,
       "UKMO": 1.0
     },
-    "html_javascript_files_checked": 76
+    "usability_missing_language": [],
+    "usability_missing_viewport": [],
+    "usability_missing_title": [],
+    "usability_inaccessible_fr": [],
+    "usability_basics_ok": true,
+    "evaluation_state": "menunggu_pasangan",
+    "evaluation_observation_mode": "proxy_observation",
+    "evaluation_matched_location_days": 0,
+    "evaluation_matched_unique_dates": 0,
+    "evaluation_can_claim_field_accuracy": false,
+    "evaluation_can_report_preliminary_proxy_skill": false,
+    "evaluation_observation_sources": [],
+    "evaluation_joined_observation_sources": [],
+    "validation_proxy_refresh_status": "proxy_pending",
+    "validation_proxy_missing_pairs": 8,
+    "geospatial_history_zones": 7,
+    "geospatial_history_catchment_zones": 6,
+    "geospatial_history_catchment_area_km2": 137.799,
+    "geospatial_history_complete_years": {
+      "gpm1": 24,
+      "gpm2": 24,
+      "gpm3": 24,
+      "gpm4": 24,
+      "gpm5": 24,
+      "gpm6": 24
+    },
+    "geospatial_history_station_metadata_count": 7,
+    "multisite_catalog_sites": 2,
+    "multisite_besai_status": "provisional_public_source_pending_asset_confirmation",
+    "multisite_besai_boundary_status": "not_yet_delineated",
+    "multisite_besai_history_days": 16436,
+    "multisite_besai_forecast_days": 4,
+    "html_javascript_files_checked": 92
   }
 }

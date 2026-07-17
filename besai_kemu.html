@@ -1,0 +1,97 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="forecast-hydro-page" content="forecast-besai-kemu-history-v1"><title>Forecast Besai Kemu</title><style>
+:root{--bg:#020817;--panel:#071426;--line:rgba(125,211,252,.18);--text:#effaff;--muted:#8ea9bd;--cyan:#22d3ee;--green:#34d399;--amber:#fbbf24}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#0b3152 0,transparent 33%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,system-ui,sans-serif}a{color:inherit}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 max(20px,calc((100vw - 1180px)/2));border-bottom:1px solid var(--line);background:rgba(2,8,23,.82);backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:11px;text-decoration:none}.mark{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#22d3ee,#8b5cf6 60%,#34d399);font-weight:950;font-size:11px}.brand b{display:block}.brand small{color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase}.network{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 12px;font-size:10px;font-weight:800}main{max-width:1180px;margin:auto;padding:54px 20px 80px}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:end;margin-bottom:34px}.eyebrow{color:#67e8f9;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:850}h1{font-size:clamp(46px,7vw,88px);letter-spacing:-.065em;line-height:.92;margin:14px 0}.lead{color:var(--muted);line-height:1.65;max-width:720px}.status{border:1px solid rgba(251,191,36,.3);background:rgba(251,191,36,.08);border-radius:20px;padding:18px;color:#f9d783;font-size:11px;line-height:1.6}.section-head{display:flex;justify-content:space-between;align-items:end;margin:36px 0 14px}h2{font-size:25px;letter-spacing:-.03em;margin:0}.section-head p{margin:0;color:var(--muted);font-size:10px}.forecast-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.forecast-card,.metric,.chart-card{border:1px solid var(--line);background:rgba(7,20,38,.86);border-radius:20px}.forecast-card{padding:17px}.forecast-card .date{color:var(--muted);font-size:10px}.forecast-card strong{font-size:34px;display:block;margin:12px 0 3px}.forecast-card strong small{font-size:12px;color:#67e8f9}.forecast-card p{color:var(--muted);font-size:9px;line-height:1.5}.chips{display:flex;gap:6px}.chips span{background:rgba(34,211,238,.1);color:#67e8f9;border-radius:999px;padding:5px 7px;font-size:8px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{padding:18px}.metric span{font-size:9px;color:var(--muted)}.metric b{display:block;font-size:25px;margin-top:8px}.charts{display:grid;grid-template-columns:1.35fr .65fr;gap:10px;margin-top:10px}.chart-card{padding:18px;min-height:320px}.chart-card h3{margin:0 0 5px;font-size:15px}.chart-card p{color:var(--muted);font-size:9px;margin:0 0 15px}canvas{display:block;width:100%;height:235px}.months{height:235px;display:flex;align-items:end;gap:5px;padding-top:15px}.month{height:100%;flex:1;display:flex;align-items:end;position:relative}.bar{width:100%;min-height:2px;border-radius:5px 5px 2px 2px;background:linear-gradient(#22d3ee,#2563eb)}.month label{position:absolute;bottom:-18px;width:100%;text-align:center;font-size:7px;color:var(--muted)}.source-note{margin-top:12px;border-left:3px solid var(--amber);padding:11px 14px;color:#d8c28e;background:rgba(251,191,36,.06);font-size:9px;line-height:1.6}.empty{grid-column:1/-1;border:1px solid var(--line);border-radius:18px;padding:18px;color:var(--muted)}@media(max-width:800px){.hero,.charts{grid-template-columns:1fr}.forecast-grid,.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.forecast-grid,.metrics{grid-template-columns:1fr}h1{font-size:48px}}
+</style><meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
+</head><body><nav class="nav"><a class="brand" data-fr-brand="true" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong"><span class="mark" data-fr-spin-target="true">FR</span><span><b>Forecast Besai Kemu</b><small>Forecast Hydro Network</small></span></a><a class="network" href="site_network.html">Globe semua site</a></nav><main>
+<section class="hero"><div><div class="eyebrow">PLTM run-of-river, Way Kanan</div><h1>Besai Kemu</h1><p class="lead">Prakiraan multi-model dan histori cuaca gridded pada titik referensi publik. Sistem ini siap diperluas ke batas DAS setelah intake atau weir dikonfirmasi oleh tim engineering.</p></div><div class="status"><b>Status provisional</b><br>Koordinat dan ADM4 berasal dari sumber publik. Jangan gunakan halaman ini untuk menghitung volume hujan atau debit sebelum batas DAS diverifikasi.</div></section>
+<div class="section-head"><div><div class="eyebrow">Forecast</div><h2>Empat hari ke depan</h2></div><p>Rata-rata setara antar-model kuantitatif</p></div><section class="forecast-grid"><article class="forecast-card"><div class="date">2026-07-17</div>
+            <strong>0.1<small> mm</small></strong>
+            <p>Rentang model 0.0 sampai 0.5 mm</p>
+            <div class="chips"><span>6 model</span><span>cukup</span></div></article><article class="forecast-card"><div class="date">2026-07-18</div>
+            <strong>1.3<small> mm</small></strong>
+            <p>Rentang model 0.3 sampai 4.7 mm</p>
+            <div class="chips"><span>6 model</span><span>cukup</span></div></article><article class="forecast-card"><div class="date">2026-07-19</div>
+            <strong>3.2<small> mm</small></strong>
+            <p>Rentang model 0.0 sampai 10.3 mm</p>
+            <div class="chips"><span>6 model</span><span>cukup</span></div></article><article class="forecast-card"><div class="date">2026-07-20</div>
+            <strong>2.4<small> mm</small></strong>
+            <p>Rentang model 0.0 sampai 7.0 mm</p>
+            <div class="chips"><span>6 model</span><span>cukup</span></div></article></section>
+<div class="section-head"><div><div class="eyebrow">Historical explorer</div><h2>Jejak cuaca 1981 sampai 2025</h2></div><p>NASA POWER Daily, proxy gridded</p></div><section class="metrics"><div class="metric"><span>Hari tersedia</span><b>16,436</b></div><div class="metric"><span>Tahun lengkap</span><b>45</b></div><div class="metric"><span>Hujan tahunan normal</span><b>2,051 mm</b></div><div class="metric"><span>Hari hujan normal</span><b>220</b></div></section>
+<section class="charts"><article class="chart-card"><h3>Hujan tahunan</h3><p>Arahkan kursor untuk membaca tahun dan total hujan.</p><canvas id="annual" width="760" height="235" aria-label="Grafik hujan tahunan"></canvas></article><article class="chart-card"><h3>Pola hujan bulanan</h3><p>Rata-rata total bulanan sepanjang periode.</p><div class="months" id="months"></div></article></section>
+<div class="source-note">Histori ini bukan observasi alat di PLTM. NASA POWER adalah referensi meteorologi gridded pada koordinat provisional -4.87997, 104.50453. Forecast dan histori akan tetap dipisahkan dari klaim debit sampai delineasi DAS disetujui.</div>
+</main><script>const DATA={"annual":[{"year":1981,"rain_mm":2728.7,"wet_days":265,"temperature_c":23.5,"days":365},{"year":1982,"rain_mm":2065.3,"wet_days":172,"temperature_c":24.1,"days":365},{"year":1983,"rain_mm":2083.8,"wet_days":231,"temperature_c":24.0,"days":365},{"year":1984,"rain_mm":2775.3,"wet_days":254,"temperature_c":23.1,"days":366},{"year":1985,"rain_mm":2089.7,"wet_days":240,"temperature_c":23.3,"days":365},{"year":1986,"rain_mm":2852.3,"wet_days":257,"temperature_c":23.2,"days":365},{"year":1987,"rain_mm":1551.4,"wet_days":191,"temperature_c":24.2,"days":365},{"year":1988,"rain_mm":2174.6,"wet_days":245,"temperature_c":24.0,"days":366},{"year":1989,"rain_mm":1956.7,"wet_days":200,"temperature_c":23.7,"days":365},{"year":1990,"rain_mm":1587.2,"wet_days":188,"temperature_c":24.3,"days":365},{"year":1991,"rain_mm":1672.4,"wet_days":173,"temperature_c":24.2,"days":365},{"year":1992,"rain_mm":1627.8,"wet_days":211,"temperature_c":23.9,"days":366},{"year":1993,"rain_mm":1968.9,"wet_days":213,"temperature_c":23.9,"days":365},{"year":1994,"rain_mm":1550.4,"wet_days":153,"temperature_c":24.3,"days":365},{"year":1995,"rain_mm":2536.2,"wet_days":243,"temperature_c":23.8,"days":365},{"year":1996,"rain_mm":1851.0,"wet_days":224,"temperature_c":23.9,"days":366},{"year":1997,"rain_mm":1306.9,"wet_days":157,"temperature_c":24.4,"days":365},{"year":1998,"rain_mm":2806.5,"wet_days":294,"temperature_c":24.3,"days":365},{"year":1999,"rain_mm":2126.2,"wet_days":242,"temperature_c":23.5,"days":365},{"year":2000,"rain_mm":1803.2,"wet_days":218,"temperature_c":23.6,"days":366},{"year":2001,"rain_mm":1919.2,"wet_days":214,"temperature_c":23.8,"days":365},{"year":2002,"rain_mm":1426.7,"wet_days":200,"temperature_c":24.6,"days":365},{"year":2003,"rain_mm":1503.3,"wet_days":187,"temperature_c":24.4,"days":365},{"year":2004,"rain_mm":1633.7,"wet_days":205,"temperature_c":24.5,"days":366},{"year":2005,"rain_mm":2119.6,"wet_days":243,"temperature_c":23.9,"days":365},{"year":2006,"rain_mm":1850.6,"wet_days":185,"temperature_c":24.1,"days":365},{"year":2007,"rain_mm":2105.1,"wet_days":215,"temperature_c":24.0,"days":365},{"year":2008,"rain_mm":2058.2,"wet_days":222,"temperature_c":23.8,"days":366},{"year":2009,"rain_mm":1848.3,"wet_days":220,"temperature_c":24.1,"days":365},{"year":2010,"rain_mm":2600.1,"wet_days":283,"temperature_c":23.8,"days":365},{"year":2011,"rain_mm":1733.0,"wet_days":197,"temperature_c":24.0,"days":365},{"year":2012,"rain_mm":2073.4,"wet_days":209,"temperature_c":24.2,"days":366},{"year":2013,"rain_mm":2966.3,"wet_days":265,"temperature_c":23.8,"days":365},{"year":2014,"rain_mm":2254.5,"wet_days":234,"temperature_c":24.2,"days":365},{"year":2015,"rain_mm":1697.5,"wet_days":182,"temperature_c":24.6,"days":365},{"year":2016,"rain_mm":2423.1,"wet_days":269,"temperature_c":24.2,"days":366},{"year":2017,"rain_mm":1927.0,"wet_days":227,"temperature_c":24.1,"days":365},{"year":2018,"rain_mm":1853.0,"wet_days":227,"temperature_c":24.2,"days":365},{"year":2019,"rain_mm":1870.0,"wet_days":177,"temperature_c":24.9,"days":365},{"year":2020,"rain_mm":2686.1,"wet_days":271,"temperature_c":24.2,"days":366},{"year":2021,"rain_mm":2256.2,"wet_days":226,"temperature_c":24.0,"days":365},{"year":2022,"rain_mm":2005.4,"wet_days":242,"temperature_c":23.9,"days":365},{"year":2023,"rain_mm":1789.2,"wet_days":186,"temperature_c":24.7,"days":365},{"year":2024,"rain_mm":2070.8,"wet_days":218,"temperature_c":25.1,"days":366},{"year":2025,"rain_mm":2514.6,"wet_days":244,"temperature_c":24.1,"days":365}],"monthly":[{"month":1,"rain_mm":292.5,"temperature_c":23.5},{"month":2,"rain_mm":263.4,"temperature_c":23.6},{"month":3,"rain_mm":234.8,"temperature_c":23.8},{"month":4,"rain_mm":194.6,"temperature_c":24.1},{"month":5,"rain_mm":129.5,"temperature_c":24.2},{"month":6,"rain_mm":101.4,"temperature_c":23.7},{"month":7,"rain_mm":91.7,"temperature_c":23.5},{"month":8,"rain_mm":70.2,"temperature_c":24.0},{"month":9,"rain_mm":89.1,"temperature_c":24.6},{"month":10,"rain_mm":121.3,"temperature_c":25.0},{"month":11,"rain_mm":193.8,"temperature_c":24.6},{"month":12,"rain_mm":269.0,"temperature_c":23.8}]};const names=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];const monthly=DATA.monthly;const maxM=Math.max(...monthly.map(x=>x.rain_mm||0));document.getElementById('months').innerHTML=monthly.map((x,i)=>`<div class="month" title="${names[i]}: ${x.rain_mm} mm"><div class="bar" style="height:${Math.max(2,(x.rain_mm/maxM)*100)}%"></div><label>${names[i]}</label></div>`).join('');const canvas=document.getElementById('annual'),ctx=canvas.getContext('2d'),rows=DATA.annual,maxA=Math.max(...rows.map(x=>x.rain_mm));function draw(){const w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.strokeStyle='rgba(125,211,252,.14)';for(let i=0;i<5;i++){const y=15+i*(h-35)/4;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}ctx.beginPath();rows.forEach((x,i)=>{const px=i*(w/(rows.length-1)),py=h-20-(x.rain_mm/maxA)*(h-40);i?ctx.lineTo(px,py):ctx.moveTo(px,py)});ctx.strokeStyle='#22d3ee';ctx.lineWidth=2.5;ctx.stroke();ctx.lineTo(w,h-20);ctx.lineTo(0,h-20);ctx.closePath();const g=ctx.createLinearGradient(0,0,0,h);g.addColorStop(0,'rgba(34,211,238,.32)');g.addColorStop(1,'rgba(34,211,238,0)');ctx.fillStyle=g;ctx.fill()}draw();canvas.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect(),i=Math.max(0,Math.min(rows.length-1,Math.round((e.clientX-r.left)/r.width*(rows.length-1))));canvas.title=`${rows[i].year}: ${rows[i].rain_mm} mm, ${rows[i].wet_days} hari hujan`;});</script><canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
+})();
+</script>
+</body></html>

@@ -69,13 +69,46 @@
     @media(max-width:980px){.hero-inner{grid-template-columns:1fr}.cards,.download-grid{grid-template-columns:repeat(2,1fr)}.locations{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}}
     @media(max-width:620px){.nav{position:absolute;align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.cards,.download-grid{grid-template-columns:1fr}.location-card{flex-direction:column;align-items:flex-start}.card-links{min-width:0;justify-content:flex-start}h1{letter-spacing:-1.5px}}
     </style>
+<style id="fr-globe-entry-style">
+#fr-globe-entry{position:fixed;right:22px;bottom:22px;z-index:9200;display:flex;align-items:center;gap:10px;padding:11px 16px 11px 11px;border:1px solid rgba(125,211,252,.45);border-radius:999px;background:rgba(2,15,30,.88);backdrop-filter:blur(18px);box-shadow:0 18px 55px rgba(0,0,0,.35);color:#effbff;text-decoration:none;font:750 13px/1.2 Inter,system-ui,sans-serif}
+#fr-globe-entry span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#06b6d4,#8b5cf6);font-size:9px;font-weight:900}
+#fr-globe-entry small{display:block;color:#7dd3fc;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
+@media(max-width:620px){#fr-globe-entry{right:12px;bottom:12px;padding-right:13px}}
+</style>
+<style id="fr-sites-entry-style">#fr-sites-entry{position:fixed;right:22px;bottom:86px;z-index:9200;padding:9px 13px;border:1px solid rgba(52,211,153,.36);border-radius:999px;background:rgba(2,15,30,.88);backdrop-filter:blur(16px);color:#a7f3d0;text-decoration:none;font:800 11px/1.2 Inter,system-ui,sans-serif}@media(max-width:620px){#fr-sites-entry{right:12px;bottom:76px}}</style>
+<meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
 </head>
 <body>
   <div class="noise"></div>
   
     <nav class="nav">
-      <a class="brand" href="index.html">
-        <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em">FR</div>
+      <a class="brand" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong">
+        <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em" data-fr-spin-target="true">FR</div>
         <div>
           <strong>Forecast Redelong</strong>
           <span>Monitoring Hujan PLTA Redelong</span>
@@ -110,10 +143,10 @@
       </div>
 
       <aside class="hero-panel">
-        <div class="metric"><div class="label">Titik Forecast</div><div class="value">8</div></div>
+        <div class="metric"><div class="label">Titik Forecast</div><div class="value">9</div></div>
         <div class="metric"><div class="label">Masuk Agregasi Catchment</div><div class="value">6</div></div>
         <div class="metric"><div class="label">Model Hujan Numerik</div><div class="value">6</div></div>
-        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-17 06:33 WIB</div></div>
+        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-17 08:01 WIB</div></div>
       </aside>
     </div>
     <a class="scroll-cue" href="#ringkasan">Scroll</a>
@@ -146,7 +179,7 @@
           <div>
             <p class="eyebrow">Titik referensi PLTA</p>
             <h3>PLTA Redelong</h3>
-            <p class="muted">Lat 4.748139 · Lon 96.977344</p>
+            <p class="muted">Lat 4.748139, Lon 96.977344</p>
             <p class="muted" style="margin-top:7px;font-size:12px">Titik referensi PLTA; tidak diberi bobot luas.</p>
           </div>
           <div class="card-links">
@@ -160,7 +193,7 @@
           <div>
             <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM1</h3>
-            <p class="muted">Lat 4.81572033808049 · Lon 96.877105410688</p>
+            <p class="muted">Lat 4.81572033808049, Lon 96.877105410688</p>
             <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
@@ -174,7 +207,7 @@
           <div>
             <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM2</h3>
-            <p class="muted">Lat 4.811672965065149 · Lon 96.9505347134354</p>
+            <p class="muted">Lat 4.811672965065149, Lon 96.9505347134354</p>
             <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
@@ -188,7 +221,7 @@
           <div>
             <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM3</h3>
-            <p class="muted">Lat 4.815409756944025 · Lon 97.009911990332</p>
+            <p class="muted">Lat 4.815409756944025, Lon 97.009911990332</p>
             <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
@@ -202,7 +235,7 @@
           <div>
             <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM4</h3>
-            <p class="muted">Lat 4.778238355009202 · Lon 96.8876539578458</p>
+            <p class="muted">Lat 4.778238355009202, Lon 96.8876539578458</p>
             <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
@@ -216,7 +249,7 @@
           <div>
             <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM5</h3>
-            <p class="muted">Lat 4.767312077178135 · Lon 96.94566692384144</p>
+            <p class="muted">Lat 4.767312077178135, Lon 96.94566692384144</p>
             <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
@@ -230,7 +263,7 @@
           <div>
             <p class="eyebrow">Area catchment provisional</p>
             <h3>GPM6</h3>
-            <p class="muted">Lat 4.796061970712406 · Lon 97.0098682419131</p>
+            <p class="muted">Lat 4.796061970712406, Lon 97.0098682419131</p>
             <p class="muted" style="margin-top:7px;font-size:12px">Area analisis provisional; menunggu konfirmasi batas DAS resmi.</p>
           </div>
           <div class="card-links">
@@ -244,13 +277,27 @@
           <div>
             <p class="eyebrow">Pembanding eksternal</p>
             <h3>GPM Grid TamaTue</h3>
-            <p class="muted">Lat 4.649902718619309 · Lon 96.85017949357464</p>
+            <p class="muted">Lat 4.649902718619309, Lon 96.85017949357464</p>
             <p class="muted" style="margin-top:7px;font-size:12px">Grid terpisah dan terlalu jauh untuk langsung diasumsikan berkontribusi; hanya titik pembanding sampai konektivitas DAS dikonfirmasi.</p>
           </div>
           <div class="card-links">
             <a href="gpm_grid_tamatue/rain_dashboard.html">Dashboard Hujan</a>
             <a href="gpm_grid_tamatue/redelong_app.html">Prakiraan Interaktif</a>
             <a href="gpm_grid_tamatue/redelong_3day.html">Halaman 3 Hari</a>
+          </div>
+        </article>
+        
+        <article class="location-card reveal">
+          <div>
+            <p class="eyebrow">Titik forecast</p>
+            <h3>PLTM Besai Kemu</h3>
+            <p class="muted">Lat -4.87997, Lon 104.50453</p>
+            <p class="muted" style="margin-top:7px;font-size:12px">Titik site provisional; tidak masuk agregasi DAS Redelong dan belum digunakan untuk menghitung volume hujan atau debit.</p>
+          </div>
+          <div class="card-links">
+            <a href="pltm_besai_kemu/rain_dashboard.html">Dashboard Hujan</a>
+            <a href="pltm_besai_kemu/redelong_app.html">Prakiraan Interaktif</a>
+            <a href="pltm_besai_kemu/redelong_3day.html">Halaman 3 Hari</a>
           </div>
         </article>
         
@@ -273,7 +320,7 @@
     </div>
   </section>
 
-  <footer><div class="footer-inner"><span>Forecast Redelong</span><span>FORECAST PLTA REDELONG · Generated 2026-07-17 06:33 WIB</span></div></footer>
+  <footer><div class="footer-inner"><span>Forecast Redelong</span><span>FORECAST PLTA REDELONG, Generated 2026-07-17 08:01 WIB</span></div></footer>
   
     <script>
       const observer = new IntersectionObserver((entries) => {
@@ -302,5 +349,58 @@
   serta model prakiraan numerik multi-source yang tersedia pada pipeline Forecast Redelong.
 </div>
 
+<a id="fr-globe-entry" href="redelong_globe.html" aria-label="Buka Globe 3D dan histori Forecast Redelong">
+  <span aria-hidden="true">3D</span><b>Globe &amp; Histori<small>Area 137,80 km²</small></b>
+</a>
+<a id="fr-sites-entry" href="site_network.html">Semua Site, Globe Jaringan</a>
+<canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>

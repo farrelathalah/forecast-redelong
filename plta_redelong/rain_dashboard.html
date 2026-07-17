@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PLTA Redelong · Forecast Redelong</title>
+  <title>PLTA Redelong, Forecast Redelong</title>
   <style>
     :root {
       --bg:#040c16; --panel:rgba(255,255,255,.08); --panel2:rgba(255,255,255,.13);
@@ -69,12 +69,38 @@
     @media(max-width:980px){.hero-inner{grid-template-columns:1fr}.cards,.download-grid{grid-template-columns:repeat(2,1fr)}.locations{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}}
     @media(max-width:620px){.nav{position:absolute;align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.cards,.download-grid{grid-template-columns:1fr}.location-card{flex-direction:column;align-items:flex-start}.card-links{min-width:0;justify-content:flex-start}h1{letter-spacing:-1.5px}}
     </style>
+<meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
 </head>
 <body>
   <div class="noise"></div>
   <nav class="nav">
-    <a class="brand" href="../index.html">
-      <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em">FR</div>
+    <a class="brand" href="../index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong">
+      <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em" data-fr-spin-target="true">FR</div>
       <div>
         <strong>Forecast Redelong</strong>
         <span>PLTA Redelong</span>
@@ -103,10 +129,11 @@
       </div>
       <aside class="hero-panel">
         <div class="metric"><div class="label">Hujan Jam Tertinggi</div><div class="value">6.0 mm</div></div>
-        <div class="metric"><div class="label">P90 Model-Jam</div><div class="value">1.9 mm</div></div>
+        <div class="metric"><div class="label">Nilai Tinggi (P90)</div><div class="value">2.0 mm</div></div>
         <div class="metric"><div class="label">Rata-rata Model-Jam</div><div class="value">0.6 mm</div></div>
         <div class="metric"><div class="label">Model Numerik</div><div class="value">6</div></div>
       </aside>
+      <p style="max-width:520px;color:var(--muted);font-size:12px;line-height:1.6;margin:12px 0 0">P90 adalah batas nilai tinggi antar-model dan jam: sekitar 90% nilai berada di bawahnya. Ini bukan peluang hujan 90% dan bukan akumulasi 24 jam.</p>
     </div>
     <a class="scroll-cue" href="#grafik">Scroll</a>
   </header>
@@ -137,7 +164,7 @@
     <div class="table-wrap">
       <table>
         <thead><tr><th>target_date</th><th>tanggal</th><th>timezone</th><th>source_id</th><th>rain_mm</th><th>suhu_C</th><th>wind_kmh</th></tr></thead>
-        <tbody><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>1.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>1.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>1.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>1.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>1.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>1.4</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>1.4</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>1.4</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>4.9</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>4.9</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>22.0</td><td>4.9</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>2.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>2.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>2.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>18.0</td><td>2.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>18.0</td><td>2.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>18.0</td><td>2.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>17.0</td><td>0.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>17.0</td><td>0.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>17.0</td><td>0.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.5</td><td>2.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.2</td><td>2.4</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.1</td><td>3.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.1</td><td>3.9</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.1</td><td>4.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.2</td><td>4.0</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.3</td><td>3.4</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.9</td><td>1.8</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>21.3</td><td>0.7</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>23.2</td><td>3.1</td></tr></tbody>
+        <tbody><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>1.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>1.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>1.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>1.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>1.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>4.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>4.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>4.6</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>3.3</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>3.3</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>20.0</td><td>3.3</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>1.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>1.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>19.0</td><td>1.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>17.0</td><td>0.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>17.0</td><td>0.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>17.0</td><td>0.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>16.0</td><td>0.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>16.0</td><td>0.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.6</td><td>1.3</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.3</td><td>1.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.2</td><td>1.9</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.2</td><td>2.8</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.3</td><td>3.3</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.3</td><td>3.9</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>19.5</td><td>4.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>20.2</td><td>3.7</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>22.1</td><td>0.5</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.4</td><td>4.1</td></tr><tr><td>2026-07-17</td><td>17-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>25.8</td><td>7.1</td></tr></tbody>
       </table>
     </div>
     </div>
@@ -173,5 +200,54 @@
   serta model prakiraan numerik multi-source yang tersedia pada pipeline Forecast Redelong.
 </div>
 
+<canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
   "brand": "Forecast Redelong",
   "version": "Forecast Redelong v1.0",
-  "generated_at": "Diperbarui 17/07/2026, 06:33 WIB",
+  "generated_at": "Diperbarui 17/07/2026, 08:01 WIB",
   "public_base_url": "https://farrelathalah.github.io/forecast-redelong",
   "locations": [
     {
@@ -35,6 +35,10 @@
     {
       "slug": "plta_redelong",
       "name": "PLTA Redelong"
+    },
+    {
+      "slug": "pltm_besai_kemu",
+      "name": "PLTM Besai Kemu"
     }
   ]
 }

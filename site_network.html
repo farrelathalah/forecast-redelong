@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="forecast-hydro-page" content="forecast-hydro-multisite-network-v1"><title>Jaringan Site, Forecast Hydro</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css"><script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+<style>
+:root{--bg:#020817;--panel:rgba(3,15,30,.91);--line:rgba(125,211,252,.2);--text:#edfaff;--muted:#8ba7bc;--cyan:#22d3ee;--amber:#fbbf24;--green:#34d399}*{box-sizing:border-box}html,body,#map{width:100%;height:100%;margin:0}body{overflow:hidden;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,system-ui,sans-serif}#map{position:fixed;inset:0}.top{position:fixed;z-index:20;left:16px;right:16px;top:14px;display:flex;justify-content:space-between;pointer-events:none}.brand,.home{pointer-events:auto;background:rgba(2,10,22,.86);border:1px solid var(--line);backdrop-filter:blur(16px);color:inherit;text-decoration:none}.brand{display:flex;align-items:center;gap:10px;padding:7px 13px 7px 7px;border-radius:17px}.mark{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#22d3ee,#8b5cf6 62%,#34d399);font-size:10px;font-weight:950}.brand b{display:block;font-size:13px}.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:.13em;text-transform:uppercase;margin-top:2px}.home{border-radius:13px;padding:11px 14px;font-size:11px;font-weight:800}.panel{position:fixed;z-index:18;top:82px;bottom:16px;left:16px;width:min(410px,calc(100vw - 32px));border:1px solid var(--line);border-radius:24px;background:var(--panel);backdrop-filter:blur(20px);overflow:auto;padding:20px;box-shadow:0 30px 90px rgba(0,0,0,.45)}.eyebrow{font-size:9px;font-weight:850;letter-spacing:.17em;text-transform:uppercase;color:#67e8f9}h1{font-size:29px;line-height:1.05;letter-spacing:-.04em;margin:9px 0}.intro{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 17px}.sites{display:grid;gap:10px}.site-card{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035);padding:14px}.site-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.site-head small{color:var(--muted);font-size:8px}.status{padding:5px 8px;border-radius:999px;font-size:8px;font-weight:850}.status.ready{background:rgba(52,211,153,.14);color:#6ee7b7}.status.provisional{background:rgba(251,191,36,.13);color:#fcd34d}.site-card h2{font-size:18px;margin:11px 0 3px}.site-card>p{color:var(--muted);font-size:10px;margin:0}.facts{display:flex;gap:7px;margin:12px 0}.facts span{flex:1;border:1px solid var(--line);border-radius:12px;padding:8px;color:var(--muted);font-size:8px}.facts b{display:block;color:var(--text);font-size:12px;margin-bottom:2px}.site-card .note{font-size:8px;line-height:1.5;color:#d7bd79}.open,.pending{display:inline-flex;margin-top:11px;font-size:9px;font-weight:850;padding:8px 10px;border-radius:10px}.open{background:rgba(34,211,238,.14);border:1px solid rgba(34,211,238,.32);color:#67e8f9;text-decoration:none}.pending{background:rgba(255,255,255,.045);color:var(--muted)}.maplibregl-ctrl-top-right{top:67px}.maplibregl-popup-content{background:#07192b!important;color:#eaf8ff!important;border:1px solid var(--line);border-radius:13px!important;font-size:10px}@media(max-width:700px){.panel{top:auto;height:55vh}.top{left:9px;right:9px;top:8px}.home{display:none}}
+</style><meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
+</head><body><div id="map" aria-label="Globe jaringan site Forecast Hydro"></div><div class="top"><a class="brand" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong"><span class="mark" data-fr-spin-target="true">FR</span><span><b>Forecast Hydro Network</b><small>Multi-site intelligence</small></span></a><a class="home" href="index.html">Kembali ke portal</a></div>
+<aside class="panel"><div class="eyebrow">Portfolio view</div><h1>Satu globe, seluruh site.</h1><p class="intro">Site yang telah diverifikasi dan site provisional ditampilkan bersama, tetapi status datanya tidak disamakan.</p><div class="sites">
+    <article class="site-card" data-site="plta_redelong">
+      <div class="site-head"><span class="status ready">Data proyek tersedia</span><small>PLTA</small></div>
+      <h2>PLTA Redelong</h2>
+      <p>Bener Meriah, Aceh</p>
+      <div class="facts"><span><b>18.0</b> MW</span><span><b>137,80 km²</b> area</span></div>
+      <p class="note">Matches the 137.8 km2 GRANIF 2025 re-delineation note in the project package; not labelled as an official legal basin boundary.</p>
+      <a class="open" href="redelong_globe.html">Buka site</a>
+    </article>
+    <article class="site-card" data-site="pltm_besai_kemu">
+      <div class="site-head"><span class="status provisional">Sumber publik provisional</span><small>PLTM run-of-river</small></div>
+      <h2>PLTM Besai Kemu</h2>
+      <p>Way Kanan, Lampung</p>
+      <div class="facts"><span><b>7.0</b> MW</span><span><b>Menunggu delineasi</b> area</span></div>
+      <p class="note">Do not publish rainfall volume or discharge until the intake or weir outlet and watershed boundary are verified.</p>
+      <a class="open" href="besai_kemu.html">Buka site</a>
+    </article></div></aside>
+<script>const SITES=[{"slug":"plta_redelong","name":"PLTA Redelong","plant_type":"PLTA","latitude":4.748139,"longitude":96.977344,"province":"Aceh","status":"verified_from_project_package","public_entry":"redelong_globe.html"},{"slug":"pltm_besai_kemu","name":"PLTM Besai Kemu","plant_type":"PLTM run-of-river","latitude":-4.87997,"longitude":104.50453,"province":"Lampung","status":"provisional_public_source_pending_asset_confirmation","public_entry":"besai_kemu.html"}];if(typeof maplibregl==='undefined')throw new Error('MapLibre unavailable');const map=new maplibregl.Map({container:'map',center:[104,-1],zoom:2.7,style:{version:8,projection:{type:'globe'},sources:{satellite:{type:'raster',tiles:['https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}.jpg'],tileSize:256,attribution:'Cloudless imagery, EOX'}},layers:[{id:'satellite',type:'raster',source:'satellite'}],sky:{'atmosphere-blend':['interpolate',['linear'],['zoom'],0,1,7,0]}}});map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'top-right');map.on('load',()=>{map.addSource('sites',{type:'geojson',data:{type:'FeatureCollection',features:SITES.map(s=>({type:'Feature',properties:s,geometry:{type:'Point',coordinates:[s.longitude,s.latitude]}}))}});map.addLayer({id:'site-points',type:'circle',source:'sites',paint:{'circle-radius':['interpolate',['linear'],['zoom'],2,5,8,10],'circle-color':['case',['==',['get','status'],'verified_from_project_package'],'#34d399','#fbbf24'],'circle-stroke-color':'#04111f','circle-stroke-width':3}});map.on('click','site-points',e=>{if(!e.features)return;const f=e.features[0],p=f.properties;new maplibregl.Popup({offset:12}).setLngLat(f.geometry.coordinates).setHTML(`<b>${p.name}</b><br>${p.plant_type}, ${p.province}<br>${p.status.includes('provisional')?'Data provisional':'Data proyek tersedia'}`).addTo(map);});map.on('mouseenter','site-points',()=>map.getCanvas().style.cursor='pointer');map.on('mouseleave','site-points',()=>map.getCanvas().style.cursor='');});document.querySelectorAll('[data-site]').forEach(card=>card.addEventListener('mouseenter',()=>{const site=SITES.find(s=>s.slug===card.dataset.site);map.flyTo({center:[site.longitude,site.latitude],zoom:7,pitch:38,duration:1400});}));</script><canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
+})();
+</script>
+</body></html>

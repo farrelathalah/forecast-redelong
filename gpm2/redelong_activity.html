@@ -1642,13 +1642,39 @@ a { color: inherit; text-decoration: none; }
   .glass { background: #f5f5f5; border: 1px solid #ddd; backdrop-filter: none; }
 }
 </style>
+<meta name="fr-global-experience" content="fr-global-experience-v1;rain=native+global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
 </head><body class="theme-noon">
 <div class="atmo">
   <canvas id="atmo-canvas"></canvas>
 </div>
 <header class="nav-bar">
-  <a class="nav-brand" href="../index.html">
-    <span class="nav-logo" aria-hidden="true">FR</span>
+  <a class="nav-brand" href="../index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong">
+    <span class="nav-logo" aria-hidden="true" data-fr-spin-target="true">FR</span>
     <span><span class="nav-title">Forecast Redelong</span><span class="nav-sub">GPM2</span></span>
   </a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -1669,7 +1695,7 @@ aktivitas</h1>
       <p class="hero-subtitle reveal reveal-delay-2">Jumat, 17 Juli 2026. Fokus pada jam yang perlu dipantau.</p>
       <div class="hero-metrics reveal reveal-delay-3">
         <div class="hero-metric">
-          <div class="hero-metric-value" data-animate-value="18.816666666666663" data-animate-suffix="°C" data-animate-decimals="1">18.8°C</div>
+          <div class="hero-metric-value" data-animate-value="18.758333333333333" data-animate-suffix="°C" data-animate-decimals="1">18.8°C</div>
           <div class="hero-metric-label">Suhu rata-rata</div>
         </div>
         <div class="hero-metric">
@@ -1699,7 +1725,7 @@ aktivitas</h1>
         <div class="kpi-card"><div class="kpi-label">Risiko</div><div class="kpi-value" data-animate-value="86" data-animate-suffix="/100">86<span style="font-size:16px;color:var(--mist)">/100</span></div><div class="kpi-sub">Berpotensi signifikan</div></div>
         <div class="kpi-card"><div class="kpi-label">Puncak hujan</div><div class="kpi-value" data-animate-value="86.5" data-animate-suffix="%">86%</div><div class="kpi-sub">15:00</div></div>
         <div class="kpi-card"><div class="kpi-label">Jam nyaman</div><div class="kpi-value" style="font-size:16px">09:00–10:00</div><div class="kpi-sub">aktivitas</div></div>
-        <div class="kpi-card"><div class="kpi-label">Panas terasa</div><div class="kpi-value" data-animate-value="22.6" data-animate-suffix="°C" data-animate-decimals="1">22.6°C</div><div class="kpi-sub">maksimum</div></div>
+        <div class="kpi-card"><div class="kpi-label">Panas terasa</div><div class="kpi-value" data-animate-value="23.0" data-animate-suffix="°C" data-animate-decimals="1">23.0°C</div><div class="kpi-sub">maksimum</div></div>
       </aside>
     </div>
   </div></section><section class="section-compact"><div class="container">
@@ -1749,7 +1775,7 @@ aktivitas</h1>
         <button class="chart-chip" data-var="wind">Kecepatan Angin</button>
       </div>
       
-      <div class="chart-svg-container" data-points="[{&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;00:00&quot;, &quot;temp_c&quot;: 17.1, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 17.1, &quot;rain_probability&quot;: 16.7, &quot;wind_kmh&quot;: 2.7, &quot;risk_score&quot;: 30, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;01:00&quot;, &quot;temp_c&quot;: 16.7, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 16.7, &quot;rain_probability&quot;: 16.7, &quot;wind_kmh&quot;: 2.6, &quot;risk_score&quot;: 28, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;02:00&quot;, &quot;temp_c&quot;: 16.5, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 16.5, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 2.9, &quot;risk_score&quot;: 27, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;03:00&quot;, &quot;temp_c&quot;: 16.4, &quot;humidity_pct&quot;: 95.0, &quot;heat_index_c&quot;: 16.4, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 3.3, &quot;risk_score&quot;: 26, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;04:00&quot;, &quot;temp_c&quot;: 16.8, &quot;humidity_pct&quot;: 95.0, &quot;heat_index_c&quot;: 16.8, &quot;rain_probability&quot;: 15.0, &quot;wind_kmh&quot;: 2.9, &quot;risk_score&quot;: 27, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;05:00&quot;, &quot;temp_c&quot;: 16.7, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 16.7, &quot;rain_probability&quot;: 15.0, &quot;wind_kmh&quot;: 2.6, &quot;risk_score&quot;: 27, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;06:00&quot;, &quot;temp_c&quot;: 16.9, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 16.9, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 2.2, &quot;risk_score&quot;: 27, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;07:00&quot;, &quot;temp_c&quot;: 17.2, &quot;humidity_pct&quot;: 94.0, &quot;heat_index_c&quot;: 17.2, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 1.6, &quot;risk_score&quot;: 26, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;08:00&quot;, &quot;temp_c&quot;: 19.0, &quot;humidity_pct&quot;: 90.0, &quot;heat_index_c&quot;: 19.0, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 1.3, &quot;risk_score&quot;: 26, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;09:00&quot;, &quot;temp_c&quot;: 20.5, &quot;humidity_pct&quot;: 83.0, &quot;heat_index_c&quot;: 20.5, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 2.1, &quot;risk_score&quot;: 24, &quot;risk_class&quot;: &quot;safe&quot;, &quot;risk_label&quot;: &quot;Aman&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;10:00&quot;, &quot;temp_c&quot;: 21.7, &quot;humidity_pct&quot;: 77.0, &quot;heat_index_c&quot;: 21.7, &quot;rain_probability&quot;: 13.8, &quot;wind_kmh&quot;: 3.8, &quot;risk_score&quot;: 24, &quot;risk_class&quot;: &quot;safe&quot;, &quot;risk_label&quot;: &quot;Aman&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;11:00&quot;, &quot;temp_c&quot;: 22.5, &quot;humidity_pct&quot;: 75.0, &quot;heat_index_c&quot;: 22.5, &quot;rain_probability&quot;: 57.7, &quot;wind_kmh&quot;: 4.7, &quot;risk_score&quot;: 58, &quot;risk_class&quot;: &quot;rain&quot;, &quot;risk_label&quot;: &quot;Waspada&quot;, &quot;condition&quot;: &quot;Hujan Ringan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 88.0}]">
+      <div class="chart-svg-container" data-points="[{&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;00:00&quot;, &quot;temp_c&quot;: 17.1, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 17.1, &quot;rain_probability&quot;: 16.7, &quot;wind_kmh&quot;: 2.8, &quot;risk_score&quot;: 30, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;01:00&quot;, &quot;temp_c&quot;: 16.6, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 16.6, &quot;rain_probability&quot;: 16.7, &quot;wind_kmh&quot;: 2.6, &quot;risk_score&quot;: 29, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;02:00&quot;, &quot;temp_c&quot;: 16.5, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 16.5, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 2.9, &quot;risk_score&quot;: 27, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;03:00&quot;, &quot;temp_c&quot;: 16.4, &quot;humidity_pct&quot;: 95.0, &quot;heat_index_c&quot;: 16.4, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 3.1, &quot;risk_score&quot;: 26, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;04:00&quot;, &quot;temp_c&quot;: 16.5, &quot;humidity_pct&quot;: 95.0, &quot;heat_index_c&quot;: 16.5, &quot;rain_probability&quot;: 16.7, &quot;wind_kmh&quot;: 3.1, &quot;risk_score&quot;: 28, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 6, &quot;coverage_fraction&quot;: 0.857, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;05:00&quot;, &quot;temp_c&quot;: 16.8, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 16.8, &quot;rain_probability&quot;: 15.0, &quot;wind_kmh&quot;: 3.0, &quot;risk_score&quot;: 27, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;06:00&quot;, &quot;temp_c&quot;: 16.9, &quot;humidity_pct&quot;: 96.0, &quot;heat_index_c&quot;: 16.9, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 2.2, &quot;risk_score&quot;: 27, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;07:00&quot;, &quot;temp_c&quot;: 17.2, &quot;humidity_pct&quot;: 94.0, &quot;heat_index_c&quot;: 17.2, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 2.1, &quot;risk_score&quot;: 26, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;08:00&quot;, &quot;temp_c&quot;: 19.0, &quot;humidity_pct&quot;: 88.0, &quot;heat_index_c&quot;: 19.0, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 1.5, &quot;risk_score&quot;: 25, &quot;risk_class&quot;: &quot;watch&quot;, &quot;risk_label&quot;: &quot;Perlu diperhatikan&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;09:00&quot;, &quot;temp_c&quot;: 20.3, &quot;humidity_pct&quot;: 82.0, &quot;heat_index_c&quot;: 20.3, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 2.1, &quot;risk_score&quot;: 24, &quot;risk_class&quot;: &quot;safe&quot;, &quot;risk_label&quot;: &quot;Aman&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;10:00&quot;, &quot;temp_c&quot;: 22.1, &quot;humidity_pct&quot;: 77.0, &quot;heat_index_c&quot;: 22.1, &quot;rain_probability&quot;: 0, &quot;wind_kmh&quot;: 4.1, &quot;risk_score&quot;: 23, &quot;risk_class&quot;: &quot;safe&quot;, &quot;risk_label&quot;: &quot;Aman&quot;, &quot;condition&quot;: &quot;Berawan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 75.0}, {&quot;date_iso&quot;: &quot;2026-07-17&quot;, &quot;date_label&quot;: &quot;Jumat, 17 Juli 2026&quot;, &quot;date_short&quot;: &quot;17 Juli&quot;, &quot;relative&quot;: &quot;Hari ini&quot;, &quot;hour&quot;: &quot;11:00&quot;, &quot;temp_c&quot;: 23.0, &quot;humidity_pct&quot;: 75.0, &quot;heat_index_c&quot;: 23.0, &quot;rain_probability&quot;: 55.2, &quot;wind_kmh&quot;: 4.6, &quot;risk_score&quot;: 55, &quot;risk_class&quot;: &quot;rain&quot;, &quot;risk_label&quot;: &quot;Waspada&quot;, &quot;condition&quot;: &quot;Hujan Ringan&quot;, &quot;valid&quot;: true, &quot;has_data&quot;: true, &quot;source_count&quot;: 7, &quot;coverage_fraction&quot;: 1.0, &quot;trust_level&quot;: &quot;HIGHLY_TRUSTED&quot;, &quot;operational_status&quot;: &quot;GREEN&quot;, &quot;quality_note&quot;: &quot;&quot;, &quot;wind_dir&quot;: 0.0, &quot;cloud_pct&quot;: 88.0}]">
         <svg class="rain-curve" viewBox="0 0 900 200" preserveAspectRatio="none"></svg>
         <div class="chart-tooltip">
           <div class="chart-tooltip-time">00:00</div>
@@ -1767,35 +1793,35 @@ aktivitas</h1>
         <div class="period-name">Pagi</div>
         <div class="period-condition">Berawan</div>
         <div class="period-stats">
-          <div><div class="period-stat-value" data-animate-value="18.666666666666668" data-animate-suffix="°C" data-animate-decimals="1">18.7°C</div><div class="period-stat-label">Suhu</div></div>
+          <div><div class="period-stat-value" data-animate-value="18.71666666666667" data-animate-suffix="°C" data-animate-decimals="1">18.7°C</div><div class="period-stat-label">Suhu</div></div>
           <div><div class="period-stat-value" data-animate-value="15.0" data-animate-suffix="%">15%</div><div class="period-stat-label">Hujan</div></div>
         </div>
       </div><div class="period-card reveal reveal-delay-2" style="--accent-color:#ff9346;background:linear-gradient(180deg,rgba(6,182,212,0.06),var(--glass))">
         <div class="period-name">Siang</div>
         <div class="period-condition">Hujan Ringan</div>
         <div class="period-stats">
-          <div><div class="period-stat-value" data-animate-value="22.25" data-animate-suffix="°C" data-animate-decimals="1">22.2°C</div><div class="period-stat-label">Suhu</div></div>
+          <div><div class="period-stat-value" data-animate-value="22.1" data-animate-suffix="°C" data-animate-decimals="1">22.1°C</div><div class="period-stat-label">Suhu</div></div>
           <div><div class="period-stat-value" data-animate-value="72.1" data-animate-suffix="%">72%</div><div class="period-stat-label">Hujan</div></div>
         </div>
       </div><div class="period-card reveal reveal-delay-3" style="--accent-color:#ff4778;background:linear-gradient(180deg,rgba(139,92,246,0.06),var(--glass))">
         <div class="period-name">Sore</div>
         <div class="period-condition">Hujan Ringan</div>
         <div class="period-stats">
-          <div><div class="period-stat-value" data-animate-value="19.8" data-animate-suffix="°C" data-animate-decimals="1">19.8°C</div><div class="period-stat-label">Suhu</div></div>
+          <div><div class="period-stat-value" data-animate-value="19.675" data-animate-suffix="°C" data-animate-decimals="1">19.7°C</div><div class="period-stat-label">Suhu</div></div>
           <div><div class="period-stat-value" data-animate-value="86.5" data-animate-suffix="%">86%</div><div class="period-stat-label">Hujan</div></div>
         </div>
       </div><div class="period-card reveal reveal-delay-4" style="--accent-color:#ff9346;background:linear-gradient(180deg,rgba(99,102,241,0.04),var(--glass))">
         <div class="period-name">Malam</div>
         <div class="period-condition">Hujan Ringan</div>
         <div class="period-stats">
-          <div><div class="period-stat-value" data-animate-value="17.14" data-animate-suffix="°C" data-animate-decimals="1">17.1°C</div><div class="period-stat-label">Suhu</div></div>
+          <div><div class="period-stat-value" data-animate-value="17.080000000000002" data-animate-suffix="°C" data-animate-decimals="1">17.1°C</div><div class="period-stat-label">Suhu</div></div>
           <div><div class="period-stat-value" data-animate-value="72.1" data-animate-suffix="%">72%</div><div class="period-stat-label">Hujan</div></div>
         </div>
       </div></div>
   </div></section><section class="section-compact"><div class="container">
     <details class="hourly-section reveal">
       <summary class="hourly-toggle">
-        <span>Detail per jam · Jumat, 17 Juli 2026</span>
+        <span>Detail per jam, Jumat, 17 Juli 2026</span>
         <svg class="hourly-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </summary>
       <div class="hourly-list"><div class="hour-row" style="--accent-color:#ffd052">
@@ -1808,9 +1834,9 @@ aktivitas</h1>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">01:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.7°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.6°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">96%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.7°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.6°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">17%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">02:00</div>
@@ -1829,16 +1855,16 @@ aktivitas</h1>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">04:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.8°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.5°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">95%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.8°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">15%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.5°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">17%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">05:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.7°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.8°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">96%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.7°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.8°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">15%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">06:00</div>
@@ -1858,51 +1884,51 @@ aktivitas</h1>
         <div class="hour-time">08:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
         <div class="hour-box"><div class="hour-box-value">19.0°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">90%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">88%</div><div class="hour-box-label">Kelembapan</div></div>
         <div class="hour-box"><div class="hour-box-value">19.0°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">0%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#35e8a4">
         <div class="hour-time">09:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Aman</div></div>
-        <div class="hour-box"><div class="hour-box-value">20.5°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">83%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">20.5°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">20.3°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">82%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">20.3°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">0%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#35e8a4">
         <div class="hour-time">10:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Aman</div></div>
-        <div class="hour-box"><div class="hour-box-value">21.7°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">22.1°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">77%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">21.7°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">14%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">22.1°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">0%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">11:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.5°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">23.0°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">75%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.5°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">58%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">23.0°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">55%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">12:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.6°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">74%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.6°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">22.8°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">77%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">22.8°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">58%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">13:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.0°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">78%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.0°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">21.5°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">82%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">21.5°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">14:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">21.9°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">80%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">21.9°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">21.1°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">84%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">21.1°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff4778">
         <div class="hour-time">15:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Berpotensi signifikan</div></div>
@@ -1913,38 +1939,38 @@ aktivitas</h1>
       </div><div class="hour-row" style="--accent-color:#ff4778">
         <div class="hour-time">16:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Berpotensi signifikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">20.2°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">90%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">20.2°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">83%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">19.9°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">91%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">19.9°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">86%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff4778">
         <div class="hour-time">17:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Berpotensi signifikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">19.4°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">94%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">19.4°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">86%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">19.0°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">92%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">19.0°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">83%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff4778">
         <div class="hour-time">18:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Berpotensi signifikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">18.6°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">97%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">18.6°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">18.8°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">96%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">18.8°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">86%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">19:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
         <div class="hour-box"><div class="hour-box-value">18.0°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">97%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">98%</div><div class="hour-box-label">Kelembapan</div></div>
         <div class="hour-box"><div class="hour-box-value">18.0°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">20:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">18.0°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">17.7°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">99%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">18.0°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">17.7°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">21:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
@@ -1958,14 +1984,14 @@ aktivitas</h1>
         <div class="hour-box"><div class="hour-box-value">17.4°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">98%</div><div class="hour-box-label">Kelembapan</div></div>
         <div class="hour-box"><div class="hour-box-value">17.4°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
-      </div><div class="hour-row" style="--accent-color:#ffd052">
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
+      </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">23:00</div>
-        <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">17.0°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">99%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">17.0°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">43%</div><div class="hour-box-label">Hujan</div></div>
+        <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
+        <div class="hour-box"><div class="hour-box-value">17.1°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">98%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">17.1°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">55%</div><div class="hour-box-label">Hujan</div></div>
       </div></div>
     </details>
     
@@ -1983,9 +2009,9 @@ aktivitas</h1>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">01:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.7°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.6°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">96%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.7°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.6°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">17%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">02:00</div>
@@ -2004,16 +2030,16 @@ aktivitas</h1>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">04:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.8°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.5°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">95%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.8°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">15%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.5°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">17%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">05:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.7°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.8°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">96%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">16.7°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">16.8°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">15%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ffd052">
         <div class="hour-time">06:00</div>
@@ -2033,51 +2059,51 @@ aktivitas</h1>
         <div class="hour-time">08:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
         <div class="hour-box"><div class="hour-box-value">19.0°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">90%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">88%</div><div class="hour-box-label">Kelembapan</div></div>
         <div class="hour-box"><div class="hour-box-value">19.0°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">0%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#35e8a4">
         <div class="hour-time">09:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Aman</div></div>
-        <div class="hour-box"><div class="hour-box-value">20.5°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">83%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">20.5°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">20.3°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">82%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">20.3°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">0%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#35e8a4">
         <div class="hour-time">10:00</div>
         <div><div class="hour-condition">Berawan</div><div class="hour-status">Aman</div></div>
-        <div class="hour-box"><div class="hour-box-value">21.7°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">22.1°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">77%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">21.7°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">14%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">22.1°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">0%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">11:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.5°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">23.0°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">75%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.5°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">58%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">23.0°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">55%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">12:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.6°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">74%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.6°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">22.8°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">77%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">22.8°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">58%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">13:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.0°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">78%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">22.0°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">21.5°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">82%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">21.5°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">14:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">21.9°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">80%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">21.9°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">21.1°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">84%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">21.1°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff4778">
         <div class="hour-time">15:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Berpotensi signifikan</div></div>
@@ -2088,38 +2114,38 @@ aktivitas</h1>
       </div><div class="hour-row" style="--accent-color:#ff4778">
         <div class="hour-time">16:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Berpotensi signifikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">20.2°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">90%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">20.2°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">83%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">19.9°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">91%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">19.9°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">86%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff4778">
         <div class="hour-time">17:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Berpotensi signifikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">19.4°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">94%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">19.4°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">86%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">19.0°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">92%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">19.0°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">83%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff4778">
         <div class="hour-time">18:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Berpotensi signifikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">18.6°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">97%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">18.6°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box"><div class="hour-box-value">18.8°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">96%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">18.8°C</div><div class="hour-box-label">Indeks panas</div></div>
         <div class="hour-box hour-box-rain"><div class="hour-box-value">86%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">19:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
         <div class="hour-box"><div class="hour-box-value">18.0°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">97%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">98%</div><div class="hour-box-label">Kelembapan</div></div>
         <div class="hour-box"><div class="hour-box-value">18.0°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">20:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
-        <div class="hour-box"><div class="hour-box-value">18.0°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">17.7°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">99%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">18.0°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
+        <div class="hour-box"><div class="hour-box-value">17.7°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
       </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">21:00</div>
         <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
@@ -2133,14 +2159,14 @@ aktivitas</h1>
         <div class="hour-box"><div class="hour-box-value">17.4°C</div><div class="hour-box-label">Suhu</div></div>
         <div class="hour-box"><div class="hour-box-value">98%</div><div class="hour-box-label">Kelembapan</div></div>
         <div class="hour-box"><div class="hour-box-value">17.4°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">69%</div><div class="hour-box-label">Hujan</div></div>
-      </div><div class="hour-row" style="--accent-color:#ffd052">
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">72%</div><div class="hour-box-label">Hujan</div></div>
+      </div><div class="hour-row" style="--accent-color:#ff9346">
         <div class="hour-time">23:00</div>
-        <div><div class="hour-condition">Berawan</div><div class="hour-status">Perlu diperhatikan</div></div>
-        <div class="hour-box"><div class="hour-box-value">17.0°C</div><div class="hour-box-label">Suhu</div></div>
-        <div class="hour-box"><div class="hour-box-value">99%</div><div class="hour-box-label">Kelembapan</div></div>
-        <div class="hour-box"><div class="hour-box-value">17.0°C</div><div class="hour-box-label">Indeks panas</div></div>
-        <div class="hour-box hour-box-rain"><div class="hour-box-value">43%</div><div class="hour-box-label">Hujan</div></div>
+        <div><div class="hour-condition">Hujan Ringan</div><div class="hour-status">Waspada</div></div>
+        <div class="hour-box"><div class="hour-box-value">17.1°C</div><div class="hour-box-label">Suhu</div></div>
+        <div class="hour-box"><div class="hour-box-value">98%</div><div class="hour-box-label">Kelembapan</div></div>
+        <div class="hour-box"><div class="hour-box-value">17.1°C</div><div class="hour-box-label">Indeks panas</div></div>
+        <div class="hour-box hour-box-rain"><div class="hour-box-value">55%</div><div class="hour-box-label">Hujan</div></div>
       </div></div>
     </div>
   </div></section><div class="divider"></div><section class="section-compact"><div class="container">
@@ -2163,7 +2189,7 @@ Peluang hujan tertinggi: 86% sekitar pukul 15:00 WIB.</textarea>
 <footer class="footer">
   <div class="container">
     <div class="footer-brand">Forecast Redelong</div>
-    <div class="footer-version">Forecast Redelong v1.0 · Diperbarui 17 Juli, 20:00 WIB</div>
+    <div class="footer-version">Forecast Redelong v1.0, Diperbarui 17 Juli, 20:00 WIB</div>
     <div class="footer-links">
       <a class="footer-link" href="keandalan_data.html">Keandalan data</a>
       <a class="footer-link" href="akurasi_data.html">Akurasi</a>
@@ -2613,7 +2639,7 @@ Peluang hujan tertinggi: 86% sekitar pukul 15:00 WIB.</textarea>
       const y = p.y;
       
       tooltip.querySelector('.chart-tooltip-time').textContent = 'Pukul ' + p.hr.hour + ' WIB';
-      tooltip.querySelector('.chart-tooltip-value').textContent = p.val.toFixed(decimalsForVar()) + unit + ' · ' + (p.hr.condition || '-');
+      tooltip.querySelector('.chart-tooltip-value').textContent = p.val.toFixed(decimalsForVar()) + unit + ', ' + (p.hr.condition || '-');
       
       tooltip.style.opacity = '1';
       tooltip.style.transform = 'translate(' + (x - 70) + 'px, ' + (y - 75) + 'px)';
@@ -3045,6 +3071,55 @@ Peluang hujan tertinggi: 86% sekitar pukul 15:00 WIB.</textarea>
     }, 300);
   });
 
+})();
+</script>
+<canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
 })();
 </script>
 </body></html>

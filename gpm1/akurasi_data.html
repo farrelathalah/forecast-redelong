@@ -1642,13 +1642,39 @@ a { color: inherit; text-decoration: none; }
   .glass { background: #f5f5f5; border: 1px solid #ddd; backdrop-filter: none; }
 }
 </style>
+<meta name="fr-global-experience" content="fr-global-experience-v1;rain=native+global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
 </head><body class="theme-noon">
 <div class="atmo">
   <canvas id="atmo-canvas"></canvas>
 </div>
 <header class="nav-bar">
-  <a class="nav-brand" href="../index.html">
-    <span class="nav-logo" aria-hidden="true">FR</span>
+  <a class="nav-brand" href="../index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong">
+    <span class="nav-logo" aria-hidden="true" data-fr-spin-target="true">FR</span>
     <span><span class="nav-title">Forecast Redelong</span><span class="nav-sub">GPM1</span></span>
   </a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -1685,7 +1711,7 @@ a { color: inherit; text-decoration: none; }
 <footer class="footer">
   <div class="container">
     <div class="footer-brand">Forecast Redelong</div>
-    <div class="footer-version">Forecast Redelong v1.0 · Diperbarui 17 Juli, 20:00 WIB</div>
+    <div class="footer-version">Forecast Redelong v1.0, Diperbarui 17 Juli, 20:00 WIB</div>
     <div class="footer-links">
       <a class="footer-link" href="keandalan_data.html">Keandalan data</a>
       <a class="footer-link" href="akurasi_data.html">Akurasi</a>
@@ -2135,7 +2161,7 @@ a { color: inherit; text-decoration: none; }
       const y = p.y;
       
       tooltip.querySelector('.chart-tooltip-time').textContent = 'Pukul ' + p.hr.hour + ' WIB';
-      tooltip.querySelector('.chart-tooltip-value').textContent = p.val.toFixed(decimalsForVar()) + unit + ' · ' + (p.hr.condition || '-');
+      tooltip.querySelector('.chart-tooltip-value').textContent = p.val.toFixed(decimalsForVar()) + unit + ', ' + (p.hr.condition || '-');
       
       tooltip.style.opacity = '1';
       tooltip.style.transform = 'translate(' + (x - 70) + 'px, ' + (y - 75) + 'px)';
@@ -2567,6 +2593,55 @@ a { color: inherit; text-decoration: none; }
     }, 300);
   });
 
+})();
+</script>
+<canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
 })();
 </script>
 </body></html>

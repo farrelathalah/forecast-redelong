@@ -1,1 +1,122 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Status Validasi · Forecast Redelong</title><style>body{margin:0;background:#f4f7fb;color:#10233f;font-family:Inter,system-ui,sans-serif}.topbar{max-width:900px;margin:auto;padding:22px 20px 0}.brand{display:inline-flex;align-items:center;gap:12px;color:inherit;text-decoration:none}.brand-mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#075985,#0ea5e9 65%,#67e8f9);display:grid;place-items:center;color:#fff;font-size:11px;font-weight:900;letter-spacing:-.04em;box-shadow:0 10px 24px rgba(2,132,199,.25)}.brand-copy b{display:block;font-size:15px}.brand-copy small{display:block;color:#64748b;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}main{max-width:900px;margin:auto;padding:22px 20px 36px}section{background:#fff;border:1px solid #dbe5ef;border-radius:20px;padding:24px;margin-bottom:16px}h1{font-size:38px;margin:0 0 10px}p,li{line-height:1.65}.pending{display:inline-block;background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;padding:7px 10px;border-radius:999px;font-weight:700}a{color:#176bff}</style></head><body><header class="topbar"><a class="brand" data-fr-brand="true" href="index.html" aria-label="Kembali ke Forecast Redelong"><span class="brand-mark" aria-hidden="true">FR</span><span class="brand-copy"><b>Forecast Redelong</b><small>Status Validasi</small></span></a></header><main><section><span class="pending">Belum boleh mengklaim akurasi</span><h1>Status Validasi</h1><p>Forecast operasional sudah mulai diarsipkan berdasarkan <i>issue time</i> dan <i>valid time</i>. Nilai MAE, RMSE, bias, POD, FAR, dan CSI baru akan dihitung setelah tersedia pasangan forecast–observation yang cukup dan sebanding.</p></section><section><h2>Yang sudah tersedia</h2><ul><li>Arsip forecast source-level dengan waktu penerbitan.</li><li>Forecast area GPM1–GPM6 dan forecast per titik.</li><li>Kerangka proxy observation GPM/CHIRPS.</li><li>Data PU TamaTue untuk menilai kelayakan proxy, bukan untuk langsung mengklaim skill forecast Redelong.</li></ul></section><section><h2>Aturan evaluasi</h2><ol><li>Bandingkan tanggal, waktu valid, lokasi, dan lead time yang sama.</li><li>Gunakan akumulasi yang sebanding, misalnya 24 jam forecast versus 24 jam observasi.</li><li>Pisahkan hasil observasi lapangan dan proxy satelit.</li><li>Publikasikan jumlah sampel bersama setiap metrik.</li></ol><p>Arsip run ini: <code>archive/2026/07/20260717T063300+0700</code></p><p>Diperbarui 17/07/2026 06:33 WIB · <a href="index.html">Kembali ke dashboard</a></p></section></main></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Status Validasi, Forecast Redelong</title>
+  <style>
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:#eff8ff;background:#04111e}
+    .topbar{display:flex;align-items:center;padding:18px min(5vw,64px);border-bottom:1px solid rgba(255,255,255,.15);background:rgba(3,11,20,.78)}
+    .brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
+    .brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#8b5cf6 55%,#10b981);display:grid;place-items:center;color:#fff;font-size:11px;font-weight:900;letter-spacing:-.04em}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.08}
+    .brand-copy strong{font-size:18px}
+    .brand-copy span{color:#9fb4c9;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+    main{max-width:980px;margin:0 auto;padding:70px 22px}
+    .panel{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);border-radius:28px;padding:28px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}.metric{padding:16px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(0,0,0,.15)}.metric b{display:block;font-size:26px}.metric span{color:#9fb4c9;font-size:12px}
+    .notice{padding:14px 16px;border-radius:16px;background:#2b1d08;border:1px solid #7c5515;color:#ffe4a3}
+    a{color:#45e0d0}
+    p{color:#9fb4c9;line-height:1.7}
+    @media(max-width:700px){.grid{grid-template-columns:1fr 1fr}}
+  </style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong">
+      <span class="brand-mark" aria-hidden="true" data-fr-spin-target="true">FR</span>
+      <span class="brand-copy"><strong>Forecast Redelong</strong><span>Evaluasi Forecast</span></span>
+    </a>
+  </header>
+  <main>
+    <div class="panel">
+      <h1>Status Validasi Forecast Redelong</h1>
+      <p class="notice"><strong>Validasi proxy belum memiliki pasangan matang yang cukup.</strong> Data observasi yang sesuai belum tersedia.</p>
+      <div class="grid">
+        <div class="metric"><b>8</b><span>run forecast diarsipkan</span></div>
+        <div class="metric"><b>50</b><span>forecast harian layak dibandingkan</span></div>
+        <div class="metric"><b>0</b><span>observasi/proxy harian</span></div>
+        <div class="metric"><b>0</b><span>pasangan lokasi-hari</span></div>
+      </div>
+      <p>Karena site tidak memiliki penakar hujan, evaluasi berjalan otomatis terhadap referensi satelit gridded. Sistem hanya menghitung total 24 jam yang sebanding, memilih satu issue awal per hari agar retry tidak menggandakan sampel, dan tidak menyebut hasilnya sebagai akurasi lapangan.</p>
+      <p><a href="index.html">Kembali ke Home</a></p>
+      <p>Generated 2026-07-17 08:03 WIB</p>
+    </div>
+  </main>
+<canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
