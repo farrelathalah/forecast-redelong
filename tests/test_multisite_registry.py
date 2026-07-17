@@ -48,6 +48,7 @@ class MultisiteRegistryTest(unittest.TestCase):
             encoding="utf-8-sig"
         )
         self.assertIn('"feature/**"', workflow)
+        self.assertRegex(workflow, r"(?m)^\s+- main\s*$")
         self.assertIn("github.event_name == 'push'", workflow)
         deploy_condition = next(
             line.strip()
@@ -55,6 +56,7 @@ class MultisiteRegistryTest(unittest.TestCase):
             if "github.event_name == 'schedule'" in line
         )
         self.assertNotIn("github.event_name != 'workflow_dispatch'", deploy_condition)
+        self.assertIn("github.ref == 'refs/heads/main'", deploy_condition)
 
     def test_catalog_builder_creates_network_globe_and_home_link(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

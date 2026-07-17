@@ -3,6 +3,7 @@
 on:
   push:
     branches:
+      - main
       - "feature/**"
       - "validation/**"
   workflow_dispatch:
@@ -169,7 +170,7 @@ jobs:
           retention-days: 7
 
       - name: Deploy to GitHub Pages branch
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.validate_only != true) }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.validate_only != true) || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
