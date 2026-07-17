@@ -1,0 +1,187 @@
+#!/usr/bin/env python3
+"""Build the interactive Redelong globe and historical rainfall explorer."""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import shutil
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA_ROOT = ROOT / "data" / "redelong"
+OUTPUTS = ROOT / "outputs"
+PAGE_MARKER = "forecast-redelong-globe-history-v1"
+
+
+def read_forecast_rows(outputs: Path) -> list[dict]:
+    path = outputs / "operational_daily.csv"
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        rows = []
+        for row in csv.DictReader(handle):
+            try:
+                rows.append(
+                    {
+                        "date": row.get("date_wib", ""),
+                        "mean": round(float(row.get("rain_mean_mm") or 0), 2),
+                        "p10": round(float(row.get("rain_p10_mm") or 0), 2),
+                        "p90": round(float(row.get("rain_p90_mm") or 0), 2),
+                        "models": int(float(row.get("model_count") or 0)),
+                        "status": row.get("data_status", ""),
+                        "coverage": round(float(row.get("hour_coverage_pct") or 0), 1),
+                    }
+                )
+            except (TypeError, ValueError):
+                continue
+    return rows[:4]
+
+
+def copy_assets(outputs: Path) -> None:
+    assets = {
+        DATA_ROOT / "geospatial" / "redelong_analysis_zones.geojson": outputs
+        / "redelong_analysis_zones.geojson",
+        DATA_ROOT / "geospatial" / "redelong_historical_stations.geojson": outputs
+        / "redelong_historical_stations.geojson",
+        DATA_ROOT / "history" / "gpm_history_summary.json": outputs
+        / "gpm_history_summary.json",
+        DATA_ROOT / "history" / "gpm_daily_history.csv": outputs
+        / "gpm_daily_history.csv",
+    }
+    for source, destination in assets.items():
+        if not source.exists():
+            raise FileNotFoundError(source)
+        shutil.copyfile(source, destination)
+
+
+def patch_homepage(outputs: Path) -> None:
+    path = outputs / "index.html"
+    if not path.exists():
+        return
+    content = path.read_text(encoding="utf-8", errors="replace")
+    if 'id="fr-globe-entry"' in content:
+        return
+    style = """
+<style id="fr-globe-entry-style">
+#fr-globe-entry{position:fixed;right:22px;bottom:22px;z-index:9200;display:flex;align-items:center;gap:10px;padding:11px 16px 11px 11px;border:1px solid rgba(125,211,252,.45);border-radius:999px;background:rgba(2,15,30,.88);backdrop-filter:blur(18px);box-shadow:0 18px 55px rgba(0,0,0,.35);color:#effbff;text-decoration:none;font:750 13px/1.2 Inter,system-ui,sans-serif}
+#fr-globe-entry span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#06b6d4,#8b5cf6);font-size:9px;font-weight:900}
+#fr-globe-entry small{display:block;color:#7dd3fc;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
+@media(max-width:620px){#fr-globe-entry{right:12px;bottom:12px;padding-right:13px}}
+</style>
+""".strip()
+    button = """
+<a id="fr-globe-entry" href="redelong_globe.html" aria-label="Buka Globe 3D dan histori Forecast Redelong">
+  <span aria-hidden="true">3D</span><b>Globe &amp; Histori<small>Area 137,80 km²</small></b>
+</a>
+""".strip()
+    content = content.replace("</head>", style + "\n</head>", 1)
+    content = content.replace("</body>", button + "\n</body>", 1)
+    path.write_text(content, encoding="utf-8")
+
+
+def page_html(forecast_rows: list[dict]) -> str:
+    template = r'''<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#020817">
+  <meta name="forecast-redelong-page" content="forecast-redelong-globe-history-v1">
+  <title>Globe 3D dan Histori, Forecast Redelong</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
+  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <style>
+    :root{--bg:#020817;--panel:rgba(3,14,29,.86);--line:rgba(148,210,255,.18);--text:#eef9ff;--muted:#90a9bf;--cyan:#22d3ee;--blue:#38bdf8;--purple:#8b5cf6;--green:#34d399;--amber:#fbbf24}
+    *{box-sizing:border-box}html,body,#map{width:100%;height:100%;margin:0}body{overflow:hidden;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,system-ui,sans-serif}
+    #map{position:fixed;inset:0;background:radial-gradient(circle at center,#0b2940,#01040b 68%)}
+    .shell{position:fixed;inset:0;pointer-events:none;z-index:12}.topbar{position:absolute;left:18px;right:18px;top:16px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand,.toolbar,.panel,.map-note{pointer-events:auto}
+    .brand{display:flex;align-items:center;gap:11px;color:inherit;text-decoration:none;padding:8px 13px 8px 8px;border:1px solid var(--line);border-radius:18px;background:rgba(2,10,22,.82);backdrop-filter:blur(18px);box-shadow:0 16px 45px rgba(0,0,0,.25)}
+    .mark{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#22d3ee,#8b5cf6 60%,#34d399);font-size:10px;font-weight:950}.brand b{display:block;font-size:14px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
+    .toolbar{display:flex;gap:7px;padding:6px;border:1px solid var(--line);border-radius:16px;background:rgba(2,10,22,.82);backdrop-filter:blur(18px)}button,select{font:inherit}.tool,.tab{border:1px solid transparent;color:#cceeff;background:transparent;border-radius:11px;padding:9px 11px;cursor:pointer;font-size:12px;font-weight:750}.tool:hover,.tool.active,.tab.active{background:rgba(34,211,238,.13);border-color:rgba(34,211,238,.35);color:#67e8f9}
+    .panel{position:absolute;left:18px;top:88px;bottom:18px;width:min(390px,calc(100vw - 36px));display:flex;flex-direction:column;border:1px solid var(--line);border-radius:25px;background:linear-gradient(180deg,rgba(3,16,33,.94),rgba(2,9,21,.88));backdrop-filter:blur(20px);box-shadow:0 30px 90px rgba(0,0,0,.45);overflow:hidden}
+    .hero{padding:23px 22px 17px;border-bottom:1px solid var(--line)}.eyebrow{color:#67e8f9;font-size:10px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:29px;line-height:1.02;letter-spacing:-.045em;margin:10px 0 9px}.hero p{color:var(--muted);font-size:12px;line-height:1.55;margin:0}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:15px}.kpi{padding:10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.035)}.kpi b{display:block;font-size:16px}.kpi span{display:block;color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+    .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:9px 12px;border-bottom:1px solid var(--line)}.tab{padding:9px 6px}.content{padding:16px 18px 22px;overflow:auto;scrollbar-width:thin;scrollbar-color:#24506b transparent}.view{display:none}.view.active{display:block}.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:11px}.section-title h2{font-size:16px;margin:0}.section-title span{color:var(--muted);font-size:9px}
+    .forecast-list,.station-list{display:grid;gap:8px}.forecast-card,.station-card{width:100%;text-align:left;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.035);color:inherit;padding:12px}.forecast-card{display:grid;grid-template-columns:1fr auto;gap:8px}.forecast-card small,.station-card small{display:block;color:var(--muted);font-size:9px;margin-top:4px}.forecast-card strong{font-size:18px;color:#7dd3fc}.range{color:#a7f3d0;font-size:9px;text-align:right}.station-card{cursor:pointer}.station-card:hover{border-color:rgba(34,211,238,.45);background:rgba(34,211,238,.07)}
+    .control{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}.control label{color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.1em}.control select{width:100%;margin-top:5px;padding:9px;border:1px solid var(--line);border-radius:11px;background:#071a2b;color:var(--text)}
+    .chart{width:100%;height:185px;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.18);overflow:visible}.chart text{font-family:inherit;fill:#87a4ba;font-size:9px}.chart .grid{stroke:rgba(148,210,255,.12);stroke-width:1}.chart .line{fill:none;stroke:url(#historyGradient);stroke-width:2.5}.chart .area{fill:url(#areaGradient)}.chart .dot{fill:#67e8f9;stroke:#051324;stroke-width:2}.chart-title{color:#dff8ff;font-size:11px;font-weight:750;margin:8px 2px 0}.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;color:var(--muted);font-size:9px}.legend i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+    .source-note{margin-top:12px;padding:11px 12px;border-radius:13px;border:1px solid rgba(251,191,36,.22);background:rgba(120,75,8,.12);color:#e8c97b;font-size:9px;line-height:1.55}.download{display:inline-flex;margin-top:10px;color:#67e8f9;font-size:10px;font-weight:750;text-decoration:none;border-bottom:1px solid rgba(103,232,249,.35)}
+    .map-note{position:absolute;right:18px;bottom:18px;max-width:310px;padding:11px 13px;border:1px solid var(--line);border-radius:14px;background:rgba(2,10,22,.78);backdrop-filter:blur(15px);color:var(--muted);font-size:9px;line-height:1.5}.map-note b{color:#dff8ff}.error{display:none;position:fixed;inset:auto 18px 18px;z-index:50;padding:13px;border:1px solid #f87171;border-radius:14px;background:#301017;color:#fecaca;font-size:12px}
+    .maplibregl-popup-content{background:#07192b!important;color:#eaf8ff!important;border:1px solid rgba(125,211,252,.28);border-radius:14px!important;padding:13px!important;box-shadow:0 16px 45px rgba(0,0,0,.4)!important}.maplibregl-popup-tip{border-top-color:#07192b!important}.popup-title{font-weight:850}.popup-meta{color:#9db4c7;font-size:10px;margin-top:4px;line-height:1.45}
+    .maplibregl-ctrl-top-right{top:66px;right:8px}
+    @media(max-width:760px){.topbar{left:10px;right:10px;top:9px}.toolbar{display:none}.panel{left:10px;right:10px;top:auto;bottom:10px;width:auto;height:52vh;border-radius:22px}.hero{padding:15px 16px 12px}.hero h1{font-size:22px}.hero p{display:none}.kpis{margin-top:10px}.content{padding:13px}.map-note{display:none}.brand{padding:6px 10px 6px 6px}.mark{width:34px;height:34px}.maplibregl-ctrl-top-right{top:56px;right:3px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div id="map" aria-label="Globe 3D Forecast Redelong"></div>
+  <div class="shell">
+    <div class="topbar">
+      <a class="brand" href="index.html" aria-label="Kembali ke Forecast Redelong"><span class="mark" aria-hidden="true">FR</span><span><b>Forecast Redelong</b><small>Globe 3D dan Histori</small></span></a>
+      <div class="toolbar" aria-label="Kontrol peta"><button class="tool active" id="worldBtn">Dunia</button><button class="tool" id="redelongBtn">Fokus Redelong</button><button class="tool" id="projectionBtn">Peta datar</button></div>
+    </div>
+    <aside class="panel">
+      <section class="hero"><div class="eyebrow">Hydrometeorological Intelligence</div><h1>Satu portal untuk ruang, waktu, dan keputusan.</h1><p>Jelajahi area analisis Redelong, forecast operasional, 24 tahun histori lengkap, dan jaringan stasiun pembanding.</p><div class="kpis"><div class="kpi"><b>137,80</b><span>km² area</span></div><div class="kpi"><b>24</b><span>tahun lengkap</span></div><div class="kpi"><b>6</b><span>zona GPM</span></div></div></section>
+      <nav class="tabs" aria-label="Mode informasi"><button class="tab active" data-view="forecast">Forecast</button><button class="tab" data-view="history">Histori</button><button class="tab" data-view="stations">Stasiun</button></nav>
+      <div class="content">
+        <section class="view active" id="forecastView"><div class="section-title"><h2>Forecast area</h2><span>WIB</span></div><div class="forecast-list" id="forecastList"></div><div class="source-note">Mean area berasal dari GPM1–GPM6. TamaTue tetap ditampilkan sebagai pembanding eksternal dan tidak masuk perhitungan area.</div></section>
+        <section class="view" id="historyView"><div class="section-title"><h2>Histori hujan GPM</h2><span>NASA Final Daily</span></div><div class="control"><label>Zona<select id="historyLocation"><option value="gpm1">GPM1</option><option value="gpm2">GPM2</option><option value="gpm3">GPM3</option><option value="gpm4">GPM4</option><option value="gpm5">GPM5</option><option value="gpm6">GPM6</option></select></label><label>Bulan peta<select id="historyMonth"><option value="1">Januari</option><option value="2">Februari</option><option value="3">Maret</option><option value="4">April</option><option value="5">Mei</option><option value="6">Juni</option><option value="7">Juli</option><option value="8">Agustus</option><option value="9">September</option><option value="10">Oktober</option><option value="11">November</option><option value="12">Desember</option></select></label></div><svg class="chart" id="historyChart" viewBox="0 0 350 185" role="img" aria-label="Grafik histori hujan tahunan"></svg><div class="chart-title" id="chartTitle"></div><div class="legend"><span><i style="background:#22d3ee"></i>Total tahunan lengkap</span><span><i style="background:#8b5cf6"></i>Warna polygon menunjukkan klimatologi bulanan</span></div><a class="download" href="gpm_daily_history.csv">Unduh data harian 2000–2024</a><div class="source-note">Histori publik memakai sampling grid GPM IMERG Final berlabel GPM1–GPM6 dari NASA Giovanni, bukan observasi site atau rerata seluruh piksel polygon. Data BMKG dan PU belum dipublikasikan ulang; metadata stasiunnya tetap ditampilkan untuk transparansi.</div></section>
+        <section class="view" id="stationsView"><div class="section-title"><h2>Jaringan pembanding</h2><span>klik untuk terbang</span></div><div class="station-list" id="stationList"></div><div class="source-note">Stasiun di luar catchment tidak dianggap mewakili hujan PLTA. Data ini digunakan sebagai pembanding regional dan pemeriksaan silang.</div></section>
+      </div>
+    </aside>
+    <div class="map-note"><b>Interaksi:</b> putar globe dengan drag, scroll untuk zoom, klik polygon atau titik untuk detail. Gunakan mode Histori untuk mewarnai zona berdasarkan klimatologi bulanan.</div>
+  </div>
+  <div class="error" id="errorBox">Globe tidak dapat dimuat. Periksa koneksi internet atau buka kembali halaman ini.</div>
+  <script>
+  const FORECAST=__FORECAST_ROWS__;
+  const PLTA=[96.9773444444,4.7481388889];
+  const state={projection:'globe',mode:'forecast',history:null,zones:null,stations:null,points:null};
+  const palette=['#22d3ee','#38bdf8','#818cf8','#8b5cf6','#34d399','#fbbf24'];
+  function esc(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+  function formatDate(value){try{return new Intl.DateTimeFormat('id-ID',{weekday:'short',day:'numeric',month:'short'}).format(new Date(value+'T12:00:00+07:00'));}catch{return value;}}
+  function renderForecast(){const root=document.getElementById('forecastList');root.innerHTML=FORECAST.map((row,index)=>`<button class="forecast-card" data-index="${index}"><span><b>${esc(formatDate(row.date))}</b><small>${row.models} model, coverage ${row.coverage}%</small></span><span><strong>${row.mean.toFixed(1)} mm</strong><small class="range">P10–P90 ${row.p10.toFixed(1)}–${row.p90.toFixed(1)}</small></span></button>`).join('')||'<div class="source-note">Forecast operasional belum tersedia.</div>';}
+  function chartAnnual(slug){if(!state.history)return;const rows=state.history.annual.filter(row=>row.location_slug===slug&&row.complete);const svg=document.getElementById('historyChart');if(!rows.length){svg.innerHTML='';return;}const W=350,H=185,p={l:38,r:12,t:15,b:28};const max=Math.max(...rows.map(row=>row.rain_mm))*1.08;const x=i=>p.l+i*(W-p.l-p.r)/Math.max(1,rows.length-1);const y=v=>H-p.b-v*(H-p.t-p.b)/max;let grid='';for(let i=0;i<=4;i++){const value=max*i/4;const yy=y(value);grid+=`<line class="grid" x1="${p.l}" y1="${yy}" x2="${W-p.r}" y2="${yy}"/><text x="4" y="${yy+3}">${Math.round(value)}</text>`;}const points=rows.map((row,i)=>`${x(i).toFixed(1)},${y(row.rain_mm).toFixed(1)}`).join(' ');const area=`${p.l},${H-p.b} ${points} ${x(rows.length-1)},${H-p.b}`;const dots=rows.map((row,i)=>`<circle class="dot" cx="${x(i)}" cy="${y(row.rain_mm)}" r="2.8"><title>${row.year}: ${row.rain_mm.toFixed(1)} mm</title></circle>`).join('');const labels=rows.map((row,i)=>i%5===0||i===rows.length-1?`<text x="${x(i)}" y="${H-8}" text-anchor="middle">${row.year}</text>`:'').join('');svg.innerHTML=`<defs><linearGradient id="historyGradient"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient><linearGradient id="areaGradient" x2="0" y2="1"><stop stop-color="#22d3ee" stop-opacity=".28"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></linearGradient></defs>${grid}<polygon class="area" points="${area}"/><polyline class="line" points="${points}"/>${dots}${labels}`;const mean=rows.reduce((sum,row)=>sum+row.rain_mm,0)/rows.length;document.getElementById('chartTitle').textContent=`${slug.toUpperCase()}, rata-rata ${mean.toFixed(0)} mm/tahun (${rows.length} tahun lengkap)`;}
+  function applyHistoryMonth(){if(!state.history||!state.zones||!map.loaded())return;const month=Number(document.getElementById('historyMonth').value);const rows=state.history.monthly_climatology.filter(row=>row.month===month);for(const row of rows){map.setFeatureState({source:'zones',id:row.location_slug},{displayRain:row.mean_rain_mm||0});}state.mode='history';}
+  function applyForecastColors(){if(!state.points||!map.loaded())return;for(const feature of state.points.features){const slug=feature.properties.location_slug;if(/^gpm[1-6]$/.test(slug)){map.setFeatureState({source:'zones',id:slug},{displayRain:Number(feature.properties.rain_24h_mean_mm)||0});}}state.mode='forecast';}
+  function stationCards(){const root=document.getElementById('stationList');const rows=[...state.stations.features].sort((a,b)=>a.properties.distance_to_plta_km-b.properties.distance_to_plta_km);root.innerHTML=rows.map((feature,index)=>`<button class="station-card" data-station="${index}"><b>${esc(feature.properties.name)}</b><small>${esc(feature.properties.network)}, ${feature.properties.distance_to_plta_km} km dari PLTA</small><small>Histori ${feature.properties.history_start} sampai ${feature.properties.history_end}, ${feature.properties.valid_rain_days.toLocaleString('id-ID')} hari valid</small></button>`).join('');root.querySelectorAll('[data-station]').forEach((button,index)=>button.addEventListener('click',()=>{const f=rows[index];map.flyTo({center:f.geometry.coordinates,zoom:10,pitch:48,duration:1700});popupStation(f);}));}
+  function popupStation(feature){new maplibregl.Popup({offset:12}).setLngLat(feature.geometry.coordinates).setHTML(`<div class="popup-title">${esc(feature.properties.name)}</div><div class="popup-meta">${esc(feature.properties.network)}<br>${feature.properties.distance_to_plta_km} km dari PLTA<br>Data mentah tidak dipublikasikan ulang</div>`).addTo(map);}
+  function popupZone(feature,lngLat){const p=feature.properties;new maplibregl.Popup({offset:8}).setLngLat(lngLat).setHTML(`<div class="popup-title">${esc(p.name)}</div><div class="popup-meta">Luas ${Number(p.area_km2).toFixed(2)} km²<br>${p.include_in_catchment?'Masuk area Redelong':'Pembanding eksternal'}</div>`).addTo(map);}
+  function setView(name){document.querySelectorAll('.tab').forEach(el=>el.classList.toggle('active',el.dataset.view===name));document.querySelectorAll('.view').forEach(el=>el.classList.toggle('active',el.id===name+'View'));if(name==='history'){applyHistoryMonth();chartAnnual(document.getElementById('historyLocation').value);map.flyTo({center:PLTA,zoom:10.1,pitch:52,duration:1500});}else if(name==='forecast'){applyForecastColors();}else if(name==='stations'){map.flyTo({center:[96.97,4.78],zoom:7.2,pitch:34,duration:1500});}}
+  if(typeof maplibregl==='undefined'){document.getElementById('errorBox').style.display='block';throw new Error('MapLibre unavailable');}
+  const map=new maplibregl.Map({container:'map',center:[105,-1],zoom:1.25,attributionControl:true,style:{version:8,projection:{type:'globe'},sources:{satellite:{type:'raster',tiles:['https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}.jpg'],tileSize:256,attribution:'Cloudless imagery, EOX'}},layers:[{id:'satellite',type:'raster',source:'satellite'}],sky:{'atmosphere-blend':['interpolate',['linear'],['zoom'],0,1,6,1,8,0]},light:{anchor:'map',position:[1.5,90,80]}}});
+  map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'top-right');map.addControl(new maplibregl.GlobeControl(),'top-right');
+  Promise.all([fetch('redelong_analysis_zones.geojson').then(r=>r.json()),fetch('redelong_historical_stations.geojson').then(r=>r.json()),fetch('redelong_operational_points.geojson').then(r=>r.json()),fetch('gpm_history_summary.json').then(r=>r.json())]).then(([zones,stations,points,history])=>{state.zones=zones;state.stations=stations;state.points=points;state.history=history;if(map.loaded())installLayers();else map.once('load',installLayers);stationCards();chartAnnual('gpm1');}).catch(error=>{console.error(error);document.getElementById('errorBox').style.display='block';});
+  function installLayers(){map.addSource('zones',{type:'geojson',data:state.zones,promoteId:'zone_id'});map.addLayer({id:'zone-fill',type:'fill',source:'zones',paint:{'fill-color':['case',['==',['get','include_in_catchment'],false],'#64748b',['interpolate',['linear'],['coalesce',['feature-state','displayRain'],0],0,'#082f49',5,'#0891b2',15,'#22d3ee',30,'#8b5cf6',60,'#f59e0b']],'fill-opacity':['case',['==',['get','include_in_catchment'],false],.16,.54]}});map.addLayer({id:'zone-line',type:'line',source:'zones',paint:{'line-color':['case',['==',['get','include_in_catchment'],false],'#fbbf24','#baf5ff'],'line-width':['case',['==',['get','include_in_catchment'],false],1.2,2.1],'line-opacity':.9}});map.addSource('stations',{type:'geojson',data:state.stations});map.addLayer({id:'station-points',type:'circle',source:'stations',paint:{'circle-radius':['interpolate',['linear'],['zoom'],3,3,10,7],'circle-color':['match',['get','network'],'BMKG','#fbbf24','#34d399'],'circle-stroke-color':'#06121e','circle-stroke-width':2}});map.addSource('forecast-points',{type:'geojson',data:state.points});map.addLayer({id:'forecast-points',type:'circle',source:'forecast-points',paint:{'circle-radius':['interpolate',['linear'],['zoom'],3,3,10,8],'circle-color':['case',['==',['get','location_slug'],'plta_redelong'],'#ffffff','#22d3ee'],'circle-stroke-color':'#082f49','circle-stroke-width':2}});map.on('click','zone-fill',event=>event.features&&popupZone(event.features[0],event.lngLat));map.on('click','station-points',event=>event.features&&popupStation(event.features[0]));map.on('click','forecast-points',event=>{if(!event.features)return;const f=event.features[0],p=f.properties;new maplibregl.Popup({offset:10}).setLngLat(f.geometry.coordinates).setHTML(`<div class="popup-title">${esc(p.name)}</div><div class="popup-meta">Forecast 24 jam ${Number(p.rain_24h_mean_mm||0).toFixed(1)} mm<br>${p.model_count||0} model valid</div>`).addTo(map);});for(const id of ['zone-fill','station-points','forecast-points']){map.on('mouseenter',id,()=>map.getCanvas().style.cursor='pointer');map.on('mouseleave',id,()=>map.getCanvas().style.cursor='');}applyForecastColors();}
+  document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>setView(tab.dataset.view)));document.getElementById('historyLocation').addEventListener('change',event=>chartAnnual(event.target.value));document.getElementById('historyMonth').addEventListener('change',applyHistoryMonth);document.getElementById('worldBtn').addEventListener('click',()=>map.flyTo({center:[105,-1],zoom:1.25,pitch:0,bearing:0,duration:1800}));document.getElementById('redelongBtn').addEventListener('click',()=>map.flyTo({center:PLTA,zoom:10.1,pitch:52,bearing:-18,duration:1900}));document.getElementById('projectionBtn').addEventListener('click',event=>{state.projection=state.projection==='globe'?'mercator':'globe';map.setProjection({type:state.projection});event.target.textContent=state.projection==='globe'?'Peta datar':'Globe 3D';});renderForecast();
+  </script>
+</body>
+</html>'''
+    return template.replace(
+        "__FORECAST_ROWS__",
+        json.dumps(forecast_rows, ensure_ascii=False, separators=(",", ":")),
+    )
+
+
+def build(outputs: Path) -> None:
+    outputs.mkdir(parents=True, exist_ok=True)
+    copy_assets(outputs)
+    (outputs / "redelong_globe.html").write_text(
+        page_html(read_forecast_rows(outputs)), encoding="utf-8"
+    )
+    patch_homepage(outputs)
+    print("SUCCESS")
+    print("Globe and history portal:", outputs / "redelong_globe.html")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--outputs", type=Path, default=OUTPUTS)
+    args = parser.parse_args()
+    build(args.outputs)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

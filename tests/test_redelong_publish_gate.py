@@ -6,6 +6,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from build_utils.apply_global_experience import apply_all
+from build_utils.build_besai_portal import build as build_besai_portal
+from build_utils.build_multisite_catalog import build as build_multisite_catalog
 from build_utils.validate_redelong_publish import (
     EXPECTED_LOCATIONS,
     QUANTITATIVE_SOURCES,
@@ -23,7 +26,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 def branded_html(href: str, script: str = "") -> str:
     return (
-        "<!doctype html><html><body>"
+        '<!doctype html><html lang="id"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forecast Redelong</title></head><body>'
         f'<a data-fr-brand="true" href="{href}"><span>FR</span>'
         "<b>Forecast Redelong</b></a>"
         f"{script}</body></html>"
@@ -39,9 +42,11 @@ class RedelongPublishGateTest(unittest.TestCase):
                 "target_jam": "00:00",
                 "source_id": source,
             }
-            for location in sorted(EXPECTED_LOCATIONS)
+            for location in sorted(EXPECTED_LOCATIONS | {"pltm_besai_kemu"})
             for source in sorted(QUANTITATIVE_SOURCES)
         ]
+        for row in forecast_rows:
+            row["rain_mm"] = 1.0
         write_csv(root / "forecast_all_locations.csv", forecast_rows)
         write_csv(
             root / "dim_sources.csv",
@@ -86,6 +91,15 @@ class RedelongPublishGateTest(unittest.TestCase):
                     "features": [
                         {
                             "type": "Feature",
+                            "geometry": {"type": "Point", "coordinates": [96.977344, 4.748139]},
+                            "properties": {
+                                "location_slug": "plta_redelong",
+                                "operational_role": "outlet_reference",
+                                "include_in_catchment": False,
+                            },
+                        },
+                        {
+                            "type": "Feature",
                             "geometry": {"type": "Point", "coordinates": [96.85, 4.65]},
                             "properties": {
                                 "location_slug": "gpm_grid_tamatue",
@@ -127,7 +141,8 @@ class RedelongPublishGateTest(unittest.TestCase):
             )
         (root / "index.html").write_text(
             branded_html(
-                "index.html", "<script>(() => { const portal = true; })();</script>"
+                "index.html",
+                '<a href="redelong_globe.html">Globe</a><script>(() => { const portal = true; })();</script>',
             ),
             encoding="utf-8",
         )
@@ -137,6 +152,104 @@ class RedelongPublishGateTest(unittest.TestCase):
         (root / "validation_status.html").write_text(
             branded_html("index.html"), encoding="utf-8"
         )
+        (root / "evaluation_summary.html").write_text(
+            branded_html("index.html"), encoding="utf-8"
+        )
+        (root / "redelong_globe.html").write_text(
+            branded_html(
+                "index.html",
+                "<meta name='forecast-redelong-page' content='forecast-redelong-globe-history-v1'><script>(() => { const projection = {type:'globe'}; })();</script>",
+            ),
+            encoding="utf-8",
+        )
+        zone_features = [
+            {
+                "type": "Feature",
+                "properties": {
+                    "name": f"GPM{index}",
+                    "area_km2": 137.8 / 6,
+                    "include_in_catchment": True,
+                    "role": "catchment_zone",
+                },
+                "geometry": {"type": "Polygon", "coordinates": []},
+            }
+            for index in range(1, 7)
+        ]
+        zone_features.append(
+            {
+                "type": "Feature",
+                "properties": {
+                    "name": "GPM Grid TamaTue",
+                    "area_km2": 122.5,
+                    "include_in_catchment": False,
+                    "role": "external_comparison",
+                },
+                "geometry": {"type": "Polygon", "coordinates": []},
+            }
+        )
+        (root / "redelong_analysis_zones.geojson").write_text(
+            json.dumps({"type": "FeatureCollection", "features": zone_features}),
+            encoding="utf-8",
+        )
+        (root / "redelong_historical_stations.geojson").write_text(
+            json.dumps(
+                {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "properties": {"publication": "metadata_only"},
+                            "geometry": {"type": "Point", "coordinates": [97, 5]},
+                        }
+                        for _ in range(7)
+                    ],
+                }
+            ),
+            encoding="utf-8",
+        )
+        history_sources = {f"gpm{index}": {} for index in range(1, 7)}
+        history_annual = [
+            {"location_slug": slug, "year": year, "complete": True}
+            for slug in history_sources
+            for year in range(2000, 2024)
+        ]
+        (root / "gpm_history_summary.json").write_text(
+            json.dumps({"sources": history_sources, "annual": history_annual}),
+            encoding="utf-8",
+        )
+        (root / "gpm_daily_history.csv").write_text(
+            "date,location_slug,rain_mm\n", encoding="utf-8"
+        )
+        (root / "evaluation_status.json").write_text(
+            json.dumps(
+                {
+                    "schema_version": "forecast-redelong-validation-v2",
+                    "state": "menunggu_pasangan",
+                    "observation_mode": "proxy_observation",
+                    "observation_reference": "proxy_satellite_gridded",
+                    "observation_sources": [],
+                    "site_gauge_required": False,
+                    "matched_location_days": 0,
+                    "can_claim_field_accuracy": False,
+                    "can_report_preliminary_proxy_skill": False,
+                }
+            ),
+            encoding="utf-8",
+        )
+        (root / "evaluation_joined_daily.csv").write_text(
+            "date,location_slug\n", encoding="utf-8"
+        )
+        (root / "evaluation_metrics.csv").write_text(
+            "scope,forecast_metric,n_samples\n", encoding="utf-8"
+        )
+        (root / "validation_archive").mkdir()
+        (root / "validation_archive" / "proxy_refresh_status.json").write_text(
+            json.dumps({"status": "no_eligible_archive", "missing_pairs": 0}),
+            encoding="utf-8",
+        )
+        build_besai_portal(root)
+        build_multisite_catalog(root)
+        apply_all(root)
 
     def test_valid_run_passes_and_broken_javascript_is_blocked(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -160,7 +273,12 @@ class RedelongPublishGateTest(unittest.TestCase):
             self.make_valid_outputs(outputs)
             geo_path = outputs / "redelong_operational_points.geojson"
             payload = json.loads(geo_path.read_text(encoding="utf-8"))
-            payload["features"][0]["properties"]["include_in_catchment"] = True
+            tama = next(
+                feature
+                for feature in payload["features"]
+                if feature["properties"]["location_slug"] == "gpm_grid_tamatue"
+            )
+            tama["properties"]["include_in_catchment"] = True
             geo_path.write_text(json.dumps(payload), encoding="utf-8")
 
             ok, report = validate(outputs)
@@ -267,6 +385,24 @@ class RedelongPublishGateTest(unittest.TestCase):
             self.assertTrue(any("halaman peta" in error for error in report["errors"]))
             self.assertTrue(any("validation_status" in error for error in report["errors"]))
             self.assertTrue(any("Link monogram FR" in error for error in report["errors"]))
+
+    def test_decorative_middle_dot_is_blocked_from_public_html(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            index_path = outputs / "index.html"
+            content = index_path.read_text(encoding="utf-8")
+            index_path.write_text(
+                content.replace("Forecast Redelong", "Forecast Redelong • PLTA", 1),
+                encoding="utf-8",
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertFalse(ok)
+            self.assertTrue(
+                any("Pemisah titik tengah" in error for error in report["errors"])
+            )
 
 
 if __name__ == "__main__":

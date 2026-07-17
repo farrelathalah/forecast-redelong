@@ -1,6 +1,10 @@
 ﻿name: Forecast Redelong
 
 on:
+  push:
+    branches:
+      - "feature/**"
+      - "validation/**"
   workflow_dispatch:
     inputs:
       validate_only:
@@ -57,6 +61,9 @@ jobs:
             git worktree add --detach /tmp/forecast-gh-pages origin/gh-pages
             if [ -d /tmp/forecast-gh-pages/archive ]; then
               cp -a /tmp/forecast-gh-pages/archive outputs/
+            fi
+            if [ -d /tmp/forecast-gh-pages/validation_archive ]; then
+              cp -a /tmp/forecast-gh-pages/validation_archive outputs/
             fi
             git worktree remove --force /tmp/forecast-gh-pages
           fi
@@ -117,6 +124,22 @@ jobs:
         run: |
           python build_utils/build_redelong_operational.py --outputs outputs
 
+      - name: Build Redelong 3D globe and historical explorer
+        run: |
+          python build_utils/build_redelong_globe_history.py --outputs outputs
+
+      - name: Build Besai Kemu forecast and historical explorer
+        run: |
+          python build_utils/build_besai_portal.py --outputs outputs
+
+      - name: Build multi-site hydro network globe
+        run: |
+          python build_utils/build_multisite_catalog.py --outputs outputs
+
+      - name: Refresh mature satellite validation proxies
+        run: |
+          python build_utils/refresh_validation_observations.py --outputs outputs
+
       - name: Evaluate forecast accuracy
         run: |
           python build_utils/evaluate_forecast_accuracy.py
@@ -124,6 +147,10 @@ jobs:
       - name: Add evaluation link
         run: |
           python build_utils/link_evaluation_page.py
+
+      - name: Apply shared FR interaction and rain atmosphere
+        run: |
+          python build_utils/apply_global_experience.py --outputs outputs
 
       - name: Validate publish quality gate
         run: |
@@ -134,7 +161,7 @@ jobs:
           touch outputs/.nojekyll
 
       - name: Upload validation preview
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.validate_only == true }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.validate_only == true) || github.event_name == 'push' }}
         uses: actions/upload-artifact@v4
         with:
           name: forecast-redelong-validation-${{ github.run_number }}
@@ -142,7 +169,7 @@ jobs:
           retention-days: 7
 
       - name: Deploy to GitHub Pages branch
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.validate_only != true }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.validate_only != true) }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

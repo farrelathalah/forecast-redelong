@@ -1,0 +1,16 @@
+{
+  "schema_version": "forecast-hydro-site-history-v1",
+  "site_slug": "pltm_besai_kemu",
+  "site_name": "PLTM Besai Kemu",
+  "latitude": -4.87997,
+  "longitude": 104.50453,
+  "period": {
+    "start": "1981-01-01",
+    "end": "2025-12-31"
+  },
+  "rows": 16436,
+  "source": "NASA POWER Daily API",
+  "source_url": "https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
+  "observation_type": "gridded_meteorological_proxy",
+  "disclaimer": "Not an on-site rain gauge and not direct site observation."
+}

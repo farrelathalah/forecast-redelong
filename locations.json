@@ -7,7 +7,8 @@
     "gpm4",
     "gpm5",
     "gpm6",
-    "gpm_grid_tamatue"
+    "gpm_grid_tamatue",
+    "pltm_besai_kemu"
   ],
   "locations": {
     "plta_redelong": {
@@ -137,6 +138,23 @@
       "spatial_source": "catchment_polygon",
       "spatial_note": "Grid terpisah dan terlalu jauh untuk langsung diasumsikan berkontribusi; hanya titik pembanding sampai konektivitas DAS dikonfirmasi.",
       "note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment grid Spatial role: external_comparison. Grid terpisah dan terlalu jauh untuk langsung diasumsikan berkontribusi; hanya titik pembanding sampai konektivitas DAS dikonfirmasi."
+    },
+    "pltm_besai_kemu": {
+      "location_name": "PLTM Besai Kemu",
+      "adm4": "18.08.03.2017",
+      "latitude": -4.87997,
+      "longitude": 104.50453,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "Kemu",
+      "area_level": "independent_site_reference",
+      "is_proxy_bmkg": true,
+      "weight_km2": 0.0,
+      "include_in_catchment": false,
+      "operational_role": "independent_site_reference",
+      "spatial_source": "World Bank ESMAP Small Hydro Resource Mapping in Indonesia, Annex I",
+      "spatial_note": "Titik site provisional; tidak masuk agregasi DAS Redelong dan belum digunakan untuk menghitung volume hujan atau debit.",
+      "site_scope": "pltm_besai_kemu",
+      "note": "PLTM Besai Kemu forecast reference. BMKG ADM4 reference: 18.08.03.2017. Coordinate status: provisional_public_source_pending_asset_confirmation."
     }
   }
 }
