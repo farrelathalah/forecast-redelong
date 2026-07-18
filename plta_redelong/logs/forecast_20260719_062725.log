@@ -1,0 +1,22 @@
+2026-07-18 23:27:25,866 INFO Log file: /home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260719_062725.log
+2026-07-18 23:27:25,866 INFO Output dir: /home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong
+2026-07-18 23:27:25,866 INFO Metadata lokasi: slug=plta_redelong adm4=11.17.05.2002 bmkg_point=Bale Redelong area_level=outlet_reference proxy_bmkg=True
+2026-07-18 23:27:25,866 INFO Koordinat: lat=4.748139 lon=96.977344 timezone=Asia/Jakarta
+2026-07-18 23:27:25,866 INFO Catatan lokasi: Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for Forecast Redelong Spatial role: outlet_reference. Titik referensi PLTA; tidak diberi bobot luas.
+2026-07-18 23:27:25,866 INFO Locations file: /home/runner/work/forecast-redelong/forecast-redelong/locations.json
+2026-07-18 23:27:25,866 INFO Mulai proses untuk lokasi PLTA Redelong
+2026-07-18 23:27:25,866 INFO Target date: 2026-07-22
+2026-07-18 23:27:25,866 INFO Target hours: 00:00, 01:00, 02:00, 03:00, 04:00, 05:00, 06:00, 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00, 21:00, 22:00, 23:00
+2026-07-18 23:27:25,866 INFO Sumber aktif: BMKG, ECMWF, GFS, ICON, CMA, METEOFRANCE, UKMO
+2026-07-18 23:27:25,866 INFO Bobot aktif: BMKG=1.35, CMA=1.0, ECMWF=1.0, GFS=1.0, ICON=1.0, KMA=0.9, METEOFRANCE=1.0, METNO=1.0, UKMO=1.0
+2026-07-18 23:27:25,918 INFO BMKG gagal (host=api.bmkg.go.id): BMKG tidak mengembalikan kandidat untuk target date
+2026-07-18 23:27:28,446 INFO Selesai.
+2026-07-18 23:27:28,446 INFO Sumber sukses: 6/7
+2026-07-18 23:27:28,446 INFO Total forecast point: 144
+2026-07-18 23:27:28,446 INFO BMKG: FAIL (0/24 point) t=51ms BMKG tidak mengembalikan kandidat untuk target date
+2026-07-18 23:27:28,446 INFO CMA: OK (24/24 point) http=200 t=398ms 
+2026-07-18 23:27:28,446 INFO ECMWF: OK (24/24 point) http=200 t=391ms 
+2026-07-18 23:27:28,446 INFO GFS: OK (24/24 point) http=200 t=380ms 
+2026-07-18 23:27:28,446 INFO ICON: OK (24/24 point) http=200 t=486ms 
+2026-07-18 23:27:28,446 INFO METEOFRANCE: OK (24/24 point) http=200 t=384ms 
+2026-07-18 23:27:28,446 INFO UKMO: OK (24/24 point) http=200 t=383ms 
