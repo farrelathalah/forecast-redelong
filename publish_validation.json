@@ -3,7 +3,7 @@
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 5772,
+    "forecast_rows": 5733,
     "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
@@ -161,7 +161,7 @@
     "evaluation_can_report_preliminary_proxy_skill": false,
     "evaluation_observation_sources": [],
     "evaluation_joined_observation_sources": [],
-    "validation_proxy_refresh_status": "proxy_pending",
+    "validation_proxy_refresh_status": "already_attempted_today",
     "validation_proxy_missing_pairs": 16,
     "geospatial_history_zones": 7,
     "geospatial_history_catchment_zones": 6,
