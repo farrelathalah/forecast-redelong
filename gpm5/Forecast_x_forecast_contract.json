@@ -1,7 +1,7 @@
 {
   "version": "Forecast Redelong Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-07-19T06:31:40.009191+07:00",
+  "generated_at": "2026-07-19T14:48:24.833821+07:00",
   "location": "GPM5",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,7 +25,7 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-07-19T06:31:40.000283+07:00",
+    "generated_at": "2026-07-19T14:48:24.826854+07:00",
     "aether_version": "Forecast Redelong Public Weather v11",
     "location": "GPM5",
     "mission": "safety_first",
@@ -40,18 +40,18 @@
       "notes": "Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
     },
     "risk_window": "14:00–19:00",
-    "best_general_activity_window": "09:00",
+    "best_general_activity_window": "10:00",
     "peak_rain_threat_hour": "16:00",
-    "peak_rain_threat_score": 75.6,
+    "peak_rain_threat_score": 78.1,
     "peak_heavy_rain_threat_hour": "14:00",
-    "peak_heavy_rain_threat_score": 22.9,
-    "peak_failure_risk_hour": "14:00",
-    "peak_failure_risk_score": 45.3,
-    "peak_forecast_stress_hour": "20:00",
-    "peak_forecast_stress_score": 48.1,
-    "peak_self_doubt_hour": "20:00",
-    "peak_self_doubt_score": 46.5,
-    "summary_text": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM5. Status operasional harian YELLOW. Risk window utama: 14:00–19:00. Failure risk tertinggi 45.3/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "peak_heavy_rain_threat_score": 25.2,
+    "peak_failure_risk_hour": "15:00",
+    "peak_failure_risk_score": 46.8,
+    "peak_forecast_stress_hour": "15:00",
+    "peak_forecast_stress_score": 45.8,
+    "peak_self_doubt_hour": "12:00",
+    "peak_self_doubt_score": 44.4,
+    "summary_text": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM5. Status operasional harian YELLOW. Risk window utama: 14:00–19:00. Failure risk tertinggi 46.8/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   },
   "constitution": [
     "Do not assign high trust when source coverage is weak.",

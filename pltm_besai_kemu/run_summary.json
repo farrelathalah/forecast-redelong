@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-19T06:33:39.667926+07:00",
+  "generated_at": "2026-07-19T14:51:46.316031+07:00",
   "location_slug": "pltm_besai_kemu",
   "location_name": "PLTM Besai Kemu",
   "bmkg_point_name": "Kemu",
@@ -58,14 +58,14 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "pltm_besai_kemu_20260722_20260719063339",
+    "run_id": "pltm_besai_kemu_20260722_20260719145146",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/command_center_sentinel_x.html",
     "report": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x_report.md",
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x_ledger.sqlite",
-    "daily_operational_status": "GREEN",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk PLTM Besai Kemu. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 36.3/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "daily_operational_status": "YELLOW",
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk PLTM Besai Kemu. Status operasional harian YELLOW. Risk window utama: 14:00–19:00. Failure risk tertinggi 39.4/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
