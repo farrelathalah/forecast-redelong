@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-19T14:46:02.020155+07:00",
+  "generated_at": "2026-07-20T06:30:57.425601+07:00",
   "location_slug": "gpm3",
   "location_name": "GPM3",
   "bmkg_point_name": "Bale Redelong",
@@ -13,8 +13,8 @@
   "timezone": "Asia/Jakarta",
   "target_date": "2026-07-22",
   "sources_total": 7,
-  "sources_success": 6,
-  "points_total": 144,
+  "sources_success": 7,
+  "points_total": 168,
   "sources_active": [
     "BMKG",
     "ECMWF",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm3_20260722_20260719144602",
+    "run_id": "gpm3_20260722_20260720063057",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/command_center_sentinel_x.html",
@@ -66,6 +66,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/sentinel_x_ledger.sqlite",
     "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM3. Status operasional harian YELLOW. Risk window utama: 14:00–19:00. Failure risk tertinggi 46.8/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM3. Status operasional harian YELLOW. Risk window utama: 15:00–22:00. Failure risk tertinggi 40.8/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }

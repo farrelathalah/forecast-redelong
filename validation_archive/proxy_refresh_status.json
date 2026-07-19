@@ -1,21 +1,21 @@
 {
-  "status": "already_attempted_today",
+  "status": "proxy_pending",
   "proxy_strategy": "imerg-primary-chirps-fallback-v1",
-  "attempt_date_wib": "2026-07-19",
+  "attempt_date_wib": "2026-07-20",
   "archive": {
-    "archive_runs_found": 13,
-    "archive_runs_eligible": 13,
-    "eligible_archive_daily_rows_before_dedup": 220,
-    "eligible_archive_daily_rows": 86,
+    "archive_runs_found": 15,
+    "archive_runs_eligible": 15,
+    "eligible_archive_daily_rows_before_dedup": 256,
+    "eligible_archive_daily_rows": 104,
     "selection_policy": "earliest issue per issue-date, target-date, and location"
   },
   "primary_proxy": "NONE",
   "primary_proxy_file": "rain_proxy_daily_primary.csv",
   "requested_date_start": "2026-07-16",
-  "requested_date_end": "2026-07-18",
-  "expected_pairs": 25,
+  "requested_date_end": "2026-07-19",
+  "expected_pairs": 34,
   "available_pairs": 0,
-  "missing_pairs": 25,
+  "missing_pairs": 34,
   "downloaded_rows_this_attempt": {
     "imerg": 0,
     "chirps": 0
