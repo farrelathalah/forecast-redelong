@@ -27,7 +27,7 @@ from build_utils.evaluate_forecast_accuracy import build_archive_daily_forecasts
 
 
 WIB = timezone(timedelta(hours=7))
-PROXY_STRATEGY = "imerg-primary-chirps-fallback-v1"
+PROXY_STRATEGY = "imerg-primary-openmeteo-analysis-fallback-chirps-reference-v2"
 PROXY_COLUMNS = [
     "date",
     "location_slug",
@@ -79,6 +79,17 @@ def download_chirps(validation_dir: Path, start: str, end: str) -> pd.DataFrame:
     return download_proxy_dataset(validation_dir, start, end, dataset_index=0)
 
 
+def download_openmeteo(start: str, end: str) -> pd.DataFrame:
+    from build_utils import download_proxy_observations as proxy
+
+    return proxy.download_openmeteo_historical(
+        locations=proxy.load_locations(),
+        start=start,
+        end=end,
+        timeout=30,
+    )
+
+
 def merge_proxy_rows(existing: pd.DataFrame, downloaded: pd.DataFrame) -> pd.DataFrame:
     frames = [frame for frame in (existing, downloaded) if not frame.empty]
     combined = (
@@ -102,6 +113,7 @@ def refresh(outputs: Path, force: bool = False) -> dict:
     validation_dir = outputs / "validation_archive"
     validation_dir.mkdir(parents=True, exist_ok=True)
     imerg_path = validation_dir / "rain_proxy_daily_imerg.csv"
+    openmeteo_path = validation_dir / "rain_proxy_daily_openmeteo.csv"
     chirps_path = validation_dir / "rain_proxy_daily_chirps.csv"
     primary_path = validation_dir / "rain_proxy_daily_primary.csv"
     status_path = validation_dir / "proxy_refresh_status.json"
@@ -127,15 +139,18 @@ def refresh(outputs: Path, force: bool = False) -> dict:
     mature = archived[pd.to_datetime(archived["date"]).dt.date < today]
     expected = set(zip(mature["date"], mature["location_slug"]))
     existing_imerg = read_existing(imerg_path)
+    existing_openmeteo = read_existing(openmeteo_path)
     existing_chirps = read_existing(chirps_path)
 
     def available_pairs(frame: pd.DataFrame) -> set[tuple[str, str]]:
         return set(zip(frame["date"].astype(str), frame["location_slug"].astype(str)))
 
     imerg_available = available_pairs(existing_imerg)
+    openmeteo_available = available_pairs(existing_openmeteo)
     chirps_available = available_pairs(existing_chirps)
     missing_imerg = sorted(expected - imerg_available)
     missing_chirps = sorted(expected - chirps_available)
+    missing_openmeteo = sorted(expected - openmeteo_available)
 
     previous = {}
     try:
@@ -186,8 +201,13 @@ def refresh(outputs: Path, force: bool = False) -> dict:
 
     missing_dates = sorted({date for date, _ in missing_imerg})
     downloaded_imerg = pd.DataFrame(columns=PROXY_COLUMNS)
+    downloaded_openmeteo = pd.DataFrame(columns=PROXY_COLUMNS)
     downloaded_chirps = pd.DataFrame(columns=PROXY_COLUMNS)
-    errors: dict[str, str | None] = {"imerg": None, "chirps": None}
+    errors: dict[str, str | None] = {
+        "imerg": None,
+        "openmeteo_historical": None,
+        "chirps": None,
+    }
     try:
         downloaded_imerg = download_imerg(
             validation_dir,
@@ -201,9 +221,24 @@ def refresh(outputs: Path, force: bool = False) -> dict:
     combined_imerg.to_csv(imerg_path, index=False)
     imerg_available = available_pairs(combined_imerg)
 
-    # CHIRPS is requested only when IMERG still has no usable pair. This keeps
-    # the scheduled build bounded while preserving a documented fallback.
-    if not (expected & imerg_available) and missing_chirps:
+    if not (expected & imerg_available) and missing_openmeteo:
+        openmeteo_dates = sorted({date for date, _ in missing_openmeteo})
+        try:
+            downloaded_openmeteo = download_openmeteo(
+                openmeteo_dates[0], openmeteo_dates[-1]
+            )
+        except Exception as exc:
+            errors["openmeteo_historical"] = str(exc)
+
+    combined_openmeteo = merge_proxy_rows(
+        existing_openmeteo, downloaded_openmeteo
+    )
+    combined_openmeteo.to_csv(openmeteo_path, index=False)
+    openmeteo_available = available_pairs(combined_openmeteo)
+
+    # CHIRPS is requested only when neither near-real-time route has usable
+    # pairs. It remains a delayed comparison rather than a blended reference.
+    if not (expected & (imerg_available | openmeteo_available)) and missing_chirps:
         chirps_dates = sorted({date for date, _ in missing_chirps})
         try:
             downloaded_chirps = download_chirps(
@@ -222,6 +257,10 @@ def refresh(outputs: Path, force: bool = False) -> dict:
         primary_name = "GPM IMERG via ClimateSERV"
         primary = combined_imerg
         primary_available = imerg_available
+    elif expected & openmeteo_available:
+        primary_name = "Open-Meteo Historical Weather, Best Match"
+        primary = combined_openmeteo
+        primary_available = openmeteo_available
     elif expected & chirps_available:
         primary_name = "CHIRPS via ClimateSERV"
         primary = combined_chirps
@@ -246,19 +285,25 @@ def refresh(outputs: Path, force: bool = False) -> dict:
         "missing_pairs": len(remaining),
         "downloaded_rows_this_attempt": {
             "imerg": int(len(downloaded_imerg)),
+            "openmeteo_historical": int(len(downloaded_openmeteo)),
             "chirps": int(len(downloaded_chirps)),
         },
         "sources": {
             "imerg": {"available_pairs": len(expected & imerg_available)},
+            "openmeteo_historical": {
+                "available_pairs": len(expected & openmeteo_available)
+            },
             "chirps": {"available_pairs": len(expected & chirps_available)},
         },
         "errors": errors,
         "note": (
-            "Validasi memakai referensi proxy satelit gridded karena tidak ada penakar hujan site. "
-            "IMERG menjadi referensi utama dan CHIRPS pembanding tertunda; keduanya tidak dicampur."
+            "Validasi memakai referensi gridded karena tidak ada penakar hujan site. "
+            "IMERG menjadi referensi utama; Open-Meteo Historical Weather menjadi fallback analisis "
+            "dan CHIRPS pembanding tertunda. Sumber tidak dicampur dalam satu nilai."
         ),
         "limitations": [
             "Referensi proxy bukan pengukuran langsung di PLTA.",
+            "Open-Meteo Historical Weather adalah analisis cuaca gridded, bukan sensor site.",
             "Definisi hari dari layanan sumber perlu dicatat saat menafsirkan total harian WIB.",
         ],
     }

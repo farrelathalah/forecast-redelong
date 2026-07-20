@@ -70,8 +70,32 @@ class RedelongGeospatialHistoryTest(unittest.TestCase):
             self.assertIn("forecast-redelong-globe-history-v1", globe)
             self.assertIn("type:'globe'", globe)
             self.assertIn("12.5", globe)
-            self.assertIn("redelong_globe.html", home)
+            self.assertIn("site_network.html", home)
+            self.assertIn("Globe Forecast Site", home)
             self.assertTrue((outputs / "gpm_daily_history.csv").is_file())
+
+    def test_builder_upgrades_existing_redelong_only_globe_entry(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            (outputs / "index.html").write_text(
+                '<html><head></head><body><a id="fr-globe-entry" href="redelong_globe.html" '
+                'aria-label="Buka Globe 3D dan histori Forecast Redelong">'
+                '<span>3D</span><b>Globe &amp; Histori<small>Area 137,80 km²</small></b></a>'
+                '</body></html>',
+                encoding="utf-8",
+            )
+            (outputs / "operational_daily.csv").write_text(
+                "date_wib,rain_mean_mm,rain_p10_mm,rain_p90_mm,model_count,data_status,hour_coverage_pct\n"
+                "2026-07-17,12.5,5.0,24.0,6,cukup,100\n",
+                encoding="utf-8",
+            )
+
+            build(outputs)
+
+            home = (outputs / "index.html").read_text(encoding="utf-8")
+            self.assertIn('id="fr-globe-entry" href="site_network.html"', home)
+            self.assertIn("Globe Forecast Site", home)
+            self.assertNotIn('href="redelong_globe.html"', home)
 
 
 if __name__ == "__main__":

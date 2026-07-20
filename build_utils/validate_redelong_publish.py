@@ -298,8 +298,13 @@ def check_evaluation_status(outputs: Path, errors: list[str], metrics: dict[str,
     if can_claim and mode != "field_observation":
         errors.append("Validasi proxy tidak boleh mengklaim akurasi lapangan")
     if mode == "proxy_observation":
-        if status.get("observation_reference") != "proxy_satellite_gridded":
-            errors.append("Validasi proxy harus mendokumentasikan referensi satelit gridded")
+        if status.get("observation_reference") not in {
+            "proxy_satellite_gridded",
+            "proxy_gridded_weather_analysis",
+        }:
+            errors.append(
+                "Validasi proxy harus mendokumentasikan referensi gridded yang digunakan"
+            )
         if status.get("site_gauge_required") is not False:
             errors.append("Validasi proxy tidak boleh bergantung pada penakar hujan site")
     if can_claim and matched_dates < 30:
@@ -384,6 +389,8 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     broken_fr_links: list[str] = []
     anemos_files: list[str] = []
     sentinel_files: list[str] = []
+    legacy_brand_files: list[str] = []
+    forecast_site_missing: list[str] = []
     branded_files: list[str] = []
     experience_missing: list[str] = []
     spin_missing: list[str] = []
@@ -419,6 +426,10 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
             anemos_files.append(relative)
         if re.search(r"\bSentinel(?:\s+X)?\b", content, flags=re.I):
             sentinel_files.append(relative)
+        if "Forecast Redelong" in content:
+            legacy_brand_files.append(relative)
+        if "Forecast Site" not in content:
+            forecast_site_missing.append(relative)
 
         if GLOBAL_EXPERIENCE_MARKER not in content or "data-fr-global-brand" not in content:
             experience_missing.append(relative)
@@ -449,6 +460,16 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     if sentinel_files:
         errors.append(
             "Brand Sentinel masih muncul pada output publik: " + ", ".join(sentinel_files[:20])
+        )
+    if legacy_brand_files:
+        errors.append(
+            "Brand lama Forecast Redelong masih muncul pada output publik: "
+            + ", ".join(legacy_brand_files[:20])
+        )
+    if forecast_site_missing:
+        errors.append(
+            "Brand Forecast Site belum konsisten pada output publik: "
+            + ", ".join(forecast_site_missing[:20])
         )
     if experience_missing:
         errors.append(
@@ -497,12 +518,12 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     if validation_path.is_file():
         validation_content = validation_path.read_text(encoding="utf-8", errors="replace")
         validation_brand_ok = (
-            "Forecast Redelong" in validation_content
+            "Forecast Site" in validation_content
             and "index.html" in fr_link_hrefs(validation_content)
         )
     if not validation_brand_ok:
         errors.append(
-            "validation_status.html harus memakai brand Forecast Redelong dan FR menuju index.html"
+            "validation_status.html harus memakai brand Forecast Site dan FR menuju index.html"
         )
 
     metrics["public_html_count"] = len(html_files)
@@ -512,6 +533,8 @@ def check_public_branding(outputs: Path, errors: list[str], metrics: dict[str, A
     metrics["public_html_broken_fr_links"] = broken_fr_links
     metrics["public_html_anemos_files"] = anemos_files
     metrics["public_html_sentinel_files"] = sentinel_files
+    metrics["public_html_legacy_brand_files"] = legacy_brand_files
+    metrics["public_html_forecast_site_missing"] = forecast_site_missing
     metrics["public_html_experience_missing"] = experience_missing
     metrics["public_html_spin_missing"] = spin_missing
     metrics["public_html_rain_missing"] = rain_missing
@@ -656,8 +679,12 @@ def check_geospatial_history(outputs: Path, errors: list[str], metrics: dict[str
     if "forecast-redelong-globe-history-v1" not in globe or "type:'globe'" not in globe:
         errors.append("redelong_globe.html tidak memuat kontrak globe 3D")
     home = (outputs / "index.html").read_text(encoding="utf-8", errors="replace")
-    if "redelong_globe.html" not in home:
-        errors.append("Homepage belum memiliki tautan ke globe dan histori")
+    primary_globe = re.search(
+        r'id=["\']fr-globe-entry["\'][^>]*href=["\']site_network\.html["\']',
+        home,
+    )
+    if not primary_globe or "Globe Forecast Site" not in home:
+        errors.append("Tombol globe utama homepage belum mengarah ke seluruh site")
 
     zones = read_json(outputs / "redelong_analysis_zones.geojson", {}) or {}
     features = zones.get("features", []) if isinstance(zones, dict) else []

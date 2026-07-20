@@ -492,6 +492,12 @@ def validation_status(
         and event_dates >= MIN_EVENT_DATES_FOR_PRELIMINARY_FIELD_CLAIM
     )
     proxy_reference_mode = obs_mode == "proxy_observation"
+    source_names = observation_sources or []
+    proxy_reference = (
+        "proxy_gridded_weather_analysis"
+        if any("Open-Meteo Historical Weather" in source for source in source_names)
+        else "proxy_satellite_gridded"
+    )
     can_report_preliminary_proxy_skill = bool(
         proxy_reference_mode
         and matched_dates >= MIN_DATES_FOR_PRELIMINARY_FIELD_CLAIM
@@ -521,8 +527,8 @@ def validation_status(
         "generated_at_wib": generated,
         "state": state,
         "observation_mode": obs_mode,
-        "observation_reference": "proxy_satellite_gridded" if proxy_reference_mode else "site_gauge",
-        "observation_sources": observation_sources or [],
+        "observation_reference": proxy_reference if proxy_reference_mode else "site_gauge",
+        "observation_sources": source_names,
         "site_gauge_required": False,
         "can_claim_field_accuracy": can_claim,
         "can_report_preliminary_proxy_skill": can_report_preliminary_proxy_skill,
@@ -537,7 +543,7 @@ def validation_status(
         "minimum_field_dates_for_preliminary_claim": MIN_DATES_FOR_PRELIMINARY_FIELD_CLAIM,
         "minimum_field_event_dates_for_preliminary_claim": MIN_EVENT_DATES_FOR_PRELIMINARY_FIELD_CLAIM,
         "limitations": [
-            "IMERG/CHIRPS adalah referensi proxy gridded, bukan penakar hujan di site.",
+            "IMERG, CHIRPS, dan Open-Meteo Historical Weather adalah referensi gridded, bukan penakar hujan di site.",
             "Metrik yang diterbitkan adalah skill terhadap produk referensi, bukan akurasi lapangan.",
             "Satu issue awal per hari dipilih agar retry manual tidak menggandakan sampel.",
             "Ambang klaim awal dihitung dari tanggal unik, bukan jumlah titik yang saling berkorelasi.",
@@ -743,6 +749,7 @@ def write_page(
     status = status or {}
     overall = metrics[metrics.get("scope", "overall") == "overall"] if "scope" in metrics else metrics
     best = overall.sort_values("mae_mm").iloc[0]
+    source_label = ", ".join(status.get("observation_sources", [])) or "proxy gridded"
 
     metric_rows = ""
     for _, row in metrics.iterrows():
@@ -759,6 +766,7 @@ def write_page(
           <td>{fmt(row["pod_ge_1mm"] * 100)}%</td>
           <td>{fmt(row["far_ge_1mm"] * 100)}%</td>
           <td>{fmt(row["csi_ge_1mm"] * 100)}%</td>
+          <td>{fmt(row["event_accuracy_ge_10mm"] * 100)}%</td>
         </tr>
         """
 
@@ -794,7 +802,7 @@ def write_page(
     main{{max-width:1180px;margin:0 auto;padding:58px 22px 70px}}
     .panel{{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045));border-radius:30px;padding:28px;margin-bottom:18px;box-shadow:0 28px 90px rgba(0,0,0,.22)}}
     h1{{font-size:clamp(38px,5vw,68px);line-height:.98;letter-spacing:-2px;margin:0}}h2{{font-size:28px;margin:0 0 14px}}
-    p{{color:var(--muted);line-height:1.72}}.grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}}
+    p{{color:var(--muted);line-height:1.72}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:14px;margin-top:22px}}
     .metric{{border:1px solid var(--line);background:rgba(0,0,0,.14);border-radius:22px;padding:18px}}
     .label{{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:1px;font-weight:800}}.value{{margin-top:8px;font-size:30px;font-weight:850}}
     .table-wrap{{overflow:auto;border:1px solid var(--line);border-radius:22px;background:rgba(0,0,0,.12)}}table{{border-collapse:collapse;width:100%;font-size:13px}}th,td{{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.08);white-space:nowrap}}th{{text-align:left;color:#bafff8;background:rgba(255,255,255,.06)}}
@@ -819,10 +827,11 @@ def write_page(
     <section class="panel">
       <h1>Validasi terhadap referensi proxy.</h1>
       <p><strong>Mode evaluasi:</strong> {escape(obs_mode)}</p>
+      <p><strong>Sumber referensi:</strong> {escape(source_label)}</p>
       <p><strong>Status:</strong> {escape(str(status.get('state', 'indikatif')))}. {escape(str(status.get('reason', '')))}</p>
       <p>
         Halaman ini membandingkan akumulasi forecast 24 jam dengan referensi
-        satelit gridded pada tanggal dan lokasi yang sama. Ini bukan pengukuran
+        gridded pada tanggal dan lokasi yang sama. Ini bukan pengukuran
         langsung di site. Forecast harian dihitung dengan
         menjumlahkan setiap model lebih dahulu, lalu membentuk konsensus antar-model.
         BMKG kategoris, model kosong, dan hari dengan coverage kurang dari
@@ -830,9 +839,11 @@ def write_page(
       </p>
       <div class="grid">
         <div class="metric"><div class="label">Sampel Evaluasi</div><div class="value">{int(best["n_samples"])}</div></div>
-        <div class="metric"><div class="label">Skenario error terendah</div><div class="value" style="font-size:18px">{escape(str(best["forecast_metric"]))}</div></div>
-        <div class="metric"><div class="label">MAE Terbaik</div><div class="value">{fmt(best["mae_mm"])} mm</div></div>
-        <div class="metric"><div class="label">Klasifikasi kejadian ≥1mm</div><div class="value">{fmt(best["event_accuracy_ge_1mm"] * 100)}%</div></div>
+        <div class="metric"><div class="label">Tanggal unik</div><div class="value">{int(status.get("matched_unique_dates", 0))}</div></div>
+        <div class="metric"><div class="label">Akurasi kejadian ≥1 mm</div><div class="value">{fmt(best["event_accuracy_ge_1mm"] * 100)}%</div></div>
+        <div class="metric"><div class="label">Akurasi kejadian ≥10 mm</div><div class="value">{fmt(best["event_accuracy_ge_10mm"] * 100)}%</div></div>
+        <div class="metric"><div class="label">MAE jumlah hujan</div><div class="value">{fmt(best["mae_mm"])} mm</div></div>
+        <div class="metric"><div class="label">Bias jumlah hujan</div><div class="value">{fmt(best["bias_mm"])} mm</div></div>
       </div>
     </section>
 
@@ -859,6 +870,7 @@ def write_page(
               <th>POD ≥1mm</th>
               <th>FAR ≥1mm</th>
               <th>CSI ≥1mm</th>
+              <th>Akurasi kejadian ≥10mm</th>
             </tr>
           </thead>
           <tbody>{metric_rows}</tbody>

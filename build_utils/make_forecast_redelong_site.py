@@ -376,7 +376,7 @@ def brand_nav(active: str = "") -> str:
         <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em">FR</div>
         <div>
           <strong>Forecast Redelong</strong>
-          <span>Monitoring Hujan PLTA Redelong</span>
+          <span>Cuaca Multi-Site</span>
         </div>
       </a>
       <div class="nav-links">

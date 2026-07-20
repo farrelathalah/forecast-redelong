@@ -74,6 +74,24 @@ class MultisiteRegistryTest(unittest.TestCase):
             self.assertIn("type:'globe'", page)
             self.assertIn("site_network.html", home)
 
+    def test_catalog_removes_legacy_multisite_choice_when_primary_globe_exists(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            (outputs / "index.html").write_text(
+                '<html><head><style id="fr-sites-entry-style">x</style></head><body>'
+                '<a id="fr-globe-entry" href="site_network.html">Globe Forecast Site</a>'
+                '<a id="fr-sites-entry" href="site_network.html">Semua Site</a>'
+                '</body></html>',
+                encoding="utf-8",
+            )
+
+            build(outputs)
+
+            home = (outputs / "index.html").read_text(encoding="utf-8")
+            self.assertIn('id="fr-globe-entry"', home)
+            self.assertNotIn('id="fr-sites-entry"', home)
+            self.assertNotIn('id="fr-sites-entry-style"', home)
+
     def test_location_builder_adds_besai_without_redelong_catchment_weight(self) -> None:
         subprocess.run(
             [sys.executable, "build_utils/make_redelong_locations.py"],

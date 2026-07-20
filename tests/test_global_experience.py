@@ -8,6 +8,7 @@ from build_utils.apply_global_experience import (
     EXPERIENCE_MARKER,
     apply_all,
     apply_to_html,
+    normalize_public_brand,
     normalize_public_separators,
 )
 
@@ -15,7 +16,7 @@ from build_utils.apply_global_experience import (
 class GlobalExperienceTest(unittest.TestCase):
     def test_nested_monogram_spins_and_generic_page_gets_rain(self) -> None:
         source = """<!doctype html><html><head><title>X</title></head><body>
-        <a class="brand" href="index.html"><span class="mark">FR</span><b>Forecast Redelong</b></a>
+        <a class="brand" href="index.html"><span class="mark">FR</span><b>Forecast Site</b></a>
         </body></html>"""
         result, brands, rain_mode = apply_to_html(source)
 
@@ -65,6 +66,15 @@ class GlobalExperienceTest(unittest.TestCase):
 
         self.assertEqual(count, 4)
         self.assertEqual(result, "Hari ini, Kamis, 16 Juli, WIB, selesai")
+
+    def test_legacy_public_brand_is_normalized(self) -> None:
+        result, count = normalize_public_brand(
+            "<title>Forecast Redelong</title><b>Forecast Redelong</b>"
+        )
+
+        self.assertEqual(count, 2)
+        self.assertNotIn("Forecast Redelong", result)
+        self.assertEqual(result.count("Forecast Site"), 2)
 
 
 if __name__ == "__main__":

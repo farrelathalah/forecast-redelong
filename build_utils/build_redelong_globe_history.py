@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -63,6 +64,26 @@ def patch_homepage(outputs: Path) -> None:
         return
     content = path.read_text(encoding="utf-8", errors="replace")
     if 'id="fr-globe-entry"' in content:
+        content = re.sub(
+            r'(<a id="fr-globe-entry"\s+href=")[^"]+("[^>]*>)',
+            r'\1site_network.html\2',
+            content,
+            count=1,
+        )
+        content = re.sub(
+            r'(<a id="fr-globe-entry"[^>]*aria-label=")[^"]+("[^>]*>)',
+            r'\1Buka Globe cuaca Forecast Site\2',
+            content,
+            count=1,
+        )
+        content = re.sub(
+            r'(<a id="fr-globe-entry"[^>]*>\s*<span[^>]*>.*?</span>\s*<b>).*?(</b>\s*</a>)',
+            r'\1Globe Forecast Site<small>Redelong &amp; Besai Kemu</small>\2',
+            content,
+            count=1,
+            flags=re.DOTALL,
+        )
+        path.write_text(content, encoding="utf-8")
         return
     style = """
 <style id="fr-globe-entry-style">
@@ -73,8 +94,8 @@ def patch_homepage(outputs: Path) -> None:
 </style>
 """.strip()
     button = """
-<a id="fr-globe-entry" href="redelong_globe.html" aria-label="Buka Globe 3D dan histori Forecast Redelong">
-  <span aria-hidden="true">3D</span><b>Globe &amp; Histori<small>Area 137,80 km²</small></b>
+<a id="fr-globe-entry" href="site_network.html" aria-label="Buka Globe cuaca Forecast Site">
+  <span aria-hidden="true">3D</span><b>Globe Forecast Site<small>Redelong &amp; Besai Kemu</small></b>
 </a>
 """.strip()
     content = content.replace("</head>", style + "\n</head>", 1)

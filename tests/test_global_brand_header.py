@@ -26,8 +26,8 @@ class GlobalBrandHeaderTest(unittest.TestCase):
         evaluation = (ROOT / "build_utils/evaluate_forecast_accuracy.py").read_text(encoding="utf-8")
         operational = (ROOT / "build_utils/build_redelong_operational.py").read_text(encoding="utf-8")
 
-        self.assertIn('subtitle = "Monitoring Hujan PLTA Redelong"', portal)
-        self.assertIn("Monitoring Hujan PLTA Redelong", site)
+        self.assertIn('subtitle = "Cuaca Multi-Site"', portal)
+        self.assertIn("Cuaca Multi-Site", site)
         self.assertIn("Overview Teknis", overview)
         self.assertIn("Evaluasi Forecast", evaluation)
         self.assertIn("Ringkasan Operasional DAS", operational)

@@ -7,9 +7,10 @@ import time
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
 import pandas as pd
-import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,6 +21,7 @@ OUTPUTS = ROOT / "outputs"
 OBS_DIR.mkdir(parents=True, exist_ok=True)
 
 CLIMATESERV_BASE = "https://climateserv.servirglobal.net/chirps"
+OPENMETEO_ARCHIVE_URL = "https://archive-api.open-meteo.com/v1/archive"
 
 # ClimateSERV datatype:
 # 0  = Global CHIRPS
@@ -159,18 +161,17 @@ def small_polygon(lon: float, lat: float, delta: float) -> dict[str, Any]:
 
 
 def get_json(url: str, params: dict[str, Any] | None = None, timeout: int = 90) -> Any:
-    r = requests.get(url, params=params, timeout=timeout)
-    r.raise_for_status()
-    text = r.text.strip()
+    query = urlencode(params or {})
+    target = f"{url}?{query}" if query else url
+    request = Request(target, headers={"User-Agent": "Forecast-Site/1.0"})
+    with urlopen(request, timeout=timeout) as response:
+        text = response.read().decode("utf-8", errors="replace").strip()
 
     # ClimateSERV sometimes returns JSON string/list/object.
     try:
-        return r.json()
+        return json.loads(text)
     except Exception:
-        try:
-            return json.loads(text)
-        except Exception:
-            return text.strip('"')
+        return text.strip('"')
 
 
 def submit_climateserv_request(
@@ -325,6 +326,7 @@ def download_climateserv_dataset(
     poll_max: int,
 ) -> pd.DataFrame:
     all_rows = []
+    consecutive_empty = 0
 
     print("")
     print(f"=== {dataset['name']} ===")
@@ -365,6 +367,12 @@ def download_climateserv_dataset(
 
             if not df.empty:
                 all_rows.append(df)
+                consecutive_empty = 0
+            else:
+                consecutive_empty += 1
+                if consecutive_empty >= 1:
+                    print("    INFO: layanan mengembalikan set kosong; lanjut ke fallback")
+                    break
 
         except Exception as exc:
             print(f"    WARNING: gagal untuk {slug}: {exc}")
@@ -418,9 +426,7 @@ def download_nasa_power(
         }
 
         try:
-            r = requests.get(url, params=params, timeout=timeout)
-            r.raise_for_status()
-            data = r.json()
+            data = get_json(url, params=params, timeout=timeout)
 
             values = (
                 data.get("properties", {})
@@ -460,6 +466,67 @@ def download_nasa_power(
     out.to_csv(out_path, index=False)
     print(f"SAVED: {out_path} rows={len(out)}")
     return out
+
+
+def download_openmeteo_historical(
+    locations: pd.DataFrame,
+    start: str,
+    end: str,
+    timeout: int = 30,
+) -> pd.DataFrame:
+    """Download daily gridded analysis as an authenticated-free fallback.
+
+    The source is suitable for forecast verification when direct gauges and
+    IMERG are unavailable, but it remains a model-assisted gridded reference.
+    """
+
+    rows: list[dict[str, Any]] = []
+    payload = get_json(
+        OPENMETEO_ARCHIVE_URL,
+        params={
+            "latitude": ",".join(str(float(value)) for value in locations["latitude"]),
+            "longitude": ",".join(str(float(value)) for value in locations["longitude"]),
+            "start_date": start,
+            "end_date": end,
+            "daily": "precipitation_sum",
+            "timezone": "Asia/Jakarta",
+        },
+        timeout=timeout,
+    )
+    payloads = payload if isinstance(payload, list) else [payload]
+    for (_, loc), item in zip(locations.iterrows(), payloads):
+        slug = str(loc["location_slug"])
+        dates = item.get("daily", {}).get("time", []) if isinstance(item, dict) else []
+        values = (
+            item.get("daily", {}).get("precipitation_sum", [])
+            if isinstance(item, dict)
+            else []
+        )
+        for date, value in zip(dates, values):
+            if value is None:
+                continue
+            try:
+                rain = float(value)
+            except (TypeError, ValueError):
+                continue
+            if not math.isfinite(rain) or rain < 0:
+                continue
+            rows.append(
+                {
+                    "date": str(date),
+                    "location_slug": slug,
+                    "rain_mm_observed": rain,
+                    "source": "Open-Meteo Historical Weather, Best Match",
+                    "observation_type": "proxy_gridded_weather_analysis",
+                }
+            )
+    return pd.DataFrame(rows, columns=[
+        "date",
+        "location_slug",
+        "rain_mm_observed",
+        "source",
+        "observation_type",
+    ])
 
 
 def choose_main_proxy(

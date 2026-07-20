@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply the shared Forecast Redelong interaction layer to public HTML.
+"""Apply the shared Forecast Site interaction layer to public HTML.
 
 The forecast engine and the public-site builders intentionally remain separate.
 This final build pass gives every retained page the same FR hover interaction
@@ -15,6 +15,8 @@ from pathlib import Path
 
 
 EXPERIENCE_MARKER = "fr-global-experience-v1"
+PUBLIC_BRAND = "Forecast Site"
+LEGACY_PUBLIC_BRAND = "Forecast Redelong"
 ANCHOR_RE = re.compile(r"<a\b(?P<attrs>[^>]*)>(?P<body>.*?)</a\s*>", re.I | re.S)
 MONOGRAM_RE = re.compile(
     r"<(?P<tag>span|div|strong|b)\b(?P<attrs>[^>]*)>\s*FR\s*</(?P=tag)\s*>",
@@ -120,6 +122,15 @@ def normalize_public_separators(content: str) -> tuple[str, int]:
     return content, count
 
 
+def normalize_public_brand(content: str) -> tuple[str, int]:
+    """Use the portfolio brand while retaining internal file/API contracts."""
+
+    count = content.count(LEGACY_PUBLIC_BRAND)
+    if not count:
+        return content, 0
+    return content.replace(LEGACY_PUBLIC_BRAND, PUBLIC_BRAND), count
+
+
 def _add_attr(attrs: str, name: str, value: str = "true") -> str:
     if re.search(rf"\b{re.escape(name)}\s*=", attrs, flags=re.I):
         return attrs
@@ -153,7 +164,7 @@ def mark_fr_anchors(content: str) -> tuple[str, int]:
         branded += 1
         attrs = _add_attr(match.group("attrs"), "data-fr-global-brand")
         if not re.search(r"\baria-label\s*=", attrs, flags=re.I):
-            attrs = _add_attr(attrs, "aria-label", "Kembali ke Forecast Redelong")
+            attrs = _add_attr(attrs, "aria-label", f"Kembali ke {PUBLIC_BRAND}")
         body, nested_target = _mark_monogram(body)
         if not nested_target and _visible_text(body).upper() == "FR":
             attrs = _add_attr(attrs, "data-fr-spin-target")
@@ -163,6 +174,7 @@ def mark_fr_anchors(content: str) -> tuple[str, int]:
 
 
 def apply_to_html(content: str) -> tuple[str, int, str]:
+    content, _ = normalize_public_brand(content)
     content, _ = normalize_public_separators(content)
     if EXPERIENCE_MARKER in content:
         brands = len(re.findall(r'data-fr-global-brand=["\']true', content, re.I))
@@ -239,10 +251,12 @@ def apply_all(outputs: Path) -> dict[str, int]:
         "native_rain": 0,
         "global_rain": 0,
         "separators_replaced": 0,
+        "brands_renamed": 0,
     }
     for path in pages:
         original = path.read_text(encoding="utf-8", errors="replace")
         _, separator_count = normalize_public_separators(original)
+        _, brand_count = normalize_public_brand(original)
         try:
             updated, brands, rain_mode = apply_to_html(original)
         except ValueError as exc:
@@ -251,6 +265,7 @@ def apply_all(outputs: Path) -> dict[str, int]:
         stats["pages"] += 1
         stats["brands"] += brands
         stats["separators_replaced"] += separator_count
+        stats["brands_renamed"] += brand_count
         if rain_mode in {"native+global", "global"}:
             stats["global_rain"] += 1
         if rain_mode == "native+global":

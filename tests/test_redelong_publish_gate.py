@@ -9,6 +9,7 @@ from pathlib import Path
 from build_utils.apply_global_experience import apply_all
 from build_utils.build_besai_portal import build as build_besai_portal
 from build_utils.build_multisite_catalog import build as build_multisite_catalog
+from build_utils.build_redelong_globe_history import patch_homepage as patch_globe_homepage
 from build_utils.validate_redelong_publish import (
     EXPECTED_LOCATIONS,
     QUANTITATIVE_SOURCES,
@@ -26,9 +27,9 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 def branded_html(href: str, script: str = "") -> str:
     return (
-        '<!doctype html><html lang="id"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forecast Redelong</title></head><body>'
+        '<!doctype html><html lang="id"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Forecast Site</title></head><body>'
         f'<a data-fr-brand="true" href="{href}"><span>FR</span>'
-        "<b>Forecast Redelong</b></a>"
+        "<b>Forecast Site</b></a>"
         f"{script}</body></html>"
     )
 
@@ -315,6 +316,7 @@ class RedelongPublishGateTest(unittest.TestCase):
             encoding="utf-8",
         )
         build_besai_portal(root)
+        patch_globe_homepage(root)
         build_multisite_catalog(root)
         apply_all(root)
 
@@ -460,7 +462,7 @@ class RedelongPublishGateTest(unittest.TestCase):
             index_path = outputs / "index.html"
             content = index_path.read_text(encoding="utf-8")
             index_path.write_text(
-                content.replace("Forecast Redelong", "Forecast Redelong • PLTA", 1),
+                content.replace("Forecast Site", "Forecast Site • PLTA", 1),
                 encoding="utf-8",
             )
 
