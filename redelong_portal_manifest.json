@@ -1,7 +1,7 @@
 {
   "brand": "Forecast Redelong",
   "version": "Forecast Redelong v1.0",
-  "generated_at": "Diperbarui 20/07/2026, 10:55 WIB",
+  "generated_at": "Diperbarui 20/07/2026, 14:43 WIB",
   "public_base_url": "https://farrelathalah.github.io/forecast-redelong",
   "locations": [
     {
@@ -39,6 +39,18 @@
     {
       "slug": "pltm_besai_kemu",
       "name": "PLTM Besai Kemu"
+    },
+    {
+      "slug": "pltm_besai_kemu_headpond",
+      "name": "Headpond Besai Kemu"
+    },
+    {
+      "slug": "pltm_besai_kemu_powerhouse",
+      "name": "Powerhouse Besai Kemu"
+    },
+    {
+      "slug": "pltm_besai_kemu_sumberjaya",
+      "name": "Stasiun Hujan Sumberjaya"
     }
   ]
 }

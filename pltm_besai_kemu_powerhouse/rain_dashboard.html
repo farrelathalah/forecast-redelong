@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Powerhouse Besai Kemu, Forecast Site</title>
+  <style>
+    :root {
+      --bg:#040c16; --panel:rgba(255,255,255,.08); --panel2:rgba(255,255,255,.13);
+      --line:rgba(255,255,255,.16); --text:#eff8ff; --muted:#9fb4c9;
+      --cyan:#45e0d0; --blue:#74a9ff; --gold:#ffd166; --red:#ff6b6b;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-3;background:
+      radial-gradient(circle at 12% 18%,rgba(69,224,208,.30),transparent 30%),
+      radial-gradient(circle at 82% 18%,rgba(116,169,255,.24),transparent 32%),
+      radial-gradient(circle at 50% 95%,rgba(255,209,102,.10),transparent 32%),
+      linear-gradient(135deg,#04111e,#08253a 42%,#11183a)}
+    .noise{position:fixed;inset:0;z-index:-2;opacity:.07;pointer-events:none;background-image:
+      linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:64px 64px}
+    a{color:inherit;text-decoration:none}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+      padding:18px min(5vw,64px);background:linear-gradient(180deg,rgba(3,11,20,.86),rgba(3,11,20,.28),transparent);backdrop-filter:blur(12px)}
+    .brand{display:flex;align-items:center;gap:14px}.logo{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 0 36px rgba(69,224,208,.28)}
+    .brand strong{display:block;font-size:18px;letter-spacing:.2px}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:2px;letter-spacing:.8px;text-transform:uppercase}
+    .nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-links a,.button{border:1px solid var(--line);background:rgba(255,255,255,.075);padding:10px 14px;border-radius:999px;color:var(--text);font-size:14px;font-weight:650;backdrop-filter:blur(14px);transition:.22s}
+    .nav-links a:hover,.button:hover{transform:translateY(-2px);background:rgba(255,255,255,.13)}
+    .primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#03111f;border:none}
+    .hero{min-height:100vh;display:grid;align-items:center;padding:120px min(5vw,64px) 80px}
+    .hero-inner{max-width:1220px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.32fr .88fr;gap:32px;align-items:center}
+    .hero-copy{opacity:0;transform:translateY(24px);animation:intro .9s ease forwards .15s}
+    .kicker{display:inline-flex;gap:9px;align-items:center;color:var(--cyan);text-transform:uppercase;font-size:12px;letter-spacing:1.5px;font-weight:800;margin-bottom:20px}
+    .kicker:before{content:"";width:10px;height:10px;border-radius:999px;background:var(--cyan);box-shadow:0 0 20px var(--cyan)}
+    h1{font-size:clamp(44px,7vw,92px);line-height:.94;letter-spacing:-3px;margin:0;max-width:980px}
+    .gradient-text{background:linear-gradient(135deg,#fff,#aeeef0 42%,#9dbdff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{margin:26px 0 0;color:var(--muted);font-size:clamp(17px,2vw,21px);line-height:1.75;max-width:760px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .panel,.hero-panel,.info-card,.location-card,.note{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045));border-radius:30px;backdrop-filter:blur(18px);box-shadow:0 28px 90px rgba(0,0,0,.24)}
+    .hero-panel{padding:26px;opacity:0;transform:translateY(24px) scale(.985);animation:intro .9s ease forwards .34s}
+    @keyframes intro{to{opacity:1;transform:translateY(0) scale(1)}}
+    .metric{border:1px solid var(--line);border-radius:22px;background:rgba(0,0,0,.14);padding:18px;margin-bottom:14px;transition:.24s}
+    .metric:hover{transform:translateY(-3px);background:rgba(255,255,255,.09)}
+    .metric .label{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:1px;font-weight:800}.metric .value{margin-top:8px;font-size:34px;font-weight:850}
+    .scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);color:rgba(255,255,255,.68);text-transform:uppercase;font-size:11px;letter-spacing:2px;animation:pulse 1.7s ease-in-out infinite}
+    .scroll-cue:after{content:"";display:block;width:1px;height:46px;margin:12px auto 0;background:linear-gradient(var(--cyan),transparent)}
+    @keyframes pulse{0%,100%{opacity:.45;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(8px)}}
+    section{padding:88px min(5vw,64px)}.section-inner{max-width:1220px;margin:0 auto}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.section-head p{color:var(--muted);line-height:1.7;max-width:520px;margin:0}
+    h2{font-size:clamp(30px,4vw,54px);line-height:1;letter-spacing:-1.8px;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.info-card,.note{padding:22px}.info-card h3{margin:0 0 10px;font-size:18px}
+    .info-card p,.muted,.note p{color:var(--muted);line-height:1.65;margin:0}.big-number{font-size:44px;font-weight:900;letter-spacing:-1px;margin:10px 0}
+    .locations{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.location-card{padding:22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .location-card.external-comparison{border-color:rgba(255,209,102,.42);background:linear-gradient(180deg,rgba(255,209,102,.11),rgba(255,255,255,.045))}
+    .location-card.external-comparison .eyebrow{color:var(--gold)}
+    .location-card h3{font-size:22px;margin:0 0 6px}.eyebrow{color:var(--cyan);text-transform:uppercase;font-size:11px;letter-spacing:1.3px;font-weight:800;margin:0 0 8px}
+    .card-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;min-width:220px}.card-links a{border:1px solid rgba(69,224,208,.25);background:rgba(69,224,208,.10);color:#bafff8;padding:9px 11px;border-radius:999px;font-size:12px;font-weight:800;transition:.2s}
+    .card-links a:hover{transform:translateY(-2px);background:rgba(69,224,208,.18)}
+    .download-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.download-grid a{border:1px solid var(--line);background:rgba(255,255,255,.075);padding:18px;border-radius:22px;font-weight:800;transition:.24s}.download-grid a:hover{transform:translateY(-3px);background:rgba(255,255,255,.13)}
+    .bar-chart{height:220px;display:flex;align-items:end;gap:10px;overflow-x:auto;padding:18px;border:1px solid var(--line);border-radius:24px;background:rgba(0,0,0,.14)}
+    .bar-wrap{min-width:52px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:end;height:185px}.bar{width:28px;border-radius:999px 999px 6px 6px;background:linear-gradient(180deg,var(--cyan),var(--blue));box-shadow:0 8px 24px rgba(69,224,208,.18)}
+    .bar-value{font-size:11px;color:var(--text);margin-bottom:6px}.bar-label{font-size:10px;color:var(--muted);margin-top:8px;max-width:70px;overflow:hidden;text-overflow:ellipsis}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:22px;background:rgba(0,0,0,.12)}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.08);white-space:nowrap}th{text-align:left;color:#bafff8;background:rgba(255,255,255,.06)}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .72s ease,transform .72s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+    footer{padding:42px min(5vw,64px);color:var(--muted);border-top:1px solid var(--line);background:rgba(0,0,0,.16)}.footer-inner{max-width:1220px;margin:0 auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:980px){.hero-inner{grid-template-columns:1fr}.cards,.download-grid{grid-template-columns:repeat(2,1fr)}.locations{grid-template-columns:1fr}.section-head{flex-direction:column;align-items:flex-start}}
+    @media(max-width:620px){.nav{position:absolute;align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.cards,.download-grid{grid-template-columns:1fr}.location-card{flex-direction:column;align-items:flex-start}.card-links{min-width:0;justify-content:flex-start}h1{letter-spacing:-1.5px}}
+    </style>
+<meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
+</head>
+<body>
+  <div class="noise"></div>
+  <nav class="nav">
+    <a class="brand" href="../index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Site">
+      <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em" data-fr-spin-target="true">FR</div>
+      <div>
+        <strong>Forecast Site</strong>
+        <span>Powerhouse Besai Kemu</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../redelong_rain_map.html">Peta Hujan</a>
+      <a href="../redelong_overview.html">Overview</a>
+      <a href="../redelong_operational.html">Operasional DAS</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="kicker">Dashboard Hujan</div>
+        <h1><span class="gradient-text">Powerhouse Besai Kemu</span></h1>
+        <p class="subtitle">Dashboard hujan khusus titik Powerhouse Besai Kemu, dibangun langsung dari data forecast CSV.</p>
+        <div class="actions">
+          <a class="button primary" href="../redelong_rain_map.html">Lihat Peta Hujan</a>
+          <a class="button" href="redelong_app.html">Prakiraan Interaktif</a>
+          <a class="button" href="redelong_3day.html">Prakiraan 3 Hari</a>
+          <a class="button" href="../forecast_all_locations.csv">Download CSV</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="metric"><div class="label">Hujan Jam Tertinggi</div><div class="value">2.8 mm</div></div>
+        <div class="metric"><div class="label">Nilai Tinggi (P90)</div><div class="value">0.3 mm</div></div>
+        <div class="metric"><div class="label">Rata-rata Model-Jam</div><div class="value">0.1 mm</div></div>
+        <div class="metric"><div class="label">Model Numerik</div><div class="value">6</div></div>
+      </aside>
+      <p style="max-width:520px;color:var(--muted);font-size:12px;line-height:1.6;margin:12px 0 0">P90 adalah batas nilai tinggi antar-model dan jam: sekitar 90% nilai berada di bawahnya. Ini bukan peluang hujan 90% dan bukan akumulasi 24 jam.</p>
+    </div>
+    <a class="scroll-cue" href="#grafik">Scroll</a>
+  </header>
+
+  <section id="grafik">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>Grafik hujan per jam.</h2>
+        <p>Kartu dan grafik di halaman titik merangkum nilai model per jam, bukan akumulasi harian. Gunakan halaman Operasional DAS untuk akumulasi 24/48/72 jam.</p>
+      </div>
+      <div class="panel reveal" style="padding:22px"><div class="bar-chart">
+            <div class="bar-wrap">
+              <div class="bar-value">0.1</div>
+              <div class="bar" style="height:150.0px"></div>
+              <div class="bar-label">Asia/Jakarta</div>
+            </div>
+            </div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2>Tabel forecast.</h2>
+        <p>Cuplikan data forecast mentah untuk audit cepat.</p>
+      </div>
+      <div class="reveal">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>target_date</th><th>tanggal</th><th>timezone</th><th>source_id</th><th>rain_mm</th><th>suhu_C</th><th>wind_kmh</th></tr></thead>
+        <tbody><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>29.0</td><td>6.0</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>29.0</td><td>6.0</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>29.0</td><td>6.0</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>29.0</td><td>6.0</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>29.0</td><td>6.0</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>25.0</td><td>0.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>25.0</td><td>0.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>25.0</td><td>0.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>4.2</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>4.2</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>4.2</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>BMKG</td><td>-</td><td>23.0</td><td>4.2</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.5</td><td>7.3</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.3</td><td>7.1</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.2</td><td>7.1</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.1</td><td>7.1</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.1</td><td>6.9</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.1</td><td>6.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.1</td><td>6.9</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>24.5</td><td>6.5</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>25.4</td><td>6.0</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>26.6</td><td>7.4</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>27.7</td><td>9.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>28.6</td><td>10.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>29.4</td><td>10.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>29.9</td><td>10.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>30.2</td><td>10.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>30.3</td><td>10.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.0</td><td>30.0</td><td>10.8</td></tr><tr><td>2026-07-20</td><td>20-07-2026</td><td>Asia/Jakarta</td><td>CMA</td><td>0.1</td><td>28.9</td><td>11.2</td></tr></tbody>
+      </table>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <footer><div class="footer-inner"><span>Forecast Site</span><span>Powerhouse Besai Kemu</span></div></footer>
+  
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.14 });
+
+      document.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.transitionDelay = `${Math.min(i * 55, 320)}ms`;
+        observer.observe(el);
+      });
+    </script>
+    
+
+<div style="
+  max-width:1180px;
+  margin:32px auto 0;
+  padding:14px 22px;
+  color:rgba(239,248,255,.72);
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  font-size:12px;
+  line-height:1.6;
+">
+  Sumber data prakiraan mencakup BMKG (Badan Meteorologi, Klimatologi, dan Geofisika)
+  serta model prakiraan numerik multi-source yang tersedia pada pipeline Forecast Site.
+</div>
+
+<canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

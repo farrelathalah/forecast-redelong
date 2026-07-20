@@ -1,0 +1,83 @@
+<!doctype html><html lang='id'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<meta name='forecast-hydro-page' content='forecast-besai-discharge-v1'><title>Forecast Debit Besai Kemu</title><style>
+:root{--bg:#03111d;--panel:#082234;--line:rgba(103,232,249,.18);--text:#effcff;--muted:#9bb6c8;--cyan:#22d3ee;--amber:#fbbf24}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#13455d,transparent 38%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,system-ui,sans-serif}.shell{max-width:1180px;margin:auto;padding:22px 22px 60px}nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}a{color:inherit}.brand{display:flex;gap:11px;align-items:center;text-decoration:none}.mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#22d3ee,#8b5cf6,#34d399);display:grid;place-items:center;font-weight:950}.brand b,.brand small{display:block}.brand small{color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase}nav>a:last-child{color:var(--muted);font-size:11px}.hero,.panel,.card{border:1px solid var(--line);background:rgba(8,34,52,.78);border-radius:22px}.hero{padding:38px}.tag{font-size:10px;color:#67e8f9;text-transform:uppercase;letter-spacing:.16em;font-weight:850}h1{font-size:clamp(40px,7vw,72px);line-height:.96;letter-spacing:-.055em;margin:13px 0}.lead{max-width:780px;color:#c7dce8;line-height:1.7}.warning{margin-top:20px;border:1px solid rgba(251,191,36,.3);background:rgba(251,191,36,.08);color:#fce7ac;border-radius:14px;padding:14px;font-size:12px;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.card{padding:19px}.card span,.card small,.card em{display:block;font-size:10px;color:var(--muted)}.card strong{display:block;font-size:30px;margin:15px 0 5px}.card em{font-style:normal;color:#8beaf6;margin-top:14px}section{margin-top:32px}h2{font-size:27px;letter-spacing:-.03em}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.fact{padding:17px}.fact span{font-size:9px;color:var(--muted)}.fact b{display:block;font-size:22px;margin-top:7px}.panel{padding:20px;overflow:auto}table{width:100%;border-collapse:collapse;font-size:11px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}th{font-size:8px;color:var(--muted);text-transform:uppercase}.method{display:grid;grid-template-columns:1fr 1fr;gap:12px}.method p,.method li{color:var(--muted);font-size:11px;line-height:1.65}code{color:#8beaf6}.downloads{display:flex;gap:9px;flex-wrap:wrap}.button{text-decoration:none;border:1px solid var(--line);background:#0b2e42;border-radius:11px;padding:10px 13px;font-size:11px;font-weight:800}@media(max-width:760px){.grid,.facts,.method{grid-template-columns:1fr}.hero{padding:27px 19px}}
+</style><meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
+<style id="fr-global-experience-v1">
+  [data-fr-spin-target="true"] {
+    transform-origin:50% 50%;
+    transition:transform .65s cubic-bezier(.2,.75,.2,1),box-shadow .2s ease!important;
+    will-change:transform;
+  }
+  [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+  [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {
+    transform:rotate(360deg) scale(1.06)!important;
+  }
+  #fr-global-rain {
+    position:fixed;inset:0;width:100%;height:100%;pointer-events:none;
+    z-index:2147480000;opacity:.22;mix-blend-mode:screen;
+  }
+  @media (prefers-reduced-motion:reduce), print {
+    [data-fr-spin-target="true"] {transition:none!important}
+    [data-fr-global-brand="true"]:hover [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"]:focus-visible [data-fr-spin-target="true"],
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:hover,
+    [data-fr-global-brand="true"][data-fr-spin-target="true"]:focus-visible {transform:none!important}
+    #fr-global-rain {display:none!important}
+  }
+</style>
+</head><body><div class='shell'><nav><a class='brand' data-fr-brand='true' href='index.html' data-fr-global-brand="true" aria-label="Kembali ke Forecast Site"><span class='mark' data-fr-spin-target="true">FR</span><span><b>Forecast Besai Kemu</b><small>Rainfall to discharge</small></span></a><a href='besai_kemu.html'>Kembali ke dashboard Besai</a></nav><main><header class='hero'><div class='tag'>Skenario hidrologi engineering</div><h1>Forecast debit Besai Kemu</h1><p class='lead'>Forecast hujan pada empat titik engineering diubah menjadi debit harian menggunakan model ARX yang dikalibrasi terhadap simulasi debit GloFAS di sekitar bendung.</p><div class='warning'><b>Belum field-calibrated.</b> PLTM berada di hilir PLTA Besai 1. Jadwal release upstream belum tersedia dalam feed otomatis, sehingga hasil ini adalah proxy dan skenario indikatif, bukan debit intake terukur atau jaminan energi.</div></header><div class='grid'><article class='card'><span>H+1, 2026-07-20</span><strong>2.5 m³/s</strong><small>Skenario 0.0 sampai 9.5 m³/s</small><em>Indikatif tersedia untuk PLTM 0.0 m³/s</em></article><article class='card'><span>H+2, 2026-07-21</span><strong>3.5 m³/s</strong><small>Skenario 0.0 sampai 15.1 m³/s</small><em>Indikatif tersedia untuk PLTM 0.0 m³/s</em></article><article class='card'><span>H+3, 2026-07-22</span><strong>4.2 m³/s</strong><small>Skenario 0.0 sampai 18.8 m³/s</small><em>Indikatif tersedia untuk PLTM 0.6 m³/s</em></article></div>
+<section><h2>Parameter yang digunakan</h2><div class='facts'><article class='panel fact'><span>Luas DAS dokumen</span><b>496.74 km²</b></article><article class='panel fact'><span>Debit desain</span><b>22.0 m³/s</b></article><article class='panel fact'><span>Debit ekologi</span><b>0.6 m³/s</b></article><article class='panel fact'><span>Kapasitas</span><b>2 × 3.5 MW</b></article></div></section>
+<section><h2>Validasi terhadap proxy GloFAS</h2><article class='panel'><table><thead><tr><th>Lead</th><th>Sampel</th><th>MAE</th><th>RMSE</th><th>Bias</th><th>NSE</th><th>KGE</th></tr></thead><tbody><tr><td>H+1</td><td>2,557</td><td>4.07</td><td>6.66</td><td>0.12</td><td>0.941</td><td>0.961</td></tr><tr><td>H+2</td><td>2,556</td><td>6.75</td><td>10.90</td><td>0.23</td><td>0.843</td><td>0.904</td></tr><tr><td>H+3</td><td>2,555</td><td>8.68</td><td>13.58</td><td>0.34</td><td>0.757</td><td>0.851</td></tr></tbody></table><p style='color:var(--muted);font-size:10px'>Validasi menggunakan hujan historis NASA POWER sebagai forcing dan debit simulasi GloFAS sebagai target. Nilai ini bukan akurasi lapangan dan bukan validasi end-to-end forecast cuaca.</p></article></section>
+<section class='method'><article class='panel'><h2>Persamaan</h2><p><code>Q(t) = 0.623 + 0.9676 × Q(t−1) + 0.0974 × P(t)</code></p><p>Status sinyal regulasi: rainfall_response_retained.</p></article><article class='panel'><h2>Batas penggunaan</h2><ul><li>Grid GloFAS terpilih: -4.874996, 104.475006.</li><li>Polygon GIS DAS belum tersedia; luas 496.74 km² berasal dari review engineering.</li><li>Pengurangan irigasi dan ekologi hanya skenario referensi.</li><li>Keputusan bukaan, keselamatan, dan dispatch tetap memerlukan data operasi aktual.</li></ul></article></section>
+<section><h2>Unduh data</h2><div class='downloads'><a class='button' href='besai_kemu_discharge_forecast.csv'>Forecast debit CSV</a><a class='button' href='besai_kemu_discharge_validation.csv'>Validasi CSV</a><a class='button' href='besai_kemu_discharge.json'>API JSON</a><a class='button' href='hydrology/besai_glofas_discharge_metadata.json'>Metadata GloFAS</a></div></section></main></div><canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
+<script id="fr-global-rain-script">
+(() => {
+  const canvas = document.getElementById('fr-global-rain');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+  let width = 0, height = 0, drops = [], raf = 0, last = 0;
+  const count = () => Math.max(18, Math.min(58, Math.round(innerWidth / 24)));
+  const makeDrop = (randomY = true) => ({
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -30,
+    length: 10 + Math.random() * 20,
+    speed: 360 + Math.random() * 360,
+    drift: -34 - Math.random() * 34,
+    alpha: .20 + Math.random() * .34,
+    line: .55 + Math.random() * .8
+  });
+  function resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    width = innerWidth; height = innerHeight;
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    canvas.style.width = width + 'px'; canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    drops = Array.from({length: count()}, () => makeDrop(true));
+  }
+  function frame(now) {
+    const dt = Math.min((now - (last || now)) / 1000, .04); last = now;
+    ctx.clearRect(0, 0, width, height);
+    ctx.lineCap = 'round';
+    for (const drop of drops) {
+      drop.x += drop.drift * dt; drop.y += drop.speed * dt;
+      if (drop.y > height + 40 || drop.x < -40) Object.assign(drop, makeDrop(false), {x: Math.random() * (width + 80)});
+      const gradient = ctx.createLinearGradient(drop.x, drop.y, drop.x + drop.drift * .08, drop.y + drop.length);
+      gradient.addColorStop(0, 'rgba(186,230,253,0)');
+      gradient.addColorStop(1, `rgba(125,211,252,${drop.alpha})`);
+      ctx.strokeStyle = gradient; ctx.lineWidth = drop.line;
+      ctx.beginPath(); ctx.moveTo(drop.x, drop.y); ctx.lineTo(drop.x + drop.drift * .08, drop.y + drop.length); ctx.stroke();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); raf = 0; }
+    else if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  });
+  addEventListener('resize', resize, {passive:true});
+  resize(); raf = requestAnimationFrame(frame);
+})();
+</script>
+</body></html>

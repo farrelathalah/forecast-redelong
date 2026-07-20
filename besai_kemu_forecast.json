@@ -1,12 +1,14 @@
 [
   {
     "date": "2026-07-20",
-    "rain_mean_mm": 1.1,
-    "rain_min_mm": 0.0,
-    "rain_max_mm": 4.3,
-    "temperature_mean_c": 26.2,
-    "wind_max_kmh": 17.4,
+    "rain_mean_mm": 1.2,
+    "rain_min_mm": 0.5,
+    "rain_max_mm": 3.6,
+    "temperature_mean_c": 25.8,
+    "wind_max_kmh": 16.6,
     "model_count": 6,
+    "point_count": 4,
+    "gross_volume_m3": 596088,
     "sources": [
       "CMA",
       "ECMWF",
@@ -15,16 +17,18 @@
       "METEOFRANCE",
       "UKMO"
     ],
-    "status": "cukup"
+    "status": "indikatif cukup"
   },
   {
     "date": "2026-07-21",
-    "rain_mean_mm": 3.8,
-    "rain_min_mm": 0.3,
-    "rain_max_mm": 8.4,
-    "temperature_mean_c": 25.4,
-    "wind_max_kmh": 16.7,
+    "rain_mean_mm": 3.9,
+    "rain_min_mm": 0.1,
+    "rain_max_mm": 10.4,
+    "temperature_mean_c": 24.9,
+    "wind_max_kmh": 13.0,
     "model_count": 6,
+    "point_count": 4,
+    "gross_volume_m3": 1937286,
     "sources": [
       "CMA",
       "ECMWF",
@@ -33,16 +37,18 @@
       "METEOFRANCE",
       "UKMO"
     ],
-    "status": "cukup"
+    "status": "indikatif cukup"
   },
   {
     "date": "2026-07-22",
-    "rain_mean_mm": 4.8,
-    "rain_min_mm": 0.2,
-    "rain_max_mm": 12.8,
-    "temperature_mean_c": 25.0,
+    "rain_mean_mm": 4.7,
+    "rain_min_mm": 0.3,
+    "rain_max_mm": 13.1,
+    "temperature_mean_c": 24.5,
     "wind_max_kmh": 12.2,
     "model_count": 6,
+    "point_count": 3,
+    "gross_volume_m3": 2334678,
     "sources": [
       "CMA",
       "ECMWF",
@@ -51,16 +57,18 @@
       "METEOFRANCE",
       "UKMO"
     ],
-    "status": "cukup"
+    "status": "indikatif cukup"
   },
   {
     "date": "2026-07-23",
     "rain_mean_mm": 0.5,
     "rain_min_mm": 0.0,
-    "rain_max_mm": 2.7,
-    "temperature_mean_c": 25.2,
-    "wind_max_kmh": 14.4,
+    "rain_max_mm": 1.1,
+    "temperature_mean_c": 24.7,
+    "wind_max_kmh": 14.2,
     "model_count": 6,
+    "point_count": 4,
+    "gross_volume_m3": 248370,
     "sources": [
       "CMA",
       "ECMWF",
@@ -69,6 +77,6 @@
       "METEOFRANCE",
       "UKMO"
     ],
-    "status": "cukup"
+    "status": "indikatif cukup"
   }
 ]

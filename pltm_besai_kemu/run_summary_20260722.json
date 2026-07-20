@@ -1,15 +1,15 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-20T10:54:52.615936+07:00",
+  "generated_at": "2026-07-20T14:39:04.594151+07:00",
   "location_slug": "pltm_besai_kemu",
   "location_name": "PLTM Besai Kemu",
   "bmkg_point_name": "Kemu",
   "area_level": "independent_site_reference",
   "is_proxy_bmkg": true,
-  "location_note": "PLTM Besai Kemu forecast reference. BMKG ADM4 reference: 18.08.03.2017. Coordinate status: provisional_public_source_pending_asset_confirmation.",
+  "location_note": "PLTM Besai Kemu forecast reference. BMKG ADM4 reference: 18.08.03.2017. Coordinate status: engineering_document_reference_pending_asset_confirmation.",
   "adm4": "18.08.03.2017",
-  "latitude": -4.87997,
-  "longitude": 104.50453,
+  "latitude": -4.862591667,
+  "longitude": 104.500497222,
   "timezone": "Asia/Jakarta",
   "target_date": "2026-07-22",
   "sources_total": 7,
@@ -58,14 +58,14 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "pltm_besai_kemu_20260722_20260720105452",
+    "run_id": "pltm_besai_kemu_20260722_20260720143904",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/command_center_sentinel_x.html",
     "report": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x_report.md",
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/sentinel_x_ledger.sqlite",
-    "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk PLTM Besai Kemu. Status operasional harian YELLOW. Risk window utama: 17:00–19:00. Failure risk tertinggi 32.1/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "daily_operational_status": "GREEN",
+    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk PLTM Besai Kemu. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 33.1/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }

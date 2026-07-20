@@ -3,7 +3,7 @@
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 5736,
+    "forecast_rows": 7608,
     "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
@@ -125,8 +125,8 @@
         ]
       }
     },
-    "public_html_count": 93,
-    "public_html_fr_branded_count": 93,
+    "public_html_count": 122,
+    "public_html_fr_branded_count": 122,
     "public_html_fr_exceptions": {},
     "public_html_missing_fr": [],
     "public_html_broken_fr_links": [],
@@ -167,7 +167,7 @@
     "evaluation_joined_observation_sources": [
       "Open-Meteo Historical Weather, Best Match"
     ],
-    "validation_proxy_refresh_status": "complete",
+    "validation_proxy_refresh_status": "already_attempted_today",
     "validation_proxy_missing_pairs": 0,
     "geospatial_history_zones": 7,
     "geospatial_history_catchment_zones": 6,
@@ -182,8 +182,10 @@
     },
     "geospatial_history_station_metadata_count": 7,
     "multisite_catalog_sites": 2,
-    "multisite_besai_status": "provisional_public_source_pending_asset_confirmation",
-    "multisite_besai_boundary_status": "not_yet_delineated",
+    "multisite_besai_status": "engineering_document_reference_pending_asset_confirmation",
+    "multisite_besai_boundary_status": "fs_documented_area_constrained_trace",
+    "multisite_besai_boundary_method": "fs_figure_area_constrained_trace",
+    "multisite_besai_trace_area_km2": 496.74,
     "multisite_besai_history_days": 16436,
     "multisite_besai_forecast_days": 4,
     "discharge_status": "provisional_proxy_calibrated",
@@ -202,6 +204,16 @@
       4.725006,
       96.975006
     ],
-    "html_javascript_files_checked": 93
+    "besai_discharge_status": "provisional_regulated_proxy",
+    "besai_discharge_leads": [
+      1,
+      2,
+      3
+    ],
+    "besai_discharge_reference_grid": [
+      -4.874996,
+      104.475006
+    ],
+    "html_javascript_files_checked": 122
   }
 }
