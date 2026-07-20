@@ -8,7 +8,10 @@
     "gpm5",
     "gpm6",
     "gpm_grid_tamatue",
-    "pltm_besai_kemu"
+    "pltm_besai_kemu",
+    "pltm_besai_kemu_headpond",
+    "pltm_besai_kemu_powerhouse",
+    "pltm_besai_kemu_sumberjaya"
   ],
   "locations": {
     "plta_redelong": {
@@ -142,8 +145,8 @@
     "pltm_besai_kemu": {
       "location_name": "PLTM Besai Kemu",
       "adm4": "18.08.03.2017",
-      "latitude": -4.87997,
-      "longitude": 104.50453,
+      "latitude": -4.862591667,
+      "longitude": 104.500497222,
       "timezone": "Asia/Jakarta",
       "bmkg_point_name": "Kemu",
       "area_level": "independent_site_reference",
@@ -151,10 +154,61 @@
       "weight_km2": 0.0,
       "include_in_catchment": false,
       "operational_role": "independent_site_reference",
-      "spatial_source": "World Bank ESMAP Small Hydro Resource Mapping in Indonesia, Annex I",
+      "spatial_source": "Review Studi Kelayakan PLTM Besai Kemu, Januari 2020, Tabel 2.1",
       "spatial_note": "Titik site provisional; tidak masuk agregasi DAS Redelong dan belum digunakan untuk menghitung volume hujan atau debit.",
       "site_scope": "pltm_besai_kemu",
-      "note": "PLTM Besai Kemu forecast reference. BMKG ADM4 reference: 18.08.03.2017. Coordinate status: provisional_public_source_pending_asset_confirmation."
+      "note": "PLTM Besai Kemu forecast reference. BMKG ADM4 reference: 18.08.03.2017. Coordinate status: engineering_document_reference_pending_asset_confirmation."
+    },
+    "pltm_besai_kemu_headpond": {
+      "location_name": "Headpond Besai Kemu",
+      "adm4": "18.08.03.2017",
+      "latitude": -4.839133333,
+      "longitude": 104.509577778,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "Kemu",
+      "area_level": "independent_site_engineering_point",
+      "is_proxy_bmkg": true,
+      "weight_km2": 0.0,
+      "include_in_catchment": false,
+      "operational_role": "hydraulic_structure",
+      "spatial_source": "Review Studi Kelayakan PLTM Besai Kemu, Januari 2020, Tabel 2.1",
+      "spatial_note": "Titik engineering Besai Kemu; tidak masuk agregasi DAS Redelong. Digunakan bersama titik lain sebagai sampel spasial indikatif Besai.",
+      "site_scope": "pltm_besai_kemu",
+      "note": "Headpond Besai Kemu engineering forecast reference for PLTM Besai Kemu. The catchment polygon remains pending."
+    },
+    "pltm_besai_kemu_powerhouse": {
+      "location_name": "Powerhouse Besai Kemu",
+      "adm4": "18.08.03.2017",
+      "latitude": -4.837533333,
+      "longitude": 104.510075,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "Kemu",
+      "area_level": "independent_site_engineering_point",
+      "is_proxy_bmkg": true,
+      "weight_km2": 0.0,
+      "include_in_catchment": false,
+      "operational_role": "powerhouse",
+      "spatial_source": "Review Studi Kelayakan PLTM Besai Kemu, Januari 2020, Tabel 2.1",
+      "spatial_note": "Titik engineering Besai Kemu; tidak masuk agregasi DAS Redelong. Digunakan bersama titik lain sebagai sampel spasial indikatif Besai.",
+      "site_scope": "pltm_besai_kemu",
+      "note": "Powerhouse Besai Kemu engineering forecast reference for PLTM Besai Kemu. The catchment polygon remains pending."
+    },
+    "pltm_besai_kemu_sumberjaya": {
+      "location_name": "Stasiun Hujan Sumberjaya",
+      "adm4": "18.08.03.2017",
+      "latitude": -5.009188889,
+      "longitude": 104.483483333,
+      "timezone": "Asia/Jakarta",
+      "bmkg_point_name": "Kemu",
+      "area_level": "independent_site_engineering_point",
+      "is_proxy_bmkg": true,
+      "weight_km2": 0.0,
+      "include_in_catchment": false,
+      "operational_role": "historical_rain_gauge_reference",
+      "spatial_source": "Review Studi Kelayakan PLTM Besai Kemu, Januari 2020, Tabel 2.1",
+      "spatial_note": "Titik engineering Besai Kemu; tidak masuk agregasi DAS Redelong. Digunakan bersama titik lain sebagai sampel spasial indikatif Besai.",
+      "site_scope": "pltm_besai_kemu",
+      "note": "Stasiun Hujan Sumberjaya engineering forecast reference for PLTM Besai Kemu. The catchment polygon remains pending."
     }
   }
 }

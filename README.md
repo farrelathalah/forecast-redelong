@@ -6,7 +6,7 @@ akumulasi 3 jam, serta akumulasi area 24/48/72 jam.
 
 Platform mulai digeneralisasi menjadi jaringan multi-site. PLTA Redelong tetap
 menjadi site operasional utama, sedangkan PLTM Besai Kemu sudah memiliki
-forecast titik empat hari dan explorer histori provisional. Registry yang dapat
+forecast multi-titik, histori, parameter engineering, dan skenario debit proxy. Registry yang dapat
 ditambah tanpa mengubah engine berada di `config/sites.json`.
 
 ## Jaringan multi-site dan Besai Kemu
@@ -16,20 +16,24 @@ yang menampilkan seluruh site beserta status kesiapan datanya. Site yang sudah
 memiliki paket proyek dan site yang baru bersumber dari referensi publik tidak
 ditampilkan seolah memiliki tingkat kepastian yang sama.
 
-Paket awal PLTM Besai Kemu menggunakan:
+Paket PLTM Besai Kemu menggunakan:
 
-- titik referensi publik `-4.87997, 104.50453` dan ADM4 Kemu
-  `18.08.03.2017`;
-- forecast BMKG serta enam model kuantitatif yang sama dengan Redelong;
+- bendung, headpond, powerhouse, dan Stasiun Sumberjaya dari dokumen
+  engineering 2018–2020;
+- forecast BMKG serta enam model kuantitatif pada empat titik referensi;
 - 16.436 hari histori NASA POWER Daily untuk 1981–2025;
-- halaman `besai_kemu.html` dengan forecast empat hari, grafik tahunan, dan
-  klimatologi bulanan.
+- tabel hujan Stasiun Sumberjaya 1979–2008 dan FDC dari Review 2018;
+- luas DAS menurut dokumen 496,74 km² dengan polygon GIS tetap pending;
+- forecast debit proxy H+1 sampai H+3 terhadap GloFAS;
+- halaman `besai_kemu.html`, `besai_kemu_map.html`, dan
+  `besai_kemu_discharge.html`.
 
-Koordinat Besai Kemu masih berstatus provisional sampai posisi intake atau weir
-dikonfirmasi oleh tim aset. Batas DAS belum didelineasi dan luasnya sengaja
-dibiarkan kosong. Karena itu sistem memblokir klaim volume hujan dan debit untuk
-Besai Kemu. NASA POWER juga ditulis sebagai proxy meteorologi gridded, bukan
-observasi penakar hujan di site.
+Koordinat dan luas Besai Kemu berstatus referensi dokumen sampai posisi as-built
+dan polygon DAS dikonfirmasi tim aset. Volume hujan selalu ditulis indikatif.
+NASA POWER dan GloFAS tetap ditulis sebagai proxy gridded, bukan observasi alat
+di site. Forecast debit Besai tidak disebut inflow operasional karena release
+PLTA Besai 1 belum tersedia dalam feed otomatis. Hierarki revisi dijelaskan di
+`docs/BESAI_KEMU_DATA_AND_HYDROLOGY.md`.
 
 ## Status area analisis
 
@@ -140,6 +144,8 @@ python build_utils/fetch_glofas_discharge.py --outputs outputs
 python build_utils/build_redelong_discharge.py --outputs outputs
 python build_utils/build_redelong_globe_history.py --outputs outputs
 python build_utils/build_besai_portal.py --outputs outputs
+python build_utils/fetch_besai_discharge.py --outputs outputs
+python build_utils/build_besai_hydrology.py --outputs outputs
 python build_utils/build_multisite_catalog.py --outputs outputs
 python build_utils/evaluate_forecast_accuracy.py
 python build_utils/validate_redelong_publish.py --outputs outputs

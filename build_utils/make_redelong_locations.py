@@ -128,6 +128,35 @@ def main() -> None:
             }
             default_multi_locations.append(slug)
 
+            for point in site.get("additional_forecast_points", []):
+                point_slug = slugify(point["slug"])
+                if point_slug in locations:
+                    raise ValueError(f"Duplicate multi-site forecast point: {point_slug}")
+                locations[point_slug] = {
+                    "location_name": point["name"],
+                    "adm4": site["adm4"],
+                    "latitude": float(point["latitude"]),
+                    "longitude": float(point["longitude"]),
+                    "timezone": site.get("timezone", "Asia/Jakarta"),
+                    "bmkg_point_name": site.get("village", site["display_name"]),
+                    "area_level": "independent_site_engineering_point",
+                    "is_proxy_bmkg": True,
+                    "weight_km2": 0.0,
+                    "include_in_catchment": False,
+                    "operational_role": point.get("role", "engineering_reference"),
+                    "spatial_source": site.get("coordinate_source", "multi-site registry"),
+                    "spatial_note": (
+                        "Titik engineering Besai Kemu; tidak masuk agregasi DAS Redelong. "
+                        "Digunakan bersama titik lain sebagai sampel spasial indikatif Besai."
+                    ),
+                    "site_scope": slug,
+                    "note": (
+                        f"{point['name']} engineering forecast reference for {site['display_name']}. "
+                        "The catchment polygon remains pending."
+                    ),
+                }
+                default_multi_locations.append(point_slug)
+
     payload = {
         "default_multi_locations": default_multi_locations,
         "locations": locations

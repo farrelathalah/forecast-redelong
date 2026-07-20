@@ -752,6 +752,12 @@ def check_multisite_catalog(outputs: Path, errors: list[str], metrics: dict[str,
         "besai_kemu_history.json",
         "besai_kemu_forecast.json",
         "besai_kemu_history_daily.csv",
+        "besai_kemu_sumberjaya_monthly.csv",
+        "besai_kemu_fdc_2018.csv",
+        "besai_kemu_structures.geojson",
+        "besai_kemu_engineering_parameters.json",
+        "besai_kemu_map.html",
+        "besai_kemu_catchment.geojson",
     ]
     missing = [name for name in required if not (outputs / name).is_file()]
     if missing:
@@ -767,12 +773,22 @@ def check_multisite_catalog(outputs: Path, errors: list[str], metrics: dict[str,
 
     besai = sites.get("pltm_besai_kemu", {})
     catchment = besai.get("catchment", {}) if isinstance(besai, dict) else {}
-    if not str(besai.get("site_status", "")).startswith("provisional"):
-        errors.append("Besai Kemu harus tetap berstatus provisional sebelum verifikasi engineering")
-    if catchment.get("area_km2") is not None:
-        errors.append("Besai Kemu belum boleh memuat luas DAS sebelum delineasi terverifikasi")
-    if catchment.get("status") != "not_yet_delineated":
-        errors.append("Status batas DAS Besai Kemu harus not_yet_delineated")
+    if not str(besai.get("site_status", "")).startswith("engineering_document_reference"):
+        errors.append("Besai Kemu harus membawa status referensi dokumen engineering")
+    if abs(float(number(catchment.get("area_km2")) or 0) - 496.74) > 0.01:
+        errors.append("Luas DAS dokumen Besai Kemu harus 496,74 km2")
+    if catchment.get("status") != "fs_documented_area_constrained_trace":
+        errors.append("Status DAS Besai harus menyatakan trace indikatif berbasis FS")
+    boundary = read_json(outputs / "besai_kemu_catchment.geojson", {}) or {}
+    boundary_features = boundary.get("features", []) if isinstance(boundary, dict) else []
+    boundary_feature = boundary_features[0] if boundary_features else {}
+    boundary_props = boundary_feature.get("properties", {})
+    if boundary_feature.get("geometry", {}).get("type") not in {"Polygon", "MultiPolygon"}:
+        errors.append("Batas indikatif DAS Besai Kemu bukan GeoJSON polygon")
+    if boundary_props.get("status") != "indicative_not_survey_boundary":
+        errors.append("Batas DAS Besai harus eksplisit bukan batas survei")
+    if abs(float(number(boundary_props.get("trace_area_km2")) or 0) - 496.74) > 0.05:
+        errors.append("Luas trace indikatif Besai tidak konsisten dengan luas FS")
 
     network = (outputs / "site_network.html").read_text(
         encoding="utf-8", errors="replace"
@@ -781,6 +797,8 @@ def check_multisite_catalog(outputs: Path, errors: list[str], metrics: dict[str,
         errors.append("Halaman jaringan belum menggunakan globe multi-site yang aktif")
     if "PLTA Redelong" not in network or "PLTM Besai Kemu" not in network:
         errors.append("Halaman jaringan belum menampilkan kedua site")
+    if "BESAI_CATCHMENT" not in network or "besai-catchment-outline" not in network:
+        errors.append("Globe jaringan belum menampilkan outline indikatif Besai Kemu")
     if 'href="index.html"' not in network:
         errors.append("Halaman jaringan belum memiliki link kembali ke homepage")
 
@@ -794,18 +812,81 @@ def check_multisite_catalog(outputs: Path, errors: list[str], metrics: dict[str,
     history_rows = int(number(history.get("daily_rows")) or 0)
     if history_rows < 16000:
         errors.append("Histori Besai belum memuat sedikitnya 16.000 hari")
+    gauge = history.get("engineering_gauge_reference", {})
+    if gauge.get("station") != "Sumberjaya" or len(gauge.get("annual", [])) != 29:
+        errors.append("Histori Besai harus memuat 29 tahun tabel Stasiun Sumberjaya")
 
     forecast = read_json(outputs / "besai_kemu_forecast.json", []) or []
     if not isinstance(forecast, list) or not forecast:
         errors.append("Forecast publik Besai Kemu belum tersedia")
     elif any(int(number(day.get("model_count")) or 0) < MIN_MODELS for day in forecast):
         errors.append("Forecast Besai Kemu memiliki hari dengan kurang dari tiga model")
+    elif any(int(number(day.get("point_count")) or 0) < 3 for day in forecast):
+        errors.append("Forecast Besai harus memakai sedikitnya tiga titik engineering")
 
     metrics["multisite_catalog_sites"] = len(sites)
     metrics["multisite_besai_status"] = besai.get("site_status")
     metrics["multisite_besai_boundary_status"] = catchment.get("status")
+    metrics["multisite_besai_boundary_method"] = boundary_props.get("role")
+    metrics["multisite_besai_trace_area_km2"] = boundary_props.get("trace_area_km2")
     metrics["multisite_besai_history_days"] = history_rows
     metrics["multisite_besai_forecast_days"] = len(forecast) if isinstance(forecast, list) else 0
+
+
+def check_besai_hydrology(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
+    required = [
+        "besai_kemu_discharge.html",
+        "besai_kemu_discharge.json",
+        "besai_kemu_discharge_forecast.csv",
+        "besai_kemu_discharge_validation.csv",
+        "besai_kemu_discharge_hindcast_pairs.csv",
+        "hydrology/besai_glofas_discharge_metadata.json",
+    ]
+    missing = [name for name in required if not (outputs / name).is_file()]
+    if missing:
+        errors.append("Produk hidrologi Besai hilang: " + ", ".join(missing))
+        return
+    payload = read_json(outputs / "besai_kemu_discharge.json", {}) or {}
+    if payload.get("status") != "provisional_regulated_proxy":
+        errors.append("Forecast debit Besai harus berstatus provisional_regulated_proxy")
+    if payload.get("can_claim_field_accuracy") is not False:
+        errors.append("Forecast debit Besai tidak boleh mengklaim akurasi lapangan")
+    if payload.get("can_claim_operational_inflow") is not False:
+        errors.append("Forecast debit Besai tidak boleh mengklaim inflow operasional")
+    if payload.get("upstream_release_schedule_available") is not False:
+        errors.append("Status release upstream Besai harus eksplisit belum tersedia")
+    forecast = payload.get("forecast", [])
+    leads = {int(number(row.get("lead_day")) or 0) for row in forecast}
+    if leads != {1, 2, 3}:
+        errors.append("Forecast debit Besai harus memuat H+1 sampai H+3")
+    for row in forecast:
+        low = number(row.get("discharge_scenario_low_m3s"))
+        central = number(row.get("discharge_forecast_m3s"))
+        high = number(row.get("discharge_scenario_high_m3s"))
+        available = number(row.get("indicative_plant_available_m3s"))
+        if None in {low, central, high, available} or not (0 <= low <= central <= high):
+            errors.append("Rentang debit atau skenario ketersediaan Besai tidak valid")
+            break
+    validation = payload.get("validation", [])
+    if {int(number(row.get("lead_day")) or 0) for row in validation} != {1, 2, 3}:
+        errors.append("Validasi debit Besai harus dipisahkan H+1 sampai H+3")
+    if any(int(number(row.get("n_samples")) or 0) < 365 for row in validation):
+        errors.append("Validasi debit Besai memerlukan sedikitnya 365 sampel per lead")
+    metadata = read_json(outputs / "hydrology" / "besai_glofas_discharge_metadata.json", {}) or {}
+    if metadata.get("observation_type") != "simulated_gridded_discharge_proxy":
+        errors.append("Referensi debit Besai harus dilabeli sebagai proxy simulasi gridded")
+    if int(number(metadata.get("history_rows")) or 0) < 8000:
+        errors.append("Seri GloFAS Besai kurang dari 8.000 hari")
+    if metadata.get("grid_selection_status") != "screened_proxy_pending_glofas_map_confirmation":
+        errors.append("Grid GloFAS Besai belum melewati screening FDC")
+    if float(number(metadata.get("selected_proxy_q40_m3s")) or 0) < 10.0:
+        errors.append("Grid GloFAS Besai terindikasi memilih anak sungai kecil")
+    page = (outputs / "besai_kemu_discharge.html").read_text(encoding="utf-8", errors="replace")
+    if "forecast-besai-discharge-v1" not in page or "Belum field-calibrated" not in page:
+        errors.append("Halaman debit Besai belum membawa marker dan disclaimer proxy")
+    metrics["besai_discharge_status"] = payload.get("status")
+    metrics["besai_discharge_leads"] = sorted(leads)
+    metrics["besai_discharge_reference_grid"] = metadata.get("selected_grid_coordinate")
 
 
 def check_discharge_products(outputs: Path, errors: list[str], metrics: dict[str, Any]) -> None:
@@ -890,6 +971,7 @@ def validate(outputs: Path) -> tuple[bool, dict[str, Any]]:
     check_geospatial_history(outputs, errors, metrics)
     check_multisite_catalog(outputs, errors, metrics)
     check_discharge_products(outputs, errors, metrics)
+    check_besai_hydrology(outputs, errors, metrics)
     check_inline_javascript(outputs, errors, metrics)
     report = {
         "schema_version": "forecast-hydro-publish-gate-v6",

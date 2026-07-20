@@ -36,6 +36,12 @@ def branded_html(href: str, script: str = "") -> str:
 
 class RedelongPublishGateTest(unittest.TestCase):
     def make_valid_outputs(self, root: Path) -> None:
+        besai_points = {
+            "pltm_besai_kemu",
+            "pltm_besai_kemu_headpond",
+            "pltm_besai_kemu_powerhouse",
+            "pltm_besai_kemu_sumberjaya",
+        }
         forecast_rows = [
             {
                 "location_slug": location,
@@ -43,7 +49,7 @@ class RedelongPublishGateTest(unittest.TestCase):
                 "target_jam": "00:00",
                 "source_id": source,
             }
-            for location in sorted(EXPECTED_LOCATIONS | {"pltm_besai_kemu"})
+            for location in sorted(EXPECTED_LOCATIONS | besai_points)
             for source in sorted(QUANTITATIVE_SOURCES)
         ]
         for row in forecast_rows:
@@ -316,6 +322,59 @@ class RedelongPublishGateTest(unittest.TestCase):
             encoding="utf-8",
         )
         build_besai_portal(root)
+        besai_discharge_forecast = [
+            {
+                "lead_day": lead,
+                "discharge_scenario_low_m3s": 5.0,
+                "discharge_forecast_m3s": 7.0,
+                "discharge_scenario_high_m3s": 10.0,
+                "indicative_plant_available_m3s": 3.4,
+            }
+            for lead in (1, 2, 3)
+        ]
+        besai_discharge_validation = [
+            {"lead_day": lead, "n_samples": 1000, "nse": 0.6}
+            for lead in (1, 2, 3)
+        ]
+        (root / "besai_kemu_discharge.json").write_text(
+            json.dumps(
+                {
+                    "status": "provisional_regulated_proxy",
+                    "can_claim_field_accuracy": False,
+                    "can_claim_operational_inflow": False,
+                    "upstream_release_schedule_available": False,
+                    "forecast": besai_discharge_forecast,
+                    "validation": besai_discharge_validation,
+                }
+            ),
+            encoding="utf-8",
+        )
+        write_csv(root / "besai_kemu_discharge_forecast.csv", besai_discharge_forecast)
+        write_csv(root / "besai_kemu_discharge_validation.csv", besai_discharge_validation)
+        write_csv(
+            root / "besai_kemu_discharge_hindcast_pairs.csv",
+            [{"lead_day": 1, "discharge_proxy_observed_m3s": 7, "discharge_modelled_m3s": 7}],
+        )
+        (root / "besai_kemu_discharge.html").write_text(
+            branded_html("besai_kemu.html").replace(
+                "</head>",
+                "<meta name='forecast-hydro-page' content='forecast-besai-discharge-v1'></head>",
+            ).replace("</body>", "<p>Belum field-calibrated</p></body>"),
+            encoding="utf-8",
+        )
+        (hydrology / "besai_glofas_discharge_metadata.json").write_text(
+            json.dumps(
+                {
+                    "source": "GloFAS v4 via Open-Meteo Flood API",
+                    "observation_type": "simulated_gridded_discharge_proxy",
+                    "history_rows": 9000,
+                    "selected_grid_coordinate": [-4.875, 104.525],
+                    "grid_selection_status": "screened_proxy_pending_glofas_map_confirmation",
+                    "selected_proxy_q40_m3s": 25.0,
+                }
+            ),
+            encoding="utf-8",
+        )
         patch_globe_homepage(root)
         build_multisite_catalog(root)
         apply_all(root)

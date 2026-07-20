@@ -36,12 +36,21 @@ class MultisiteRegistryTest(unittest.TestCase):
                 self.assertRegex(site["adm4"], r"^\d{2}\.\d{2}\.\d{2}\.\d{4}$")
                 self.assertGreaterEqual(len(site["forecast_sources"]), 3)
 
-    def test_provisional_besai_boundary_cannot_claim_area_or_discharge(self) -> None:
+    def test_besai_uses_documented_area_with_explicit_indicative_trace(self) -> None:
         site = self.registry["sites"]["pltm_besai_kemu"]
-        self.assertIn("provisional", site["site_status"])
-        self.assertEqual(site["catchment"]["status"], "not_yet_delineated")
-        self.assertIsNone(site["catchment"]["area_km2"])
-        self.assertIn("Do not publish", site["catchment"]["note"])
+        self.assertTrue(site["site_status"].startswith("engineering_document_reference"))
+        self.assertEqual(
+            site["catchment"]["status"], "fs_documented_area_constrained_trace"
+        )
+        self.assertAlmostEqual(site["catchment"]["area_km2"], 496.74, places=2)
+        self.assertIn("indikatif/proxy", site["catchment"]["note"])
+        boundary = json.loads(
+            (ROOT / site["catchment"]["boundary_file"]).read_text(encoding="utf-8")
+        )["features"][0]
+        self.assertEqual(boundary["geometry"]["type"], "Polygon")
+        self.assertEqual(boundary["properties"]["status"], "indicative_not_survey_boundary")
+        self.assertAlmostEqual(boundary["properties"]["trace_area_km2"], 496.74, places=2)
+        self.assertGreaterEqual(len(site["additional_forecast_points"]), 3)
 
     def test_feature_pushes_validate_without_deploying(self) -> None:
         workflow = (ROOT / ".github/workflows/main.yml").read_text(
@@ -72,6 +81,8 @@ class MultisiteRegistryTest(unittest.TestCase):
             self.assertIn("PLTA Redelong", page)
             self.assertIn("PLTM Besai Kemu", page)
             self.assertIn("type:'globe'", page)
+            self.assertIn("BESAI_CATCHMENT", page)
+            self.assertIn("besai-catchment-outline", page)
             self.assertIn("site_network.html", home)
 
     def test_catalog_removes_legacy_multisite_choice_when_primary_globe_exists(self) -> None:
@@ -113,6 +124,14 @@ class MultisiteRegistryTest(unittest.TestCase):
         self.assertFalse(besai["include_in_catchment"])
         self.assertEqual(besai["weight_km2"], 0.0)
         self.assertEqual(besai["operational_role"], "independent_site_reference")
+        self.assertAlmostEqual(besai["latitude"], -4.862591667, places=6)
+        for slug in [
+            "pltm_besai_kemu_headpond",
+            "pltm_besai_kemu_powerhouse",
+            "pltm_besai_kemu_sumberjaya",
+        ]:
+            self.assertIn(slug, payload["locations"])
+            self.assertEqual(payload["locations"][slug]["site_scope"], "pltm_besai_kemu")
 
     def test_besai_builder_publishes_history_with_proxy_disclaimer(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -123,10 +142,14 @@ class MultisiteRegistryTest(unittest.TestCase):
                 (outputs / "besai_kemu_history.json").read_text(encoding="utf-8")
             )
             self.assertIn("forecast-besai-kemu-history-v1", page)
-            self.assertIn("Status provisional", page)
+            self.assertIn("Referensi engineering tersedia", page)
             self.assertIn("bukan observasi alat", page)
             self.assertGreaterEqual(history["daily_rows"], 16000)
             self.assertEqual(history["observation_type"], "gridded_meteorological_proxy")
+            self.assertEqual(len(history["engineering_gauge_reference"]["annual"]), 29)
+            self.assertTrue((outputs / "besai_kemu_map.html").is_file())
+            self.assertTrue((outputs / "besai_kemu_catchment.geojson").is_file())
+            self.assertTrue((outputs / "besai_kemu_fdc_2018.csv").is_file())
 
 
 if __name__ == "__main__":
