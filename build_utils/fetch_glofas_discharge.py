@@ -55,12 +55,17 @@ def _daily_frame(payload: dict, columns: list[str]) -> pd.DataFrame:
     return frame
 
 
-def fetch_history(start_date: str, end_date: str) -> tuple[pd.DataFrame, dict]:
+def fetch_history(
+    start_date: str,
+    end_date: str,
+    latitude: float = REQUEST_LATITUDE,
+    longitude: float = REQUEST_LONGITUDE,
+) -> tuple[pd.DataFrame, dict]:
     variables = ["river_discharge"]
     payload = _request(
         {
-            "latitude": REQUEST_LATITUDE,
-            "longitude": REQUEST_LONGITUDE,
+            "latitude": latitude,
+            "longitude": longitude,
             "daily": ",".join(variables),
             "start_date": start_date,
             "end_date": end_date,
@@ -70,7 +75,12 @@ def fetch_history(start_date: str, end_date: str) -> tuple[pd.DataFrame, dict]:
     return _daily_frame(payload, variables), payload
 
 
-def fetch_recent_and_forecast(past_days: int = 14, forecast_days: int = 10) -> tuple[pd.DataFrame, dict]:
+def fetch_recent_and_forecast(
+    past_days: int = 14,
+    forecast_days: int = 10,
+    latitude: float = REQUEST_LATITUDE,
+    longitude: float = REQUEST_LONGITUDE,
+) -> tuple[pd.DataFrame, dict]:
     variables = [
         "river_discharge",
         "river_discharge_mean",
@@ -82,8 +92,8 @@ def fetch_recent_and_forecast(past_days: int = 14, forecast_days: int = 10) -> t
     ]
     payload = _request(
         {
-            "latitude": REQUEST_LATITUDE,
-            "longitude": REQUEST_LONGITUDE,
+            "latitude": latitude,
+            "longitude": longitude,
             "daily": ",".join(variables),
             "past_days": past_days,
             "forecast_days": forecast_days,
@@ -93,21 +103,32 @@ def fetch_recent_and_forecast(past_days: int = 14, forecast_days: int = 10) -> t
     return _daily_frame(payload, variables), payload
 
 
-def build(outputs: Path, history_start: str = "2000-01-01", history_end: str | None = None) -> dict:
+def build_for_coordinate(
+    outputs: Path,
+    latitude: float,
+    longitude: float,
+    *,
+    file_prefix: str,
+    schema_version: str,
+    site_name: str,
+    history_start: str = "2000-01-01",
+    history_end: str | None = None,
+) -> dict:
     hydrology = outputs / "hydrology"
     hydrology.mkdir(parents=True, exist_ok=True)
     if history_end is None:
         history_end = (date.today() - timedelta(days=1)).isoformat()
 
-    history, history_payload = fetch_history(history_start, history_end)
-    current, current_payload = fetch_recent_and_forecast()
-    history.to_csv(hydrology / "glofas_discharge_history.csv", index=False, encoding="utf-8-sig")
-    current.to_csv(hydrology / "glofas_discharge_current.csv", index=False, encoding="utf-8-sig")
+    history, history_payload = fetch_history(history_start, history_end, latitude, longitude)
+    current, current_payload = fetch_recent_and_forecast(latitude=latitude, longitude=longitude)
+    history.to_csv(hydrology / f"{file_prefix}_history.csv", index=False, encoding="utf-8-sig")
+    current.to_csv(hydrology / f"{file_prefix}_current.csv", index=False, encoding="utf-8-sig")
 
     selected_latitude = current_payload.get("latitude", history_payload.get("latitude"))
     selected_longitude = current_payload.get("longitude", history_payload.get("longitude"))
     metadata = {
-        "schema_version": "forecast-redelong-glofas-proxy-v1",
+        "schema_version": schema_version,
+        "site_name": site_name,
         "source": "GloFAS v4 via Open-Meteo Flood API",
         "source_url": "https://open-meteo.com/en/docs/flood-api",
         "upstream_source": "Copernicus Emergency Management Service Global Flood Awareness System (GloFAS v4)",
@@ -117,7 +138,7 @@ def build(outputs: Path, history_start: str = "2000-01-01", history_end: str | N
             "before corporate production deployment."
         ),
         "observation_type": "simulated_gridded_discharge_proxy",
-        "request_coordinate": [REQUEST_LATITUDE, REQUEST_LONGITUDE],
+        "request_coordinate": [latitude, longitude],
         "selected_grid_coordinate": [selected_latitude, selected_longitude],
         "selected_grid_elevation_m": current_payload.get("elevation"),
         "timezone": TIMEZONE,
@@ -128,14 +149,27 @@ def build(outputs: Path, history_start: str = "2000-01-01", history_end: str | N
         "unit": "m3/s",
         "disclaimer": (
             "GloFAS is a simulated gridded river-discharge product, not an AWLR or "
-            "direct discharge observation at PLTA Redelong. Grid-to-river matching and "
+            f"direct discharge observation at {site_name}. Grid-to-river matching and "
             "licensing must be confirmed before production operational use."
         ),
     }
-    (hydrology / "glofas_discharge_metadata.json").write_text(
+    (hydrology / f"{file_prefix}_metadata.json").write_text(
         json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     return metadata
+
+
+def build(outputs: Path, history_start: str = "2000-01-01", history_end: str | None = None) -> dict:
+    return build_for_coordinate(
+        outputs,
+        REQUEST_LATITUDE,
+        REQUEST_LONGITUDE,
+        file_prefix="glofas_discharge",
+        schema_version="forecast-redelong-glofas-proxy-v1",
+        site_name="PLTA Redelong",
+        history_start=history_start,
+        history_end=history_end,
+    )
 
 
 def main() -> None:

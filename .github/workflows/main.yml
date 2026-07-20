@@ -141,6 +141,14 @@ jobs:
         run: |
           python build_utils/build_besai_portal.py --outputs outputs
 
+      - name: Fetch Besai Kemu GloFAS discharge proxy
+        run: |
+          python build_utils/fetch_besai_discharge.py --outputs outputs
+
+      - name: Build Besai Kemu rainfall-to-discharge scenario
+        run: |
+          python build_utils/build_besai_hydrology.py --outputs outputs
+
       - name: Build multi-site hydro network globe
         run: |
           python build_utils/build_multisite_catalog.py --outputs outputs

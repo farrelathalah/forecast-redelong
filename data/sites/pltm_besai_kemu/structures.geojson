@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "name": "PLTM Besai Kemu engineering reference points",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [104.500497222, -4.862591667]},
+      "properties": {"slug": "pltm_besai_kemu", "name": "Bendung Besai Kemu", "role": "weir_forecast_reference", "revision": "Review Januari 2020", "status": "documented_pending_asset_confirmation"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [104.509577778, -4.839133333]},
+      "properties": {"slug": "pltm_besai_kemu_headpond", "name": "Headpond Besai Kemu", "role": "hydraulic_structure", "revision": "Review Januari 2020", "status": "documented_pending_asset_confirmation"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [104.510075, -4.837533333]},
+      "properties": {"slug": "pltm_besai_kemu_powerhouse", "name": "Powerhouse Besai Kemu", "role": "powerhouse", "revision": "Review Januari 2020", "status": "documented_pending_asset_confirmation"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [104.483483333, -5.009188889]},
+      "properties": {"slug": "pltm_besai_kemu_sumberjaya", "name": "Stasiun Hujan Sumberjaya", "role": "historical_rain_gauge", "elevation_m": 746, "revision": "Review/Basic Design 2018", "status": "historical_document_reference"}
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {"slug": "pltm_besai_kemu_catchment", "name": "DAS Besai Kemu", "role": "catchment_reference", "area_km2": 496.74, "geometry_status": "indicative_trace_published_separately", "revision": "Review Januari 2020"}
+    }
+  ]
+}

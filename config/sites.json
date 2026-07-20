@@ -45,8 +45,8 @@
       "display_name": "PLTM Besai Kemu",
       "plant_type": "PLTM run-of-river",
       "timezone": "Asia/Jakarta",
-      "latitude": -4.87997,
-      "longitude": 104.50453,
+      "latitude": -4.862591667,
+      "longitude": 104.500497222,
       "province": "Lampung",
       "regency": "Way Kanan",
       "district": "Banjit",
@@ -54,20 +54,47 @@
       "adm4": "18.08.03.2017",
       "capacity_mw": 7.0,
       "operational_status": "commercial_operation_since_2024",
-      "site_status": "provisional_public_source_pending_asset_confirmation",
-      "coordinate_source": "World Bank ESMAP Small Hydro Resource Mapping in Indonesia, Annex I",
-      "coordinate_source_url": "https://documents.worldbank.org/curated/en/891911506073273340/pdf/119859-ESM-P145273-PUBLIC-IndonesiaSmallHydropowerMappingReportWBESMAPMarch.pdf",
+      "site_status": "engineering_document_reference_pending_asset_confirmation",
+      "coordinate_source": "Review Studi Kelayakan PLTM Besai Kemu, Januari 2020, Tabel 2.1",
+      "coordinate_source_url": null,
       "catchment": {
-        "status": "not_yet_delineated",
-        "area_km2": null,
-        "source": "HydroBASINS or MERIT Hydro candidate after outlet verification",
-        "note": "Do not publish rainfall volume or discharge until the intake or weir outlet and watershed boundary are verified."
+        "status": "fs_documented_area_constrained_trace",
+        "area_km2": 496.74,
+        "boundary_file": "data/sites/pltm_besai_kemu/besai_kemu_catchment.geojson",
+        "source": "Review Studi Kelayakan Januari 2020, Gambar 2-26; outline ditelusuri dari gambar, diikat ke koordinat bendung, dan dikontrol terhadap luas 496,74 km2",
+        "note": "Batas yang ditampilkan bersifat indikatif, bukan vektor survei asli atau batas legal. Volume hujan dan debit tetap berlabel indikatif/proxy, bukan nilai lapangan terverifikasi."
       },
+      "engineering_data": "data/sites/pltm_besai_kemu/engineering_parameters.json",
+      "structures_geojson": "data/sites/pltm_besai_kemu/structures.geojson",
+      "additional_forecast_points": [
+        {
+          "slug": "pltm_besai_kemu_headpond",
+          "name": "Headpond Besai Kemu",
+          "latitude": -4.839133333,
+          "longitude": 104.509577778,
+          "role": "hydraulic_structure"
+        },
+        {
+          "slug": "pltm_besai_kemu_powerhouse",
+          "name": "Powerhouse Besai Kemu",
+          "latitude": -4.837533333,
+          "longitude": 104.510075,
+          "role": "powerhouse"
+        },
+        {
+          "slug": "pltm_besai_kemu_sumberjaya",
+          "name": "Stasiun Hujan Sumberjaya",
+          "latitude": -5.009188889,
+          "longitude": 104.483483333,
+          "role": "historical_rain_gauge_reference"
+        }
+      ],
       "historical_sources": [
+        "Sumberjaya_Rain_Gauge_1979_2008_document_transcription",
+        "NASA_POWER_Daily_1981_2025",
+        "GloFAS_v4_simulated_discharge_proxy",
         "CHIRPS_candidate",
-        "NASA_POWER_candidate",
-        "NASA_GPM_IMERG_candidate",
-        "NOAA_GSOD_station_screening"
+        "NASA_GPM_IMERG_candidate"
       ],
       "forecast_sources": [
         "BMKG",
