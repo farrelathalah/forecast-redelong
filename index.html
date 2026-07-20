@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Forecast Redelong</title>
+  <title>Forecast Site</title>
   <style>
     :root {
       --bg:#040c16; --panel:rgba(255,255,255,.08); --panel2:rgba(255,255,255,.13);
@@ -75,7 +75,6 @@
 #fr-globe-entry small{display:block;color:#7dd3fc;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
 @media(max-width:620px){#fr-globe-entry{right:12px;bottom:12px;padding-right:13px}}
 </style>
-<style id="fr-sites-entry-style">#fr-sites-entry{position:fixed;right:22px;bottom:86px;z-index:9200;padding:9px 13px;border:1px solid rgba(52,211,153,.36);border-radius:999px;background:rgba(2,15,30,.88);backdrop-filter:blur(16px);color:#a7f3d0;text-decoration:none;font:800 11px/1.2 Inter,system-ui,sans-serif}@media(max-width:620px){#fr-sites-entry{right:12px;bottom:76px}}</style>
 <meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
 <style id="fr-global-experience-v1">
   [data-fr-spin-target="true"] {
@@ -107,11 +106,11 @@
   <div class="noise"></div>
   
     <nav class="nav">
-      <a class="brand" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong">
+      <a class="brand" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Site">
         <div class="logo" aria-hidden="true" style="display:grid;place-items:center;color:#fff;font-weight:900;font-size:12px;letter-spacing:-.04em" data-fr-spin-target="true">FR</div>
         <div>
-          <strong>Forecast Redelong</strong>
-          <span>Monitoring Hujan PLTA Redelong</span>
+          <strong>Forecast Site</strong>
+          <span>Cuaca Multi-Site</span>
         </div>
       </a>
       <div class="nav-links">
@@ -146,7 +145,7 @@
         <div class="metric"><div class="label">Titik Forecast</div><div class="value">9</div></div>
         <div class="metric"><div class="label">Masuk Agregasi Catchment</div><div class="value">6</div></div>
         <div class="metric"><div class="label">Model Hujan Numerik</div><div class="value">6</div></div>
-        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-20 06:36 WIB</div></div>
+        <div class="metric"><div class="label">Update Lokal</div><div class="value" style="font-size:20px">2026-07-20 10:55 WIB</div></div>
       </aside>
     </div>
     <a class="scroll-cue" href="#ringkasan">Scroll</a>
@@ -320,7 +319,7 @@
     </div>
   </section>
 
-  <footer><div class="footer-inner"><span>Forecast Redelong</span><span>FORECAST PLTA REDELONG, Generated 2026-07-20 06:36 WIB</span></div></footer>
+  <footer><div class="footer-inner"><span>Forecast Site</span><span>FORECAST PLTA REDELONG, Generated 2026-07-20 10:55 WIB</span></div></footer>
   
     <script>
       const observer = new IntersectionObserver((entries) => {
@@ -346,13 +345,12 @@
   line-height:1.6;
 ">
   Sumber data prakiraan mencakup BMKG (Badan Meteorologi, Klimatologi, dan Geofisika)
-  serta model prakiraan numerik multi-source yang tersedia pada pipeline Forecast Redelong.
+  serta model prakiraan numerik multi-source yang tersedia pada pipeline Forecast Site.
 </div>
 
-<a id="fr-globe-entry" href="redelong_globe.html" aria-label="Buka Globe 3D dan histori Forecast Redelong">
-  <span aria-hidden="true">3D</span><b>Globe &amp; Histori<small>Area 137,80 km²</small></b>
+<a id="fr-globe-entry" href="site_network.html" aria-label="Buka Globe cuaca Forecast Site">
+  <span aria-hidden="true">3D</span><b>Globe Forecast Site<small>Redelong &amp; Besai Kemu</small></b>
 </a>
-<a id="fr-sites-entry" href="site_network.html">Semua Site, Globe Jaringan</a>
 <canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
 <script id="fr-global-rain-script">
 (() => {

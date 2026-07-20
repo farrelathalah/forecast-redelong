@@ -2,22 +2,23 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <title>Status Validasi, Forecast Redelong</title>
+  <title>Validasi Forecast, Forecast Site</title>
   <style>
-    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:#eff8ff;background:#04111e}
-    .topbar{display:flex;align-items:center;padding:18px min(5vw,64px);border-bottom:1px solid rgba(255,255,255,.15);background:rgba(3,11,20,.78)}
-    .brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
-    .brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#8b5cf6 55%,#10b981);display:grid;place-items:center;color:#fff;font-size:11px;font-weight:900;letter-spacing:-.04em}
-    .brand-copy{display:flex;flex-direction:column;line-height:1.08}
-    .brand-copy strong{font-size:18px}
-    .brand-copy span{color:#9fb4c9;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
-    main{max-width:980px;margin:0 auto;padding:70px 22px}
-    .panel{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);border-radius:28px;padding:28px}
-    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}.metric{padding:16px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(0,0,0,.15)}.metric b{display:block;font-size:26px}.metric span{color:#9fb4c9;font-size:12px}
-    .notice{padding:14px 16px;border-radius:16px;background:#2b1d08;border:1px solid #7c5515;color:#ffe4a3}
-    a{color:#45e0d0}
-    p{color:#9fb4c9;line-height:1.7}
-    @media(max-width:700px){.grid{grid-template-columns:1fr 1fr}}
+    :root{--bg:#040c16;--panel:rgba(255,255,255,.08);--line:rgba(255,255,255,.15);--text:#eff8ff;--muted:#9fb4c9;--cyan:#45e0d0;--blue:#74a9ff}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 20% 10%,rgba(69,224,208,.22),transparent 32%),linear-gradient(135deg,#04111e,#08253a 45%,#11183a)}
+    a{color:inherit;text-decoration:none}
+    nav{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:18px min(5vw,64px);background:rgba(3,11,20,.78);border-bottom:1px solid var(--line);position:sticky;top:0;backdrop-filter:blur(14px)}
+    .brand{display:flex;align-items:center;gap:12px}.brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#8b5cf6 55%,#10b981);display:grid!important;place-items:center;color:#fff!important;font-size:11px!important;font-weight:900;letter-spacing:-.04em!important}.brand-copy{display:flex!important;flex-direction:column;line-height:1.08}.brand-copy strong{display:block;font-size:18px}.brand-copy span{display:block;color:var(--muted);font-size:12px;letter-spacing:.8px;text-transform:uppercase;margin-top:3px}
+    .links{display:flex;gap:10px;flex-wrap:wrap}.links a{border:1px solid var(--line);background:rgba(255,255,255,.075);padding:10px 14px;border-radius:999px;font-size:14px;font-weight:650}
+    main{max-width:1180px;margin:0 auto;padding:58px 22px 70px}
+    .panel{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.045));border-radius:30px;padding:28px;margin-bottom:18px;box-shadow:0 28px 90px rgba(0,0,0,.22)}
+    h1{font-size:clamp(38px,5vw,68px);line-height:.98;letter-spacing:-2px;margin:0}h2{font-size:28px;margin:0 0 14px}
+    p{color:var(--muted);line-height:1.72}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:14px;margin-top:22px}
+    .metric{border:1px solid var(--line);background:rgba(0,0,0,.14);border-radius:22px;padding:18px}
+    .label{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:1px;font-weight:800}.value{margin-top:8px;font-size:30px;font-weight:850}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:22px;background:rgba(0,0,0,.12)}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.08);white-space:nowrap}th{text-align:left;color:#bafff8;background:rgba(255,255,255,.06)}
+    @media(max-width:850px){.grid{grid-template-columns:1fr 1fr}nav{align-items:flex-start;flex-direction:column}}
+    @media(max-width:520px){.grid{grid-template-columns:1fr}}
   </style>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
@@ -48,26 +49,743 @@
 </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Redelong">
+  <nav>
+    <a class="brand" href="index.html" data-fr-global-brand="true" aria-label="Kembali ke Forecast Site">
       <span class="brand-mark" aria-hidden="true" data-fr-spin-target="true">FR</span>
-      <span class="brand-copy"><strong>Forecast Redelong</strong><span>Evaluasi Forecast</span></span>
+      <span class="brand-copy"><strong>Forecast Site</strong><span>Evaluasi Forecast</span></span>
     </a>
-  </header>
-  <main>
-    <div class="panel">
-      <h1>Status Validasi Forecast Redelong</h1>
-      <p class="notice"><strong>Validasi proxy belum memiliki pasangan matang yang cukup.</strong> Data observasi yang sesuai belum tersedia.</p>
-      <div class="grid">
-        <div class="metric"><b>15</b><span>run forecast diarsipkan</span></div>
-        <div class="metric"><b>104</b><span>forecast harian layak dibandingkan</span></div>
-        <div class="metric"><b>0</b><span>observasi/proxy harian</span></div>
-        <div class="metric"><b>0</b><span>pasangan lokasi-hari</span></div>
-      </div>
-      <p>Karena site tidak memiliki penakar hujan, evaluasi berjalan otomatis terhadap referensi satelit gridded. Sistem hanya menghitung total 24 jam yang sebanding, memilih satu issue awal per hari agar retry tidak menggandakan sampel, dan tidak menyebut hasilnya sebagai akurasi lapangan.</p>
-      <p><a href="index.html">Kembali ke Home</a></p>
-      <p>Generated 2026-07-20 06:38 WIB</p>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="redelong_rain_map.html">Peta Hujan</a>
+      <a href="redelong_overview.html">Overview</a>
     </div>
+  </nav>
+
+  <main>
+    <section class="panel">
+      <h1>Validasi terhadap referensi proxy.</h1>
+      <p><strong>Mode evaluasi:</strong> proxy_observation</p>
+      <p><strong>Sumber referensi:</strong> Open-Meteo Historical Weather, Best Match</p>
+      <p><strong>Status:</strong> validasi_proxy_sampel_terbatas. Metrik berbasis proxy hanya menilai kesesuaian terhadap produk gridded, bukan akurasi lapangan.</p>
+      <p>
+        Halaman ini membandingkan akumulasi forecast 24 jam dengan referensi
+        gridded pada tanggal dan lokasi yang sama. Ini bukan pengukuran
+        langsung di site. Forecast harian dihitung dengan
+        menjumlahkan setiap model lebih dahulu, lalu membentuk konsensus antar-model.
+        BMKG kategoris, model kosong, dan hari dengan coverage kurang dari
+        20/24 jam tidak masuk perhitungan.
+      </p>
+      <div class="grid">
+        <div class="metric"><div class="label">Sampel Evaluasi</div><div class="value">59</div></div>
+        <div class="metric"><div class="label">Tanggal unik</div><div class="value">4</div></div>
+        <div class="metric"><div class="label">Akurasi kejadian ≥1 mm</div><div class="value">93.22%</div></div>
+        <div class="metric"><div class="label">Akurasi kejadian ≥10 mm</div><div class="value">50.85%</div></div>
+        <div class="metric"><div class="label">MAE jumlah hujan</div><div class="value">10.15 mm</div></div>
+        <div class="metric"><div class="label">Bias jumlah hujan</div><div class="value">9.56 mm</div></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Cara membaca metrik</h2>
+      <p><strong>MAE</strong> adalah rata-rata besar selisih forecast; lebih kecil lebih baik. <strong>RMSE</strong> memberi penalti lebih besar pada kesalahan ekstrem. <strong>Bias</strong> positif berarti forecast cenderung terlalu basah, sedangkan bias negatif berarti terlalu kering.</p>
+      <p><strong>POD</strong> menunjukkan bagian kejadian hujan yang berhasil terdeteksi; lebih tinggi lebih baik. <strong>FAR</strong> adalah bagian alarm hujan yang ternyata tidak terjadi; lebih rendah lebih baik. <strong>CSI</strong> merangkum hit, miss, dan false alarm; lebih tinggi lebih baik.</p>
+      <p><strong>Mean</strong> adalah konsensus rata-rata antar-model. <strong>P90</strong> adalah skenario tinggi antar-model, bukan peluang 90%. Baris <strong>H+1/H+2/H+3</strong> memisahkan hasil berdasarkan jarak hari dari waktu forecast diterbitkan.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Metrik evaluasi</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cakupan</th>
+              <th>Forecast Metric</th>
+              <th>N</th>
+              <th>MAE mm</th>
+              <th>RMSE mm</th>
+              <th>Bias mm</th>
+              <th>Klasifikasi benar ≥1mm</th>
+              <th>POD ≥1mm</th>
+              <th>FAR ≥1mm</th>
+              <th>CSI ≥1mm</th>
+              <th>Akurasi kejadian ≥10mm</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td>Keseluruhan</td>
+          <td>rain_forecast_mean</td>
+          <td>59</td>
+          <td>10.15</td>
+          <td>14.85</td>
+          <td>9.56</td>
+          <td>93.22%</td>
+          <td>100.00%</td>
+          <td>6.78%</td>
+          <td>93.22%</td>
+          <td>50.85%</td>
+        </tr>
+        
+        <tr>
+          <td>Keseluruhan</td>
+          <td>rain_forecast_p90</td>
+          <td>59</td>
+          <td>28.15</td>
+          <td>42.60</td>
+          <td>28.15</td>
+          <td>93.22%</td>
+          <td>100.00%</td>
+          <td>6.78%</td>
+          <td>93.22%</td>
+          <td>37.29%</td>
+        </tr>
+        
+        <tr>
+          <td>Keseluruhan</td>
+          <td>rain_forecast_max</td>
+          <td>59</td>
+          <td>47.43</td>
+          <td>78.14</td>
+          <td>47.43</td>
+          <td>93.22%</td>
+          <td>100.00%</td>
+          <td>6.78%</td>
+          <td>93.22%</td>
+          <td>35.59%</td>
+        </tr>
+        
+        <tr>
+          <td>H+1</td>
+          <td>rain_forecast_mean</td>
+          <td>34</td>
+          <td>9.06</td>
+          <td>12.21</td>
+          <td>8.58</td>
+          <td>88.24%</td>
+          <td>100.00%</td>
+          <td>11.76%</td>
+          <td>88.24%</td>
+          <td>50.00%</td>
+        </tr>
+        
+        <tr>
+          <td>H+1</td>
+          <td>rain_forecast_p90</td>
+          <td>34</td>
+          <td>24.29</td>
+          <td>33.92</td>
+          <td>24.29</td>
+          <td>88.24%</td>
+          <td>100.00%</td>
+          <td>11.76%</td>
+          <td>88.24%</td>
+          <td>35.29%</td>
+        </tr>
+        
+        <tr>
+          <td>H+1</td>
+          <td>rain_forecast_max</td>
+          <td>34</td>
+          <td>39.95</td>
+          <td>60.96</td>
+          <td>39.95</td>
+          <td>88.24%</td>
+          <td>100.00%</td>
+          <td>11.76%</td>
+          <td>88.24%</td>
+          <td>35.29%</td>
+        </tr>
+        
+        <tr>
+          <td>H+2</td>
+          <td>rain_forecast_mean</td>
+          <td>25</td>
+          <td>11.63</td>
+          <td>17.83</td>
+          <td>10.88</td>
+          <td>100.00%</td>
+          <td>100.00%</td>
+          <td>0.00%</td>
+          <td>100.00%</td>
+          <td>52.00%</td>
+        </tr>
+        
+        <tr>
+          <td>H+2</td>
+          <td>rain_forecast_p90</td>
+          <td>25</td>
+          <td>33.39</td>
+          <td>52.15</td>
+          <td>33.39</td>
+          <td>100.00%</td>
+          <td>100.00%</td>
+          <td>0.00%</td>
+          <td>100.00%</td>
+          <td>40.00%</td>
+        </tr>
+        
+        <tr>
+          <td>H+2</td>
+          <td>rain_forecast_max</td>
+          <td>25</td>
+          <td>57.60</td>
+          <td>96.72</td>
+          <td>57.60</td>
+          <td>100.00%</td>
+          <td>100.00%</td>
+          <td>0.00%</td>
+          <td>100.00%</td>
+          <td>36.00%</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Data yang dibandingkan</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Lokasi</th>
+              <th>Issue</th>
+              <th>Lead</th>
+              <th>Observed mm</th>
+              <th>Forecast Mean</th>
+              <th>Forecast P90</th>
+              <th>Forecast Max</th>
+              <th>Model valid</th>
+              <th>Coverage minimum</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td>2026-07-16</td>
+          <td>gpm1</td>
+          <td>2026-07-15</td>
+          <td>H+1</td>
+          <td>0.90</td>
+          <td>27.10</td>
+          <td>75.50</td>
+          <td>139.60</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm1</td>
+          <td>2026-07-15</td>
+          <td>H+2</td>
+          <td>4.00</td>
+          <td>39.50</td>
+          <td>109.70</td>
+          <td>201.10</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm1</td>
+          <td>2026-07-16</td>
+          <td>H+1</td>
+          <td>4.00</td>
+          <td>14.88</td>
+          <td>30.15</td>
+          <td>36.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm1</td>
+          <td>2026-07-16</td>
+          <td>H+2</td>
+          <td>1.80</td>
+          <td>9.62</td>
+          <td>16.20</td>
+          <td>20.90</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm1</td>
+          <td>2026-07-17</td>
+          <td>H+1</td>
+          <td>1.80</td>
+          <td>9.28</td>
+          <td>14.90</td>
+          <td>17.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm1</td>
+          <td>2026-07-17</td>
+          <td>H+2</td>
+          <td>16.10</td>
+          <td>16.12</td>
+          <td>27.15</td>
+          <td>31.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm1</td>
+          <td>2026-07-18</td>
+          <td>H+1</td>
+          <td>16.10</td>
+          <td>16.63</td>
+          <td>25.50</td>
+          <td>33.30</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-16</td>
+          <td>gpm2</td>
+          <td>2026-07-15</td>
+          <td>H+1</td>
+          <td>3.60</td>
+          <td>27.95</td>
+          <td>75.50</td>
+          <td>139.60</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm2</td>
+          <td>2026-07-15</td>
+          <td>H+2</td>
+          <td>6.20</td>
+          <td>40.98</td>
+          <td>109.70</td>
+          <td>201.10</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm2</td>
+          <td>2026-07-16</td>
+          <td>H+1</td>
+          <td>6.20</td>
+          <td>15.92</td>
+          <td>30.15</td>
+          <td>36.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm2</td>
+          <td>2026-07-16</td>
+          <td>H+2</td>
+          <td>3.20</td>
+          <td>11.12</td>
+          <td>20.25</td>
+          <td>20.90</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm2</td>
+          <td>2026-07-17</td>
+          <td>H+1</td>
+          <td>3.20</td>
+          <td>10.02</td>
+          <td>15.05</td>
+          <td>17.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm2</td>
+          <td>2026-07-17</td>
+          <td>H+2</td>
+          <td>20.10</td>
+          <td>17.78</td>
+          <td>27.15</td>
+          <td>31.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm2</td>
+          <td>2026-07-18</td>
+          <td>H+1</td>
+          <td>20.10</td>
+          <td>17.65</td>
+          <td>25.50</td>
+          <td>33.30</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-16</td>
+          <td>gpm3</td>
+          <td>2026-07-15</td>
+          <td>H+1</td>
+          <td>3.60</td>
+          <td>27.95</td>
+          <td>75.50</td>
+          <td>139.60</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm3</td>
+          <td>2026-07-15</td>
+          <td>H+2</td>
+          <td>6.20</td>
+          <td>40.98</td>
+          <td>109.70</td>
+          <td>201.10</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm3</td>
+          <td>2026-07-16</td>
+          <td>H+1</td>
+          <td>6.20</td>
+          <td>15.92</td>
+          <td>30.15</td>
+          <td>36.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm3</td>
+          <td>2026-07-16</td>
+          <td>H+2</td>
+          <td>3.20</td>
+          <td>11.12</td>
+          <td>20.25</td>
+          <td>20.90</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm3</td>
+          <td>2026-07-17</td>
+          <td>H+1</td>
+          <td>3.20</td>
+          <td>10.02</td>
+          <td>15.05</td>
+          <td>17.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm3</td>
+          <td>2026-07-17</td>
+          <td>H+2</td>
+          <td>20.10</td>
+          <td>17.78</td>
+          <td>27.15</td>
+          <td>31.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm3</td>
+          <td>2026-07-18</td>
+          <td>H+1</td>
+          <td>20.10</td>
+          <td>17.65</td>
+          <td>25.50</td>
+          <td>33.30</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-16</td>
+          <td>gpm4</td>
+          <td>2026-07-15</td>
+          <td>H+1</td>
+          <td>0.90</td>
+          <td>27.10</td>
+          <td>75.50</td>
+          <td>139.60</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm4</td>
+          <td>2026-07-15</td>
+          <td>H+2</td>
+          <td>4.00</td>
+          <td>39.50</td>
+          <td>109.70</td>
+          <td>201.10</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm4</td>
+          <td>2026-07-16</td>
+          <td>H+1</td>
+          <td>4.00</td>
+          <td>14.88</td>
+          <td>30.15</td>
+          <td>36.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm4</td>
+          <td>2026-07-16</td>
+          <td>H+2</td>
+          <td>1.80</td>
+          <td>9.62</td>
+          <td>16.20</td>
+          <td>20.90</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm4</td>
+          <td>2026-07-17</td>
+          <td>H+1</td>
+          <td>1.80</td>
+          <td>9.28</td>
+          <td>14.90</td>
+          <td>17.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm4</td>
+          <td>2026-07-17</td>
+          <td>H+2</td>
+          <td>16.10</td>
+          <td>16.12</td>
+          <td>27.15</td>
+          <td>31.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm4</td>
+          <td>2026-07-18</td>
+          <td>H+1</td>
+          <td>16.10</td>
+          <td>16.63</td>
+          <td>25.50</td>
+          <td>33.30</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-16</td>
+          <td>gpm5</td>
+          <td>2026-07-15</td>
+          <td>H+1</td>
+          <td>1.70</td>
+          <td>27.95</td>
+          <td>75.50</td>
+          <td>139.60</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm5</td>
+          <td>2026-07-15</td>
+          <td>H+2</td>
+          <td>5.90</td>
+          <td>40.98</td>
+          <td>109.70</td>
+          <td>201.10</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm5</td>
+          <td>2026-07-16</td>
+          <td>H+1</td>
+          <td>5.90</td>
+          <td>15.92</td>
+          <td>30.15</td>
+          <td>36.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm5</td>
+          <td>2026-07-16</td>
+          <td>H+2</td>
+          <td>3.60</td>
+          <td>11.12</td>
+          <td>20.25</td>
+          <td>20.90</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm5</td>
+          <td>2026-07-17</td>
+          <td>H+1</td>
+          <td>3.60</td>
+          <td>9.97</td>
+          <td>15.05</td>
+          <td>17.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm5</td>
+          <td>2026-07-17</td>
+          <td>H+2</td>
+          <td>10.10</td>
+          <td>17.98</td>
+          <td>27.15</td>
+          <td>31.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-19</td>
+          <td>gpm5</td>
+          <td>2026-07-18</td>
+          <td>H+1</td>
+          <td>10.10</td>
+          <td>17.65</td>
+          <td>25.50</td>
+          <td>33.30</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-16</td>
+          <td>gpm6</td>
+          <td>2026-07-15</td>
+          <td>H+1</td>
+          <td>3.60</td>
+          <td>28.20</td>
+          <td>75.50</td>
+          <td>139.60</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm6</td>
+          <td>2026-07-15</td>
+          <td>H+2</td>
+          <td>6.20</td>
+          <td>41.52</td>
+          <td>109.70</td>
+          <td>201.10</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-17</td>
+          <td>gpm6</td>
+          <td>2026-07-16</td>
+          <td>H+1</td>
+          <td>6.20</td>
+          <td>16.50</td>
+          <td>30.15</td>
+          <td>36.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm6</td>
+          <td>2026-07-16</td>
+          <td>H+2</td>
+          <td>3.20</td>
+          <td>11.82</td>
+          <td>20.25</td>
+          <td>20.90</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        
+        <tr>
+          <td>2026-07-18</td>
+          <td>gpm6</td>
+          <td>2026-07-17</td>
+          <td>H+1</td>
+          <td>3.20</td>
+          <td>10.12</td>
+          <td>15.05</td>
+          <td>17.20</td>
+          <td>6</td>
+          <td>24/24</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p>Generated 2026-07-20 10:55 WIB</p>
   </main>
 <canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
 <script id="fr-global-rain-script">

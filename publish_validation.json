@@ -3,7 +3,7 @@
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 5796,
+    "forecast_rows": 5736,
     "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
@@ -132,6 +132,8 @@
     "public_html_broken_fr_links": [],
     "public_html_anemos_files": [],
     "public_html_sentinel_files": [],
+    "public_html_legacy_brand_files": [],
+    "public_html_forecast_site_missing": [],
     "public_html_experience_missing": [],
     "public_html_spin_missing": [],
     "public_html_rain_missing": [],
@@ -153,16 +155,20 @@
     "usability_missing_title": [],
     "usability_inaccessible_fr": [],
     "usability_basics_ok": true,
-    "evaluation_state": "menunggu_pasangan",
+    "evaluation_state": "validasi_proxy_sampel_terbatas",
     "evaluation_observation_mode": "proxy_observation",
-    "evaluation_matched_location_days": 0,
-    "evaluation_matched_unique_dates": 0,
+    "evaluation_matched_location_days": 59,
+    "evaluation_matched_unique_dates": 4,
     "evaluation_can_claim_field_accuracy": false,
     "evaluation_can_report_preliminary_proxy_skill": false,
-    "evaluation_observation_sources": [],
-    "evaluation_joined_observation_sources": [],
-    "validation_proxy_refresh_status": "proxy_pending",
-    "validation_proxy_missing_pairs": 34,
+    "evaluation_observation_sources": [
+      "Open-Meteo Historical Weather, Best Match"
+    ],
+    "evaluation_joined_observation_sources": [
+      "Open-Meteo Historical Weather, Best Match"
+    ],
+    "validation_proxy_refresh_status": "complete",
+    "validation_proxy_missing_pairs": 0,
     "geospatial_history_zones": 7,
     "geospatial_history_catchment_zones": 6,
     "geospatial_history_catchment_area_km2": 137.799,
