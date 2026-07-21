@@ -1,7 +1,7 @@
 {
   "version": "Forecast Redelong Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-07-21T06:39:32.366196+07:00",
+  "generated_at": "2026-07-21T09:51:07.452857+07:00",
   "location": "Stasiun Hujan Sumberjaya",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,7 +25,7 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-07-21T06:39:32.359785+07:00",
+    "generated_at": "2026-07-21T09:51:07.443976+07:00",
     "aether_version": "Forecast Redelong Public Weather v11",
     "location": "Stasiun Hujan Sumberjaya",
     "mission": "safety_first",
@@ -39,19 +39,19 @@
       "forecast_difficulty": "medium",
       "notes": "Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
     },
-    "risk_window": "17:00–19:00",
+    "risk_window": "17:00–20:00",
     "best_general_activity_window": "13:00",
     "peak_rain_threat_hour": "19:00",
-    "peak_rain_threat_score": 58.7,
-    "peak_heavy_rain_threat_hour": "14:00",
-    "peak_heavy_rain_threat_score": 7.3,
-    "peak_failure_risk_hour": "14:00",
-    "peak_failure_risk_score": 37.2,
-    "peak_forecast_stress_hour": "14:00",
-    "peak_forecast_stress_score": 40.5,
-    "peak_self_doubt_hour": "09:00",
+    "peak_rain_threat_score": 57.6,
+    "peak_heavy_rain_threat_hour": "17:00",
+    "peak_heavy_rain_threat_score": 5.8,
+    "peak_failure_risk_hour": "17:00",
+    "peak_failure_risk_score": 35.0,
+    "peak_forecast_stress_hour": "10:00",
+    "peak_forecast_stress_score": 39.9,
+    "peak_self_doubt_hour": "10:00",
     "peak_self_doubt_score": 40.1,
-    "summary_text": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk Stasiun Hujan Sumberjaya. Status operasional harian YELLOW. Risk window utama: 17:00–19:00. Failure risk tertinggi 37.2/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "summary_text": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk Stasiun Hujan Sumberjaya. Status operasional harian YELLOW. Risk window utama: 17:00–20:00. Failure risk tertinggi 35.0/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   },
   "constitution": [
     "Do not assign high trust when source coverage is weak.",

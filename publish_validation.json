@@ -3,7 +3,7 @@
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 7728,
+    "forecast_rows": 7692,
     "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
@@ -167,7 +167,7 @@
     "evaluation_joined_observation_sources": [
       "Open-Meteo Historical Weather, Best Match"
     ],
-    "validation_proxy_refresh_status": "complete",
+    "validation_proxy_refresh_status": "already_attempted_today",
     "validation_proxy_missing_pairs": 0,
     "geospatial_history_zones": 7,
     "geospatial_history_catchment_zones": 6,
@@ -184,7 +184,7 @@
     "multisite_catalog_sites": 2,
     "multisite_besai_status": "engineering_document_reference_pending_asset_confirmation",
     "multisite_besai_boundary_status": "fs_documented_area_constrained_trace",
-    "multisite_besai_boundary_method": "fs_figure_area_constrained_trace",
+    "multisite_besai_boundary_method": "technical_indicative_delineation",
     "multisite_besai_trace_area_km2": 496.74,
     "multisite_besai_history_days": 16436,
     "multisite_besai_forecast_days": 4,

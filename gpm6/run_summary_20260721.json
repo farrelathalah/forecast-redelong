@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-21T06:33:11.112265+07:00",
+  "generated_at": "2026-07-21T09:44:44.726501+07:00",
   "location_slug": "gpm6",
   "location_name": "GPM6",
   "bmkg_point_name": "Bale Redelong",
@@ -14,7 +14,7 @@
   "target_date": "2026-07-21",
   "sources_total": 7,
   "sources_success": 7,
-  "points_total": 164,
+  "points_total": 161,
   "sources_active": [
     "BMKG",
     "ECMWF",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm6_20260721_20260721063310",
+    "run_id": "gpm6_20260721_20260721094444",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/command_center_sentinel_x.html",
@@ -66,6 +66,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_ledger.sqlite",
     "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM6. Status operasional harian YELLOW. Risk window utama: 13:00–21:00. Failure risk tertinggi 43.1/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM6. Status operasional harian YELLOW. Risk window utama: 14:00–21:00. Failure risk tertinggi 36.0/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
