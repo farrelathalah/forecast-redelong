@@ -3,7 +3,7 @@
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 7692,
+    "forecast_rows": 7644,
     "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
@@ -184,7 +184,7 @@
     "multisite_catalog_sites": 2,
     "multisite_besai_status": "engineering_document_reference_pending_asset_confirmation",
     "multisite_besai_boundary_status": "fs_documented_area_constrained_trace",
-    "multisite_besai_boundary_method": "technical_indicative_delineation",
+    "multisite_besai_boundary_method": "fs_figure_area_constrained_trace",
     "multisite_besai_trace_area_km2": 496.74,
     "multisite_besai_history_days": 16436,
     "multisite_besai_forecast_days": 4,
