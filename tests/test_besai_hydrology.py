@@ -50,13 +50,15 @@ class BesaiHydrologyTest(unittest.TestCase):
         self.assertTrue((result["spatial_point_count"] == 4).all())
         self.assertTrue((result["rain_mean_mm"] > 24).all())
 
-    def test_engineering_sources_are_versioned_and_trace_is_not_a_survey_polygon(self) -> None:
+    def test_engineering_sources_are_versioned_and_delineation_is_not_legal_boundary(self) -> None:
         data = ROOT / "data" / "sites" / "pltm_besai_kemu"
         engineering = json.loads((data / "engineering_parameters.json").read_text())
         structures = json.loads((data / "structures.geojson").read_text())
         self.assertAlmostEqual(engineering["catchment"]["area_km2"], 496.74, places=2)
         self.assertEqual(engineering["reference_revision"], "Review Studi Kelayakan, Januari 2020")
         self.assertEqual(len(engineering["source_documents"]), 3)
+        self.assertEqual(engineering["operations"]["asset_status"], "operational")
+        self.assertEqual(engineering["operations"]["commercial_operation_date"], "2024-01-08")
         catchment = next(
             feature for feature in structures["features"]
             if feature["properties"]["role"] == "catchment_reference"
@@ -65,7 +67,8 @@ class BesaiHydrologyTest(unittest.TestCase):
         self.assertEqual(catchment["properties"]["geometry_status"], "indicative_trace_published_separately")
         trace = json.loads((data / "besai_kemu_catchment.geojson").read_text())["features"][0]
         self.assertEqual(trace["properties"]["status"], "indicative_not_survey_boundary")
-        self.assertEqual(trace["properties"]["role"], "fs_figure_area_constrained_trace")
+        self.assertEqual(trace["properties"]["role"], "technical_indicative_delineation")
+        self.assertIn("DEMNAS/QGIS/engineering confirmation", trace["properties"]["method"])
         rainfall = pd.read_csv(data / "sumberjaya_monthly_rainfall_1979_2008.csv")
         self.assertEqual(len(rainfall), 29)
         self.assertNotIn(1999, set(rainfall["year"]))
