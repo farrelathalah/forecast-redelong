@@ -6,6 +6,9 @@ on:
       - main
       - "feature/**"
       - "validation/**"
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       validate_only:
@@ -49,6 +52,22 @@ jobs:
             --locations-file locations.json \
             --no-save-raw-payloads \
             --no-debug
+
+      - name: Run repository unit tests
+        run: |
+          set +e
+          python -m unittest discover -s tests -v > unit-tests.log 2>&1
+          status=$?
+          cat unit-tests.log
+          exit $status
+
+      - name: Upload unit test diagnostics
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-diagnostics-${{ github.run_number }}
+          path: unit-tests.log
+          retention-days: 7
 
       - name: Clean outputs
         run: |
@@ -165,6 +184,10 @@ jobs:
         run: |
           python build_utils/link_evaluation_page.py
 
+      - name: Synchronize final Rev3 public context
+        run: |
+          python build_utils/apply_rev3_content.py --outputs outputs
+
       - name: Apply shared FR interaction and rain atmosphere
         run: |
           python build_utils/apply_global_experience.py --outputs outputs
@@ -178,7 +201,7 @@ jobs:
           touch outputs/.nojekyll
 
       - name: Upload validation preview
-        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.validate_only == true) || github.event_name == 'push' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.validate_only == true) || github.event_name == 'push' || github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v4
         with:
           name: forecast-redelong-validation-${{ github.run_number }}

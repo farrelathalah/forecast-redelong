@@ -7,6 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from build_utils.apply_rev3_content import MARKER, apply as apply_rev3
 from build_utils.build_besai_portal import build as build_besai_portal
 from build_utils.build_multisite_catalog import build
 
@@ -36,18 +37,21 @@ class MultisiteRegistryTest(unittest.TestCase):
                 self.assertRegex(site["adm4"], r"^\d{2}\.\d{2}\.\d{2}\.\d{4}$")
                 self.assertGreaterEqual(len(site["forecast_sources"]), 3)
 
-    def test_besai_uses_documented_area_with_explicit_indicative_trace(self) -> None:
+    def test_besai_uses_documented_area_with_indicative_delineation(self) -> None:
         site = self.registry["sites"]["pltm_besai_kemu"]
         self.assertTrue(site["site_status"].startswith("engineering_document_reference"))
+        self.assertEqual(site["operational_status"], "commercial_operation_since_2024_01_08")
         self.assertEqual(
-            site["catchment"]["status"], "fs_documented_area_constrained_trace"
+            site["catchment"]["status"],
+            "technical_indicative_area_constrained_delineation",
         )
         self.assertAlmostEqual(site["catchment"]["area_km2"], 496.74, places=2)
-        self.assertIn("indikatif/proxy", site["catchment"]["note"])
+        self.assertIn("bukan batas legal", site["catchment"]["note"])
         boundary = json.loads(
             (ROOT / site["catchment"]["boundary_file"]).read_text(encoding="utf-8")
         )["features"][0]
         self.assertEqual(boundary["geometry"]["type"], "Polygon")
+        self.assertEqual(boundary["properties"]["role"], "technical_indicative_delineation")
         self.assertEqual(boundary["properties"]["status"], "indicative_not_survey_boundary")
         self.assertAlmostEqual(boundary["properties"]["trace_area_km2"], 496.74, places=2)
         self.assertGreaterEqual(len(site["additional_forecast_points"]), 3)
@@ -59,6 +63,8 @@ class MultisiteRegistryTest(unittest.TestCase):
         self.assertIn('"feature/**"', workflow)
         self.assertRegex(workflow, r"(?m)^\s+- main\s*$")
         self.assertIn("github.event_name == 'push'", workflow)
+        self.assertIn("python -m unittest discover -s tests -v", workflow)
+        self.assertIn("python build_utils/apply_rev3_content.py --outputs outputs", workflow)
         deploy_condition = next(
             line.strip()
             for line in workflow.splitlines()
@@ -95,9 +101,7 @@ class MultisiteRegistryTest(unittest.TestCase):
                 '</body></html>',
                 encoding="utf-8",
             )
-
             build(outputs)
-
             home = (outputs / "index.html").read_text(encoding="utf-8")
             self.assertIn('id="fr-globe-entry"', home)
             self.assertNotIn('id="fr-sites-entry"', home)
@@ -150,6 +154,41 @@ class MultisiteRegistryTest(unittest.TestCase):
             self.assertTrue((outputs / "besai_kemu_map.html").is_file())
             self.assertTrue((outputs / "besai_kemu_catchment.geojson").is_file())
             self.assertTrue((outputs / "besai_kemu_fdc_2018.csv").is_file())
+
+    def test_rev3_patch_is_idempotent_and_machine_readable(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            base = "<html><head></head><body><main><p>content</p></main></body></html>"
+            for name in [
+                "besai_kemu.html",
+                "besai_kemu_discharge.html",
+                "evaluation_summary.html",
+                "validation_status.html",
+                "redelong_operational.html",
+            ]:
+                (outputs / name).write_text(base, encoding="utf-8")
+            (outputs / "besai_kemu_map.html").write_text(base, encoding="utf-8")
+            (outputs / "site_network.html").write_text(
+                base.replace("content", "Referensi engineering"), encoding="utf-8"
+            )
+            (outputs / "evaluation_status.json").write_text(
+                json.dumps({"limitations": []}), encoding="utf-8"
+            )
+
+            first = apply_rev3(outputs)
+            second = apply_rev3(outputs)
+            self.assertEqual(first["status"], "complete")
+            self.assertEqual(second["status"], "complete")
+            page = (outputs / "besai_kemu.html").read_text(encoding="utf-8")
+            self.assertEqual(page.count(f'id="{MARKER}-besai"'), 1)
+            self.assertIn("8 Januari 2024", page)
+            self.assertIn("0,5–20 mm/hari", page)
+            status = json.loads((outputs / "evaluation_status.json").read_text(encoding="utf-8"))
+            self.assertTrue(status["qualitative_field_checks"]["performed"])
+            self.assertFalse(status["qualitative_field_checks"]["quantitative_metrics_eligible"])
+            sync = json.loads((outputs / "rev3_sync.json").read_text(encoding="utf-8"))
+            self.assertEqual(sync["schema_version"], MARKER)
+            self.assertEqual(sync["catchment_status"], "technical_indicative_area_constrained_not_legal_or_as_built")
 
 
 if __name__ == "__main__":

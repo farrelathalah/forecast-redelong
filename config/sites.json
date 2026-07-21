@@ -1,5 +1,5 @@
 {
-  "schema_version": "forecast-hydro-sites-v1",
+  "schema_version": "forecast-hydro-sites-v2",
   "default_site": "plta_redelong",
   "sites": {
     "plta_redelong": {
@@ -53,16 +53,22 @@
       "village": "Kemu",
       "adm4": "18.08.03.2017",
       "capacity_mw": 7.0,
-      "operational_status": "commercial_operation_since_2024",
-      "site_status": "engineering_document_reference_pending_asset_confirmation",
+      "operational_status": "commercial_operation_since_2024_01_08",
+      "operational_status_source": {
+        "publisher": "PT PLN (Persero)",
+        "published_date": "2024-01-10",
+        "commercial_operation_date": "2024-01-08",
+        "url": "https://web.pln.co.id/cms/media/siaran-pers/2024/01/awali-2024-pln-operasikan-dua-unit-pltm-kapasitas-35-mw-di-lampung-langkah-kebut-bauran-energi/"
+      },
+      "site_status": "engineering_document_reference_operational_asset_confirmed",
       "coordinate_source": "Review Studi Kelayakan PLTM Besai Kemu, Januari 2020, Tabel 2.1",
       "coordinate_source_url": null,
       "catchment": {
-        "status": "fs_documented_area_constrained_trace",
+        "status": "technical_indicative_area_constrained_delineation",
         "area_km2": 496.74,
         "boundary_file": "data/sites/pltm_besai_kemu/besai_kemu_catchment.geojson",
-        "source": "Review Studi Kelayakan Januari 2020, Gambar 2-26; outline ditelusuri dari gambar, diikat ke koordinat bendung, dan dikontrol terhadap luas 496,74 km2",
-        "note": "Batas yang ditampilkan bersifat indikatif, bukan vektor survei asli atau batas legal. Volume hujan dan debit tetap berlabel indikatif/proxy, bukan nilai lapangan terverifikasi."
+        "source": "Geometri teknis indikatif diikat ke koordinat outlet/bendung pada Review 2020 dan dikontrol terhadap luas 496,74 km2; outline FS dipakai sebagai kontrol bentuk.",
+        "note": "Batas bersifat indikatif untuk decision-support, bukan batas legal, as-built, atau delineasi DEM final yang telah disetujui Engineering. Volume hujan dan debit tetap berlabel indikatif/proxy."
       },
       "engineering_data": "data/sites/pltm_besai_kemu/engineering_parameters.json",
       "structures_geojson": "data/sites/pltm_besai_kemu/structures.geojson",
@@ -90,6 +96,8 @@
         }
       ],
       "historical_sources": [
+        "PLTA_Besai_1_documented_operation_2004_2014_gaps_2010_2011",
+        "FS_2017_reference_to_PLTA_Besai_1_operation_2004_2016",
         "Sumberjaya_Rain_Gauge_1979_2008_document_transcription",
         "NASA_POWER_Daily_1981_2025",
         "GloFAS_v4_simulated_discharge_proxy",
