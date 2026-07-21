@@ -23,6 +23,11 @@ MIN_VALID_PORTAL_HOURS = legacy.MIN_VALID_PORTAL_HOURS
 GLOBAL_EXPERIENCE_MARKER = legacy.GLOBAL_EXPERIENCE_MARKER
 PUBLIC_HTML_FR_EXCEPTIONS = legacy.PUBLIC_HTML_FR_EXCEPTIONS
 
+# Preserve the internal import surface used by existing tests and utilities.
+for _legacy_name in dir(legacy):
+    if _legacy_name.startswith("check_") and _legacy_name not in globals():
+        globals()[_legacy_name] = getattr(legacy, _legacy_name)
+
 LEGACY_BESAI_STATUS_ERROR = "Status DAS Besai harus menyatakan trace indikatif berbasis FS"
 REV3_CATCHMENT_STATUS = "technical_indicative_area_constrained_delineation"
 REV3_BOUNDARY_ROLE = "technical_indicative_delineation"
