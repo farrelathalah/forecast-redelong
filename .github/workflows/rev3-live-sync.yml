@@ -1,0 +1,65 @@
+name: Rev3 Live Website Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/rev3-live-sync.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forecast-redelong-rev3-live-sync
+  cancel-in-progress: true
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Restore last healthy GitHub Pages output
+        run: |
+          git fetch origin gh-pages --depth=1
+          git worktree add --detach /tmp/forecast-gh-pages origin/gh-pages
+          mkdir -p outputs
+          cp -a /tmp/forecast-gh-pages/. outputs/
+          git worktree remove --force /tmp/forecast-gh-pages
+
+      - name: Synchronize current Rev3 metadata
+        run: |
+          cp config/sites.json outputs/site_catalog.json
+          cp data/sites/pltm_besai_kemu/besai_kemu_catchment.geojson outputs/besai_kemu_catchment.geojson
+          cp data/sites/pltm_besai_kemu/engineering_parameters.json outputs/besai_kemu_engineering_parameters.json
+          python build_utils/apply_rev3_content.py --outputs outputs
+          python build_utils/apply_global_experience.py --outputs outputs
+
+      - name: Validate complete public output
+        run: |
+          python build_utils/validate_redelong_publish.py --outputs outputs
+
+      - name: Ensure nojekyll
+        run: touch outputs/.nojekyll
+
+      - name: Upload verified Rev3 snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: forecast-redelong-rev3-live-sync-${{ github.run_number }}
+          path: outputs
+          retention-days: 7
+
+      - name: Deploy verified Rev3 website
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./outputs
