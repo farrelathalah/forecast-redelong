@@ -4,38 +4,44 @@ Sistem otomatis prakiraan hujan multi-model untuk mendukung monitoring PLTA
 Redelong. Produk utama menggunakan waktu WIB dan menyajikan hujan per jam,
 akumulasi 3 jam, serta akumulasi area 24/48/72 jam.
 
-Platform mulai digeneralisasi menjadi jaringan multi-site. PLTA Redelong tetap
-menjadi site operasional utama, sedangkan PLTM Besai Kemu sudah memiliki
-forecast multi-titik, histori, parameter engineering, dan skenario debit proxy. Registry yang dapat
-ditambah tanpa mengubah engine berada di `config/sites.json`.
+Platform telah dikembangkan menjadi jaringan multi-site. PLTA Redelong tetap
+menjadi site utama, sedangkan PLTM Besai Kemu memiliki forecast multi-titik,
+histori, parameter engineering, geometri DAS teknis indikatif, dan skenario
+debit proxy. Registry dapat ditambah melalui `config/sites.json` tanpa mengubah
+engine forecast.
 
-## Jaringan multi-site dan Besai Kemu
+## Jaringan multi-site dan PLTM Besai Kemu
 
 `build_utils/build_multisite_catalog.py` membuat `site_network.html`, globe 3D
-yang menampilkan seluruh site beserta status kesiapan datanya. Site yang sudah
-memiliki paket proyek dan site yang baru bersumber dari referensi publik tidak
-ditampilkan seolah memiliki tingkat kepastian yang sama.
+yang menampilkan seluruh site beserta status kesiapan datanya. Tingkat kepastian
+aset, data engineering, geometri DAS, dan model hidrologi ditampilkan secara
+terpisah agar tidak tercampur.
 
-Paket PLTM Besai Kemu menggunakan:
+PLTM Besai Kemu adalah aset run-of-river berkapasitas 2 × 3,5 MW yang mulai
+beroperasi pada 8 Januari 2024 berdasarkan publikasi PT PLN (Persero). Paket
+Besai Kemu menggunakan:
 
-- bendung, headpond, powerhouse, dan Stasiun Sumberjaya dari dokumen
-  engineering 2018–2020;
+- bendung, headpond, powerhouse, dan Stasiun Sumberjaya dari dokumen engineering
+  2018–2020;
 - forecast BMKG serta enam model kuantitatif pada empat titik referensi;
 - 16.436 hari histori NASA POWER Daily untuk 1981–2025;
 - tabel hujan Stasiun Sumberjaya 1979–2008 dan FDC dari Review 2018;
-- luas DAS menurut dokumen 496,74 km² dengan polygon GIS tetap pending;
+- data debit historis yang dijelaskan pada FS/Review, termasuk data operasi PLTA
+  Besai 1 sebagai baseline;
+- luas DAS 496,74 km² dengan geometri teknis indikatif yang diikat ke outlet dan
+  dikontrol terhadap luas Review 2020;
 - forecast debit proxy H+1 sampai H+3 terhadap GloFAS;
 - halaman `besai_kemu.html`, `besai_kemu_map.html`, dan
   `besai_kemu_discharge.html`.
 
-Koordinat dan luas Besai Kemu berstatus referensi dokumen sampai posisi as-built
-dan polygon DAS dikonfirmasi tim aset. Volume hujan selalu ditulis indikatif.
-NASA POWER dan GloFAS tetap ditulis sebagai proxy gridded, bukan observasi alat
-di site. Forecast debit Besai tidak disebut inflow operasional karena release
-PLTA Besai 1 belum tersedia dalam feed otomatis. Hierarki revisi dijelaskan di
+Geometri DAS Besai Kemu bukan batas legal, as-built, atau delineasi DEM final
+yang telah disetujui Engineering. Volume hujan selalu ditulis indikatif. NASA
+POWER dan GloFAS merupakan proxy gridded, bukan observasi alat. Forecast debit
+tidak disebut inflow operasional karena release PLTA Besai 1, AWLR, rating curve,
+dan inflow aktual tidak tersedia dalam feed otomatis. Rincian terdapat pada
 `docs/BESAI_KEMU_DATA_AND_HYDROLOGY.md`.
 
-## Status area analisis
+## Status area analisis Redelong
 
 - PLTA Redelong adalah titik referensi/outlet dan tidak diberi bobot luas.
 - GPM1–GPM6 dipakai sebagai **area analisis provisional** dengan total luas
@@ -43,7 +49,7 @@ PLTA Besai 1 belum tersedia dalam feed otomatis. Hierarki revisi dijelaskan di
 - GPM Grid TamaTue hanya ditampilkan sebagai **titik pembanding eksternal**.
   Grid ini tidak masuk rata-rata area, volume hujan, maupun indikator operasional
   sampai batas DAS dan konektivitas alirannya dikonfirmasi.
-- Luas 137,80 km² belum boleh disebut sebagai luas DAS resmi.
+- Luas 137,80 km² belum disebut sebagai luas DAS legal atau as-built.
 
 Konfigurasi yang dapat diaudit berada di
 `data/redelong/catchment_points.csv`.
@@ -68,11 +74,16 @@ Nilai P10/P90 pada produk operasional adalah rentang skenario antar-model
 deterministik, bukan probabilitas hujan yang sudah terkalibrasi. Nilai kosong
 tidak pernah diubah menjadi 0 mm.
 
+Akumulasi harian diberi kategori perhatian meteorologis BMKG: <0,5 mm/hari tidak
+hujan/tidak terukur; 0,5–20 mm ringan; >20–50 mm sedang; >50–100 mm
+lebat; dan >100 mm sangat lebat. Kategori tersebut bukan SOP bukaan pintu,
+dispatch, penghentian unit, atau tindakan operasi perusahaan.
+
 ## Produk operasional
 
 Setelah forecast selesai, `build_utils/build_redelong_operational.py` membuat:
 
-- `redelong_operational.html`: ringkasan operator 24/48/72 jam yang melengkapi portal interaktif;
+- `redelong_operational.html`: ringkasan operator 24/48/72 jam;
 - `redelong_operational_map.html`: peta peran spasial;
 - `operational_3hour.csv`: hujan area per 3 jam;
 - `operational_windows.csv`: akumulasi 24/48/72 jam;
@@ -82,16 +93,14 @@ Setelah forecast selesai, `build_utils/build_redelong_operational.py` membuat:
 - `redelong_operational.json`: API statis;
 - `archive/<tahun>/<bulan>/<issue_time>/`: arsip forecast untuk validasi.
 
-Modul hidrologi tambahan membuat `redelong_discharge.html` dan
+Modul hidrologi membuat `redelong_discharge.html` dan
 `redelong_discharge_forecast.csv`. Metode, sumber proxy, pemisahan hindcast dan
 validasi end-to-end, serta batas penggunaannya dijelaskan dalam
 `docs/RAINFALL_TO_DISCHARGE.md`.
 
-Seluruh output CSV memakai header yang eksplisit dan dapat dibuka langsung di
-Excel. Workbook `.xlsx` berformat khusus dapat dibuat sebagai snapshot laporan,
-sedangkan CSV/JSON di dashboard diperbarui otomatis pada setiap run. `index.html`
-tetap menjadi portal utama dengan peta, overview, dan dashboard per titik; builder
-operasional tidak menimpanya.
+Seluruh output CSV memakai header eksplisit dan dapat dibuka langsung di Excel.
+CSV/JSON di dashboard diperbarui otomatis pada setiap run. `index.html` tetap
+menjadi portal utama; builder operasional tidak menimpanya.
 
 ## Globe 3D dan histori hujan
 
@@ -104,28 +113,30 @@ operasional tidak menimpanya.
 - klimatologi bulanan serta grafik tahunan GPM IMERG Final;
 - metadata stasiun pembanding BMKG dan PU.
 
-Histori GPM yang dipakai mencakup 2000–2024, dengan 24 tahun kalender lengkap
-untuk setiap GPM1–GPM6 (2000–2023). Tahun 2024 tetap tersedia sebagai tahun
-parsial dan tidak dipakai dalam statistik tahunan lengkap. Data harian publik
-tersedia sebagai `gpm_daily_history.csv`.
+Histori GPM mencakup 2000–2024, dengan 24 tahun kalender lengkap untuk setiap
+GPM1–GPM6 pada 2000–2023. Tahun 2024 tersedia sebagai tahun parsial dan tidak
+dipakai dalam statistik tahunan lengkap. Data harian publik tersedia sebagai
+`gpm_daily_history.csv`.
 
-Batas polygon berasal dari `PLTA Redelong CLIP.shp` pada paket data yang
-diberikan untuk proyek. Jumlah luas GPM1–GPM6 adalah sekitar 137,80 km², tetapi
-statusnya tetap **batas area analisis yang menunggu konfirmasi engineering**,
-bukan klaim batas DAS resmi. Data mentah stasiun BMKG/PU tidak diterbitkan ulang
-di GitHub Pages; portal hanya membawa metadata lokasi dan cakupan waktunya.
-Inventaris, provenance, dan pembatasan publikasi dijelaskan dalam
-`docs/GEOSPATIAL_HISTORY_DATA.md`.
+Batas polygon Redelong berasal dari `PLTA Redelong CLIP.shp` pada paket proyek.
+Jumlah luas GPM1–GPM6 sekitar 137,80 km², tetapi statusnya tetap **batas area
+analisis yang menunggu konfirmasi engineering**, bukan klaim batas legal.
+Inventaris dan provenance dijelaskan dalam `docs/GEOSPATIAL_HISTORY_DATA.md`.
 
 Forecast dijalankan setiap jam untuk empat hari kalender agar horizon 72 jam
-sejak waktu penerbitan tetap lengkap. Halaman tiga hari interaktif tetap
-dipertahankan, sedangkan ringkasan operasional tersedia sebagai modul tambahan.
+sejak waktu penerbitan tetap lengkap. Halaman tiga hari interaktif dipertahankan,
+sedangkan ringkasan operasional tersedia sebagai modul tambahan.
 
 Sebelum deployment, `build_utils/validate_redelong_publish.py` memeriksa
 kelengkapan minimal tiga model, horizon 24/48/72 jam, peran TamaTue, data portal,
 dan sintaks JavaScript. Run yang tidak memenuhi kontrak tidak menggantikan
-dashboard terakhir yang sehat. Evaluator hanya membandingkan akumulasi harian
-yang memiliki sedikitnya 20/24 jam per model dan minimal tiga model valid.
+dashboard terakhir yang sehat.
+
+`build_utils/apply_rev3_content.py` dijalankan setelah builder dan evaluator untuk
+menyamakan narasi publik dengan laporan final. Modul ini menambahkan status
+operasional Besai Kemu, batas penggunaan DAS dan debit, validasi lapangan
+kualitatif, kategori hujan BMKG, serta `rev3_sync.json` sebagai bukti
+machine-readable.
 
 ## Menjalankan lokal
 
@@ -148,6 +159,7 @@ python build_utils/fetch_besai_discharge.py --outputs outputs
 python build_utils/build_besai_hydrology.py --outputs outputs
 python build_utils/build_multisite_catalog.py --outputs outputs
 python build_utils/evaluate_forecast_accuracy.py
+python build_utils/apply_rev3_content.py --outputs outputs
 python build_utils/validate_redelong_publish.py --outputs outputs
 python -m unittest discover -s tests -v
 ```
@@ -155,48 +167,39 @@ python -m unittest discover -s tests -v
 ## Uji GitHub Actions tanpa mengubah website live
 
 Workflow manual menyediakan input `validate_only`. Pilih `true` untuk
-menjalankan forecast, evaluator, portal builder, dan publish quality gate tanpa
-menulis ke branch `gh-pages`. Jika seluruh langkah lulus, hasil `outputs/`
-tersedia sebagai artifact bernama `forecast-redelong-validation-*` selama tujuh
-hari. Schedule dan trigger Google Apps Script yang tidak mengirim input ini
-tetap memakai nilai default `false`, sehingga alur publikasi rutin tidak berubah.
+menjalankan forecast, evaluator, portal builder, sinkronisasi Rev.3, unit test,
+dan publish quality gate tanpa menulis ke branch `gh-pages`. Hasil `outputs/`
+tersedia sebagai artifact `forecast-redelong-validation-*` selama tujuh hari.
 
-Push ke branch `feature/**` atau `validation/**` juga otomatis menjalankan build,
-quality gate, dan upload artifact validasi tanpa melakukan deployment. Dengan
-demikian pengujian branch tidak lagi membutuhkan klik manual pada Actions.
+Push ke branch `feature/**` atau `validation/**` otomatis menjalankan build,
+quality gate, unit test, dan upload artifact tanpa deployment. Push ke `main`
+menjalankan rangkaian yang sama lalu menerbitkan hasil ke `gh-pages` jika seluruh
+pemeriksaan lulus.
 
 ## Validasi forecast
 
-Validasi memakai forecast yang benar-benar telah diarsipkan berdasarkan issue
-time. Satu issue paling awal per tanggal dipilih agar retry manual tidak
-menggandakan sampel. Total hujan dibandingkan per lokasi dan hari, lalu hasil
-dipisahkan menjadi H+1, H+2, dan H+3. Hanya hari dengan sedikitnya 20/24 jam per
-model dan minimal tiga model kuantitatif yang masuk evaluasi.
+Validasi memakai forecast yang telah diarsipkan berdasarkan issue time. Satu
+issue paling awal per tanggal dipilih agar retry manual tidak menggandakan
+sampel. Total hujan dibandingkan per lokasi dan hari, lalu dipisahkan menjadi
+H+1, H+2, dan H+3. Hanya hari dengan sedikitnya 20/24 jam per model dan minimal
+tiga model kuantitatif yang masuk evaluasi.
+
 Ambang awal menggunakan jumlah tanggal unik, bukan jumlah titik lokasi, agar
 titik-titik yang mengalami cuaca sama tidak dianggap sebagai sampel independen.
+Workflow melengkapi tanggal matang menggunakan referensi gridded dan tidak
+mencampurkan sumber berbeda menjadi satu nilai.
 
-Workflow mencoba melengkapi tanggal yang telah matang menggunakan GPM IMERG satu
-kali per hari dan menyimpannya di `outputs/validation_archive/`. CHIRPS disimpan
-sebagai pembanding tertunda jika IMERG belum tersedia. Kedua sumber tidak pernah
-dicampur dalam satu nilai hujan. Kegagalan layanan proxy tidak menghentikan
-publikasi forecast. Karena site tidak memiliki penakar hujan, metrik dinyatakan
-sebagai skill terhadap referensi proxy gridded dan tidak disebut akurasi
-lapangan. Status mesin dapat dibaca pada `evaluation_status.json`, sedangkan
-pasangan dan metrik berada pada `evaluation_joined_daily.csv` dan
-`evaluation_metrics.csv`.
-
-## Pemeriksaan scheduler
-
-Status `Completed` pada Google Apps Script hanya menyatakan fungsi telah selesai.
-Keberhasilan dispatch dibuktikan oleh HTTP 204 dari GitHub dan munculnya run baru
-pada Actions untuk commit `main` saat itu. Jika fungsi sengaja mencegah run
-duplikat pada hari yang sama, log harus menyebutkan bahwa dispatch dilewati.
+Pengecekan lapangan kualitatif hujan/tidak hujan telah dilakukan beberapa kali
+dan kejadian hujan terkonfirmasi. Pengecekan itu tidak dimasukkan ke persentase
+akurasi karena belum memiliki log tanggal, jam, lokasi, dan jumlah hujan yang
+lengkap. Evaluasi numerik tetap disebut skill terhadap proxy gridded, bukan
+akurasi lapangan.
 
 ## Batas penggunaan
 
-Sistem ini masih merupakan decision-support prototype. Akurasi forecast belum
-dapat diklaim sebelum tersedia pasangan forecast–observation yang cukup.
-Volume hujan bruto dihitung dengan `P(mm) × A(km²) × 1000`. Forecast debit yang
-ditambahkan adalah model proxy harian yang dikalibrasi terhadap GloFAS, bukan
-inflow atau debit lapangan terukur. Model belum memasukkan operasi waduk/intake,
-routing sub-harian, kehilangan air, maupun batas turbin.
+Sistem merupakan decision-support prototype. Volume hujan bruto dihitung dengan
+`P(mm) × A(km²) × 1000`. Forecast debit adalah model proxy harian yang
+dikalibrasi terhadap GloFAS, bukan inflow atau debit lapangan terukur. Model belum
+memasukkan release upstream real-time, operasi intake, routing sub-harian,
+kehilangan air, maupun batas turbin. Keputusan operasi tetap berada pada operator
+dan SOP perusahaan.
