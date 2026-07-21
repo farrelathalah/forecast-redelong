@@ -23,7 +23,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: forecast-redelong
+  group: forecast-redelong-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
