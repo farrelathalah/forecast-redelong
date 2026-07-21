@@ -1,0 +1,22 @@
+2026-07-21 08:06:43,868 INFO Log file: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260721_150643.log
+2026-07-21 08:06:43,868 INFO Output dir: /home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue
+2026-07-21 08:06:43,868 INFO Metadata lokasi: slug=gpm_grid_tamatue adm4=11.17.05.2002 bmkg_point=Bale Redelong area_level=external_comparison proxy_bmkg=True
+2026-07-21 08:06:43,868 INFO Koordinat: lat=4.649902718619309 lon=96.85017949357464 timezone=Asia/Jakarta
+2026-07-21 08:06:43,868 INFO Catatan lokasi: Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment grid Spatial role: external_comparison. Grid terpisah dan terlalu jauh untuk langsung diasumsikan berkontribusi; hanya titik pembanding sampai konektivitas DAS dikonfirmasi.
+2026-07-21 08:06:43,868 INFO Locations file: /home/runner/work/forecast-redelong/forecast-redelong/locations.json
+2026-07-21 08:06:43,868 INFO Mulai proses untuk lokasi GPM Grid TamaTue
+2026-07-21 08:06:43,868 INFO Target date: 2026-07-24
+2026-07-21 08:06:43,868 INFO Target hours: 00:00, 01:00, 02:00, 03:00, 04:00, 05:00, 06:00, 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00, 21:00, 22:00, 23:00
+2026-07-21 08:06:43,868 INFO Sumber aktif: BMKG, ECMWF, GFS, ICON, CMA, METEOFRANCE, UKMO
+2026-07-21 08:06:43,868 INFO Bobot aktif: BMKG=1.35, CMA=1.0, ECMWF=1.0, GFS=1.0, ICON=1.0, KMA=0.9, METEOFRANCE=1.0, METNO=1.0, UKMO=1.0
+2026-07-21 08:06:43,915 INFO BMKG gagal (host=api.bmkg.go.id): BMKG tidak mengembalikan kandidat untuk target date
+2026-07-21 08:07:10,432 INFO Selesai.
+2026-07-21 08:07:10,432 INFO Sumber sukses: 6/7
+2026-07-21 08:07:10,432 INFO Total forecast point: 144
+2026-07-21 08:07:10,432 INFO BMKG: FAIL (0/24 point) t=46ms BMKG tidak mengembalikan kandidat untuk target date
+2026-07-21 08:07:10,432 INFO CMA: OK (24/24 point) http=200 t=642ms 
+2026-07-21 08:07:10,432 INFO ECMWF: OK (24/24 point) http=200 t=621ms 
+2026-07-21 08:07:10,432 INFO GFS: OK (24/24 point) http=200 t=663ms 
+2026-07-21 08:07:10,432 INFO ICON: OK (24/24 point) http=200 t=669ms 
+2026-07-21 08:07:10,432 INFO METEOFRANCE: OK (24/24 point) http=200 t=634ms 
+2026-07-21 08:07:10,432 INFO UKMO: OK (24/24 point) http=200 t=666ms 
