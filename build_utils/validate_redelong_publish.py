@@ -147,9 +147,16 @@ def validate(outputs: Path, require_rev3: bool = False) -> tuple[bool, dict[str,
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate Forecast Redelong before GitHub Pages deploy")
     parser.add_argument("--outputs", default="outputs")
-    parser.add_argument("--require-rev3", action="store_true")
+    parser.add_argument(
+        "--allow-missing-rev3",
+        action="store_true",
+        help="Compatibility mode for isolated legacy fixtures; production builds require Rev.3.",
+    )
     args = parser.parse_args()
-    ok, report = validate(Path(args.outputs), require_rev3=args.require_rev3)
+    ok, report = validate(
+        Path(args.outputs),
+        require_rev3=not args.allow_missing_rev3,
+    )
     if ok:
         print("PASS: Forecast Redelong memenuhi publish quality gate Rev.3.")
         return 0
