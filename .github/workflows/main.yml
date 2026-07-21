@@ -50,6 +50,10 @@ jobs:
             --no-save-raw-payloads \
             --no-debug
 
+      - name: Run repository unit tests
+        run: |
+          python -m unittest discover -s tests -v
+
       - name: Clean outputs
         run: |
           rm -rf outputs
@@ -164,6 +168,10 @@ jobs:
       - name: Add evaluation link
         run: |
           python build_utils/link_evaluation_page.py
+
+      - name: Synchronize final Rev3 public context
+        run: |
+          python build_utils/apply_rev3_content.py --outputs outputs
 
       - name: Apply shared FR interaction and rain atmosphere
         run: |
