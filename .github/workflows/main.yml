@@ -55,7 +55,19 @@ jobs:
 
       - name: Run repository unit tests
         run: |
-          python -m unittest discover -s tests -v
+          set +e
+          python -m unittest discover -s tests -v > unit-tests.log 2>&1
+          status=$?
+          cat unit-tests.log
+          exit $status
+
+      - name: Upload unit test diagnostics
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-diagnostics-${{ github.run_number }}
+          path: unit-tests.log
+          retention-days: 7
 
       - name: Clean outputs
         run: |
