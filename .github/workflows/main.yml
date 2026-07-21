@@ -6,6 +6,9 @@ on:
       - main
       - "feature/**"
       - "validation/**"
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       validate_only:
@@ -186,7 +189,7 @@ jobs:
           touch outputs/.nojekyll
 
       - name: Upload validation preview
-        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.validate_only == true) || github.event_name == 'push' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.validate_only == true) || github.event_name == 'push' || github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v4
         with:
           name: forecast-redelong-validation-${{ github.run_number }}
