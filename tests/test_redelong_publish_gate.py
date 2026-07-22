@@ -518,3 +518,33 @@ class RedelongPublishGateTest(unittest.TestCase):
             )
             (outputs / "validation_status.html").write_text(
                 branded_html("missing-home.html"), encoding="utf-8"
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertFalse(ok)
+            self.assertTrue(any("halaman peta" in error for error in report["errors"]))
+            self.assertTrue(any("validation_status" in error for error in report["errors"]))
+            self.assertTrue(any("Link monogram FR" in error for error in report["errors"]))
+
+    def test_decorative_middle_dot_is_blocked_from_public_html(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            outputs = Path(tmp)
+            self.make_valid_outputs(outputs)
+            index_path = outputs / "index.html"
+            content = index_path.read_text(encoding="utf-8")
+            index_path.write_text(
+                content.replace("Forecast Site", "Forecast Site • PLTA", 1),
+                encoding="utf-8",
+            )
+
+            ok, report = validate(outputs)
+
+            self.assertFalse(ok)
+            self.assertTrue(
+                any("Pemisah titik tengah" in error for error in report["errors"])
+            )
+
+
+if __name__ == "__main__":
+    unittest.main()
