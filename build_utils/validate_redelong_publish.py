@@ -13,7 +13,12 @@ import json
 from pathlib import Path
 from typing import Any
 
-from build_utils import validate_redelong_publish_legacy as legacy
+try:
+    from build_utils import validate_redelong_publish_legacy as legacy
+except ModuleNotFoundError:
+    # When invoked as ``python build_utils/validate_redelong_publish.py``,
+    # Python places build_utils/ rather than the repository root on sys.path.
+    import validate_redelong_publish_legacy as legacy
 
 QUANTITATIVE_SOURCES = legacy.QUANTITATIVE_SOURCES
 EXPECTED_LOCATIONS = legacy.EXPECTED_LOCATIONS
