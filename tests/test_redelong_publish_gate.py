@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import csv
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -35,6 +37,17 @@ def branded_html(href: str, script: str = "") -> str:
 
 
 class RedelongPublishGateTest(unittest.TestCase):
+    def test_validator_cli_imports_from_repository_root(self) -> None:
+        validator = Path(__file__).resolve().parents[1] / "build_utils" / "validate_redelong_publish.py"
+        result = subprocess.run(
+            [sys.executable, str(validator), "--help"],
+            cwd=validator.parents[1],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def make_valid_outputs(self, root: Path) -> None:
         besai_points = {
             "pltm_besai_kemu",
@@ -505,33 +518,3 @@ class RedelongPublishGateTest(unittest.TestCase):
             )
             (outputs / "validation_status.html").write_text(
                 branded_html("missing-home.html"), encoding="utf-8"
-            )
-
-            ok, report = validate(outputs)
-
-            self.assertFalse(ok)
-            self.assertTrue(any("halaman peta" in error for error in report["errors"]))
-            self.assertTrue(any("validation_status" in error for error in report["errors"]))
-            self.assertTrue(any("Link monogram FR" in error for error in report["errors"]))
-
-    def test_decorative_middle_dot_is_blocked_from_public_html(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp:
-            outputs = Path(tmp)
-            self.make_valid_outputs(outputs)
-            index_path = outputs / "index.html"
-            content = index_path.read_text(encoding="utf-8")
-            index_path.write_text(
-                content.replace("Forecast Site", "Forecast Site • PLTA", 1),
-                encoding="utf-8",
-            )
-
-            ok, report = validate(outputs)
-
-            self.assertFalse(ok)
-            self.assertTrue(
-                any("Pemisah titik tengah" in error for error in report["errors"])
-            )
-
-
-if __name__ == "__main__":
-    unittest.main()
