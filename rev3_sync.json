@@ -1,0 +1,47 @@
+{
+  "schema_version": "rev3-content-sync-v1",
+  "status": "complete",
+  "patched_files": [
+    "besai_kemu.html",
+    "besai_kemu_discharge.html",
+    "besai_kemu_map.html",
+    "evaluation_status.json",
+    "evaluation_summary.html",
+    "redelong_operational.html",
+    "site_network.html",
+    "validation_status.html"
+  ],
+  "operational_asset": {
+    "site": "PLTM Besai Kemu",
+    "capacity_mw": 7.0,
+    "commercial_operation_date": "2024-01-08",
+    "source": "https://web.pln.co.id/cms/media/siaran-pers/2024/01/awali-2024-pln-operasikan-dua-unit-pltm-kapasitas-35-mw-di-lampung-langkah-kebut-bauran-energi/"
+  },
+  "bmkg_daily_thresholds_mm": {
+    "not_measurable": [
+      0.0,
+      0.5
+    ],
+    "light": [
+      0.5,
+      20.0
+    ],
+    "moderate": [
+      20.0,
+      50.0
+    ],
+    "heavy": [
+      50.0,
+      100.0
+    ],
+    "very_heavy": [
+      100.0,
+      null
+    ]
+  },
+  "qualitative_field_validation": {
+    "performed": true,
+    "included_in_numeric_accuracy": false
+  },
+  "catchment_status": "technical_indicative_area_constrained_not_legal_or_as_built"
+}

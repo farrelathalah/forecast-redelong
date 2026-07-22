@@ -20,6 +20,15 @@
     @media(max-width:850px){.grid{grid-template-columns:1fr 1fr}nav{align-items:flex-start;flex-direction:column}}
     @media(max-width:520px){.grid{grid-template-columns:1fr}}
   </style>
+<style id="rev3-content-style">
+.rev3-panel{margin:18px 0;padding:20px;border:1px solid rgba(103,232,249,.22);border-radius:20px;background:rgba(5,22,39,.88);color:#effaff}
+.rev3-panel h2{margin:0 0 12px;font-size:22px}.rev3-panel h3{margin:0 0 7px;font-size:14px}
+.rev3-panel p,.rev3-panel li{font-size:10px;line-height:1.62;color:#a9bfd0}.rev3-panel a{color:#67e8f9}
+.rev3-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.rev3-card{padding:14px;border:1px solid rgba(255,255,255,.10);border-radius:15px;background:rgba(255,255,255,.035)}
+.rev3-card ul{margin:7px 0 0;padding-left:18px}.rev3-badge{display:inline-flex;padding:5px 8px;border-radius:999px;background:rgba(52,211,153,.13);color:#6ee7b7;font-size:9px;font-weight:800;margin-bottom:8px}
+.rev3-warning{border-left:3px solid #fbbf24;padding-left:11px}@media(max-width:720px){.rev3-grid{grid-template-columns:1fr}}
+</style>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="fr-global-experience" content="fr-global-experience-v1;rain=global">
 <style id="fr-global-experience-v1">
@@ -785,8 +794,13 @@
       </div>
     </section>
 
-    <p>Generated 2026-07-22 06:34 WIB</p>
-  </main>
+    <p>Generated 2026-07-22 08:38 WIB</p>
+  <section id="rev3-content-sync-v1-validation" class="rev3-panel" data-rev3-content="true">
+  <h2>Validasi lapangan kualitatif</h2>
+  <p>Pengecekan manual hujan/tidak hujan telah dilakukan beberapa kali selama pelaksanaan magang dan kejadian hujan yang diprakirakan memang terkonfirmasi terjadi. Pemeriksaan tersebut bersifat kualitatif karena belum disertai log tanggal, jam, lokasi, dan jumlah hujan yang lengkap. Karena itu hasilnya ditampilkan sebagai bukti pengecekan lapangan, tetapi tidak dimasukkan ke persentase akurasi atau metrik jumlah hujan.</p>
+  <p>Evaluasi numerik pada halaman ini tetap memakai pasangan forecast dan referensi gridded yang memiliki tanggal serta lokasi yang dapat diaudit.</p>
+</section>
+</main>
 <canvas id="fr-global-rain" data-fr-rain-effect="true" aria-hidden="true"></canvas>
 <script id="fr-global-rain-script">
 (() => {

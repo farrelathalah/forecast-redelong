@@ -1,14 +1,26 @@
 {
-  "schema_version": "forecast-hydro-besai-engineering-v1",
+  "schema_version": "forecast-hydro-besai-engineering-v2",
   "site_slug": "pltm_besai_kemu",
   "reference_revision": "Review Studi Kelayakan, Januari 2020",
-  "reference_status": "documented_engineering_reference_pending_asset_confirmation",
+  "reference_status": "operational_asset_with_documented_engineering_reference",
+  "operations": {
+    "asset_status": "operational",
+    "commercial_operation_date": "2024-01-08",
+    "installed_capacity_mw": 7.0,
+    "units": 2,
+    "unit_capacity_mw": 3.5,
+    "source": {
+      "publisher": "PT PLN (Persero)",
+      "published_date": "2024-01-10",
+      "url": "https://web.pln.co.id/cms/media/siaran-pers/2024/01/awali-2024-pln-operasikan-dua-unit-pltm-kapasitas-35-mw-di-lampung-langkah-kebut-bauran-energi/"
+    }
+  },
   "structures": {
     "weir": {
       "latitude": -4.862591667,
       "longitude": 104.500497222,
       "source_page_pdf": 9,
-      "note": "Koordinat ringkasan review 2020; laporan juga menyarankan pergeseran sekitar 50 m ke hulu menuju ruas sungai yang lebih lurus."
+      "note": "Koordinat ringkasan Review 2020; laporan juga menyarankan pergeseran sekitar 50 m ke hulu menuju ruas sungai yang lebih lurus."
     },
     "headpond": {
       "latitude": -4.839133333,
@@ -31,7 +43,9 @@
   "catchment": {
     "area_km2": 496.74,
     "rounded_area_km2": 497.0,
-    "geometry_status": "indicative_fs_figure_trace_available_not_survey_boundary",
+    "geometry_status": "technical_indicative_area_constrained_not_legal_or_as_built",
+    "geometry_method": "anchored to documented outlet/weir coordinate, controlled to Review 2020 area, with FS outline used as shape control",
+    "final_delineation_requirement": "rerun and approve with DEMNAS or equivalent hydrologically conditioned DEM in QGIS/HEC-HMS",
     "upstream_plta_besai_1_area_km2": 422.91,
     "supplementary_weir_area_km2": 489.72,
     "incremental_area_from_plta_besai_1_km2": 73.83,
@@ -57,10 +71,51 @@
       "december": 3.0
     },
     "net_head_m": 43.17,
+    "net_head_narrative_m": 43.13,
+    "net_head_note": "Nilai 43,17 m dipertahankan sebagai nilai tabel/adopted pada paket proyek; narasi Review 2020 juga memuat 43,13 m. Selisih 0,04 m dicatat dan tidak disembunyikan.",
     "installed_capacity_mw": 7.0,
     "units": 2,
     "unit_capacity_mw": 3.5,
     "upstream_operation_dependency": "PLTM Besai Kemu berada di hilir PLTA Besai 1; release dan pola operasi upstream dapat mendominasi debit aktual."
+  },
+  "historical_discharge_data": {
+    "review_2020_basis": "Data operasi jam-jaman PLTA Besai 1 periode 2004-2014, dengan kekosongan 2010-2011, dikonversi menjadi debit harian dan ditransformasikan ke Besai Kemu dengan rasio luas DAS.",
+    "fs_2017_basis": "FS 2017 menyebut data debit jam-jaman tailrace PLTA Besai periode 2004-2016.",
+    "available_in_repository": [
+      "derived tables and engineering summaries",
+      "FDC review 2018",
+      "monthly irrigation and ecological release assumptions"
+    ],
+    "not_available_in_automatic_feed": [
+      "raw hourly historical series",
+      "current upstream release schedule",
+      "current AWLR and rating curve",
+      "current intake inflow"
+    ],
+    "operational_implication": "Historical references are used as baseline context; current discharge forecast remains a proxy."
+  },
+  "bmkg_daily_rainfall_categories_mm": {
+    "not_raining_or_not_measurable": {
+      "min": 0.0,
+      "max_exclusive": 0.5
+    },
+    "light": {
+      "min": 0.5,
+      "max_inclusive": 20.0
+    },
+    "moderate": {
+      "min_exclusive": 20.0,
+      "max_inclusive": 50.0
+    },
+    "heavy": {
+      "min_exclusive": 50.0,
+      "max_inclusive": 100.0
+    },
+    "very_heavy": {
+      "min_exclusive": 100.0,
+      "max": null
+    },
+    "usage": "meteorological attention category only, not an operating SOP"
   },
   "revision_conflicts": [
     {
@@ -68,18 +123,26 @@
       "design_discharge_m3s": 20.312,
       "probability_pct": 38.0,
       "net_head_m": 40.13,
-      "catchment_area_km2": 497.0
+      "catchment_area_km2": 497.0,
+      "annual_energy_gwh": 39.735,
+      "capacity_factor_pct": 65.0
     },
     {
       "revision": "Review/Basic Design 2018",
+      "design_discharge_m3s": 21.0,
       "fdc_q40_m3s": 18.35,
+      "net_head_m": 38.8,
       "ecological_release_m3s": 1.243,
-      "catchment_area_km2": 496.74
+      "catchment_area_km2": 496.74,
+      "annual_energy_gwh": 40.84,
+      "capacity_factor_pct": 66.56
     },
     {
       "revision": "Review Januari 2020",
       "design_discharge_fdc_m3s": 21.59,
       "adopted_design_discharge_m3s": 22.0,
+      "net_head_table_m": 43.17,
+      "net_head_narrative_m": 43.13,
       "ecological_release_m3s": 0.6,
       "catchment_area_km2": 496.74,
       "selection_rule": "latest_review_reference"
