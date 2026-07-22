@@ -1,0 +1,22 @@
+2026-07-22 08:06:46,785 INFO Log file: /home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260722_150646.log
+2026-07-22 08:06:46,785 INFO Output dir: /home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse
+2026-07-22 08:06:46,785 INFO Metadata lokasi: slug=pltm_besai_kemu_powerhouse adm4=18.08.03.2017 bmkg_point=Kemu area_level=independent_site_engineering_point proxy_bmkg=True
+2026-07-22 08:06:46,785 INFO Koordinat: lat=-4.837533333 lon=104.510075 timezone=Asia/Jakarta
+2026-07-22 08:06:46,785 INFO Catatan lokasi: Powerhouse Besai Kemu engineering forecast reference for PLTM Besai Kemu. The catchment polygon remains pending.
+2026-07-22 08:06:46,785 INFO Locations file: /home/runner/work/forecast-redelong/forecast-redelong/locations.json
+2026-07-22 08:06:46,786 INFO Mulai proses untuk lokasi Powerhouse Besai Kemu
+2026-07-22 08:06:46,786 INFO Target date: 2026-07-25
+2026-07-22 08:06:46,786 INFO Target hours: 00:00, 01:00, 02:00, 03:00, 04:00, 05:00, 06:00, 07:00, 08:00, 09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00, 21:00, 22:00, 23:00
+2026-07-22 08:06:46,786 INFO Sumber aktif: BMKG, ECMWF, GFS, ICON, CMA, METEOFRANCE, UKMO
+2026-07-22 08:06:46,786 INFO Bobot aktif: BMKG=1.35, CMA=1.0, ECMWF=1.0, GFS=1.0, ICON=1.0, KMA=0.9, METEOFRANCE=1.0, METNO=1.0, UKMO=1.0
+2026-07-22 08:06:46,841 INFO BMKG gagal (host=api.bmkg.go.id): BMKG tidak mengembalikan kandidat untuk target date
+2026-07-22 08:07:11,485 INFO Selesai.
+2026-07-22 08:07:11,485 INFO Sumber sukses: 6/7
+2026-07-22 08:07:11,485 INFO Total forecast point: 144
+2026-07-22 08:07:11,485 INFO BMKG: FAIL (0/24 point) t=55ms BMKG tidak mengembalikan kandidat untuk target date
+2026-07-22 08:07:11,485 INFO CMA: OK (24/24 point) http=200 t=419ms 
+2026-07-22 08:07:11,485 INFO ECMWF: OK (24/24 point) http=200 t=408ms 
+2026-07-22 08:07:11,485 INFO GFS: OK (24/24 point) http=200 t=410ms 
+2026-07-22 08:07:11,485 INFO ICON: OK (24/24 point) http=200 t=416ms 
+2026-07-22 08:07:11,485 INFO METEOFRANCE: OK (24/24 point) http=200 t=412ms 
+2026-07-22 08:07:11,485 INFO UKMO: OK (24/24 point) http=200 t=403ms 
