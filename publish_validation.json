@@ -3,7 +3,7 @@
   "status": "pass",
   "errors": [],
   "metrics": {
-    "forecast_rows": 7620,
+    "forecast_rows": 7728,
     "locations_found": 9,
     "quantitative_sources_found": [
       "CMA",
@@ -30,9 +30,9 @@
     "portal": {
       "gpm1": {
         "dates": [
-          "2026-07-23",
           "2026-07-24",
-          "2026-07-25"
+          "2026-07-25",
+          "2026-07-26"
         ],
         "valid_points": [
           24,
@@ -42,9 +42,9 @@
       },
       "gpm2": {
         "dates": [
-          "2026-07-23",
           "2026-07-24",
-          "2026-07-25"
+          "2026-07-25",
+          "2026-07-26"
         ],
         "valid_points": [
           24,
@@ -54,9 +54,9 @@
       },
       "gpm3": {
         "dates": [
-          "2026-07-23",
           "2026-07-24",
-          "2026-07-25"
+          "2026-07-25",
+          "2026-07-26"
         ],
         "valid_points": [
           24,
@@ -66,9 +66,9 @@
       },
       "gpm4": {
         "dates": [
-          "2026-07-23",
           "2026-07-24",
-          "2026-07-25"
+          "2026-07-25",
+          "2026-07-26"
         ],
         "valid_points": [
           24,
@@ -78,9 +78,9 @@
       },
       "gpm5": {
         "dates": [
-          "2026-07-23",
           "2026-07-24",
-          "2026-07-25"
+          "2026-07-25",
+          "2026-07-26"
         ],
         "valid_points": [
           24,
@@ -90,9 +90,9 @@
       },
       "gpm6": {
         "dates": [
-          "2026-07-23",
           "2026-07-24",
-          "2026-07-25"
+          "2026-07-25",
+          "2026-07-26"
         ],
         "valid_points": [
           24,
@@ -102,9 +102,9 @@
       },
       "gpm_grid_tamatue": {
         "dates": [
-          "2026-07-23",
           "2026-07-24",
-          "2026-07-25"
+          "2026-07-25",
+          "2026-07-26"
         ],
         "valid_points": [
           24,
@@ -114,9 +114,9 @@
       },
       "plta_redelong": {
         "dates": [
-          "2026-07-23",
           "2026-07-24",
-          "2026-07-25"
+          "2026-07-25",
+          "2026-07-26"
         ],
         "valid_points": [
           24,
@@ -157,8 +157,8 @@
     "usability_basics_ok": true,
     "evaluation_state": "validasi_proxy_sampel_terbatas",
     "evaluation_observation_mode": "proxy_observation",
-    "evaluation_matched_location_days": 122,
-    "evaluation_matched_unique_dates": 7,
+    "evaluation_matched_location_days": 146,
+    "evaluation_matched_unique_dates": 8,
     "evaluation_can_claim_field_accuracy": false,
     "evaluation_can_report_preliminary_proxy_skill": false,
     "evaluation_observation_sources": [
@@ -167,7 +167,7 @@
     "evaluation_joined_observation_sources": [
       "Open-Meteo Historical Weather, Best Match"
     ],
-    "validation_proxy_refresh_status": "already_attempted_today",
+    "validation_proxy_refresh_status": "complete",
     "validation_proxy_missing_pairs": 0,
     "geospatial_history_zones": 7,
     "geospatial_history_catchment_zones": 6,
