@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-27T06:31:56.467384+07:00",
+  "generated_at": "2026-07-27T19:02:35.574191+07:00",
   "location_slug": "gpm5",
   "location_name": "GPM5",
   "bmkg_point_name": "Bale Redelong",
@@ -58,14 +58,14 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm5_20260728_20260727063156",
+    "run_id": "gpm5_20260728_20260727190235",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/command_center_sentinel_x.html",
     "report": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/sentinel_x_report.md",
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/sentinel_x_ledger.sqlite",
-    "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM5. Status operasional harian YELLOW. Risk window utama: 15:00–20:00. Failure risk tertinggi 42.9/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "daily_operational_status": "RED",
+    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM5. Status operasional harian RED. Risk window utama: 16:00–20:00. Failure risk tertinggi 42.5/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }

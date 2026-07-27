@@ -1,8 +1,8 @@
 source_id,provider,state,success,points,ema_success,ema_completeness,consecutive_failures,http_status,duration_ms,error
-BMKG,BMKG,DEGRADED,False,0,1.0,0.9754,0,,52,BMKG tidak mengembalikan kandidat untuk target date
-CMA,Open-Meteo / CMA GRAPES,ACTIVE,True,24,1.0,1.0,0,200,630,
-ECMWF,Open-Meteo / ECMWF,ACTIVE,True,24,1.0,1.0,0,200,638,
-GFS,Open-Meteo / NOAA GFS,DEGRADED,False,0,1.0,1.0,0,,26435,<urlopen error _ssl.c:999: The handshake operation timed out>
-ICON,Open-Meteo / DWD ICON,ACTIVE,True,24,1.0,1.0,0,200,636,
-METEOFRANCE,Open-Meteo / Meteo-France,ACTIVE,True,24,1.0,1.0,0,200,653,
-UKMO,Open-Meteo / UK Met Office,ACTIVE,True,24,1.0,1.0,0,200,1418,
+BMKG,BMKG,DEGRADED,False,0,1.0,0.9015,0,,74,BMKG tidak mengembalikan kandidat untuk target date
+CMA,Open-Meteo / CMA GRAPES,ACTIVE,True,24,1.0,1.0,0,200,596,
+ECMWF,Open-Meteo / ECMWF,ACTIVE,True,24,1.0,1.0,0,200,584,
+GFS,Open-Meteo / NOAA GFS,ACTIVE,True,24,1.0,1.0,0,200,585,
+ICON,Open-Meteo / DWD ICON,ACTIVE,True,24,1.0,1.0,0,200,616,
+METEOFRANCE,Open-Meteo / Meteo-France,ACTIVE,True,24,1.0,1.0,0,200,641,
+UKMO,Open-Meteo / UK Met Office,ACTIVE,True,24,1.0,1.0,0,200,618,
