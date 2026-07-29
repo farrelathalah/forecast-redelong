@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-07-29T15:15:26.792820+07:00",
+  "generated_at": "2026-07-30T06:30:49.748423+07:00",
   "location_slug": "gpm4",
   "location_name": "GPM4",
   "bmkg_point_name": "Bale Redelong",
@@ -14,7 +14,7 @@
   "target_date": "2026-07-30",
   "sources_total": 7,
   "sources_success": 7,
-  "points_total": 168,
+  "points_total": 164,
   "sources_active": [
     "BMKG",
     "ECMWF",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm4_20260730_20260729151526",
+    "run_id": "gpm4_20260730_20260730063049",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/command_center_sentinel_x.html",
@@ -66,6 +66,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/sentinel_x_ledger.sqlite",
     "daily_operational_status": "RED",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM4. Status operasional harian RED. Risk window utama: 12:00–22:00. Failure risk tertinggi 57.1/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM4. Status operasional harian RED. Risk window utama: 12:00–20:00. Failure risk tertinggi 49.2/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
