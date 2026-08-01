@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-08-01T06:38:52.493505+07:00",
+  "generated_at": "2026-08-01T07:24:45.900975+07:00",
   "location_slug": "pltm_besai_kemu_sumberjaya",
   "location_name": "Stasiun Hujan Sumberjaya",
   "bmkg_point_name": "Kemu",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "pltm_besai_kemu_sumberjaya_20260804_20260801063852",
+    "run_id": "pltm_besai_kemu_sumberjaya_20260804_20260801072445",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/command_center_sentinel_x.html",
