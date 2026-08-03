@@ -17,8 +17,8 @@
   "selected_grid_elevation_m": 479.0,
   "timezone": "Asia/Jakarta",
   "history_start": "2000-01-01",
-  "history_end": "2026-08-01",
-  "history_rows": 9710,
+  "history_end": "2026-08-02",
+  "history_rows": 9711,
   "current_rows": 24,
   "unit": "m3/s",
   "disclaimer": "GloFAS is a simulated gridded river-discharge product, not an AWLR or direct discharge observation at PLTM Besai Kemu. Grid-to-river matching and licensing must be confirmed before production operational use.",
@@ -32,6 +32,6 @@
   ],
   "grid_selection_method": "screened nearby GloFAS cells for spatial proximity and a non-trivial flow-duration regime; the exact asset request selected a small tributary cell",
   "documented_design_q40_m3s": 21.59,
-  "selected_proxy_q40_m3s": 39.4,
+  "selected_proxy_q40_m3s": 39.36,
   "grid_selection_status": "screened_proxy_pending_glofas_map_confirmation"
 }
