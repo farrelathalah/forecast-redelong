@@ -13,48 +13,19 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
         "hour": "00:00",
         "rain_probability": 0,
-        "risk_score": 56,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah",
-        "temp_c": 23.0,
-        "humidity_pct": 87.0,
-        "heat_index_c": 23.0,
-        "wind_kmh": 4.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "01:00",
-        "rain_probability": 0,
-        "risk_score": 44,
+        "risk_score": 36,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 22.9,
+        "condition": "Cerah Berawan",
+        "temp_c": 22.8,
         "humidity_pct": 88.0,
-        "heat_index_c": 22.9,
-        "wind_kmh": 4.1,
+        "heat_index_c": 22.8,
+        "wind_kmh": 5.9,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -71,48 +42,77 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "01:00",
+        "rain_probability": 0,
+        "risk_score": 31,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 22.7,
+        "humidity_pct": 88.0,
+        "heat_index_c": 22.7,
+        "wind_kmh": 5.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
         "hour": "02:00",
         "rain_probability": 0,
-        "risk_score": 22,
+        "risk_score": 26,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 22.6,
+        "humidity_pct": 88.0,
+        "heat_index_c": 22.6,
+        "wind_kmh": 5.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "03:00",
+        "rain_probability": 0,
+        "risk_score": 25,
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah Berawan",
         "temp_c": 22.5,
-        "humidity_pct": 89.0,
-        "heat_index_c": 22.5,
-        "wind_kmh": 4.3,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "03:00",
-        "rain_probability": 0,
-        "risk_score": 22,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Cerah Berawan",
-        "temp_c": 22.1,
         "humidity_pct": 88.0,
-        "heat_index_c": 22.1,
-        "wind_kmh": 5.1,
+        "heat_index_c": 22.5,
+        "wind_kmh": 5.8,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -129,8 +129,8 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
         "hour": "04:00",
         "rain_probability": 0,
@@ -138,10 +138,10 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah Berawan",
-        "temp_c": 21.8,
+        "temp_c": 23.4,
         "humidity_pct": 88.0,
-        "heat_index_c": 21.8,
-        "wind_kmh": 5.3,
+        "heat_index_c": 23.4,
+        "wind_kmh": 5.7,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -158,8 +158,8 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
         "hour": "05:00",
         "rain_probability": 0,
@@ -167,154 +167,9 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah Berawan",
-        "temp_c": 21.7,
-        "humidity_pct": 88.0,
-        "heat_index_c": 21.7,
-        "wind_kmh": 5.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "06:00",
-        "rain_probability": 0,
-        "risk_score": 22,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Cerah Berawan",
-        "temp_c": 21.6,
-        "humidity_pct": 88.0,
-        "heat_index_c": 21.6,
-        "wind_kmh": 5.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "07:00",
-        "rain_probability": 0,
-        "risk_score": 22,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Cerah Berawan",
         "temp_c": 23.0,
-        "humidity_pct": 86.0,
+        "humidity_pct": 88.0,
         "heat_index_c": 23.0,
-        "wind_kmh": 4.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "08:00",
-        "rain_probability": 10.3,
-        "risk_score": 50,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 26.0,
-        "humidity_pct": 77.0,
-        "heat_index_c": 26.0,
-        "wind_kmh": 1.1,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "09:00",
-        "rain_probability": 10.3,
-        "risk_score": 49,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 28.1,
-        "humidity_pct": 69.0,
-        "heat_index_c": 30.51,
-        "wind_kmh": 3.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "10:00",
-        "rain_probability": 13.5,
-        "risk_score": 76,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 29.0,
-        "humidity_pct": 62.0,
-        "heat_index_c": 32.15,
         "wind_kmh": 6.1,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -332,19 +187,19 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
-        "hour": "11:00",
-        "rain_probability": 31.0,
-        "risk_score": 96,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
+        "hour": "06:00",
+        "rain_probability": 0,
+        "risk_score": 22,
+        "risk_class": "safe",
+        "risk_label": "Aman",
         "condition": "Cerah Berawan",
-        "temp_c": 30.4,
-        "humidity_pct": 56.0,
-        "heat_index_c": 33.43,
-        "wind_kmh": 7.3,
+        "temp_c": 22.9,
+        "humidity_pct": 89.0,
+        "heat_index_c": 22.9,
+        "wind_kmh": 6.2,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -361,19 +216,19 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
-        "hour": "12:00",
-        "rain_probability": 27.9,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 31.5,
-        "humidity_pct": 52.0,
-        "heat_index_c": 34.63,
-        "wind_kmh": 9.0,
+        "hour": "07:00",
+        "rain_probability": 0,
+        "risk_score": 21,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Cerah",
+        "temp_c": 23.5,
+        "humidity_pct": 84.0,
+        "heat_index_c": 23.5,
+        "wind_kmh": 5.7,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -390,21 +245,21 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
-        "hour": "13:00",
-        "rain_probability": 27.9,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
+        "hour": "08:00",
+        "rain_probability": 0,
+        "risk_score": 20,
+        "risk_class": "safe",
+        "risk_label": "Aman",
         "condition": "Cerah Berawan",
-        "temp_c": 32.0,
-        "humidity_pct": 50.0,
-        "heat_index_c": 34.7,
-        "wind_kmh": 8.7,
+        "temp_c": 25.1,
+        "humidity_pct": 75.0,
+        "heat_index_c": 25.1,
+        "wind_kmh": 3.6,
         "wind_dir": 0.0,
-        "cloud_pct": 75.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -419,223 +274,136 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
-        "hour": "14:00",
-        "rain_probability": 44.8,
-        "risk_score": 93,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Hujan Ringan",
-        "temp_c": 31.5,
-        "humidity_pct": 55.0,
-        "heat_index_c": 34.63,
-        "wind_kmh": 11.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "15:00",
-        "rain_probability": 42.3,
-        "risk_score": 94,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Berawan",
-        "temp_c": 30.9,
-        "humidity_pct": 56.0,
-        "heat_index_c": 34.33,
-        "wind_kmh": 12.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "16:00",
-        "rain_probability": 42.3,
-        "risk_score": 89,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Berawan",
-        "temp_c": 30.3,
-        "humidity_pct": 61.0,
-        "heat_index_c": 33.31,
-        "wind_kmh": 13.3,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "17:00",
-        "rain_probability": 31.0,
-        "risk_score": 78,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Berawan",
-        "temp_c": 29.1,
-        "humidity_pct": 66.0,
-        "heat_index_c": 32.21,
-        "wind_kmh": 11.5,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "18:00",
-        "rain_probability": 27.9,
-        "risk_score": 62,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Berawan",
-        "temp_c": 27.6,
-        "humidity_pct": 71.0,
-        "heat_index_c": 29.65,
-        "wind_kmh": 7.6,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "19:00",
-        "rain_probability": 14.4,
-        "risk_score": 53,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 26.1,
-        "humidity_pct": 76.0,
-        "heat_index_c": 26.1,
-        "wind_kmh": 5.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "20:00",
+        "hour": "09:00",
         "rain_probability": 0,
-        "risk_score": 52,
+        "risk_score": 40,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 24.5,
-        "humidity_pct": 82.0,
-        "heat_index_c": 24.5,
-        "wind_kmh": 5.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
-        "relative": "Hari ini",
-        "hour": "21:00",
-        "rain_probability": 0,
-        "risk_score": 44,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 23.9,
-        "humidity_pct": 83.0,
-        "heat_index_c": 23.9,
+        "condition": "Cerah Berawan",
+        "temp_c": 27.9,
+        "humidity_pct": 68.0,
+        "heat_index_c": 29.52,
         "wind_kmh": 5.6,
         "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "10:00",
+        "rain_probability": 0,
+        "risk_score": 68,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 28.7,
+        "humidity_pct": 62.0,
+        "heat_index_c": 30.97,
+        "wind_kmh": 7.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "11:00",
+        "rain_probability": 0,
+        "risk_score": 84,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 30.0,
+        "humidity_pct": 58.0,
+        "heat_index_c": 32.63,
+        "wind_kmh": 9.3,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "12:00",
+        "rain_probability": 0,
+        "risk_score": 91,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 31.2,
+        "humidity_pct": 54.0,
+        "heat_index_c": 34.05,
+        "wind_kmh": 9.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "13:00",
+        "rain_probability": 13.8,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Berawan",
+        "temp_c": 30.8,
+        "humidity_pct": 54.0,
+        "heat_index_c": 33.29,
+        "wind_kmh": 9.0,
+        "wind_dir": 0.0,
         "cloud_pct": 75.0
       }
     },
@@ -651,18 +419,134 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
-        "hour": "22:00",
-        "rain_probability": 0,
-        "risk_score": 43,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
+        "hour": "14:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 30.9,
+        "humidity_pct": 54.0,
+        "heat_index_c": 33.7,
+        "wind_kmh": 8.7,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "15:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 31.5,
+        "humidity_pct": 53.0,
+        "heat_index_c": 34.39,
+        "wind_kmh": 9.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "16:00",
+        "rain_probability": 13.8,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 31.3,
+        "humidity_pct": 53.0,
+        "heat_index_c": 33.89,
+        "wind_kmh": 9.8,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "17:00",
+        "rain_probability": 28.8,
+        "risk_score": 90,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
         "condition": "Berawan",
-        "temp_c": 23.3,
-        "humidity_pct": 90.0,
-        "heat_index_c": 23.3,
+        "temp_c": 30.1,
+        "humidity_pct": 62.0,
+        "heat_index_c": 33.33,
+        "wind_kmh": 8.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "18:00",
+        "rain_probability": 14.4,
+        "risk_score": 75,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Berawan",
+        "temp_c": 27.8,
+        "humidity_pct": 71.0,
+        "heat_index_c": 31.23,
         "wind_kmh": 5.1,
         "wind_dir": 0.0,
         "cloud_pct": 75.0
@@ -680,18 +564,76 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Rabu, 5 Agustus 2026",
-        "date_iso": "2026-08-05",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
         "relative": "Hari ini",
-        "hour": "23:00",
-        "rain_probability": 0,
-        "risk_score": 34,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
+        "hour": "19:00",
+        "rain_probability": 13.8,
+        "risk_score": 67,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
         "condition": "Berawan",
-        "temp_c": 23.0,
-        "humidity_pct": 90.0,
-        "heat_index_c": 23.0,
+        "temp_c": 26.7,
+        "humidity_pct": 77.0,
+        "heat_index_c": 29.48,
+        "wind_kmh": 4.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "20:00",
+        "rain_probability": 14.4,
+        "risk_score": 58,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Berawan",
+        "temp_c": 26.0,
+        "humidity_pct": 77.0,
+        "heat_index_c": 26.0,
+        "wind_kmh": 4.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "21:00",
+        "rain_probability": 28.8,
+        "risk_score": 63,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Berawan",
+        "temp_c": 24.9,
+        "humidity_pct": 85.0,
+        "heat_index_c": 24.9,
         "wind_kmh": 5.6,
         "wind_dir": 0.0,
         "cloud_pct": 75.0
@@ -711,15 +653,189 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Kamis, 6 Agustus 2026",
         "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "22:00",
+        "rain_probability": 13.8,
+        "risk_score": 56,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Berawan",
+        "temp_c": 24.6,
+        "humidity_pct": 88.0,
+        "heat_index_c": 24.6,
+        "wind_kmh": 5.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Kamis, 6 Agustus 2026",
+        "date_iso": "2026-08-06",
+        "relative": "Hari ini",
+        "hour": "23:00",
+        "rain_probability": 14.4,
+        "risk_score": 50,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 23.9,
+        "humidity_pct": 89.0,
+        "heat_index_c": 23.9,
+        "wind_kmh": 4.7,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
         "relative": "Besok",
         "hour": "00:00",
+        "rain_probability": 14.4,
+        "risk_score": 47,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 23.5,
+        "humidity_pct": 92.0,
+        "heat_index_c": 23.5,
+        "wind_kmh": 5.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
+        "relative": "Besok",
+        "hour": "01:00",
+        "rain_probability": 13.8,
+        "risk_score": 42,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 23.1,
+        "humidity_pct": 93.0,
+        "heat_index_c": 23.1,
+        "wind_kmh": 4.7,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
+        "relative": "Besok",
+        "hour": "02:00",
         "rain_probability": 0,
-        "risk_score": 30,
+        "risk_score": 43,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 22.9,
+        "humidity_pct": 94.0,
+        "heat_index_c": 22.9,
+        "wind_kmh": 4.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
+        "relative": "Besok",
+        "hour": "03:00",
+        "rain_probability": 0,
+        "risk_score": 28,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Berawan",
         "temp_c": 22.8,
-        "humidity_pct": 88.0,
+        "humidity_pct": 93.0,
+        "heat_index_c": 22.8,
+        "wind_kmh": 5.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
+        "relative": "Besok",
+        "hour": "04:00",
+        "rain_probability": 0,
+        "risk_score": 28,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 22.8,
+        "humidity_pct": 93.0,
         "heat_index_c": 22.8,
         "wind_kmh": 5.4,
         "wind_dir": 0.0,
@@ -738,135 +854,19 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "01:00",
-        "rain_probability": 0,
-        "risk_score": 28,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 22.6,
-        "humidity_pct": 89.0,
-        "heat_index_c": 22.6,
-        "wind_kmh": 5.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "02:00",
-        "rain_probability": 13.8,
-        "risk_score": 27,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 22.3,
-        "humidity_pct": 88.0,
-        "heat_index_c": 22.3,
-        "wind_kmh": 4.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "03:00",
-        "rain_probability": 14.5,
-        "risk_score": 27,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 22.3,
-        "humidity_pct": 86.0,
-        "heat_index_c": 22.3,
-        "wind_kmh": 5.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "04:00",
-        "rain_probability": 14.5,
-        "risk_score": 27,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 22.1,
-        "humidity_pct": 86.0,
-        "heat_index_c": 22.1,
-        "wind_kmh": 5.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
         "relative": "Besok",
         "hour": "05:00",
         "rain_probability": 0,
-        "risk_score": 22,
-        "risk_class": "safe",
-        "risk_label": "Aman",
+        "risk_score": 27,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
         "condition": "Cerah Berawan",
-        "temp_c": 21.9,
-        "humidity_pct": 87.0,
-        "heat_index_c": 21.9,
-        "wind_kmh": 5.2,
+        "temp_c": 22.6,
+        "humidity_pct": 93.0,
+        "heat_index_c": 22.6,
+        "wind_kmh": 6.1,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -883,18 +883,47 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
         "relative": "Besok",
         "hour": "06:00",
         "rain_probability": 0,
-        "risk_score": 22,
+        "risk_score": 25,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 23.0,
+        "humidity_pct": 91.0,
+        "heat_index_c": 23.0,
+        "wind_kmh": 6.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
+        "relative": "Besok",
+        "hour": "07:00",
+        "rain_probability": 0,
+        "risk_score": 23,
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah Berawan",
-        "temp_c": 21.7,
-        "humidity_pct": 87.0,
-        "heat_index_c": 21.7,
+        "temp_c": 23.4,
+        "humidity_pct": 85.0,
+        "heat_index_c": 23.4,
         "wind_kmh": 6.3,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -912,48 +941,19 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "07:00",
-        "rain_probability": 0,
-        "risk_score": 18,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Cerah",
-        "temp_c": 23.4,
-        "humidity_pct": 80.0,
-        "heat_index_c": 23.4,
-        "wind_kmh": 6.5,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
         "relative": "Besok",
         "hour": "08:00",
         "rain_probability": 0,
-        "risk_score": 20,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Cerah",
-        "temp_c": 25.3,
-        "humidity_pct": 71.0,
-        "heat_index_c": 25.3,
-        "wind_kmh": 5.2,
+        "risk_score": 32,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 25.1,
+        "humidity_pct": 77.0,
+        "heat_index_c": 25.1,
+        "wind_kmh": 5.1,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -970,48 +970,19 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
         "relative": "Besok",
         "hour": "09:00",
         "rain_probability": 0,
-        "risk_score": 41,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 26.9,
-        "humidity_pct": 67.0,
-        "heat_index_c": 28.61,
-        "wind_kmh": 5.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "10:00",
-        "rain_probability": 0,
-        "risk_score": 62,
+        "risk_score": 61,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah Berawan",
-        "temp_c": 29.0,
-        "humidity_pct": 58.0,
-        "heat_index_c": 30.59,
-        "wind_kmh": 7.6,
+        "temp_c": 27.7,
+        "humidity_pct": 69.0,
+        "heat_index_c": 29.98,
+        "wind_kmh": 7.8,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1028,368 +999,20 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
         "relative": "Besok",
-        "hour": "11:00",
+        "hour": "10:00",
         "rain_probability": 0,
-        "risk_score": 82,
+        "risk_score": 86,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Berawan",
-        "temp_c": 30.2,
-        "humidity_pct": 54.0,
-        "heat_index_c": 31.86,
-        "wind_kmh": 9.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "12:00",
-        "rain_probability": 14.5,
-        "risk_score": 94,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Berawan",
-        "temp_c": 31.5,
-        "humidity_pct": 49.0,
-        "heat_index_c": 33.04,
-        "wind_kmh": 9.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "13:00",
-        "rain_probability": 0,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 32.1,
-        "humidity_pct": 47.0,
-        "heat_index_c": 33.84,
-        "wind_kmh": 10.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "14:00",
-        "rain_probability": 0,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 32.8,
-        "humidity_pct": 46.0,
-        "heat_index_c": 34.35,
+        "temp_c": 28.9,
+        "humidity_pct": 63.0,
+        "heat_index_c": 31.33,
         "wind_kmh": 9.1,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "15:00",
-        "rain_probability": 14.5,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 32.5,
-        "humidity_pct": 47.0,
-        "heat_index_c": 34.31,
-        "wind_kmh": 8.6,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "16:00",
-        "rain_probability": 0,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 31.5,
-        "humidity_pct": 53.0,
-        "heat_index_c": 33.59,
-        "wind_kmh": 8.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "17:00",
-        "rain_probability": 0,
-        "risk_score": 91,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 30.1,
-        "humidity_pct": 60.0,
-        "heat_index_c": 32.31,
-        "wind_kmh": 8.3,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "18:00",
-        "rain_probability": 0,
-        "risk_score": 78,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah",
-        "temp_c": 28.1,
-        "humidity_pct": 63.0,
-        "heat_index_c": 30.26,
-        "wind_kmh": 7.6,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "19:00",
-        "rain_probability": 0,
-        "risk_score": 71,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Berawan",
-        "temp_c": 27.1,
-        "humidity_pct": 65.0,
-        "heat_index_c": 28.13,
-        "wind_kmh": 7.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "20:00",
-        "rain_probability": 0,
-        "risk_score": 66,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Berawan",
-        "temp_c": 25.6,
-        "humidity_pct": 75.0,
-        "heat_index_c": 25.6,
-        "wind_kmh": 8.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "21:00",
-        "rain_probability": 0,
-        "risk_score": 62,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Berawan",
-        "temp_c": 25.0,
-        "humidity_pct": 82.0,
-        "heat_index_c": 25.0,
-        "wind_kmh": 7.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "22:00",
-        "rain_probability": 0,
-        "risk_score": 54,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 24.3,
-        "humidity_pct": 85.0,
-        "heat_index_c": 24.3,
-        "wind_kmh": 7.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Kamis, 6 Agustus 2026",
-        "date_iso": "2026-08-06",
-        "relative": "Besok",
-        "hour": "23:00",
-        "rain_probability": 0,
-        "risk_score": 52,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 23.7,
-        "humidity_pct": 89.0,
-        "heat_index_c": 23.7,
-        "wind_kmh": 6.8,
-        "wind_dir": 0.0,
         "cloud_pct": 75.0
       }
     },
@@ -1407,335 +1030,45 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "00:00",
-        "rain_probability": 0,
-        "risk_score": 46,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 23.1,
-        "humidity_pct": 92.0,
-        "heat_index_c": 23.1,
-        "wind_kmh": 5.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "01:00",
-        "rain_probability": 0,
-        "risk_score": 42,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 22.9,
-        "humidity_pct": 93.0,
-        "heat_index_c": 22.9,
-        "wind_kmh": 5.5,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "02:00",
-        "rain_probability": 0,
-        "risk_score": 26,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 22.9,
-        "humidity_pct": 93.0,
-        "heat_index_c": 22.9,
-        "wind_kmh": 5.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "03:00",
-        "rain_probability": 0,
-        "risk_score": 26,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 22.7,
-        "humidity_pct": 93.0,
-        "heat_index_c": 22.7,
-        "wind_kmh": 5.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "04:00",
-        "rain_probability": 0,
-        "risk_score": 27,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 22.6,
-        "humidity_pct": 92.0,
-        "heat_index_c": 22.6,
-        "wind_kmh": 5.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "05:00",
-        "rain_probability": 0,
-        "risk_score": 25,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 22.6,
-        "humidity_pct": 91.0,
-        "heat_index_c": 22.6,
-        "wind_kmh": 6.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "06:00",
-        "rain_probability": 0,
-        "risk_score": 22,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Cerah Berawan",
-        "temp_c": 22.5,
-        "humidity_pct": 90.0,
-        "heat_index_c": 22.5,
-        "wind_kmh": 7.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "07:00",
-        "rain_probability": 0,
-        "risk_score": 22,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Cerah",
-        "temp_c": 23.2,
-        "humidity_pct": 85.0,
-        "heat_index_c": 23.2,
-        "wind_kmh": 7.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "08:00",
-        "rain_probability": 0,
-        "risk_score": 25,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 26.0,
-        "humidity_pct": 74.0,
-        "heat_index_c": 26.0,
-        "wind_kmh": 6.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "09:00",
-        "rain_probability": 0,
-        "risk_score": 54,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 27.1,
-        "humidity_pct": 70.0,
-        "heat_index_c": 29.03,
-        "wind_kmh": 8.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "10:00",
-        "rain_probability": 0,
-        "risk_score": 73,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 29.0,
-        "humidity_pct": 60.0,
-        "heat_index_c": 31.51,
-        "wind_kmh": 9.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "11:00",
         "rain_probability": 0,
-        "risk_score": 87,
+        "risk_score": 96,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Berawan",
+        "temp_c": 30.1,
+        "humidity_pct": 59.0,
+        "heat_index_c": 32.61,
+        "wind_kmh": 10.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
+        "relative": "Besok",
+        "hour": "12:00",
+        "rain_probability": 0,
+        "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 30.3,
-        "humidity_pct": 58.0,
-        "heat_index_c": 32.91,
+        "temp_c": 31.3,
+        "humidity_pct": 54.0,
+        "heat_index_c": 33.69,
         "wind_kmh": 10.5,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -1755,16 +1088,16 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "12:00",
+        "relative": "Besok",
+        "hour": "13:00",
         "rain_probability": 0,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 31.4,
-        "humidity_pct": 54.0,
-        "heat_index_c": 34.0,
+        "temp_c": 32.2,
+        "humidity_pct": 51.0,
+        "heat_index_c": 34.55,
         "wind_kmh": 10.8,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -1784,46 +1117,17 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
-        "hour": "13:00",
-        "rain_probability": 0,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 32.1,
-        "humidity_pct": 51.0,
-        "heat_index_c": 34.8,
-        "wind_kmh": 11.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.509577778,
-          -4.839133333
-        ]
-      },
-      "properties": {
-        "location_name": "Headpond Besai Kemu",
-        "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "14:00",
         "rain_probability": 0,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 32.5,
+        "temp_c": 32.8,
         "humidity_pct": 49.0,
-        "heat_index_c": 34.9,
-        "wind_kmh": 11.6,
+        "heat_index_c": 35.31,
+        "wind_kmh": 11.3,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1842,16 +1146,16 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "15:00",
         "rain_probability": 0,
-        "risk_score": 92,
+        "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 32.5,
-        "humidity_pct": 48.0,
-        "heat_index_c": 34.7,
+        "temp_c": 33.0,
+        "humidity_pct": 47.0,
+        "heat_index_c": 35.05,
         "wind_kmh": 10.7,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -1871,17 +1175,17 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "16:00",
         "rain_probability": 0,
-        "risk_score": 92,
+        "risk_score": 91,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 32.2,
-        "humidity_pct": 49.0,
-        "heat_index_c": 34.33,
-        "wind_kmh": 11.1,
+        "temp_c": 32.7,
+        "humidity_pct": 48.0,
+        "heat_index_c": 34.35,
+        "wind_kmh": 10.8,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1900,17 +1204,17 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "17:00",
         "rain_probability": 0,
-        "risk_score": 86,
+        "risk_score": 83,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 31.4,
-        "humidity_pct": 51.0,
-        "heat_index_c": 33.1,
-        "wind_kmh": 10.1,
+        "condition": "Cerah Berawan",
+        "temp_c": 30.5,
+        "humidity_pct": 53.0,
+        "heat_index_c": 32.92,
+        "wind_kmh": 9.4,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1929,17 +1233,17 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "18:00",
         "rain_probability": 0,
-        "risk_score": 88,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
+        "risk_score": 74,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
         "condition": "Cerah Berawan",
-        "temp_c": 28.5,
-        "humidity_pct": 63.0,
-        "heat_index_c": 30.91,
-        "wind_kmh": 9.4,
+        "temp_c": 28.7,
+        "humidity_pct": 60.0,
+        "heat_index_c": 31.07,
+        "wind_kmh": 8.6,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1958,17 +1262,17 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "19:00",
         "rain_probability": 0,
-        "risk_score": 76,
+        "risk_score": 72,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah Berawan",
-        "temp_c": 26.5,
+        "temp_c": 27.0,
         "humidity_pct": 71.0,
-        "heat_index_c": 26.5,
-        "wind_kmh": 9.4,
+        "heat_index_c": 28.94,
+        "wind_kmh": 10.0,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1987,17 +1291,17 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "20:00",
         "rain_probability": 0,
-        "risk_score": 73,
+        "risk_score": 62,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah Berawan",
-        "temp_c": 25.6,
-        "humidity_pct": 79.0,
-        "heat_index_c": 25.6,
-        "wind_kmh": 8.3,
+        "temp_c": 26.2,
+        "humidity_pct": 76.0,
+        "heat_index_c": 26.2,
+        "wind_kmh": 9.0,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -2016,17 +1320,17 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "21:00",
         "rain_probability": 0,
-        "risk_score": 65,
+        "risk_score": 61,
         "risk_class": "rain",
         "risk_label": "Waspada",
-        "condition": "Cerah",
-        "temp_c": 24.8,
+        "condition": "Cerah Berawan",
+        "temp_c": 24.9,
         "humidity_pct": 84.0,
-        "heat_index_c": 24.8,
-        "wind_kmh": 5.8,
+        "heat_index_c": 24.9,
+        "wind_kmh": 7.7,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -2045,16 +1349,219 @@
         "slug": "pltm_besai_kemu_headpond",
         "date": "Jumat, 7 Agustus 2026",
         "date_iso": "2026-08-07",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "22:00",
         "rain_probability": 0,
-        "risk_score": 56,
+        "risk_score": 55,
         "risk_class": "rain",
         "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 24.2,
+        "humidity_pct": 88.0,
+        "heat_index_c": 24.2,
+        "wind_kmh": 6.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Jumat, 7 Agustus 2026",
+        "date_iso": "2026-08-07",
+        "relative": "Besok",
+        "hour": "23:00",
+        "rain_probability": 0,
+        "risk_score": 45,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 23.8,
+        "humidity_pct": 89.0,
+        "heat_index_c": 23.8,
+        "wind_kmh": 6.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "00:00",
+        "rain_probability": 0,
+        "risk_score": 41,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
         "condition": "Berawan",
-        "temp_c": 24.1,
-        "humidity_pct": 87.0,
-        "heat_index_c": 24.1,
+        "temp_c": 23.4,
+        "humidity_pct": 92.0,
+        "heat_index_c": 23.4,
+        "wind_kmh": 5.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "01:00",
+        "rain_probability": 0,
+        "risk_score": 35,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 23.4,
+        "humidity_pct": 92.0,
+        "heat_index_c": 23.4,
+        "wind_kmh": 6.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "02:00",
+        "rain_probability": 0,
+        "risk_score": 32,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 23.1,
+        "humidity_pct": 92.0,
+        "heat_index_c": 23.1,
+        "wind_kmh": 6.5,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "03:00",
+        "rain_probability": 0,
+        "risk_score": 28,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 22.7,
+        "humidity_pct": 90.0,
+        "heat_index_c": 22.7,
+        "wind_kmh": 6.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "04:00",
+        "rain_probability": 0,
+        "risk_score": 25,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 22.2,
+        "humidity_pct": 89.0,
+        "heat_index_c": 22.2,
+        "wind_kmh": 6.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "05:00",
+        "rain_probability": 0,
+        "risk_score": 25,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 21.7,
+        "humidity_pct": 88.0,
+        "heat_index_c": 21.7,
         "wind_kmh": 6.7,
         "wind_dir": 0.0,
         "cloud_pct": 75.0
@@ -2072,21 +1579,514 @@
       "properties": {
         "location_name": "Headpond Besai Kemu",
         "slug": "pltm_besai_kemu_headpond",
-        "date": "Jumat, 7 Agustus 2026",
-        "date_iso": "2026-08-07",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
         "relative": "Lusa",
-        "hour": "23:00",
+        "hour": "06:00",
         "rain_probability": 0,
-        "risk_score": 46,
+        "risk_score": 22,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": 22.0,
+        "humidity_pct": 85.0,
+        "heat_index_c": 22.0,
+        "wind_kmh": 7.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "07:00",
+        "rain_probability": 0,
+        "risk_score": 21,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Berawan",
+        "temp_c": 22.6,
+        "humidity_pct": 83.0,
+        "heat_index_c": 22.6,
+        "wind_kmh": 7.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "08:00",
+        "rain_probability": 0,
+        "risk_score": 20,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Cerah Berawan",
+        "temp_c": 24.7,
+        "humidity_pct": 76.0,
+        "heat_index_c": 24.7,
+        "wind_kmh": 5.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "09:00",
+        "rain_probability": 0,
+        "risk_score": 45,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 28.2,
+        "humidity_pct": 67.0,
+        "heat_index_c": 29.52,
+        "wind_kmh": 6.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "10:00",
+        "rain_probability": 0,
+        "risk_score": 63,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah",
+        "temp_c": 29.0,
+        "humidity_pct": 59.0,
+        "heat_index_c": 31.56,
+        "wind_kmh": 7.5,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "11:00",
+        "rain_probability": 14.4,
+        "risk_score": 80,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 30.4,
+        "humidity_pct": 57.0,
+        "heat_index_c": 33.23,
+        "wind_kmh": 7.8,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "12:00",
+        "rain_probability": 14.4,
+        "risk_score": 93,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 31.6,
+        "humidity_pct": 48.0,
+        "heat_index_c": 34.1,
+        "wind_kmh": 9.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "13:00",
+        "rain_probability": 13.8,
+        "risk_score": 97,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 32.4,
+        "humidity_pct": 45.0,
+        "heat_index_c": 34.37,
+        "wind_kmh": 10.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "14:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 33.0,
+        "humidity_pct": 43.0,
+        "heat_index_c": 34.46,
+        "wind_kmh": 10.5,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "15:00",
+        "rain_probability": 14.4,
+        "risk_score": 96,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 33.1,
+        "humidity_pct": 40.0,
+        "heat_index_c": 34.3,
+        "wind_kmh": 11.5,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "16:00",
+        "rain_probability": 13.8,
+        "risk_score": 94,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 32.9,
+        "humidity_pct": 39.0,
+        "heat_index_c": 33.5,
+        "wind_kmh": 11.7,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "17:00",
+        "rain_probability": 14.4,
+        "risk_score": 88,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 31.0,
+        "humidity_pct": 43.0,
+        "heat_index_c": 32.01,
+        "wind_kmh": 10.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "18:00",
+        "rain_probability": 14.4,
+        "risk_score": 77,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Berawan",
+        "temp_c": 27.1,
+        "humidity_pct": 57.0,
+        "heat_index_c": 29.77,
+        "wind_kmh": 6.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "19:00",
+        "rain_probability": 13.8,
+        "risk_score": 64,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah",
+        "temp_c": 25.7,
+        "humidity_pct": 67.0,
+        "heat_index_c": 25.7,
+        "wind_kmh": 5.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "20:00",
+        "rain_probability": 0,
+        "risk_score": 59,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Berawan",
+        "temp_c": 24.9,
+        "humidity_pct": 75.0,
+        "heat_index_c": 24.9,
+        "wind_kmh": 7.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "21:00",
+        "rain_probability": 0,
+        "risk_score": 61,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Berawan",
+        "temp_c": 23.5,
+        "humidity_pct": 82.0,
+        "heat_index_c": 23.5,
+        "wind_kmh": 7.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "22:00",
+        "rain_probability": 0,
+        "risk_score": 50,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Berawan",
-        "temp_c": 23.9,
-        "humidity_pct": 87.0,
-        "heat_index_c": 23.9,
-        "wind_kmh": 6.4,
+        "temp_c": 22.7,
+        "humidity_pct": 81.0,
+        "heat_index_c": 22.7,
+        "wind_kmh": 7.5,
         "wind_dir": 0.0,
         "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.509577778,
+          -4.839133333
+        ]
+      },
+      "properties": {
+        "location_name": "Headpond Besai Kemu",
+        "slug": "pltm_besai_kemu_headpond",
+        "date": "Sabtu, 8 Agustus 2026",
+        "date_iso": "2026-08-08",
+        "relative": "Lusa",
+        "hour": "23:00",
+        "rain_probability": 0,
+        "risk_score": 42,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 22.2,
+        "humidity_pct": 84.0,
+        "heat_index_c": 22.2,
+        "wind_kmh": 7.3,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
       }
     }
   ]
