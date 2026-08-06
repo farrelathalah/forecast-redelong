@@ -1,54 +1,54 @@
 {
-  "generated_at": "2026-08-06T10:41:25.983468+07:00",
+  "generated_at": "2026-08-07T06:29:53.319490+07:00",
   "sources": {
     "BMKG": {
       "ema_success": 0.65,
-      "ema_completeness": 0.618,
+      "ema_completeness": 0.634,
       "consecutive_failures": 1,
       "last_error": "BMKG tidak mengembalikan kandidat untuk target date",
-      "last_run_date": "2026-08-09"
+      "last_run_date": "2026-08-10"
     },
     "CMA": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-09"
+      "last_run_date": "2026-08-10"
     },
     "ECMWF": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-09"
+      "last_run_date": "2026-08-10"
     },
     "GFS": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-09"
+      "last_run_date": "2026-08-10"
     },
     "ICON": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-09"
+      "last_run_date": "2026-08-10"
     },
     "METEOFRANCE": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-09"
+      "last_run_date": "2026-08-10"
     },
     "UKMO": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-09"
+      "last_run_date": "2026-08-10"
     }
   }
 }
