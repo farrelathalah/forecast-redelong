@@ -1,7 +1,7 @@
 {
   "version": "Forecast Redelong Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-08-08T06:33:45.568353+07:00",
+  "generated_at": "2026-08-08T06:54:36.943026+07:00",
   "location": "PLTM Besai Kemu",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,7 +25,7 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-08-08T06:33:45.559696+07:00",
+    "generated_at": "2026-08-08T06:54:36.934305+07:00",
     "aether_version": "Forecast Redelong Public Weather v11",
     "location": "PLTM Besai Kemu",
     "mission": "safety_first",
@@ -41,7 +41,7 @@
     },
     "risk_window": "Tidak ada risk window kuat",
     "best_general_activity_window": "08:00",
-    "peak_rain_threat_hour": "23:00",
+    "peak_rain_threat_hour": "02:00",
     "peak_rain_threat_score": 19.3,
     "peak_heavy_rain_threat_hour": "09:00",
     "peak_heavy_rain_threat_score": 3.3,

@@ -311,7 +311,7 @@
         "risk_score": 63,
         "risk_class": "rain",
         "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
+        "condition": "Cerah",
         "temp_c": 29.9,
         "humidity_pct": 57.0,
         "heat_index_c": 32.08,
@@ -723,7 +723,7 @@
         "heat_index_c": 20.5,
         "wind_kmh": 9.1,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 75.0
       }
     },
     {
@@ -781,7 +781,7 @@
         "heat_index_c": 19.7,
         "wind_kmh": 8.6,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 75.0
       }
     },
     {
@@ -1094,7 +1094,7 @@
         "risk_score": 90,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
+        "condition": "Cerah Berawan",
         "temp_c": 32.1,
         "humidity_pct": 44.0,
         "heat_index_c": 33.41,
@@ -1274,7 +1274,7 @@
         "heat_index_c": 25.7,
         "wind_kmh": 7.2,
         "wind_dir": 0.0,
-        "cloud_pct": 75.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -1332,7 +1332,7 @@
         "heat_index_c": 24.3,
         "wind_kmh": 6.0,
         "wind_dir": 0.0,
-        "cloud_pct": 75.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -1361,7 +1361,7 @@
         "heat_index_c": 23.0,
         "wind_kmh": 6.8,
         "wind_dir": 0.0,
-        "cloud_pct": 75.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -1790,7 +1790,7 @@
         "risk_score": 94,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
+        "condition": "Berawan",
         "temp_c": 32.3,
         "humidity_pct": 44.0,
         "heat_index_c": 33.0,
@@ -1906,7 +1906,7 @@
         "risk_score": 77,
         "risk_class": "rain",
         "risk_label": "Waspada",
-        "condition": "Cerah",
+        "condition": "Cerah Berawan",
         "temp_c": 31.8,
         "humidity_pct": 42.0,
         "heat_index_c": 32.17,
@@ -2022,7 +2022,7 @@
         "risk_score": 58,
         "risk_class": "rain",
         "risk_label": "Waspada",
-        "condition": "Berawan",
+        "condition": "Cerah Berawan",
         "temp_c": 23.8,
         "humidity_pct": 82.0,
         "heat_index_c": 23.8,

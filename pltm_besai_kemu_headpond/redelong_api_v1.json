@@ -277,7 +277,7 @@
         "risk_score": 63,
         "risk_class": "rain",
         "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
+        "condition": "Cerah",
         "valid": true,
         "has_data": true,
         "source_count": 7,
@@ -618,7 +618,7 @@
       {
         "name": "Pagi",
         "hour": "10:00",
-        "condition": "Cerah Berawan",
+        "condition": "Cerah",
         "temp_c": 24.766666666666666,
         "rain_probability": 0.0,
         "risk_class": "rain",
@@ -942,7 +942,7 @@
           "risk_score": 63,
           "risk_class": "rain",
           "risk_label": "Waspada",
-          "condition": "Cerah Berawan",
+          "condition": "Cerah",
           "valid": true,
           "has_data": true,
           "source_count": 7,
@@ -1283,7 +1283,7 @@
         {
           "name": "Pagi",
           "hour": "10:00",
-          "condition": "Cerah Berawan",
+          "condition": "Cerah",
           "temp_c": 24.766666666666666,
           "rain_probability": 0.0,
           "risk_class": "rain",
@@ -1365,7 +1365,7 @@
           "operational_status": "GREEN",
           "quality_note": "",
           "wind_dir": 0.0,
-          "cloud_pct": 45.0
+          "cloud_pct": 75.0
         },
         {
           "date_iso": "2026-08-09",
@@ -1415,7 +1415,7 @@
           "operational_status": "GREEN",
           "quality_note": "",
           "wind_dir": 0.0,
-          "cloud_pct": 45.0
+          "cloud_pct": 75.0
         },
         {
           "date_iso": "2026-08-09",
@@ -1681,7 +1681,7 @@
           "risk_score": 90,
           "risk_class": "danger",
           "risk_label": "Berpotensi signifikan",
-          "condition": "Cerah",
+          "condition": "Cerah Berawan",
           "valid": true,
           "has_data": true,
           "source_count": 7,
@@ -1840,7 +1840,7 @@
           "operational_status": "GREEN",
           "quality_note": "",
           "wind_dir": 0.0,
-          "cloud_pct": 75.0
+          "cloud_pct": 45.0
         },
         {
           "date_iso": "2026-08-09",
@@ -1890,7 +1890,7 @@
           "operational_status": "GREEN",
           "quality_note": "",
           "wind_dir": 0.0,
-          "cloud_pct": 75.0
+          "cloud_pct": 45.0
         },
         {
           "date_iso": "2026-08-09",
@@ -1915,7 +1915,7 @@
           "operational_status": "GREEN",
           "quality_note": "",
           "wind_dir": 0.0,
-          "cloud_pct": 75.0
+          "cloud_pct": 45.0
         },
         {
           "date_iso": "2026-08-09",
@@ -1956,7 +1956,7 @@
         {
           "name": "Siang",
           "hour": "13:00",
-          "condition": "Cerah",
+          "condition": "Cerah Berawan",
           "temp_c": 31.4,
           "rain_probability": 0.0,
           "risk_class": "danger",
@@ -1986,7 +1986,7 @@
       "risk_score": 90,
       "risk_class": "danger",
       "risk_label": "Berpotensi signifikan",
-      "condition": "Cerah",
+      "condition": "Cerah Berawan",
       "avg_temp_c": 25.36666666666667,
       "avg_rh": 62.041666666666664,
       "max_heat_c": 34.02,
@@ -2345,7 +2345,7 @@
           "risk_score": 94,
           "risk_class": "danger",
           "risk_label": "Berpotensi signifikan",
-          "condition": "Cerah Berawan",
+          "condition": "Berawan",
           "valid": true,
           "has_data": true,
           "source_count": 7,
@@ -2445,7 +2445,7 @@
           "risk_score": 77,
           "risk_class": "rain",
           "risk_label": "Waspada",
-          "condition": "Cerah",
+          "condition": "Cerah Berawan",
           "valid": true,
           "has_data": true,
           "source_count": 7,
@@ -2545,7 +2545,7 @@
           "risk_score": 58,
           "risk_class": "rain",
           "risk_label": "Waspada",
-          "condition": "Berawan",
+          "condition": "Cerah Berawan",
           "valid": true,
           "has_data": true,
           "source_count": 7,
@@ -2620,7 +2620,7 @@
         {
           "name": "Siang",
           "hour": "13:00",
-          "condition": "Cerah Berawan",
+          "condition": "Berawan",
           "temp_c": 31.599999999999998,
           "rain_probability": 0.0,
           "risk_class": "danger",
@@ -2638,7 +2638,7 @@
         {
           "name": "Malam",
           "hour": "21:00",
-          "condition": "Berawan",
+          "condition": "Cerah Berawan",
           "temp_c": 23.01,
           "rain_probability": 0.0,
           "risk_class": "rain",
@@ -2650,7 +2650,7 @@
       "risk_score": 94,
       "risk_class": "danger",
       "risk_label": "Berpotensi signifikan",
-      "condition": "Cerah Berawan",
+      "condition": "Berawan",
       "avg_temp_c": 26.208333333333332,
       "avg_rh": 68.79166666666667,
       "max_heat_c": 33.6,
@@ -2676,7 +2676,7 @@
       "points_collected": "0",
       "target_points": "24",
       "http_status": "",
-      "duration_ms": "64",
+      "duration_ms": "45",
       "error_content_type": "",
       "error_snippet": "",
       "payload_saved_path": "",
@@ -2693,7 +2693,7 @@
       "points_collected": "24",
       "target_points": "24",
       "http_status": "200",
-      "duration_ms": "446",
+      "duration_ms": "394",
       "error_content_type": "",
       "error_snippet": "",
       "payload_saved_path": "",
@@ -2710,7 +2710,7 @@
       "points_collected": "24",
       "target_points": "24",
       "http_status": "200",
-      "duration_ms": "442",
+      "duration_ms": "391",
       "error_content_type": "",
       "error_snippet": "",
       "payload_saved_path": "",
@@ -2727,7 +2727,7 @@
       "points_collected": "24",
       "target_points": "24",
       "http_status": "200",
-      "duration_ms": "475",
+      "duration_ms": "381",
       "error_content_type": "",
       "error_snippet": "",
       "payload_saved_path": "",
@@ -2744,7 +2744,7 @@
       "points_collected": "24",
       "target_points": "24",
       "http_status": "200",
-      "duration_ms": "444",
+      "duration_ms": "391",
       "error_content_type": "",
       "error_snippet": "",
       "payload_saved_path": "",
@@ -2761,7 +2761,7 @@
       "points_collected": "24",
       "target_points": "24",
       "http_status": "200",
-      "duration_ms": "438",
+      "duration_ms": "394",
       "error_content_type": "",
       "error_snippet": "",
       "payload_saved_path": "",
@@ -2778,7 +2778,7 @@
       "points_collected": "24",
       "target_points": "24",
       "http_status": "200",
-      "duration_ms": "456",
+      "duration_ms": "393",
       "error_content_type": "",
       "error_snippet": "",
       "payload_saved_path": "",
