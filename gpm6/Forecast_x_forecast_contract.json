@@ -1,7 +1,7 @@
 {
   "version": "Forecast Redelong Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-08-07T08:49:34.794612+07:00",
+  "generated_at": "2026-08-08T06:31:51.765790+07:00",
   "location": "GPM6",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,11 +25,11 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-08-07T08:49:34.785620+07:00",
+    "generated_at": "2026-08-08T06:31:51.756857+07:00",
     "aether_version": "Forecast Redelong Public Weather v11",
     "location": "GPM6",
     "mission": "safety_first",
-    "daily_operational_status": "GREEN",
+    "daily_operational_status": "YELLOW",
     "dominant_atmospheric_mode": "MIXED_LOCAL_ATMOSPHERE",
     "location_personality": {
       "personality": "generic_hyperlocal",
@@ -39,19 +39,19 @@
       "forecast_difficulty": "medium",
       "notes": "Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
     },
-    "risk_window": "Tidak ada risk window kuat",
+    "risk_window": "18:00–19:00",
     "best_general_activity_window": "13:00",
     "peak_rain_threat_hour": "19:00",
-    "peak_rain_threat_score": 26.5,
-    "peak_heavy_rain_threat_hour": "16:00",
-    "peak_heavy_rain_threat_score": 5.4,
-    "peak_failure_risk_hour": "16:00",
-    "peak_failure_risk_score": 27.5,
-    "peak_forecast_stress_hour": "16:00",
-    "peak_forecast_stress_score": 33.3,
-    "peak_self_doubt_hour": "02:00",
-    "peak_self_doubt_score": 30.9,
-    "summary_text": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM6. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 27.5/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "peak_rain_threat_score": 63.8,
+    "peak_heavy_rain_threat_hour": "17:00",
+    "peak_heavy_rain_threat_score": 4.7,
+    "peak_failure_risk_hour": "14:00",
+    "peak_failure_risk_score": 36.8,
+    "peak_forecast_stress_hour": "14:00",
+    "peak_forecast_stress_score": 41.6,
+    "peak_self_doubt_hour": "14:00",
+    "peak_self_doubt_score": 41.9,
+    "summary_text": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk GPM6. Status operasional harian YELLOW. Risk window utama: 18:00–19:00. Failure risk tertinggi 36.8/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   },
   "constitution": [
     "Do not assign high trust when source coverage is weak.",
