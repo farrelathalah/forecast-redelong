@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-08-09T06:30:57.173847+07:00",
+  "generated_at": "2026-08-09T06:49:19.877329+07:00",
   "location_slug": "gpm5",
   "location_name": "GPM5",
   "bmkg_point_name": "Bale Redelong",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm5_20260811_20260809063057",
+    "run_id": "gpm5_20260811_20260809064919",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/command_center_sentinel_x.html",
