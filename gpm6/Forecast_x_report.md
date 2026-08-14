@@ -2,5 +2,5 @@
 
 Buka versi HTML: `sentinel_x_report.html`.
 
-Berlaku untuk Senin, 17 Agustus 2026, 00.00–23.59 WIB
-Diperbarui Jumat, 14 Agustus 2026, 09:51 WIB
+Berlaku untuk Selasa, 18 Agustus 2026, 00.00–23.59 WIB
+Diperbarui Sabtu, 15 Agustus 2026, 06:31 WIB
