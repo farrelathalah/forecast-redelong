@@ -1,7 +1,7 @@
 {
   "version": "Forecast Redelong Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-08-16T06:28:44.285334+07:00",
+  "generated_at": "2026-08-16T06:42:00.225293+07:00",
   "location": "GPM2",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,7 +25,7 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-08-16T06:28:44.278936+07:00",
+    "generated_at": "2026-08-16T06:42:00.220039+07:00",
     "aether_version": "Forecast Redelong Public Weather v11",
     "location": "GPM2",
     "mission": "safety_first",
@@ -40,9 +40,9 @@
       "notes": "Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
     },
     "risk_window": "14:00–16:00",
-    "best_general_activity_window": "10:00",
+    "best_general_activity_window": "09:00",
     "peak_rain_threat_hour": "16:00",
-    "peak_rain_threat_score": 71.4,
+    "peak_rain_threat_score": 70.7,
     "peak_heavy_rain_threat_hour": "14:00",
     "peak_heavy_rain_threat_score": 21.7,
     "peak_failure_risk_hour": "14:00",
