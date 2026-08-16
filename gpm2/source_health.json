@@ -1,54 +1,54 @@
 {
-  "generated_at": "2026-08-16T09:00:28.825608+07:00",
+  "generated_at": "2026-08-17T06:28:07.503710+07:00",
   "sources": {
     "BMKG": {
       "ema_success": 0.65,
-      "ema_completeness": 0.626,
+      "ema_completeness": 0.634,
       "consecutive_failures": 1,
       "last_error": "BMKG tidak mengembalikan kandidat untuk target date",
-      "last_run_date": "2026-08-19"
+      "last_run_date": "2026-08-20"
     },
     "CMA": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-19"
+      "last_run_date": "2026-08-20"
     },
     "ECMWF": {
-      "ema_success": 0.65,
-      "ema_completeness": 0.65,
-      "consecutive_failures": 1,
-      "last_error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
-      "last_run_date": "2026-08-19"
+      "ema_success": 1.0,
+      "ema_completeness": 1.0,
+      "consecutive_failures": 0,
+      "last_error": "",
+      "last_run_date": "2026-08-20"
     },
     "GFS": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-19"
+      "last_run_date": "2026-08-20"
     },
     "ICON": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-19"
+      "last_run_date": "2026-08-20"
     },
     "METEOFRANCE": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-19"
+      "last_run_date": "2026-08-20"
     },
     "UKMO": {
       "ema_success": 1.0,
       "ema_completeness": 1.0,
       "consecutive_failures": 0,
       "last_error": "",
-      "last_run_date": "2026-08-19"
+      "last_run_date": "2026-08-20"
     }
   }
 }
