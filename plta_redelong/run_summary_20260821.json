@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-08-19T06:26:51.493242+07:00",
+  "generated_at": "2026-08-19T06:40:22.709915+07:00",
   "location_slug": "plta_redelong",
   "location_name": "PLTA Redelong",
   "bmkg_point_name": "Bale Redelong",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "plta_redelong_20260821_20260819062651",
+    "run_id": "plta_redelong_20260821_20260819064022",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/command_center_sentinel_x.html",
