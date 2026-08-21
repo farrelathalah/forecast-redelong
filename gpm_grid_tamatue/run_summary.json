@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-08-21T06:45:54.394458+07:00",
+  "generated_at": "2026-08-21T09:05:58.017415+07:00",
   "location_slug": "gpm_grid_tamatue",
   "location_name": "GPM Grid TamaTue",
   "bmkg_point_name": "Bale Redelong",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm_grid_tamatue_20260824_20260821064554",
+    "run_id": "gpm_grid_tamatue_20260824_20260821090558",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/command_center_sentinel_x.html",
