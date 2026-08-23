@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T06:35:35.531959+07:00",
+  "generated_at": "2026-08-24T06:49:35.983021+07:00",
   "sources": {
     "BMKG": {
       "ema_success": 0.65,
@@ -23,8 +23,8 @@
       "last_run_date": "2026-08-27"
     },
     "GFS": {
-      "ema_success": 1.0,
-      "ema_completeness": 1.0,
+      "ema_success": 0.9039,
+      "ema_completeness": 0.9039,
       "consecutive_failures": 0,
       "last_error": "",
       "last_run_date": "2026-08-27"
