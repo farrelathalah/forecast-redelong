@@ -18,35 +18,35 @@
         "verdict": "Dipantau",
         "points": "0",
         "http_status": "",
-        "latency_ms": "260"
+        "latency_ms": "188"
       },
       {
         "source_id": "CMA",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "527"
+        "latency_ms": "553"
       },
       {
         "source_id": "ECMWF",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "555"
+        "latency_ms": "554"
       },
       {
         "source_id": "GFS",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "565"
+        "latency_ms": "545"
       },
       {
         "source_id": "ICON",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "592"
+        "latency_ms": "550"
       },
       {
         "source_id": "METEOFRANCE",
@@ -60,7 +60,7 @@
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "573"
+        "latency_ms": "531"
       }
     ]
   },
