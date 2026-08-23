@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-08-23T06:50:03.535813+07:00",
+  "generated_at": "2026-08-23T09:10:45.594471+07:00",
   "location_slug": "pltm_besai_kemu_powerhouse",
   "location_name": "Powerhouse Besai Kemu",
   "bmkg_point_name": "Kemu",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "pltm_besai_kemu_powerhouse_20260826_20260823065003",
+    "run_id": "pltm_besai_kemu_powerhouse_20260826_20260823091045",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/command_center_sentinel_x.html",
