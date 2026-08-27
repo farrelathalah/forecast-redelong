@@ -1,11 +1,51 @@
 [
   {
     "date": "2026-08-27",
+    "rain_mean_mm": 0.3,
+    "rain_min_mm": 0.0,
+    "rain_max_mm": 1.1,
+    "temperature_mean_c": 26.4,
+    "wind_max_kmh": 21.3,
+    "model_count": 6,
+    "point_count": 4,
+    "gross_volume_m3": 149022,
+    "sources": [
+      "CMA",
+      "ECMWF",
+      "GFS",
+      "ICON",
+      "METEOFRANCE",
+      "UKMO"
+    ],
+    "status": "indikatif cukup"
+  },
+  {
+    "date": "2026-08-28",
+    "rain_mean_mm": 0.6,
+    "rain_min_mm": 0.0,
+    "rain_max_mm": 1.8,
+    "temperature_mean_c": 26.5,
+    "wind_max_kmh": 22.4,
+    "model_count": 6,
+    "point_count": 4,
+    "gross_volume_m3": 298044,
+    "sources": [
+      "CMA",
+      "ECMWF",
+      "GFS",
+      "ICON",
+      "METEOFRANCE",
+      "UKMO"
+    ],
+    "status": "indikatif cukup"
+  },
+  {
+    "date": "2026-08-29",
     "rain_mean_mm": 0.2,
     "rain_min_mm": 0.0,
-    "rain_max_mm": 0.8,
-    "temperature_mean_c": 26.4,
-    "wind_max_kmh": 21.6,
+    "rain_max_mm": 0.7,
+    "temperature_mean_c": 26.8,
+    "wind_max_kmh": 18.6,
     "model_count": 6,
     "point_count": 4,
     "gross_volume_m3": 99348,
@@ -20,55 +60,15 @@
     "status": "indikatif cukup"
   },
   {
-    "date": "2026-08-28",
-    "rain_mean_mm": 1.1,
-    "rain_min_mm": 0.0,
-    "rain_max_mm": 3.7,
-    "temperature_mean_c": 26.6,
-    "wind_max_kmh": 21.8,
-    "model_count": 6,
-    "point_count": 4,
-    "gross_volume_m3": 546414,
-    "sources": [
-      "CMA",
-      "ECMWF",
-      "GFS",
-      "ICON",
-      "METEOFRANCE",
-      "UKMO"
-    ],
-    "status": "indikatif cukup"
-  },
-  {
-    "date": "2026-08-29",
-    "rain_mean_mm": 0.4,
-    "rain_min_mm": 0.0,
-    "rain_max_mm": 2.1,
-    "temperature_mean_c": 26.8,
-    "wind_max_kmh": 19.1,
-    "model_count": 6,
-    "point_count": 4,
-    "gross_volume_m3": 198696,
-    "sources": [
-      "CMA",
-      "ECMWF",
-      "GFS",
-      "ICON",
-      "METEOFRANCE",
-      "UKMO"
-    ],
-    "status": "indikatif cukup"
-  },
-  {
     "date": "2026-08-30",
-    "rain_mean_mm": 1.1,
+    "rain_mean_mm": 0.6,
     "rain_min_mm": 0.0,
-    "rain_max_mm": 4.7,
+    "rain_max_mm": 2.8,
     "temperature_mean_c": 26.8,
-    "wind_max_kmh": 17.4,
+    "wind_max_kmh": 18.0,
     "model_count": 6,
     "point_count": 4,
-    "gross_volume_m3": 546414,
+    "gross_volume_m3": 298044,
     "sources": [
       "CMA",
       "ECMWF",
