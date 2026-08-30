@@ -1,20 +1,20 @@
 {
-  "status": "already_attempted_today",
+  "status": "complete",
   "proxy_strategy": "imerg-primary-openmeteo-analysis-fallback-chirps-reference-v2",
-  "attempt_date_wib": "2026-08-30",
+  "attempt_date_wib": "2026-08-31",
   "archive": {
-    "archive_runs_found": 129,
-    "archive_runs_eligible": 129,
-    "eligible_archive_daily_rows_before_dedup": 2998,
-    "eligible_archive_daily_rows": 1106,
+    "archive_runs_found": 132,
+    "archive_runs_eligible": 132,
+    "eligible_archive_daily_rows_before_dedup": 3070,
+    "eligible_archive_daily_rows": 1130,
     "selection_policy": "earliest issue per issue-date, target-date, and location"
   },
   "primary_proxy": "Open-Meteo Historical Weather, Best Match",
   "primary_proxy_file": "rain_proxy_daily_primary.csv",
   "requested_date_start": "2026-07-16",
-  "requested_date_end": "2026-08-29",
-  "expected_pairs": 523,
-  "available_pairs": 523,
+  "requested_date_end": "2026-08-30",
+  "expected_pairs": 535,
+  "available_pairs": 535,
   "missing_pairs": 0,
   "downloaded_rows_this_attempt": {
     "imerg": 0,
@@ -26,7 +26,7 @@
       "available_pairs": 0
     },
     "openmeteo_historical": {
-      "available_pairs": 523
+      "available_pairs": 535
     },
     "chirps": {
       "available_pairs": 0

@@ -13,19 +13,19 @@
       "properties": {
         "location_name": "PLTM Besai Kemu",
         "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
         "relative": "Hari ini",
         "hour": "00:00",
         "rain_probability": 0,
-        "risk_score": 36,
+        "risk_score": 43,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 23.5,
-        "humidity_pct": 87.0,
-        "heat_index_c": 23.5,
-        "wind_kmh": 5.2,
+        "condition": "Cerah Berawan",
+        "temp_c": 24.1,
+        "humidity_pct": 84.0,
+        "heat_index_c": 24.1,
+        "wind_kmh": 5.5,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -42,21 +42,21 @@
       "properties": {
         "location_name": "PLTM Besai Kemu",
         "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
         "relative": "Hari ini",
         "hour": "01:00",
         "rain_probability": 0,
-        "risk_score": 26,
+        "risk_score": 35,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 23.4,
+        "condition": "Cerah Berawan",
+        "temp_c": 23.8,
         "humidity_pct": 86.0,
-        "heat_index_c": 23.4,
-        "wind_kmh": 3.9,
+        "heat_index_c": 23.8,
+        "wind_kmh": 5.5,
         "wind_dir": 0.0,
-        "cloud_pct": 75.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -71,21 +71,21 @@
       "properties": {
         "location_name": "PLTM Besai Kemu",
         "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
         "relative": "Hari ini",
         "hour": "02:00",
-        "rain_probability": 16.7,
-        "risk_score": 26,
+        "rain_probability": 0,
+        "risk_score": 30,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 22.7,
-        "humidity_pct": 86.0,
-        "heat_index_c": 22.7,
-        "wind_kmh": 3.4,
+        "condition": "Cerah Berawan",
+        "temp_c": 23.3,
+        "humidity_pct": 88.0,
+        "heat_index_c": 23.3,
+        "wind_kmh": 5.8,
         "wind_dir": 0.0,
-        "cloud_pct": 75.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -100,21 +100,21 @@
       "properties": {
         "location_name": "PLTM Besai Kemu",
         "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
         "relative": "Hari ini",
         "hour": "03:00",
-        "rain_probability": 16.7,
-        "risk_score": 27,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
+        "rain_probability": 0,
+        "risk_score": 24,
+        "risk_class": "safe",
+        "risk_label": "Aman",
         "condition": "Berawan",
-        "temp_c": 22.3,
-        "humidity_pct": 86.0,
-        "heat_index_c": 22.3,
-        "wind_kmh": 2.8,
+        "temp_c": 22.8,
+        "humidity_pct": 89.0,
+        "heat_index_c": 22.8,
+        "wind_kmh": 5.8,
         "wind_dir": 0.0,
-        "cloud_pct": 75.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -129,48 +129,19 @@
       "properties": {
         "location_name": "PLTM Besai Kemu",
         "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
         "relative": "Hari ini",
         "hour": "04:00",
-        "rain_probability": 16.7,
-        "risk_score": 27,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Berawan",
-        "temp_c": 22.1,
-        "humidity_pct": 86.0,
-        "heat_index_c": 22.1,
-        "wind_kmh": 2.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 75.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "05:00",
         "rain_probability": 0,
         "risk_score": 22,
         "risk_class": "safe",
         "risk_label": "Aman",
-        "condition": "Cerah Berawan",
-        "temp_c": 21.9,
-        "humidity_pct": 86.0,
-        "heat_index_c": 21.9,
-        "wind_kmh": 2.9,
+        "condition": "Cerah",
+        "temp_c": 23.3,
+        "humidity_pct": 89.0,
+        "heat_index_c": 23.3,
+        "wind_kmh": 5.5,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -187,21 +158,50 @@
       "properties": {
         "location_name": "PLTM Besai Kemu",
         "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
+        "relative": "Hari ini",
+        "hour": "05:00",
+        "rain_probability": 0,
+        "risk_score": 19,
+        "risk_class": "safe",
+        "risk_label": "Aman",
+        "condition": "Cerah",
+        "temp_c": 23.3,
+        "humidity_pct": 89.0,
+        "heat_index_c": 23.3,
+        "wind_kmh": 5.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
         "relative": "Hari ini",
         "hour": "06:00",
         "rain_probability": 0,
-        "risk_score": 21,
+        "risk_score": 19,
         "risk_class": "safe",
         "risk_label": "Aman",
-        "condition": "Cerah Berawan",
-        "temp_c": 21.9,
-        "humidity_pct": 84.0,
-        "heat_index_c": 21.9,
-        "wind_kmh": 3.9,
+        "condition": "Cerah",
+        "temp_c": 23.5,
+        "humidity_pct": 89.0,
+        "heat_index_c": 23.5,
+        "wind_kmh": 6.3,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 15.0
       }
     },
     {
@@ -216,656 +216,18 @@
       "properties": {
         "location_name": "PLTM Besai Kemu",
         "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
         "relative": "Hari ini",
         "hour": "07:00",
         "rain_probability": 0,
-        "risk_score": 20,
+        "risk_score": 18,
         "risk_class": "safe",
         "risk_label": "Aman",
-        "condition": "Cerah Berawan",
-        "temp_c": 23.9,
-        "humidity_pct": 76.0,
-        "heat_index_c": 23.9,
-        "wind_kmh": 2.6,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "08:00",
-        "rain_probability": 16.7,
-        "risk_score": 26,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 25.3,
-        "humidity_pct": 73.0,
-        "heat_index_c": 25.3,
-        "wind_kmh": 2.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "09:00",
-        "rain_probability": 16.7,
-        "risk_score": 41,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 26.9,
-        "humidity_pct": 69.0,
-        "heat_index_c": 28.61,
-        "wind_kmh": 4.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "10:00",
-        "rain_probability": 16.7,
-        "risk_score": 66,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 28.4,
-        "humidity_pct": 63.0,
-        "heat_index_c": 30.73,
-        "wind_kmh": 6.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "11:00",
-        "rain_probability": 29.9,
-        "risk_score": 75,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 30.0,
-        "humidity_pct": 57.0,
-        "heat_index_c": 32.25,
-        "wind_kmh": 8.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "12:00",
-        "rain_probability": 44.9,
-        "risk_score": 82,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Hujan Ringan",
-        "temp_c": 31.1,
-        "humidity_pct": 51.0,
-        "heat_index_c": 33.33,
-        "wind_kmh": 8.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "13:00",
-        "rain_probability": 28.8,
-        "risk_score": 94,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 32.3,
-        "humidity_pct": 48.0,
-        "heat_index_c": 34.07,
-        "wind_kmh": 8.3,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "14:00",
-        "rain_probability": 0,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 33.2,
-        "humidity_pct": 42.0,
-        "heat_index_c": 34.39,
-        "wind_kmh": 8.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "15:00",
-        "rain_probability": 14.4,
-        "risk_score": 87,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 32.9,
-        "humidity_pct": 42.0,
-        "heat_index_c": 34.49,
-        "wind_kmh": 8.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "16:00",
-        "rain_probability": 0,
-        "risk_score": 87,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 31.1,
-        "humidity_pct": 52.0,
-        "heat_index_c": 33.2,
-        "wind_kmh": 9.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "17:00",
-        "rain_probability": 0,
-        "risk_score": 80,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 30.3,
-        "humidity_pct": 57.0,
-        "heat_index_c": 32.79,
-        "wind_kmh": 9.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "18:00",
-        "rain_probability": 0,
-        "risk_score": 81,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 28.0,
-        "humidity_pct": 59.0,
-        "heat_index_c": 30.29,
-        "wind_kmh": 8.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "19:00",
-        "rain_probability": 0,
-        "risk_score": 73,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 27.1,
-        "humidity_pct": 68.0,
-        "heat_index_c": 28.85,
-        "wind_kmh": 5.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "20:00",
-        "rain_probability": 0,
-        "risk_score": 66,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 26.8,
-        "humidity_pct": 69.0,
-        "heat_index_c": 28.45,
-        "wind_kmh": 10.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "21:00",
-        "rain_probability": 0,
-        "risk_score": 55,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 26.0,
-        "humidity_pct": 74.0,
-        "heat_index_c": 26.0,
-        "wind_kmh": 8.5,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "22:00",
-        "rain_probability": 0,
-        "risk_score": 56,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 25.0,
-        "humidity_pct": 84.0,
-        "heat_index_c": 25.0,
-        "wind_kmh": 6.5,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Minggu, 30 Agustus 2026",
-        "date_iso": "2026-08-30",
-        "relative": "Hari ini",
-        "hour": "23:00",
-        "rain_probability": 0,
-        "risk_score": 50,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 24.5,
-        "humidity_pct": 84.0,
-        "heat_index_c": 24.5,
-        "wind_kmh": 5.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "00:00",
-        "rain_probability": 0,
-        "risk_score": 50,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 23.6,
-        "humidity_pct": 88.0,
-        "heat_index_c": 23.6,
-        "wind_kmh": 4.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "01:00",
-        "rain_probability": 0,
-        "risk_score": 44,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 23.0,
-        "humidity_pct": 89.0,
-        "heat_index_c": 23.0,
-        "wind_kmh": 5.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "02:00",
-        "rain_probability": 0,
-        "risk_score": 42,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 23.0,
-        "humidity_pct": 89.0,
-        "heat_index_c": 23.0,
-        "wind_kmh": 5.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "03:00",
-        "rain_probability": 0,
-        "risk_score": 39,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 23.0,
-        "humidity_pct": 90.0,
-        "heat_index_c": 23.0,
-        "wind_kmh": 5.8,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "04:00",
-        "rain_probability": 0,
-        "risk_score": 37,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 22.4,
-        "humidity_pct": 90.0,
-        "heat_index_c": 22.4,
-        "wind_kmh": 5.9,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "05:00",
-        "rain_probability": 0,
-        "risk_score": 37,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 22.3,
-        "humidity_pct": 90.0,
-        "heat_index_c": 22.3,
+        "temp_c": 24.1,
+        "humidity_pct": 82.0,
+        "heat_index_c": 24.1,
         "wind_kmh": 5.0,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -885,75 +247,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "06:00",
-        "rain_probability": 0,
-        "risk_score": 35,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 22.3,
-        "humidity_pct": 89.0,
-        "heat_index_c": 22.3,
-        "wind_kmh": 5.5,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "07:00",
-        "rain_probability": 0,
-        "risk_score": 28,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 24.4,
-        "humidity_pct": 80.0,
-        "heat_index_c": 24.4,
-        "wind_kmh": 4.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "08:00",
-        "rain_probability": 0,
-        "risk_score": 36,
+        "rain_probability": 14.4,
+        "risk_score": 34,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 27.0,
-        "humidity_pct": 71.0,
-        "heat_index_c": 28.94,
-        "wind_kmh": 6.6,
+        "temp_c": 25.8,
+        "humidity_pct": 75.0,
+        "heat_index_c": 25.8,
+        "wind_kmh": 4.2,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -972,17 +276,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "09:00",
-        "rain_probability": 0,
-        "risk_score": 62,
+        "rain_probability": 14.4,
+        "risk_score": 63,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 28.2,
-        "humidity_pct": 66.0,
-        "heat_index_c": 30.51,
-        "wind_kmh": 9.4,
+        "temp_c": 29.0,
+        "humidity_pct": 62.0,
+        "heat_index_c": 31.03,
+        "wind_kmh": 8.0,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1001,19 +305,19 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "10:00",
-        "rain_probability": 14.5,
+        "rain_probability": 13.8,
         "risk_score": 82,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 30.3,
-        "humidity_pct": 56.0,
-        "heat_index_c": 32.4,
-        "wind_kmh": 10.8,
+        "condition": "Cerah",
+        "temp_c": 29.6,
+        "humidity_pct": 61.0,
+        "heat_index_c": 32.27,
+        "wind_kmh": 10.2,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 15.0
       }
     },
     {
@@ -1030,17 +334,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "11:00",
-        "rain_probability": 27.7,
-        "risk_score": 94,
+        "rain_probability": 14.4,
+        "risk_score": 99,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 31.0,
-        "humidity_pct": 56.0,
-        "heat_index_c": 33.89,
-        "wind_kmh": 11.9,
+        "temp_c": 30.9,
+        "humidity_pct": 57.0,
+        "heat_index_c": 33.51,
+        "wind_kmh": 11.2,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1059,16 +363,74 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "12:00",
-        "rain_probability": 14.5,
+        "rain_probability": 14.4,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
         "temp_c": 32.0,
-        "humidity_pct": 51.0,
-        "heat_index_c": 34.84,
+        "humidity_pct": 55.0,
+        "heat_index_c": 34.73,
+        "wind_kmh": 11.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
+        "relative": "Hari ini",
+        "hour": "13:00",
+        "rain_probability": 13.8,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 32.5,
+        "humidity_pct": 50.0,
+        "heat_index_c": 35.77,
+        "wind_kmh": 11.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
+        "relative": "Hari ini",
+        "hour": "14:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 33.7,
+        "humidity_pct": 42.0,
+        "heat_index_c": 35.42,
         "wind_kmh": 10.8,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -1088,46 +450,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "13:00",
-        "rain_probability": 14.5,
+        "relative": "Hari ini",
+        "hour": "15:00",
+        "rain_probability": 14.4,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 32.8,
-        "humidity_pct": 47.0,
-        "heat_index_c": 35.68,
-        "wind_kmh": 10.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "14:00",
-        "rain_probability": 13.9,
-        "risk_score": 100,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 33.2,
-        "humidity_pct": 47.0,
-        "heat_index_c": 35.69,
-        "wind_kmh": 10.1,
+        "temp_c": 33.1,
+        "humidity_pct": 45.0,
+        "heat_index_c": 35.42,
+        "wind_kmh": 11.7,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1146,75 +479,46 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "15:00",
-        "rain_probability": 0,
-        "risk_score": 99,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 33.4,
-        "humidity_pct": 46.0,
-        "heat_index_c": 35.26,
-        "wind_kmh": 11.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "16:00",
-        "rain_probability": 14.5,
-        "risk_score": 96,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 31.2,
-        "humidity_pct": 57.0,
-        "heat_index_c": 34.52,
-        "wind_kmh": 11.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "17:00",
-        "rain_probability": 0,
+        "rain_probability": 27.6,
         "risk_score": 91,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 30.0,
-        "humidity_pct": 64.0,
+        "temp_c": 31.1,
+        "humidity_pct": 53.0,
+        "heat_index_c": 34.56,
+        "wind_kmh": 10.5,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
+        "relative": "Hari ini",
+        "hour": "17:00",
+        "rain_probability": 14.4,
+        "risk_score": 87,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 30.1,
+        "humidity_pct": 59.0,
         "heat_index_c": 33.66,
-        "wind_kmh": 11.2,
+        "wind_kmh": 9.8,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1233,17 +537,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "18:00",
-        "rain_probability": 0,
-        "risk_score": 100,
+        "rain_probability": 14.4,
+        "risk_score": 99,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 28.6,
+        "temp_c": 28.8,
         "humidity_pct": 65.0,
-        "heat_index_c": 31.71,
-        "wind_kmh": 10.7,
+        "heat_index_c": 31.8,
+        "wind_kmh": 9.2,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1262,17 +566,46 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "19:00",
-        "rain_probability": 0,
-        "risk_score": 93,
+        "rain_probability": 13.8,
+        "risk_score": 94,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 27.9,
+        "temp_c": 27.7,
         "humidity_pct": 73.0,
-        "heat_index_c": 30.87,
-        "wind_kmh": 10.2,
+        "heat_index_c": 30.7,
+        "wind_kmh": 9.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
+        "relative": "Hari ini",
+        "hour": "20:00",
+        "rain_probability": 0,
+        "risk_score": 89,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 26.7,
+        "humidity_pct": 80.0,
+        "heat_index_c": 29.16,
+        "wind_kmh": 8.4,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1291,46 +624,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "20:00",
-        "rain_probability": 13.9,
-        "risk_score": 86,
+        "relative": "Hari ini",
+        "hour": "21:00",
+        "rain_probability": 14.4,
+        "risk_score": 85,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 26.7,
-        "humidity_pct": 81.0,
-        "heat_index_c": 29.16,
-        "wind_kmh": 9.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "21:00",
-        "rain_probability": 14.5,
-        "risk_score": 76,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah",
-        "temp_c": 25.9,
+        "temp_c": 25.6,
         "humidity_pct": 86.0,
-        "heat_index_c": 25.9,
-        "wind_kmh": 7.2,
+        "heat_index_c": 25.6,
+        "wind_kmh": 6.1,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1349,76 +653,76 @@
         "slug": "pltm_besai_kemu",
         "date": "Senin, 31 Agustus 2026",
         "date_iso": "2026-08-31",
-        "relative": "Besok",
+        "relative": "Hari ini",
         "hour": "22:00",
-        "rain_probability": 0,
-        "risk_score": 75,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 24.5,
-        "humidity_pct": 90.0,
-        "heat_index_c": 24.5,
-        "wind_kmh": 6.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Senin, 31 Agustus 2026",
-        "date_iso": "2026-08-31",
-        "relative": "Besok",
-        "hour": "23:00",
-        "rain_probability": 0,
-        "risk_score": 72,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah Berawan",
-        "temp_c": 24.1,
-        "humidity_pct": 91.0,
-        "heat_index_c": 24.1,
-        "wind_kmh": 6.3,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Selasa, 1 September 2026",
-        "date_iso": "2026-09-01",
-        "relative": "Lusa",
-        "hour": "00:00",
-        "rain_probability": 0,
-        "risk_score": 67,
+        "rain_probability": 13.8,
+        "risk_score": 77,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 23.9,
-        "humidity_pct": 91.0,
-        "heat_index_c": 23.9,
+        "temp_c": 25.1,
+        "humidity_pct": 87.0,
+        "heat_index_c": 25.1,
         "wind_kmh": 6.2,
         "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Senin, 31 Agustus 2026",
+        "date_iso": "2026-08-31",
+        "relative": "Hari ini",
+        "hour": "23:00",
+        "rain_probability": 14.4,
+        "risk_score": 68,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah",
+        "temp_c": 24.7,
+        "humidity_pct": 87.0,
+        "heat_index_c": 24.7,
+        "wind_kmh": 6.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Selasa, 1 September 2026",
+        "date_iso": "2026-09-01",
+        "relative": "Besok",
+        "hour": "00:00",
+        "rain_probability": 0,
+        "risk_score": 64,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah",
+        "temp_c": 24.3,
+        "humidity_pct": 90.0,
+        "heat_index_c": 24.3,
+        "wind_kmh": 5.7,
+        "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
     },
@@ -1436,17 +740,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "01:00",
         "rain_probability": 0,
         "risk_score": 58,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 23.7,
-        "humidity_pct": 92.0,
-        "heat_index_c": 23.7,
-        "wind_kmh": 6.0,
+        "temp_c": 23.4,
+        "humidity_pct": 90.0,
+        "heat_index_c": 23.4,
+        "wind_kmh": 4.8,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1465,7 +769,7 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "02:00",
         "rain_probability": 0,
         "risk_score": 53,
@@ -1475,7 +779,7 @@
         "temp_c": 23.0,
         "humidity_pct": 92.0,
         "heat_index_c": 23.0,
-        "wind_kmh": 5.2,
+        "wind_kmh": 4.4,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1494,17 +798,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "03:00",
         "rain_probability": 0,
-        "risk_score": 49,
+        "risk_score": 46,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 23.0,
-        "humidity_pct": 94.0,
-        "heat_index_c": 23.0,
-        "wind_kmh": 5.2,
+        "temp_c": 22.6,
+        "humidity_pct": 92.0,
+        "heat_index_c": 22.6,
+        "wind_kmh": 4.0,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1523,17 +827,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "04:00",
         "rain_probability": 0,
         "risk_score": 42,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 23.0,
+        "temp_c": 22.5,
         "humidity_pct": 93.0,
-        "heat_index_c": 23.0,
-        "wind_kmh": 5.3,
+        "heat_index_c": 22.5,
+        "wind_kmh": 4.9,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1552,19 +856,19 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "05:00",
         "rain_probability": 0,
-        "risk_score": 39,
+        "risk_score": 40,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 23.0,
-        "humidity_pct": 93.0,
-        "heat_index_c": 23.0,
-        "wind_kmh": 5.3,
+        "condition": "Cerah",
+        "temp_c": 22.4,
+        "humidity_pct": 94.0,
+        "heat_index_c": 22.4,
+        "wind_kmh": 5.2,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 15.0
       }
     },
     {
@@ -1581,17 +885,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "06:00",
         "rain_probability": 0,
-        "risk_score": 31,
+        "risk_score": 35,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 23.0,
-        "humidity_pct": 93.0,
-        "heat_index_c": 23.0,
-        "wind_kmh": 5.4,
+        "temp_c": 23.8,
+        "humidity_pct": 92.0,
+        "heat_index_c": 23.8,
+        "wind_kmh": 5.7,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1610,48 +914,19 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "07:00",
-        "rain_probability": 0,
-        "risk_score": 29,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 24.3,
-        "humidity_pct": 85.0,
-        "heat_index_c": 24.3,
-        "wind_kmh": 3.3,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Selasa, 1 September 2026",
-        "date_iso": "2026-09-01",
-        "relative": "Lusa",
-        "hour": "08:00",
         "rain_probability": 0,
         "risk_score": 34,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 26.7,
-        "humidity_pct": 74.0,
-        "heat_index_c": 28.64,
-        "wind_kmh": 5.8,
+        "condition": "Cerah",
+        "temp_c": 24.4,
+        "humidity_pct": 86.0,
+        "heat_index_c": 24.4,
+        "wind_kmh": 3.7,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 15.0
       }
     },
     {
@@ -1668,75 +943,46 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
-        "hour": "09:00",
+        "relative": "Besok",
+        "hour": "08:00",
         "rain_probability": 0,
-        "risk_score": 61,
+        "risk_score": 41,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah",
+        "temp_c": 26.3,
+        "humidity_pct": 78.0,
+        "heat_index_c": 26.3,
+        "wind_kmh": 3.7,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Selasa, 1 September 2026",
+        "date_iso": "2026-09-01",
+        "relative": "Besok",
+        "hour": "09:00",
+        "rain_probability": 14.4,
+        "risk_score": 71,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 28.7,
-        "humidity_pct": 64.0,
-        "heat_index_c": 30.97,
-        "wind_kmh": 9.4,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Selasa, 1 September 2026",
-        "date_iso": "2026-09-01",
-        "relative": "Lusa",
-        "hour": "10:00",
-        "rain_probability": 0,
-        "risk_score": 79,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
-        "temp_c": 30.5,
-        "humidity_pct": 55.0,
-        "heat_index_c": 32.55,
-        "wind_kmh": 12.0,
-        "wind_dir": 0.0,
-        "cloud_pct": 15.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Selasa, 1 September 2026",
-        "date_iso": "2026-09-01",
-        "relative": "Lusa",
-        "hour": "11:00",
-        "rain_probability": 0,
-        "risk_score": 96,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 31.8,
-        "humidity_pct": 52.0,
-        "heat_index_c": 34.0,
-        "wind_kmh": 13.0,
+        "temp_c": 29.5,
+        "humidity_pct": 62.0,
+        "heat_index_c": 31.23,
+        "wind_kmh": 8.6,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1755,17 +1001,75 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
+        "hour": "10:00",
+        "rain_probability": 13.8,
+        "risk_score": 84,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 30.0,
+        "humidity_pct": 56.0,
+        "heat_index_c": 32.27,
+        "wind_kmh": 11.5,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Selasa, 1 September 2026",
+        "date_iso": "2026-09-01",
+        "relative": "Besok",
+        "hour": "11:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 30.8,
+        "humidity_pct": 55.0,
+        "heat_index_c": 33.51,
+        "wind_kmh": 11.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Selasa, 1 September 2026",
+        "date_iso": "2026-09-01",
+        "relative": "Besok",
         "hour": "12:00",
-        "rain_probability": 0,
+        "rain_probability": 14.4,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 32.8,
-        "humidity_pct": 48.0,
-        "heat_index_c": 35.33,
-        "wind_kmh": 12.6,
+        "temp_c": 31.7,
+        "humidity_pct": 52.0,
+        "heat_index_c": 34.63,
+        "wind_kmh": 12.3,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1784,17 +1088,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "13:00",
         "rain_probability": 0,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 33.5,
-        "humidity_pct": 46.0,
-        "heat_index_c": 35.78,
-        "wind_kmh": 11.9,
+        "temp_c": 33.2,
+        "humidity_pct": 48.0,
+        "heat_index_c": 35.33,
+        "wind_kmh": 12.7,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1813,19 +1117,19 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "14:00",
-        "rain_probability": 13.8,
+        "rain_probability": 14.4,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 33.1,
-        "humidity_pct": 48.0,
-        "heat_index_c": 35.4,
-        "wind_kmh": 13.1,
+        "temp_c": 32.1,
+        "humidity_pct": 52.0,
+        "heat_index_c": 35.7,
+        "wind_kmh": 13.0,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 15.0
       }
     },
     {
@@ -1842,17 +1146,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "15:00",
         "rain_probability": 14.4,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
-        "condition": "Berawan",
-        "temp_c": 32.4,
-        "humidity_pct": 52.0,
-        "heat_index_c": 35.4,
-        "wind_kmh": 12.5,
+        "condition": "Cerah Berawan",
+        "temp_c": 32.1,
+        "humidity_pct": 53.0,
+        "heat_index_c": 35.5,
+        "wind_kmh": 14.0,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1871,17 +1175,75 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "16:00",
+        "rain_probability": 13.8,
+        "risk_score": 91,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 31.4,
+        "humidity_pct": 56.0,
+        "heat_index_c": 35.05,
+        "wind_kmh": 14.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Selasa, 1 September 2026",
+        "date_iso": "2026-09-01",
+        "relative": "Besok",
+        "hour": "17:00",
         "rain_probability": 14.4,
-        "risk_score": 94,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 30.0,
+        "humidity_pct": 64.0,
+        "heat_index_c": 33.66,
+        "wind_kmh": 14.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Selasa, 1 September 2026",
+        "date_iso": "2026-09-01",
+        "relative": "Besok",
+        "hour": "18:00",
+        "rain_probability": 14.4,
+        "risk_score": 85,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Berawan",
-        "temp_c": 31.4,
-        "humidity_pct": 57.0,
-        "heat_index_c": 34.93,
-        "wind_kmh": 12.8,
+        "temp_c": 28.6,
+        "humidity_pct": 68.0,
+        "heat_index_c": 31.55,
+        "wind_kmh": 10.2,
         "wind_dir": 0.0,
         "cloud_pct": 75.0
       }
@@ -1900,74 +1262,16 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
-        "hour": "17:00",
-        "rain_probability": 13.8,
-        "risk_score": 95,
-        "risk_class": "danger",
-        "risk_label": "Berpotensi signifikan",
-        "condition": "Berawan",
-        "temp_c": 30.2,
-        "humidity_pct": 62.0,
-        "heat_index_c": 33.79,
-        "wind_kmh": 12.2,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Selasa, 1 September 2026",
-        "date_iso": "2026-09-01",
-        "relative": "Lusa",
-        "hour": "18:00",
-        "rain_probability": 14.4,
-        "risk_score": 77,
-        "risk_class": "rain",
-        "risk_label": "Waspada",
-        "condition": "Cerah",
-        "temp_c": 28.8,
-        "humidity_pct": 68.0,
-        "heat_index_c": 32.06,
-        "wind_kmh": 10.7,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Selasa, 1 September 2026",
-        "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "19:00",
-        "rain_probability": 14.4,
-        "risk_score": 60,
+        "rain_probability": 27.6,
+        "risk_score": 71,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 27.9,
-        "humidity_pct": 74.0,
-        "heat_index_c": 30.46,
+        "temp_c": 26.8,
+        "humidity_pct": 75.0,
+        "heat_index_c": 28.9,
         "wind_kmh": 9.0,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -1987,17 +1291,17 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "20:00",
-        "rain_probability": 0,
-        "risk_score": 52,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 26.8,
+        "rain_probability": 14.4,
+        "risk_score": 66,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 26.1,
         "humidity_pct": 79.0,
-        "heat_index_c": 28.82,
-        "wind_kmh": 8.0,
+        "heat_index_c": 26.1,
+        "wind_kmh": 6.5,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -2016,17 +1320,133 @@
         "slug": "pltm_besai_kemu",
         "date": "Selasa, 1 September 2026",
         "date_iso": "2026-09-01",
-        "relative": "Lusa",
+        "relative": "Besok",
         "hour": "21:00",
+        "rain_probability": 14.4,
+        "risk_score": 62,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 25.9,
+        "humidity_pct": 84.0,
+        "heat_index_c": 25.9,
+        "wind_kmh": 4.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Selasa, 1 September 2026",
+        "date_iso": "2026-09-01",
+        "relative": "Besok",
+        "hour": "22:00",
+        "rain_probability": 13.8,
+        "risk_score": 59,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 25.0,
+        "humidity_pct": 89.0,
+        "heat_index_c": 25.0,
+        "wind_kmh": 5.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Selasa, 1 September 2026",
+        "date_iso": "2026-09-01",
+        "relative": "Besok",
+        "hour": "23:00",
+        "rain_probability": 0,
+        "risk_score": 51,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah",
+        "temp_c": 24.2,
+        "humidity_pct": 90.0,
+        "heat_index_c": 24.2,
+        "wind_kmh": 4.7,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "00:00",
+        "rain_probability": 14.4,
+        "risk_score": 49,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 23.9,
+        "humidity_pct": 94.0,
+        "heat_index_c": 23.9,
+        "wind_kmh": 4.3,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "01:00",
         "rain_probability": 0,
         "risk_score": 44,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah Berawan",
-        "temp_c": 25.5,
-        "humidity_pct": 81.0,
-        "heat_index_c": 25.5,
-        "wind_kmh": 7.6,
+        "temp_c": 23.7,
+        "humidity_pct": 95.0,
+        "heat_index_c": 23.7,
+        "wind_kmh": 4.9,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -2043,50 +1463,630 @@
       "properties": {
         "location_name": "PLTM Besai Kemu",
         "slug": "pltm_besai_kemu",
-        "date": "Selasa, 1 September 2026",
-        "date_iso": "2026-09-01",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
         "relative": "Lusa",
-        "hour": "22:00",
-        "rain_probability": 0,
-        "risk_score": 41,
-        "risk_class": "watch",
-        "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah",
-        "temp_c": 24.6,
-        "humidity_pct": 86.0,
-        "heat_index_c": 24.6,
-        "wind_kmh": 6.1,
-        "wind_dir": 0.0,
-        "cloud_pct": 45.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          104.500497222,
-          -4.862591667
-        ]
-      },
-      "properties": {
-        "location_name": "PLTM Besai Kemu",
-        "slug": "pltm_besai_kemu",
-        "date": "Selasa, 1 September 2026",
-        "date_iso": "2026-09-01",
-        "relative": "Lusa",
-        "hour": "23:00",
-        "rain_probability": 0,
-        "risk_score": 35,
+        "hour": "02:00",
+        "rain_probability": 14.4,
+        "risk_score": 29,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah Berawan",
-        "temp_c": 24.4,
-        "humidity_pct": 86.0,
-        "heat_index_c": 24.4,
+        "temp_c": 23.5,
+        "humidity_pct": 95.0,
+        "heat_index_c": 23.5,
+        "wind_kmh": 4.8,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "03:00",
+        "rain_probability": 14.4,
+        "risk_score": 30,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah",
+        "temp_c": 23.6,
+        "humidity_pct": 95.0,
+        "heat_index_c": 23.6,
+        "wind_kmh": 5.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "04:00",
+        "rain_probability": 13.8,
+        "risk_score": 28,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 23.6,
+        "humidity_pct": 94.0,
+        "heat_index_c": 23.6,
+        "wind_kmh": 5.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "05:00",
+        "rain_probability": 14.4,
+        "risk_score": 29,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 23.6,
+        "humidity_pct": 94.0,
+        "heat_index_c": 23.6,
+        "wind_kmh": 6.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "06:00",
+        "rain_probability": 14.4,
+        "risk_score": 28,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 23.7,
+        "humidity_pct": 91.0,
+        "heat_index_c": 23.7,
         "wind_kmh": 5.4,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "07:00",
+        "rain_probability": 13.8,
+        "risk_score": 26,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 24.5,
+        "humidity_pct": 82.0,
+        "heat_index_c": 24.5,
+        "wind_kmh": 4.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "08:00",
+        "rain_probability": 14.4,
+        "risk_score": 46,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 25.4,
+        "humidity_pct": 78.0,
+        "heat_index_c": 25.4,
+        "wind_kmh": 4.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "09:00",
+        "rain_probability": 14.4,
+        "risk_score": 68,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 28.7,
+        "humidity_pct": 68.0,
+        "heat_index_c": 30.99,
+        "wind_kmh": 6.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "10:00",
+        "rain_probability": 13.8,
+        "risk_score": 91,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 29.0,
+        "humidity_pct": 68.0,
+        "heat_index_c": 32.36,
+        "wind_kmh": 8.8,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "11:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 30.3,
+        "humidity_pct": 61.0,
+        "heat_index_c": 33.63,
+        "wind_kmh": 9.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "12:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 32.0,
+        "humidity_pct": 53.0,
+        "heat_index_c": 35.4,
+        "wind_kmh": 9.8,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "13:00",
+        "rain_probability": 13.8,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah",
+        "temp_c": 32.6,
+        "humidity_pct": 49.0,
+        "heat_index_c": 35.23,
+        "wind_kmh": 10.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 15.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "14:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 32.6,
+        "humidity_pct": 50.0,
+        "heat_index_c": 35.87,
+        "wind_kmh": 12.0,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "15:00",
+        "rain_probability": 14.4,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 32.0,
+        "humidity_pct": 54.0,
+        "heat_index_c": 35.54,
+        "wind_kmh": 12.7,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "16:00",
+        "rain_probability": 27.6,
+        "risk_score": 100,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 31.1,
+        "humidity_pct": 58.0,
+        "heat_index_c": 34.86,
+        "wind_kmh": 13.5,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "17:00",
+        "rain_probability": 28.9,
+        "risk_score": 92,
+        "risk_class": "danger",
+        "risk_label": "Berpotensi signifikan",
+        "condition": "Cerah Berawan",
+        "temp_c": 29.4,
+        "humidity_pct": 62.0,
+        "heat_index_c": 33.51,
+        "wind_kmh": 13.3,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "18:00",
+        "rain_probability": 28.9,
+        "risk_score": 76,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 28.1,
+        "humidity_pct": 78.0,
+        "heat_index_c": 31.72,
+        "wind_kmh": 10.9,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "19:00",
+        "rain_probability": 27.6,
+        "risk_score": 71,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 26.9,
+        "humidity_pct": 83.0,
+        "heat_index_c": 29.79,
+        "wind_kmh": 9.4,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "20:00",
+        "rain_probability": 14.4,
+        "risk_score": 62,
+        "risk_class": "rain",
+        "risk_label": "Waspada",
+        "condition": "Cerah Berawan",
+        "temp_c": 26.0,
+        "humidity_pct": 85.0,
+        "heat_index_c": 26.0,
+        "wind_kmh": 8.3,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "21:00",
+        "rain_probability": 14.4,
+        "risk_score": 50,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah",
+        "temp_c": 25.7,
+        "humidity_pct": 85.0,
+        "heat_index_c": 25.7,
+        "wind_kmh": 8.6,
+        "wind_dir": 0.0,
+        "cloud_pct": 45.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "22:00",
+        "rain_probability": 27.6,
+        "risk_score": 39,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Berawan",
+        "temp_c": 24.9,
+        "humidity_pct": 85.0,
+        "heat_index_c": 24.9,
+        "wind_kmh": 7.2,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.500497222,
+          -4.862591667
+        ]
+      },
+      "properties": {
+        "location_name": "PLTM Besai Kemu",
+        "slug": "pltm_besai_kemu",
+        "date": "Rabu, 2 September 2026",
+        "date_iso": "2026-09-02",
+        "relative": "Lusa",
+        "hour": "23:00",
+        "rain_probability": 28.9,
+        "risk_score": 37,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Hujan Ringan",
+        "temp_c": 24.4,
+        "humidity_pct": 89.0,
+        "heat_index_c": 24.4,
+        "wind_kmh": 6.1,
+        "wind_dir": 0.0,
+        "cloud_pct": 75.0
       }
     }
   ]
