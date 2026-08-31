@@ -1,7 +1,7 @@
 {
   "version": "Forecast Redelong Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-08-31T08:29:18.810833+07:00",
+  "generated_at": "2026-09-01T06:32:34.952694+07:00",
   "location": "PLTM Besai Kemu",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,7 +25,7 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-08-31T08:29:18.802000+07:00",
+    "generated_at": "2026-09-01T06:32:34.943642+07:00",
     "aether_version": "Forecast Redelong Public Weather v11",
     "location": "PLTM Besai Kemu",
     "mission": "safety_first",
@@ -40,18 +40,18 @@
       "notes": "Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
     },
     "risk_window": "Tidak ada risk window kuat",
-    "best_general_activity_window": "08:00",
-    "peak_rain_threat_hour": "10:00",
-    "peak_rain_threat_score": 32.5,
-    "peak_heavy_rain_threat_hour": "15:00",
-    "peak_heavy_rain_threat_score": 3.6,
-    "peak_failure_risk_hour": "05:00",
-    "peak_failure_risk_score": 33.2,
-    "peak_forecast_stress_hour": "05:00",
-    "peak_forecast_stress_score": 39.0,
-    "peak_self_doubt_hour": "05:00",
-    "peak_self_doubt_score": 39.7,
-    "summary_text": "Forecast membaca hari ini sebagai STABLE_LOW_RAIN untuk PLTM Besai Kemu. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 33.2/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "best_general_activity_window": "06:00",
+    "peak_rain_threat_hour": "00:00",
+    "peak_rain_threat_score": 28.7,
+    "peak_heavy_rain_threat_hour": "14:00",
+    "peak_heavy_rain_threat_score": 3.5,
+    "peak_failure_risk_hour": "14:00",
+    "peak_failure_risk_score": 33.7,
+    "peak_forecast_stress_hour": "14:00",
+    "peak_forecast_stress_score": 39.9,
+    "peak_self_doubt_hour": "14:00",
+    "peak_self_doubt_score": 40.1,
+    "summary_text": "Forecast membaca hari ini sebagai STABLE_LOW_RAIN untuk PLTM Besai Kemu. Status operasional harian GREEN. Risk window utama: Tidak ada risk window kuat. Failure risk tertinggi 33.7/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   },
   "constitution": [
     "Do not assign high trust when source coverage is weak.",
