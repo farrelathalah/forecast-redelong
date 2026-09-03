@@ -80,9 +80,9 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah Berawan",
-        "temp_c": 22.3,
+        "temp_c": 22.1,
         "humidity_pct": 88.0,
-        "heat_index_c": 22.3,
+        "heat_index_c": 22.1,
         "wind_kmh": 5.8,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -105,16 +105,16 @@
         "relative": "Hari ini",
         "hour": "03:00",
         "rain_probability": 0,
-        "risk_score": 20,
+        "risk_score": 22,
         "risk_class": "safe",
         "risk_label": "Aman",
-        "condition": "Cerah",
+        "condition": "Cerah Berawan",
         "temp_c": 21.3,
         "humidity_pct": 89.0,
         "heat_index_c": 21.3,
         "wind_kmh": 5.8,
         "wind_dir": 0.0,
-        "cloud_pct": 15.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -138,9 +138,9 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah Berawan",
-        "temp_c": 21.1,
+        "temp_c": 20.9,
         "humidity_pct": 88.0,
-        "heat_index_c": 21.1,
+        "heat_index_c": 20.9,
         "wind_kmh": 5.4,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -167,9 +167,9 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah Berawan",
-        "temp_c": 21.5,
+        "temp_c": 20.9,
         "humidity_pct": 88.0,
-        "heat_index_c": 21.5,
+        "heat_index_c": 20.9,
         "wind_kmh": 5.2,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -192,16 +192,16 @@
         "relative": "Hari ini",
         "hour": "06:00",
         "rain_probability": 0,
-        "risk_score": 22,
-        "risk_class": "safe",
-        "risk_label": "Aman",
+        "risk_score": 44,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 22.3,
+        "temp_c": 22.6,
         "humidity_pct": 87.0,
-        "heat_index_c": 22.3,
-        "wind_kmh": 5.3,
+        "heat_index_c": 22.6,
+        "wind_kmh": 5.5,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 15.0
       }
     },
     {
@@ -221,14 +221,14 @@
         "relative": "Hari ini",
         "hour": "07:00",
         "rain_probability": 0,
-        "risk_score": 21,
-        "risk_class": "safe",
-        "risk_label": "Aman",
-        "condition": "Cerah",
+        "risk_score": 39,
+        "risk_class": "watch",
+        "risk_label": "Perlu diperhatikan",
+        "condition": "Cerah Berawan",
         "temp_c": 23.3,
-        "humidity_pct": 84.0,
+        "humidity_pct": 82.0,
         "heat_index_c": 23.3,
-        "wind_kmh": 4.6,
+        "wind_kmh": 5.1,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -250,16 +250,16 @@
         "relative": "Hari ini",
         "hour": "08:00",
         "rain_probability": 14.4,
-        "risk_score": 26,
+        "risk_score": 34,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
-        "temp_c": 25.6,
-        "humidity_pct": 79.0,
-        "heat_index_c": 25.6,
-        "wind_kmh": 3.5,
+        "condition": "Cerah",
+        "temp_c": 25.8,
+        "humidity_pct": 77.0,
+        "heat_index_c": 25.8,
+        "wind_kmh": 4.4,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 15.0
       }
     },
     {
@@ -278,15 +278,15 @@
         "date_iso": "2026-09-03",
         "relative": "Hari ini",
         "hour": "09:00",
-        "rain_probability": 14.4,
-        "risk_score": 43,
+        "rain_probability": 13.8,
+        "risk_score": 37,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
-        "condition": "Cerah Berawan",
+        "condition": "Cerah",
         "temp_c": 27.6,
         "humidity_pct": 69.0,
         "heat_index_c": 29.58,
-        "wind_kmh": 7.0,
+        "wind_kmh": 7.6,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -307,13 +307,13 @@
         "date_iso": "2026-09-03",
         "relative": "Hari ini",
         "hour": "10:00",
-        "rain_probability": 13.8,
+        "rain_probability": 14.4,
         "risk_score": 53,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
         "temp_c": 29.0,
-        "humidity_pct": 59.0,
+        "humidity_pct": 64.0,
         "heat_index_c": 31.51,
         "wind_kmh": 8.7,
         "wind_dir": 0.0,
@@ -341,10 +341,10 @@
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 30.2,
-        "humidity_pct": 53.0,
+        "temp_c": 30.4,
+        "humidity_pct": 49.0,
         "heat_index_c": 32.05,
-        "wind_kmh": 10.0,
+        "wind_kmh": 10.5,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -372,8 +372,8 @@
         "condition": "Cerah",
         "temp_c": 32.2,
         "humidity_pct": 42.0,
-        "heat_index_c": 33.26,
-        "wind_kmh": 10.2,
+        "heat_index_c": 32.99,
+        "wind_kmh": 10.7,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -399,10 +399,10 @@
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 33.2,
+        "temp_c": 32.9,
         "humidity_pct": 39.0,
-        "heat_index_c": 33.55,
-        "wind_kmh": 9.8,
+        "heat_index_c": 33.12,
+        "wind_kmh": 10.5,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -428,10 +428,10 @@
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 33.5,
+        "temp_c": 33.4,
         "humidity_pct": 37.0,
-        "heat_index_c": 33.8,
-        "wind_kmh": 9.0,
+        "heat_index_c": 33.47,
+        "wind_kmh": 9.3,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -457,10 +457,10 @@
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 33.5,
-        "humidity_pct": 38.0,
-        "heat_index_c": 33.9,
-        "wind_kmh": 9.4,
+        "temp_c": 32.7,
+        "humidity_pct": 41.0,
+        "heat_index_c": 33.5,
+        "wind_kmh": 8.5,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -487,9 +487,9 @@
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
         "temp_c": 32.6,
-        "humidity_pct": 43.0,
-        "heat_index_c": 33.63,
-        "wind_kmh": 9.0,
+        "humidity_pct": 41.0,
+        "heat_index_c": 33.37,
+        "wind_kmh": 9.4,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -516,9 +516,9 @@
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
         "temp_c": 31.8,
-        "humidity_pct": 45.0,
-        "heat_index_c": 32.49,
-        "wind_kmh": 13.0,
+        "humidity_pct": 42.0,
+        "heat_index_c": 32.48,
+        "wind_kmh": 11.2,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -573,10 +573,10 @@
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 27.6,
-        "humidity_pct": 62.0,
-        "heat_index_c": 29.07,
-        "wind_kmh": 7.8,
+        "temp_c": 27.5,
+        "humidity_pct": 61.0,
+        "heat_index_c": 28.92,
+        "wind_kmh": 8.0,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -605,7 +605,7 @@
         "temp_c": 26.3,
         "humidity_pct": 68.0,
         "heat_index_c": 26.3,
-        "wind_kmh": 7.0,
+        "wind_kmh": 7.6,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -631,10 +631,10 @@
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah Berawan",
-        "temp_c": 25.0,
+        "temp_c": 24.5,
         "humidity_pct": 76.0,
-        "heat_index_c": 25.0,
-        "wind_kmh": 7.1,
+        "heat_index_c": 24.5,
+        "wind_kmh": 7.6,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -656,14 +656,14 @@
         "relative": "Hari ini",
         "hour": "22:00",
         "rain_probability": 0,
-        "risk_score": 42,
+        "risk_score": 41,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 23.9,
-        "humidity_pct": 82.0,
-        "heat_index_c": 23.9,
-        "wind_kmh": 5.8,
+        "temp_c": 24.0,
+        "humidity_pct": 81.0,
+        "heat_index_c": 24.0,
+        "wind_kmh": 6.8,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -685,13 +685,13 @@
         "relative": "Hari ini",
         "hour": "23:00",
         "rain_probability": 0,
-        "risk_score": 39,
+        "risk_score": 34,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 23.1,
-        "humidity_pct": 86.0,
-        "heat_index_c": 23.1,
+        "temp_c": 23.6,
+        "humidity_pct": 81.0,
+        "heat_index_c": 23.6,
         "wind_kmh": 6.0,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -714,16 +714,16 @@
         "relative": "Besok",
         "hour": "00:00",
         "rain_probability": 0,
-        "risk_score": 37,
+        "risk_score": 39,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
         "temp_c": 22.3,
-        "humidity_pct": 89.0,
+        "humidity_pct": 91.0,
         "heat_index_c": 22.3,
         "wind_kmh": 6.8,
         "wind_dir": 0.0,
-        "cloud_pct": 15.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -743,16 +743,16 @@
         "relative": "Besok",
         "hour": "01:00",
         "rain_probability": 0,
-        "risk_score": 32,
+        "risk_score": 33,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
         "temp_c": 22.0,
-        "humidity_pct": 89.0,
+        "humidity_pct": 90.0,
         "heat_index_c": 22.0,
-        "wind_kmh": 5.7,
+        "wind_kmh": 6.5,
         "wind_dir": 0.0,
-        "cloud_pct": 15.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -779,7 +779,7 @@
         "temp_c": 21.5,
         "humidity_pct": 90.0,
         "heat_index_c": 21.5,
-        "wind_kmh": 7.5,
+        "wind_kmh": 7.2,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -806,7 +806,7 @@
         "risk_label": "Aman",
         "condition": "Cerah",
         "temp_c": 20.2,
-        "humidity_pct": 92.0,
+        "humidity_pct": 88.0,
         "heat_index_c": 20.2,
         "wind_kmh": 7.6,
         "wind_dir": 0.0,
@@ -830,12 +830,12 @@
         "relative": "Besok",
         "hour": "04:00",
         "rain_probability": 0,
-        "risk_score": 20,
+        "risk_score": 19,
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah",
         "temp_c": 20.0,
-        "humidity_pct": 91.0,
+        "humidity_pct": 89.0,
         "heat_index_c": 20.0,
         "wind_kmh": 7.6,
         "wind_dir": 0.0,
@@ -863,10 +863,10 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah",
-        "temp_c": 19.9,
-        "humidity_pct": 89.0,
-        "heat_index_c": 19.9,
-        "wind_kmh": 6.5,
+        "temp_c": 20.0,
+        "humidity_pct": 88.0,
+        "heat_index_c": 20.0,
+        "wind_kmh": 6.4,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -892,9 +892,9 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah",
-        "temp_c": 21.0,
-        "humidity_pct": 86.0,
-        "heat_index_c": 21.0,
+        "temp_c": 20.0,
+        "humidity_pct": 87.0,
+        "heat_index_c": 20.0,
         "wind_kmh": 6.1,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -921,9 +921,9 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah",
-        "temp_c": 23.4,
+        "temp_c": 21.7,
         "humidity_pct": 76.0,
-        "heat_index_c": 23.4,
+        "heat_index_c": 21.7,
         "wind_kmh": 4.6,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -950,10 +950,10 @@
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 25.0,
-        "humidity_pct": 70.0,
-        "heat_index_c": 25.0,
-        "wind_kmh": 3.2,
+        "temp_c": 27.3,
+        "humidity_pct": 62.0,
+        "heat_index_c": 28.06,
+        "wind_kmh": 3.0,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -979,9 +979,9 @@
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 29.0,
+        "temp_c": 28.0,
         "humidity_pct": 55.0,
-        "heat_index_c": 29.93,
+        "heat_index_c": 28.38,
         "wind_kmh": 5.4,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -1010,7 +1010,7 @@
         "condition": "Cerah",
         "temp_c": 29.8,
         "humidity_pct": 47.0,
-        "heat_index_c": 30.62,
+        "heat_index_c": 30.47,
         "wind_kmh": 8.3,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -1039,8 +1039,8 @@
         "condition": "Cerah",
         "temp_c": 31.5,
         "humidity_pct": 42.0,
-        "heat_index_c": 32.71,
-        "wind_kmh": 10.8,
+        "heat_index_c": 32.08,
+        "wind_kmh": 10.6,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1061,17 +1061,17 @@
         "date_iso": "2026-09-04",
         "relative": "Besok",
         "hour": "12:00",
-        "rain_probability": 14.4,
+        "rain_probability": 13.8,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
         "temp_c": 32.6,
         "humidity_pct": 41.0,
-        "heat_index_c": 33.37,
-        "wind_kmh": 11.9,
+        "heat_index_c": 33.16,
+        "wind_kmh": 11.2,
         "wind_dir": 0.0,
-        "cloud_pct": 15.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -1094,13 +1094,13 @@
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
+        "condition": "Cerah Berawan",
         "temp_c": 33.2,
         "humidity_pct": 40.0,
-        "heat_index_c": 34.1,
+        "heat_index_c": 33.2,
         "wind_kmh": 11.5,
         "wind_dir": 0.0,
-        "cloud_pct": 15.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -1124,10 +1124,10 @@
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
-        "temp_c": 33.7,
-        "humidity_pct": 38.0,
-        "heat_index_c": 33.7,
-        "wind_kmh": 12.2,
+        "temp_c": 33.6,
+        "humidity_pct": 39.0,
+        "heat_index_c": 33.6,
+        "wind_kmh": 11.5,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1154,9 +1154,9 @@
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
         "temp_c": 33.5,
-        "humidity_pct": 39.0,
-        "heat_index_c": 34.26,
-        "wind_kmh": 11.5,
+        "humidity_pct": 38.0,
+        "heat_index_c": 34.5,
+        "wind_kmh": 11.3,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1183,9 +1183,9 @@
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
         "temp_c": 33.1,
-        "humidity_pct": 40.0,
+        "humidity_pct": 41.0,
         "heat_index_c": 33.9,
-        "wind_kmh": 11.2,
+        "wind_kmh": 10.7,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1212,9 +1212,9 @@
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
         "temp_c": 32.2,
-        "humidity_pct": 43.0,
-        "heat_index_c": 33.15,
-        "wind_kmh": 10.9,
+        "humidity_pct": 45.0,
+        "heat_index_c": 32.8,
+        "wind_kmh": 10.2,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1243,7 +1243,7 @@
         "temp_c": 30.4,
         "humidity_pct": 48.0,
         "heat_index_c": 30.69,
-        "wind_kmh": 10.3,
+        "wind_kmh": 9.3,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1269,10 +1269,10 @@
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 27.9,
-        "humidity_pct": 60.0,
-        "heat_index_c": 28.97,
-        "wind_kmh": 9.7,
+        "temp_c": 27.4,
+        "humidity_pct": 61.0,
+        "heat_index_c": 28.69,
+        "wind_kmh": 8.6,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1298,10 +1298,10 @@
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 26.4,
-        "humidity_pct": 72.0,
-        "heat_index_c": 26.4,
-        "wind_kmh": 8.6,
+        "temp_c": 26.5,
+        "humidity_pct": 69.0,
+        "heat_index_c": 26.5,
+        "wind_kmh": 8.0,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1323,14 +1323,14 @@
         "relative": "Besok",
         "hour": "21:00",
         "rain_probability": 0,
-        "risk_score": 65,
+        "risk_score": 64,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
         "temp_c": 24.5,
-        "humidity_pct": 80.0,
+        "humidity_pct": 79.0,
         "heat_index_c": 24.5,
-        "wind_kmh": 7.0,
+        "wind_kmh": 6.9,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1352,13 +1352,13 @@
         "relative": "Besok",
         "hour": "22:00",
         "rain_probability": 0,
-        "risk_score": 62,
+        "risk_score": 60,
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 23.7,
-        "humidity_pct": 83.0,
-        "heat_index_c": 23.7,
+        "temp_c": 23.4,
+        "humidity_pct": 81.0,
+        "heat_index_c": 23.4,
         "wind_kmh": 6.6,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -1388,7 +1388,7 @@
         "temp_c": 23.2,
         "humidity_pct": 87.0,
         "heat_index_c": 23.2,
-        "wind_kmh": 6.1,
+        "wind_kmh": 6.4,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1414,12 +1414,12 @@
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 23.0,
+        "temp_c": 22.8,
         "humidity_pct": 88.0,
-        "heat_index_c": 23.0,
+        "heat_index_c": 22.8,
         "wind_kmh": 6.6,
         "wind_dir": 0.0,
-        "cloud_pct": 45.0
+        "cloud_pct": 15.0
       }
     },
     {
@@ -1443,9 +1443,9 @@
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 23.0,
+        "temp_c": 22.7,
         "humidity_pct": 87.0,
-        "heat_index_c": 23.0,
+        "heat_index_c": 22.7,
         "wind_kmh": 6.7,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -1468,13 +1468,13 @@
         "relative": "Lusa",
         "hour": "02:00",
         "rain_probability": 0,
-        "risk_score": 40,
+        "risk_score": 41,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 23.0,
-        "humidity_pct": 87.0,
-        "heat_index_c": 23.0,
+        "temp_c": 22.0,
+        "humidity_pct": 88.0,
+        "heat_index_c": 22.0,
         "wind_kmh": 6.8,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -1497,16 +1497,16 @@
         "relative": "Lusa",
         "hour": "03:00",
         "rain_probability": 0,
-        "risk_score": 33,
+        "risk_score": 35,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
         "temp_c": 21.7,
-        "humidity_pct": 86.0,
+        "humidity_pct": 88.0,
         "heat_index_c": 21.7,
-        "wind_kmh": 6.1,
+        "wind_kmh": 6.7,
         "wind_dir": 0.0,
-        "cloud_pct": 15.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -1526,14 +1526,14 @@
         "relative": "Lusa",
         "hour": "04:00",
         "rain_probability": 0,
-        "risk_score": 26,
+        "risk_score": 27,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
         "temp_c": 21.7,
-        "humidity_pct": 86.0,
+        "humidity_pct": 87.0,
         "heat_index_c": 21.7,
-        "wind_kmh": 6.1,
+        "wind_kmh": 6.7,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1559,10 +1559,10 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah",
-        "temp_c": 21.5,
-        "humidity_pct": 87.0,
-        "heat_index_c": 21.5,
-        "wind_kmh": 5.9,
+        "temp_c": 21.9,
+        "humidity_pct": 85.0,
+        "heat_index_c": 21.9,
+        "wind_kmh": 5.8,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1588,10 +1588,10 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah",
-        "temp_c": 21.9,
-        "humidity_pct": 78.0,
-        "heat_index_c": 21.9,
-        "wind_kmh": 5.7,
+        "temp_c": 21.4,
+        "humidity_pct": 84.0,
+        "heat_index_c": 21.4,
+        "wind_kmh": 6.7,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1617,9 +1617,9 @@
         "risk_class": "safe",
         "risk_label": "Aman",
         "condition": "Cerah",
-        "temp_c": 23.7,
-        "humidity_pct": 73.0,
-        "heat_index_c": 23.7,
+        "temp_c": 23.4,
+        "humidity_pct": 77.0,
+        "heat_index_c": 23.4,
         "wind_kmh": 5.2,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -1642,14 +1642,14 @@
         "relative": "Lusa",
         "hour": "08:00",
         "rain_probability": 0,
-        "risk_score": 33,
+        "risk_score": 37,
         "risk_class": "watch",
         "risk_label": "Perlu diperhatikan",
         "condition": "Cerah",
-        "temp_c": 26.0,
-        "humidity_pct": 68.0,
-        "heat_index_c": 26.0,
-        "wind_kmh": 3.5,
+        "temp_c": 27.8,
+        "humidity_pct": 64.0,
+        "heat_index_c": 29.18,
+        "wind_kmh": 4.2,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1675,9 +1675,9 @@
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 29.9,
+        "temp_c": 29.0,
         "humidity_pct": 55.0,
-        "heat_index_c": 31.23,
+        "heat_index_c": 30.31,
         "wind_kmh": 5.4,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
@@ -1706,8 +1706,8 @@
         "condition": "Cerah",
         "temp_c": 30.1,
         "humidity_pct": 53.0,
-        "heat_index_c": 31.88,
-        "wind_kmh": 8.3,
+        "heat_index_c": 31.7,
+        "wind_kmh": 8.2,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1733,10 +1733,10 @@
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah",
-        "temp_c": 31.9,
-        "humidity_pct": 47.0,
+        "temp_c": 32.0,
+        "humidity_pct": 43.0,
         "heat_index_c": 33.5,
-        "wind_kmh": 10.5,
+        "wind_kmh": 10.4,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -1761,13 +1761,13 @@
         "risk_score": 97,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
+        "condition": "Cerah Berawan",
         "temp_c": 33.2,
         "humidity_pct": 43.0,
         "heat_index_c": 34.6,
         "wind_kmh": 11.8,
         "wind_dir": 0.0,
-        "cloud_pct": 15.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -1790,13 +1790,13 @@
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
-        "condition": "Cerah",
+        "condition": "Cerah Berawan",
         "temp_c": 33.9,
         "humidity_pct": 40.0,
         "heat_index_c": 35.26,
         "wind_kmh": 12.3,
         "wind_dir": 0.0,
-        "cloud_pct": 15.0
+        "cloud_pct": 45.0
       }
     },
     {
@@ -1815,7 +1815,7 @@
         "date_iso": "2026-09-05",
         "relative": "Lusa",
         "hour": "14:00",
-        "rain_probability": 14.4,
+        "rain_probability": 0,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
@@ -1844,14 +1844,14 @@
         "date_iso": "2026-09-05",
         "relative": "Lusa",
         "hour": "15:00",
-        "rain_probability": 14.4,
+        "rain_probability": 0,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Cerah Berawan",
         "temp_c": 33.2,
-        "humidity_pct": 42.0,
-        "heat_index_c": 34.8,
+        "humidity_pct": 41.0,
+        "heat_index_c": 34.33,
         "wind_kmh": 12.3,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
@@ -1873,15 +1873,15 @@
         "date_iso": "2026-09-05",
         "relative": "Lusa",
         "hour": "16:00",
-        "rain_probability": 13.8,
+        "rain_probability": 0,
         "risk_score": 100,
         "risk_class": "danger",
         "risk_label": "Berpotensi signifikan",
         "condition": "Berawan",
         "temp_c": 32.2,
-        "humidity_pct": 46.0,
-        "heat_index_c": 34.02,
-        "wind_kmh": 11.7,
+        "humidity_pct": 43.0,
+        "heat_index_c": 33.62,
+        "wind_kmh": 11.6,
         "wind_dir": 0.0,
         "cloud_pct": 75.0
       }
@@ -1908,9 +1908,9 @@
         "risk_label": "Berpotensi signifikan",
         "condition": "Berawan",
         "temp_c": 31.1,
-        "humidity_pct": 51.0,
-        "heat_index_c": 33.0,
-        "wind_kmh": 10.1,
+        "humidity_pct": 45.0,
+        "heat_index_c": 32.31,
+        "wind_kmh": 11.3,
         "wind_dir": 0.0,
         "cloud_pct": 75.0
       }
@@ -1937,9 +1937,9 @@
         "risk_label": "Berpotensi signifikan",
         "condition": "Berawan",
         "temp_c": 29.6,
-        "humidity_pct": 57.0,
-        "heat_index_c": 31.35,
-        "wind_kmh": 8.7,
+        "humidity_pct": 51.0,
+        "heat_index_c": 30.51,
+        "wind_kmh": 10.1,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1967,8 +1967,8 @@
         "condition": "Berawan",
         "temp_c": 27.1,
         "humidity_pct": 65.0,
-        "heat_index_c": 28.28,
-        "wind_kmh": 8.2,
+        "heat_index_c": 28.6,
+        "wind_kmh": 9.0,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -1995,7 +1995,7 @@
         "risk_label": "Waspada",
         "condition": "Cerah",
         "temp_c": 25.1,
-        "humidity_pct": 74.0,
+        "humidity_pct": 75.0,
         "heat_index_c": 25.1,
         "wind_kmh": 7.7,
         "wind_dir": 0.0,
@@ -2022,11 +2022,11 @@
         "risk_score": 66,
         "risk_class": "rain",
         "risk_label": "Waspada",
-        "condition": "Cerah",
+        "condition": "Cerah Berawan",
         "temp_c": 24.3,
         "humidity_pct": 79.0,
         "heat_index_c": 24.3,
-        "wind_kmh": 7.9,
+        "wind_kmh": 7.4,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
@@ -2052,10 +2052,10 @@
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 23.9,
+        "temp_c": 24.0,
         "humidity_pct": 82.0,
-        "heat_index_c": 23.9,
-        "wind_kmh": 8.4,
+        "heat_index_c": 24.0,
+        "wind_kmh": 6.9,
         "wind_dir": 0.0,
         "cloud_pct": 15.0
       }
@@ -2081,10 +2081,10 @@
         "risk_class": "rain",
         "risk_label": "Waspada",
         "condition": "Cerah",
-        "temp_c": 23.5,
+        "temp_c": 23.6,
         "humidity_pct": 83.0,
-        "heat_index_c": 23.5,
-        "wind_kmh": 8.4,
+        "heat_index_c": 23.6,
+        "wind_kmh": 7.6,
         "wind_dir": 0.0,
         "cloud_pct": 45.0
       }
