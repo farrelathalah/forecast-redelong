@@ -10,57 +10,57 @@
   },
   "source_court": {
     "status": "Aktif",
-    "agreement": "Sedang",
-    "summary": "5/7 sumber aktif. Agreement operasional: Sedang.",
+    "agreement": "Tinggi",
+    "summary": "6/7 sumber aktif. Agreement operasional: Tinggi.",
     "sources": [
       {
         "source_id": "BMKG",
         "verdict": "Dipantau",
         "points": "0",
         "http_status": "",
-        "latency_ms": "64"
+        "latency_ms": "95"
       },
       {
         "source_id": "CMA",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "76"
+        "latency_ms": "494"
       },
       {
         "source_id": "ECMWF",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "19851"
+        "latency_ms": "526"
       },
       {
         "source_id": "GFS",
-        "verdict": "Dipantau",
-        "points": "0",
-        "http_status": "",
-        "latency_ms": "84574"
+        "verdict": "Aktif",
+        "points": "24",
+        "http_status": "200",
+        "latency_ms": "506"
       },
       {
         "source_id": "ICON",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "76"
+        "latency_ms": "503"
       },
       {
         "source_id": "METEOFRANCE",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "67"
+        "latency_ms": "496"
       },
       {
         "source_id": "UKMO",
         "verdict": "Aktif",
         "points": "24",
         "http_status": "200",
-        "latency_ms": "67"
+        "latency_ms": "505"
       }
     ]
   },
