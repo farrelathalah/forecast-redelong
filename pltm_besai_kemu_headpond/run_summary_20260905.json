@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-09-05T08:07:27.994646+07:00",
+  "generated_at": "2026-09-05T12:54:42.691765+07:00",
   "location_slug": "pltm_besai_kemu_headpond",
   "location_name": "Headpond Besai Kemu",
   "bmkg_point_name": "Kemu",
@@ -14,7 +14,7 @@
   "target_date": "2026-09-05",
   "sources_total": 7,
   "sources_success": 7,
-  "points_total": 162,
+  "points_total": 158,
   "sources_active": [
     "BMKG",
     "ECMWF",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "pltm_besai_kemu_headpond_20260905_20260905080727",
+    "run_id": "pltm_besai_kemu_headpond_20260905_20260905125442",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/command_center_sentinel_x.html",
