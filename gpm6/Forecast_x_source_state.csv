@@ -1,8 +1,8 @@
 source_id,provider,state,success,points,ema_success,ema_completeness,consecutive_failures,http_status,duration_ms,error
-BMKG,BMKG,DEGRADED,False,0,1.0,0.9754,0,,52,BMKG tidak mengembalikan kandidat untuk target date
-CMA,Open-Meteo / CMA GRAPES,ACTIVE,True,24,1.0,1.0,0,200,65,
-ECMWF,Open-Meteo / ECMWF,ACTIVE,True,24,1.0,1.0,0,200,66,
-GFS,Open-Meteo / NOAA GFS,ACTIVE,True,24,1.0,1.0,0,200,64,
-ICON,Open-Meteo / DWD ICON,ACTIVE,True,24,1.0,1.0,0,200,67,
-METEOFRANCE,Open-Meteo / Meteo-France,ACTIVE,True,24,1.0,1.0,0,200,71,
-UKMO,Open-Meteo / UK Met Office,ACTIVE,True,24,1.0,1.0,0,200,63,
+BMKG,BMKG,DEGRADED,False,0,1.0,0.9692,0,,93,BMKG tidak mengembalikan kandidat untuk target date
+CMA,Open-Meteo / CMA GRAPES,ACTIVE,True,24,1.0,1.0,0,200,580,
+ECMWF,Open-Meteo / ECMWF,ACTIVE,True,24,1.0,1.0,0,200,568,
+GFS,Open-Meteo / NOAA GFS,ACTIVE,True,24,1.0,1.0,0,200,564,
+ICON,Open-Meteo / DWD ICON,ACTIVE,True,24,1.0,1.0,0,200,582,
+METEOFRANCE,Open-Meteo / Meteo-France,ACTIVE,True,24,1.0,1.0,0,200,569,
+UKMO,Open-Meteo / UK Met Office,ACTIVE,True,24,1.0,1.0,0,200,562,
