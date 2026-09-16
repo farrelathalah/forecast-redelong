@@ -1,8 +1,8 @@
 tanggal,source_id,provider,success,base_weight,health_factor,effective_base_weight,points_collected,target_points,http_status,duration_ms,error_content_type,error_snippet,payload_saved_path,error
-16-09-2026,BMKG,BMKG,no,1.35,1.0,1.35,0,24,,41550,,,,The read operation timed out
-16-09-2026,CMA,Open-Meteo / CMA GRAPES,yes,1.0,1.0,1.0,24,24,200,88,,,,
-16-09-2026,ECMWF,Open-Meteo / ECMWF,yes,1.0,1.0,1.0,24,24,200,66,,,,
-16-09-2026,GFS,Open-Meteo / NOAA GFS,yes,1.0,1.0,1.0,24,24,200,8532,,,,
-16-09-2026,ICON,Open-Meteo / DWD ICON,no,1.0,1.0,1.0,0,24,,41743,,,,The read operation timed out
-16-09-2026,METEOFRANCE,Open-Meteo / Meteo-France,yes,1.0,1.0,1.0,24,24,200,5348,,,,
-16-09-2026,UKMO,Open-Meteo / UK Met Office,yes,1.0,1.0,1.0,24,24,200,11627,,,,
+16-09-2026,BMKG,BMKG,yes,1.35,1.0,1.35,18,24,200,116,,,,
+16-09-2026,CMA,Open-Meteo / CMA GRAPES,yes,1.0,1.0,1.0,24,24,200,522,,,,
+16-09-2026,ECMWF,Open-Meteo / ECMWF,yes,1.0,1.0,1.0,24,24,200,496,,,,
+16-09-2026,GFS,Open-Meteo / NOAA GFS,yes,1.0,1.0,1.0,24,24,200,507,,,,
+16-09-2026,ICON,Open-Meteo / DWD ICON,yes,1.0,1.0,1.0,24,24,200,524,,,,
+16-09-2026,METEOFRANCE,Open-Meteo / Meteo-France,yes,1.0,1.0,1.0,24,24,200,512,,,,
+16-09-2026,UKMO,Open-Meteo / UK Met Office,yes,1.0,1.0,1.0,24,24,200,515,,,,
