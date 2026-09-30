@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T06:38:40.836835+07:00",
+  "generated_at": "2026-09-30T09:15:50.240326+07:00",
   "mode": "forecast",
   "locations_file": "/home/runner/work/forecast-redelong/forecast-redelong/locations.json",
   "default_multi_locations": [
@@ -37,7 +37,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260930_062603.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260930_090751.log"
         },
         {
           "target_date": "2026-10-01",
@@ -45,7 +45,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260930_062607.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260930_090754.log"
         },
         {
           "target_date": "2026-10-02",
@@ -53,7 +53,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260930_062634.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260930_090757.log"
         },
         {
           "target_date": "2026-10-03",
@@ -61,7 +61,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260930_062637.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/plta_redelong/logs/forecast_20260930_090822.log"
         }
       ],
       "error": ""
@@ -85,7 +85,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260930_062704.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260930_090825.log"
         },
         {
           "target_date": "2026-10-01",
@@ -93,7 +93,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260930_062708.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260930_090849.log"
         },
         {
           "target_date": "2026-10-02",
@@ -101,7 +101,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260930_062734.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260930_090852.log"
         },
         {
           "target_date": "2026-10-03",
@@ -109,7 +109,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260930_062738.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm1/logs/forecast_20260930_090855.log"
         }
       ],
       "error": ""
@@ -133,7 +133,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260930_062803.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260930_090919.log"
         },
         {
           "target_date": "2026-10-01",
@@ -141,7 +141,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260930_062807.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260930_090922.log"
         },
         {
           "target_date": "2026-10-02",
@@ -149,7 +149,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260930_062833.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260930_090924.log"
         },
         {
           "target_date": "2026-10-03",
@@ -157,7 +157,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260930_062836.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/logs/forecast_20260930_090926.log"
         }
       ],
       "error": ""
@@ -181,7 +181,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260930_062903.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260930_090951.log"
         },
         {
           "target_date": "2026-10-01",
@@ -189,7 +189,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260930_062906.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260930_090953.log"
         },
         {
           "target_date": "2026-10-02",
@@ -197,7 +197,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260930_062933.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260930_090956.log"
         },
         {
           "target_date": "2026-10-03",
@@ -205,7 +205,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260930_062959.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm3/logs/forecast_20260930_090958.log"
         }
       ],
       "error": ""
@@ -229,7 +229,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260930_063004.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260930_091022.log"
         },
         {
           "target_date": "2026-10-01",
@@ -237,7 +237,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260930_063030.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260930_091025.log"
         },
         {
           "target_date": "2026-10-02",
@@ -245,7 +245,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260930_063033.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260930_091049.log"
         },
         {
           "target_date": "2026-10-03",
@@ -253,7 +253,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260930_063059.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm4/logs/forecast_20260930_091052.log"
         }
       ],
       "error": ""
@@ -277,7 +277,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260930_063102.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260930_091054.log"
         },
         {
           "target_date": "2026-10-01",
@@ -285,7 +285,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260930_063128.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260930_091120.log"
         },
         {
           "target_date": "2026-10-02",
@@ -293,7 +293,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260930_063131.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260930_091123.log"
         },
         {
           "target_date": "2026-10-03",
@@ -301,7 +301,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260930_063157.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm5/logs/forecast_20260930_091148.log"
         }
       ],
       "error": ""
@@ -325,7 +325,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260930_063222.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260930_091150.log"
         },
         {
           "target_date": "2026-10-01",
@@ -333,7 +333,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260930_063226.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260930_091153.log"
         },
         {
           "target_date": "2026-10-02",
@@ -341,7 +341,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260930_063251.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260930_091218.log"
         },
         {
           "target_date": "2026-10-03",
@@ -349,7 +349,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260930_063254.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/logs/forecast_20260930_091220.log"
         }
       ],
       "error": ""
@@ -373,7 +373,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260930_063321.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260930_091223.log"
         },
         {
           "target_date": "2026-10-01",
@@ -381,7 +381,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260930_063324.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260930_091225.log"
         },
         {
           "target_date": "2026-10-02",
@@ -389,7 +389,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260930_063350.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260930_091251.log"
         },
         {
           "target_date": "2026-10-03",
@@ -397,7 +397,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260930_063353.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/logs/forecast_20260930_091253.log"
         }
       ],
       "error": ""
@@ -421,7 +421,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/logs/forecast_20260930_063419.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/logs/forecast_20260930_091256.log"
         },
         {
           "target_date": "2026-10-01",
@@ -429,7 +429,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/logs/forecast_20260930_063422.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/logs/forecast_20260930_091321.log"
         },
         {
           "target_date": "2026-10-02",
@@ -437,7 +437,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/logs/forecast_20260930_063448.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/logs/forecast_20260930_091323.log"
         },
         {
           "target_date": "2026-10-03",
@@ -445,7 +445,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/logs/forecast_20260930_063514.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu/logs/forecast_20260930_091348.log"
         }
       ],
       "error": ""
@@ -469,7 +469,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/logs/forecast_20260930_063518.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/logs/forecast_20260930_091351.log"
         },
         {
           "target_date": "2026-10-01",
@@ -477,7 +477,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/logs/forecast_20260930_063544.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/logs/forecast_20260930_091353.log"
         },
         {
           "target_date": "2026-10-02",
@@ -485,7 +485,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/logs/forecast_20260930_063547.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/logs/forecast_20260930_091417.log"
         },
         {
           "target_date": "2026-10-03",
@@ -493,7 +493,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/logs/forecast_20260930_063613.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/logs/forecast_20260930_091420.log"
         }
       ],
       "error": ""
@@ -517,7 +517,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260930_063616.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260930_091422.log"
         },
         {
           "target_date": "2026-10-01",
@@ -525,7 +525,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260930_063641.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260930_091447.log"
         },
         {
           "target_date": "2026-10-02",
@@ -533,7 +533,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260930_063645.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260930_091450.log"
         },
         {
           "target_date": "2026-10-03",
@@ -541,7 +541,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260930_063714.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/logs/forecast_20260930_091452.log"
         }
       ],
       "error": ""
@@ -565,7 +565,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/logs/forecast_20260930_063740.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/logs/forecast_20260930_091516.log"
         },
         {
           "target_date": "2026-10-01",
@@ -573,7 +573,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/logs/forecast_20260930_063744.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/logs/forecast_20260930_091519.log"
         },
         {
           "target_date": "2026-10-02",
@@ -581,7 +581,7 @@
           "sources_success": 7,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/logs/forecast_20260930_063810.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/logs/forecast_20260930_091544.log"
         },
         {
           "target_date": "2026-10-03",
@@ -589,7 +589,7 @@
           "sources_success": 6,
           "sources_total": 7,
           "low_coverage_slots": [],
-          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/logs/forecast_20260930_063836.log"
+          "log_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_sumberjaya/logs/forecast_20260930_091547.log"
         }
       ],
       "error": ""
@@ -607,22 +607,22 @@
   "combined_outputs": {
     "ensemble_all_locations": {
       "latest_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_all_locations.csv",
-      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_all_locations_20260930_063840.csv",
+      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_all_locations_20260930_091549.csv",
       "rows": 1152
     },
     "ensemble_long_all_locations": {
       "latest_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_long_all_locations.csv",
-      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_long_all_locations_20260930_063840.csv",
+      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/ensemble_long_all_locations_20260930_091549.csv",
       "rows": 1152
     },
     "forecast_all_locations": {
       "latest_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/forecast_all_locations.csv",
-      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/forecast_all_locations_20260930_063840.csv",
-      "rows": 7728
+      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/forecast_all_locations_20260930_091549.csv",
+      "rows": 7692
     },
     "source_status_all_locations": {
       "latest_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/source_status_all_locations.csv",
-      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/source_status_all_locations_20260930_063840.csv",
+      "versioned_path": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/source_status_all_locations_20260930_091550.csv",
       "rows": 336
     }
   }
