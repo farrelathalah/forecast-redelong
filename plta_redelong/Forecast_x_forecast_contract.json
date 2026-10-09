@@ -1,7 +1,7 @@
 {
   "version": "Forecast Redelong Public Weather v11",
   "public_version": "sentinel-x-public-operational-v2",
-  "generated_at": "2026-10-08T09:42:35.781140+07:00",
+  "generated_at": "2026-10-09T09:57:26.581889+07:00",
   "location": "PLTA Redelong",
   "official_warning_disclaimer": "Bukan peringatan resmi. Untuk cuaca ekstrem, ikuti informasi BMKG dan kondisi setempat.",
   "allowed_uses": [
@@ -25,12 +25,12 @@
   ],
   "calibration_policy": "If verification cases are below threshold, risk scores are labeled heuristic until enough observations are available.",
   "daily_summary": {
-    "generated_at": "2026-10-08T09:42:35.774613+07:00",
+    "generated_at": "2026-10-09T09:57:26.572212+07:00",
     "aether_version": "Forecast Redelong Public Weather v11",
     "location": "PLTA Redelong",
     "mission": "safety_first",
-    "daily_operational_status": "RED",
-    "dominant_atmospheric_mode": "HEAVY_RAIN_WATCH",
+    "daily_operational_status": "YELLOW",
+    "dominant_atmospheric_mode": "HUMID_CONVECTIVE_AFTERNOON",
     "location_personality": {
       "personality": "generic_hyperlocal",
       "convective_sensitivity": "medium",
@@ -39,19 +39,19 @@
       "forecast_difficulty": "medium",
       "notes": "Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
     },
-    "risk_window": "11:00–23:00",
-    "best_general_activity_window": "07:00",
-    "peak_rain_threat_hour": "17:00",
-    "peak_rain_threat_score": 96.7,
+    "risk_window": "00:00–22:00",
+    "best_general_activity_window": "08:00",
+    "peak_rain_threat_hour": "16:00",
+    "peak_rain_threat_score": 66.1,
     "peak_heavy_rain_threat_hour": "14:00",
-    "peak_heavy_rain_threat_score": 64.1,
-    "peak_failure_risk_hour": "17:00",
-    "peak_failure_risk_score": 67.4,
-    "peak_forecast_stress_hour": "17:00",
-    "peak_forecast_stress_score": 74.2,
-    "peak_self_doubt_hour": "17:00",
-    "peak_self_doubt_score": 64.0,
-    "summary_text": "Forecast membaca hari ini sebagai HEAVY_RAIN_WATCH untuk PLTA Redelong. Status operasional harian RED. Risk window utama: 11:00–23:00. Failure risk tertinggi 67.4/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "peak_heavy_rain_threat_score": 13.8,
+    "peak_failure_risk_hour": "00:00",
+    "peak_failure_risk_score": 39.2,
+    "peak_forecast_stress_hour": "00:00",
+    "peak_forecast_stress_score": 43.0,
+    "peak_self_doubt_hour": "00:00",
+    "peak_self_doubt_score": 39.4,
+    "summary_text": "Forecast membaca hari ini sebagai HUMID_CONVECTIVE_AFTERNOON untuk PLTA Redelong. Status operasional harian YELLOW. Risk window utama: 00:00–22:00. Failure risk tertinggi 39.2/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   },
   "constitution": [
     "Do not assign high trust when source coverage is weak.",
