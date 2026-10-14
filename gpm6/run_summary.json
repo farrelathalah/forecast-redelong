@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-10-13T10:36:03.450664+07:00",
+  "generated_at": "2026-10-14T09:00:21.144276+07:00",
   "location_slug": "gpm6",
   "location_name": "GPM6",
   "bmkg_point_name": "Bale Redelong",
@@ -11,7 +11,7 @@
   "latitude": 4.796061970712406,
   "longitude": 97.0098682419131,
   "timezone": "Asia/Jakarta",
-  "target_date": "2026-10-16",
+  "target_date": "2026-10-17",
   "sources_total": 7,
   "sources_success": 6,
   "points_total": 144,
@@ -58,14 +58,14 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm6_20261016_20261013103603",
+    "run_id": "gpm6_20261017_20261014090021",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/command_center_sentinel_x.html",
     "report": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_report.md",
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm6/sentinel_x_ledger.sqlite",
-    "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM6. Status operasional harian YELLOW. Risk window utama: 18:00–18:00. Failure risk tertinggi 35.5/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "daily_operational_status": "RED",
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM6. Status operasional harian RED. Risk window utama: 14:00–22:00. Failure risk tertinggi 58.5/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
