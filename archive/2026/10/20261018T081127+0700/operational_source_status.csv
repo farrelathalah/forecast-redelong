@@ -1,0 +1,10 @@
+﻿source_id,purpose,qc_status,valid_rows,expected_rows,completeness_pct,catchment_hours_available,note
+CMA,multi-model_consensus_kuantitatif,valid,432,432.0,100.0,72.0,Bobot sama; nilai kosong tidak dianggap 0 mm.
+ECMWF,multi-model_consensus_kuantitatif,valid,432,432.0,100.0,72.0,Bobot sama; nilai kosong tidak dianggap 0 mm.
+GFS,multi-model_consensus_kuantitatif,valid,432,432.0,100.0,72.0,Bobot sama; nilai kosong tidak dianggap 0 mm.
+ICON,multi-model_consensus_kuantitatif,valid,432,432.0,100.0,72.0,Bobot sama; nilai kosong tidak dianggap 0 mm.
+METEOFRANCE,multi-model_consensus_kuantitatif,valid,432,432.0,100.0,72.0,Bobot sama; nilai kosong tidak dianggap 0 mm.
+UKMO,multi-model_consensus_kuantitatif,valid,432,432.0,100.0,72.0,Bobot sama; nilai kosong tidak dianggap 0 mm.
+BMKG,panduan_resmi_kategoris,tersedia,63,,,,Tidak dicampur sebagai rain_mm numerik.
+KMA,dinonaktifkan,nonaktif,0,,,,Dinonaktifkan karena data operasional kosong/tidak tersedia.
+METNO,dinonaktifkan_dari_consensus,nonaktif,0,,,,Tidak dihitung sebagai model independen dari ECMWF untuk wilayah global.
