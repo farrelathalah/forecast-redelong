@@ -1,0 +1,182 @@
+{
+  "schema_version": "forecast-redelong-rainfall-discharge-v1",
+  "status": "provisional_proxy_calibrated",
+  "issue_time_wib": "2026-10-19T13:19:01.787997+07:00",
+  "forecast_start_wib": "2026-10-19T14:00:00+07:00",
+  "model": "daily ARX(1) rainfall-routing model",
+  "parameters": {
+    "intercept_m3s": 0.453530232027862,
+    "recession_coefficient": 0.943805391850864,
+    "rainfall_response_m3s_per_mm": 0.15120450879054634,
+    "training_start": "2000-01-02",
+    "training_end": "2017-12-31",
+    "training_rows": 6574,
+    "validation_start": "2018-01-01",
+    "validation_end": "2024-12-12",
+    "validation_rows": 2538
+  },
+  "calibration_reference": {
+    "schema_version": "forecast-redelong-glofas-proxy-v1",
+    "site_name": "PLTA Redelong",
+    "source": "GloFAS v4 via Open-Meteo Flood API",
+    "source_url": "https://open-meteo.com/en/docs/flood-api",
+    "upstream_source": "Copernicus Emergency Management Service Global Flood Awareness System (GloFAS v4)",
+    "usage_note": "Open-Meteo public access is suitable for prototype/non-commercial use; confirm the applicable licence or use an approved Copernicus service before corporate production deployment.",
+    "observation_type": "simulated_gridded_discharge_proxy",
+    "request_coordinate": [
+      4.748139,
+      96.977344
+    ],
+    "selected_grid_coordinate": [
+      4.725006,
+      96.975006
+    ],
+    "selected_grid_elevation_m": 1093.0,
+    "timezone": "Asia/Jakarta",
+    "history_start": "2000-01-01",
+    "history_end": "2026-10-18",
+    "history_rows": 9788,
+    "current_rows": 24,
+    "unit": "m3/s",
+    "disclaimer": "GloFAS is a simulated gridded river-discharge product, not an AWLR or direct discharge observation at PLTA Redelong. Grid-to-river matching and licensing must be confirmed before production operational use."
+  },
+  "validation_scope": "rainfall-runoff transform hindcast using historical IMERG forcing against GloFAS simulated discharge; not end-to-end forecast skill",
+  "end_to_end_validation": {
+    "status": "preliminary_proxy_skill",
+    "matched_pairs": 279,
+    "minimum_samples_to_report_preliminary_skill": 30,
+    "metrics": [
+      {
+        "lead_day": 1,
+        "n_samples": 94,
+        "mae_m3s": 4.8295979964,
+        "rmse_m3s": 8.0357246227,
+        "bias_m3s": 1.2577661518,
+        "nse": 0.7990371357,
+        "kge": 0.879048355,
+        "correlation": 0.8985379484
+      },
+      {
+        "lead_day": 2,
+        "n_samples": 93,
+        "mae_m3s": 7.651975926,
+        "rmse_m3s": 11.5292412592,
+        "bias_m3s": 2.2704955537,
+        "nse": 0.5846132909,
+        "kge": 0.7564737988,
+        "correlation": 0.7868961276
+      },
+      {
+        "lead_day": 3,
+        "n_samples": 92,
+        "mae_m3s": 8.9005341009,
+        "rmse_m3s": 12.7129052855,
+        "bias_m3s": 3.192515358,
+        "nse": 0.4923789645,
+        "kge": 0.6945893614,
+        "correlation": 0.7407606231
+      }
+    ]
+  },
+  "can_claim_field_accuracy": false,
+  "forecast": [
+    {
+      "lead_day": 1,
+      "window_start_wib": "2026-10-19T14:00:00+07:00",
+      "window_end_wib": "2026-10-20T14:00:00+07:00",
+      "rain_mean_mm": 22.3098564184,
+      "rain_p10_mm": 11.7999147114,
+      "rain_p90_mm": 33.3718462563,
+      "model_count": 6,
+      "model_list": "CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",
+      "valid_date": "2026-10-19",
+      "initial_discharge_proxy_m3s": 40.11,
+      "discharge_forecast_m3s": 41.6829153801,
+      "discharge_scenario_low_m3s": 33.9294227771,
+      "discharge_scenario_high_m3s": 49.5198801495,
+      "glofas_reference_m3s": 35.05,
+      "glofas_reference_p25_m3s": 34.77,
+      "glofas_reference_p75_m3s": 35.02,
+      "hindcast_rmse_m3s": 6.1643420298,
+      "status": "provisional_proxy_calibrated"
+    },
+    {
+      "lead_day": 2,
+      "window_start_wib": "2026-10-20T14:00:00+07:00",
+      "window_end_wib": "2026-10-21T14:00:00+07:00",
+      "rain_mean_mm": 29.2994682223,
+      "rain_p10_mm": 7.1485752442,
+      "rain_p90_mm": 58.1851372942,
+      "model_count": 6,
+      "model_list": "CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",
+      "valid_date": "2026-10-20",
+      "initial_discharge_proxy_m3s": 40.11,
+      "discharge_forecast_m3s": 44.2243022162,
+      "discharge_scenario_low_m3s": 29.6024147912,
+      "discharge_scenario_high_m3s": 59.9432996331,
+      "glofas_reference_m3s": 36.2,
+      "glofas_reference_p25_m3s": 33.28,
+      "glofas_reference_p75_m3s": 35.43,
+      "hindcast_rmse_m3s": 9.7727236535,
+      "status": "provisional_proxy_calibrated"
+    },
+    {
+      "lead_day": 3,
+      "window_start_wib": "2026-10-21T14:00:00+07:00",
+      "window_end_wib": "2026-10-22T14:00:00+07:00",
+      "rain_mean_mm": 12.1583102069,
+      "rain_p10_mm": 5.85,
+      "rain_p90_mm": 19.9074651523,
+      "model_count": 6,
+      "model_list": "CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",
+      "valid_date": "2026-10-21",
+      "initial_discharge_proxy_m3s": 40.11,
+      "discharge_forecast_m3s": 44.0310564371,
+      "discharge_scenario_low_m3s": 26.7844091394,
+      "discharge_scenario_high_m3s": 62.5310242815,
+      "glofas_reference_m3s": 43.92,
+      "glofas_reference_p25_m3s": 33.91,
+      "glofas_reference_p75_m3s": 46.05,
+      "hindcast_rmse_m3s": 11.7161354381,
+      "status": "provisional_proxy_calibrated"
+    }
+  ],
+  "validation": [
+    {
+      "lead_day": 1,
+      "n_samples": 2538,
+      "mae_m3s": 3.3597593703,
+      "rmse_m3s": 6.1643420298,
+      "bias_m3s": -0.1079733881,
+      "nse": 0.9179703148,
+      "kge": 0.938348078,
+      "correlation": 0.9581261886
+    },
+    {
+      "lead_day": 2,
+      "n_samples": 2537,
+      "mae_m3s": 5.4996275769,
+      "rmse_m3s": 9.7727236535,
+      "bias_m3s": -0.2106266441,
+      "nse": 0.7939093502,
+      "kge": 0.8605498293,
+      "correlation": 0.8913314029
+    },
+    {
+      "lead_day": 3,
+      "n_samples": 2536,
+      "mae_m3s": 6.8477001532,
+      "rmse_m3s": 11.7161354381,
+      "bias_m3s": -0.3064105087,
+      "nse": 0.7039081846,
+      "kge": 0.7957595968,
+      "correlation": 0.8398009022
+    }
+  ],
+  "limitations": [
+    "No on-site AWLR or measured discharge is available.",
+    "GloFAS is a gridded simulated proxy and river-grid selection needs engineering confirmation.",
+    "Rainfall P10-P90 is inter-model spread, not a calibrated probability interval.",
+    "Reservoir/intake operation, losses, travel time below daily scale, and turbine constraints are not modelled."
+  ]
+}
