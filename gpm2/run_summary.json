@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-10-22T08:35:06.021709+07:00",
+  "generated_at": "2026-10-23T08:33:17.153742+07:00",
   "location_slug": "gpm2",
   "location_name": "GPM2",
   "bmkg_point_name": "Bale Redelong",
@@ -9,9 +9,9 @@
   "location_note": "Forecast Redelong representative point. BMKG ADM4 reference: 11.17.05.2002 (Bale Redelong). Initial BMKG reference for catchment point Spatial role: provisional_catchment. Area analisis provisional; menunggu konfirmasi batas DAS resmi.",
   "adm4": "11.17.05.2002",
   "latitude": 4.811672965065149,
-  "longitude": 96.9505347134354,
+  "longitude": 96.95053471343539,
   "timezone": "Asia/Jakarta",
-  "target_date": "2026-10-25",
+  "target_date": "2026-10-26",
   "sources_total": 7,
   "sources_success": 6,
   "points_total": 144,
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm2_20261025_20261022083506",
+    "run_id": "gpm2_20261026_20261023083317",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/command_center_sentinel_x.html",
@@ -66,6 +66,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm2/sentinel_x_ledger.sqlite",
     "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_CONVECTIVE_AFTERNOON untuk GPM2. Status operasional harian YELLOW. Risk window utama: 11:00–19:00. Failure risk tertinggi 46.0/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk GPM2. Status operasional harian YELLOW. Risk window utama: 11:00–19:00. Failure risk tertinggi 39.7/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
