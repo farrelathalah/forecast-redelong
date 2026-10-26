@@ -1,0 +1,346 @@
+{
+  "schema_version": "forecast-besai-rainfall-discharge-v1",
+  "status": "provisional_regulated_proxy",
+  "issue_time_wib": "2026-10-26T08:16:50.030738+07:00",
+  "forecast_start_wib": "2026-10-26T09:00:00+07:00",
+  "model": "constrained daily ARX(1) rainfall-routing proxy",
+  "parameters": {
+    "intercept_m3s": 0.6225339900903035,
+    "recession_coefficient": 0.9675822178038866,
+    "rainfall_response_m3s_per_mm": 0.09742404529934057,
+    "training_start": "2000-01-02",
+    "training_end": "2018-12-31",
+    "training_rows": 6939,
+    "validation_start": "2019-01-01",
+    "validation_end": "2025-12-31",
+    "validation_rows": 2557,
+    "regulation_signal": "rainfall_response_retained"
+  },
+  "engineering_reference": {
+    "schema_version": "forecast-hydro-besai-engineering-v2",
+    "site_slug": "pltm_besai_kemu",
+    "reference_revision": "Review Studi Kelayakan, Januari 2020",
+    "reference_status": "operational_asset_with_documented_engineering_reference",
+    "operations": {
+      "asset_status": "operational",
+      "commercial_operation_date": "2024-01-08",
+      "installed_capacity_mw": 7.0,
+      "units": 2,
+      "unit_capacity_mw": 3.5,
+      "source": {
+        "publisher": "PT PLN (Persero)",
+        "published_date": "2024-01-10",
+        "url": "https://web.pln.co.id/cms/media/siaran-pers/2024/01/awali-2024-pln-operasikan-dua-unit-pltm-kapasitas-35-mw-di-lampung-langkah-kebut-bauran-energi/"
+      }
+    },
+    "structures": {
+      "weir": {
+        "latitude": -4.862591667,
+        "longitude": 104.500497222,
+        "source_page_pdf": 9,
+        "note": "Koordinat ringkasan Review 2020; laporan juga menyarankan pergeseran sekitar 50 m ke hulu menuju ruas sungai yang lebih lurus."
+      },
+      "headpond": {
+        "latitude": -4.839133333,
+        "longitude": 104.509577778,
+        "source_page_pdf": 9
+      },
+      "powerhouse": {
+        "latitude": -4.837533333,
+        "longitude": 104.510075,
+        "source_page_pdf": 9
+      },
+      "sumberjaya_rain_gauge": {
+        "latitude": -5.009188889,
+        "longitude": 104.483483333,
+        "elevation_m": 746,
+        "source_revision": "Review Feasibility Study & Basic Design 2018",
+        "source_page_pdf": 12
+      }
+    },
+    "catchment": {
+      "area_km2": 496.74,
+      "rounded_area_km2": 497.0,
+      "geometry_status": "technical_indicative_area_constrained_not_legal_or_as_built",
+      "geometry_method": "anchored to documented outlet/weir coordinate, controlled to Review 2020 area, with FS outline used as shape control",
+      "final_delineation_requirement": "rerun and approve with DEMNAS or equivalent hydrologically conditioned DEM in QGIS/HEC-HMS",
+      "upstream_plta_besai_1_area_km2": 422.91,
+      "supplementary_weir_area_km2": 489.72,
+      "incremental_area_from_plta_besai_1_km2": 73.83,
+      "source_page_pdf": 42
+    },
+    "hydrology": {
+      "design_discharge_fdc_m3s": 21.59,
+      "adopted_design_discharge_m3s": 22.0,
+      "design_exceedance_probability_pct": 40.0,
+      "ecological_release_m3s": 0.6,
+      "irrigation_release_m3s": {
+        "january": 3.0,
+        "february": 3.0,
+        "march": 3.0,
+        "april": 6.03,
+        "may": 6.03,
+        "june": 3.0,
+        "july": 3.0,
+        "august": 3.0,
+        "september": 3.0,
+        "october": 3.0,
+        "november": 3.0,
+        "december": 3.0
+      },
+      "net_head_m": 43.17,
+      "net_head_narrative_m": 43.13,
+      "net_head_note": "Nilai 43,17 m dipertahankan sebagai nilai tabel/adopted pada paket proyek; narasi Review 2020 juga memuat 43,13 m. Selisih 0,04 m dicatat dan tidak disembunyikan.",
+      "installed_capacity_mw": 7.0,
+      "units": 2,
+      "unit_capacity_mw": 3.5,
+      "upstream_operation_dependency": "PLTM Besai Kemu berada di hilir PLTA Besai 1; release dan pola operasi upstream dapat mendominasi debit aktual."
+    },
+    "historical_discharge_data": {
+      "review_2020_basis": "Data operasi jam-jaman PLTA Besai 1 periode 2004-2014, dengan kekosongan 2010-2011, dikonversi menjadi debit harian dan ditransformasikan ke Besai Kemu dengan rasio luas DAS.",
+      "fs_2017_basis": "FS 2017 menyebut data debit jam-jaman tailrace PLTA Besai periode 2004-2016.",
+      "available_in_repository": [
+        "derived tables and engineering summaries",
+        "FDC review 2018",
+        "monthly irrigation and ecological release assumptions"
+      ],
+      "not_available_in_automatic_feed": [
+        "raw hourly historical series",
+        "current upstream release schedule",
+        "current AWLR and rating curve",
+        "current intake inflow"
+      ],
+      "operational_implication": "Historical references are used as baseline context; current discharge forecast remains a proxy."
+    },
+    "bmkg_daily_rainfall_categories_mm": {
+      "not_raining_or_not_measurable": {
+        "min": 0.0,
+        "max_exclusive": 0.5
+      },
+      "light": {
+        "min": 0.5,
+        "max_inclusive": 20.0
+      },
+      "moderate": {
+        "min_exclusive": 20.0,
+        "max_inclusive": 50.0
+      },
+      "heavy": {
+        "min_exclusive": 50.0,
+        "max_inclusive": 100.0
+      },
+      "very_heavy": {
+        "min_exclusive": 100.0,
+        "max": null
+      },
+      "usage": "meteorological attention category only, not an operating SOP"
+    },
+    "revision_conflicts": [
+      {
+        "revision": "FS April 2017",
+        "design_discharge_m3s": 20.312,
+        "probability_pct": 38.0,
+        "net_head_m": 40.13,
+        "catchment_area_km2": 497.0,
+        "annual_energy_gwh": 39.735,
+        "capacity_factor_pct": 65.0
+      },
+      {
+        "revision": "Review/Basic Design 2018",
+        "design_discharge_m3s": 21.0,
+        "fdc_q40_m3s": 18.35,
+        "net_head_m": 38.8,
+        "ecological_release_m3s": 1.243,
+        "catchment_area_km2": 496.74,
+        "annual_energy_gwh": 40.84,
+        "capacity_factor_pct": 66.56
+      },
+      {
+        "revision": "Review Januari 2020",
+        "design_discharge_fdc_m3s": 21.59,
+        "adopted_design_discharge_m3s": 22.0,
+        "net_head_table_m": 43.17,
+        "net_head_narrative_m": 43.13,
+        "ecological_release_m3s": 0.6,
+        "catchment_area_km2": 496.74,
+        "selection_rule": "latest_review_reference"
+      }
+    ],
+    "source_documents": [
+      {
+        "filename": "Review FS-Last rev5 300820 (1).pdf",
+        "sha256": "a46b8584fec09d55151b4c448f864a5a078c93708d4873ccfcb726b63c4bac46",
+        "role": "primary_latest_review"
+      },
+      {
+        "filename": "Review Feasibility Study - PLTM Besai Kemu 2x3.5 MW Lampung.pdf",
+        "sha256": "97ec45ca8eef5ad248ac8e7234c48980bf0770346ba9a414be72f9f633842de4",
+        "role": "historical_hydrology_and_rainfall_source"
+      },
+      {
+        "filename": "Feasibility Study & Detail Design PLTM Besai Kemu (2 x 3.50 MW) - APRIL2017(1).pdf",
+        "sha256": "19398e84941a2311e02b259d04c98af09dc622c54aedfeb921aae163d400cbb1",
+        "role": "earlier_design_reference"
+      }
+    ]
+  },
+  "calibration_reference": {
+    "schema_version": "forecast-besai-glofas-proxy-v1",
+    "site_name": "PLTM Besai Kemu",
+    "source": "GloFAS v4 via Open-Meteo Flood API",
+    "source_url": "https://open-meteo.com/en/docs/flood-api",
+    "upstream_source": "Copernicus Emergency Management Service Global Flood Awareness System (GloFAS v4)",
+    "usage_note": "Open-Meteo public access is suitable for prototype/non-commercial use; confirm the applicable licence or use an approved Copernicus service before corporate production deployment.",
+    "observation_type": "simulated_gridded_discharge_proxy",
+    "request_coordinate": [
+      -4.862591667,
+      104.450497222
+    ],
+    "selected_grid_coordinate": [
+      -4.874996,
+      104.475006
+    ],
+    "selected_grid_elevation_m": 479.0,
+    "timezone": "Asia/Jakarta",
+    "history_start": "2000-01-01",
+    "history_end": "2026-10-25",
+    "history_rows": 9795,
+    "current_rows": 24,
+    "unit": "m3/s",
+    "disclaimer": "GloFAS is a simulated gridded river-discharge product, not an AWLR or direct discharge observation at PLTM Besai Kemu. Grid-to-river matching and licensing must be confirmed before production operational use.",
+    "asset_coordinate": [
+      -4.862591667,
+      104.500497222
+    ],
+    "sampling_coordinate": [
+      -4.862591667,
+      104.450497222
+    ],
+    "grid_selection_method": "screened nearby GloFAS cells for spatial proximity and a non-trivial flow-duration regime; the exact asset request selected a small tributary cell",
+    "documented_design_q40_m3s": 21.59,
+    "selected_proxy_q40_m3s": 39.18,
+    "grid_selection_status": "screened_proxy_pending_glofas_map_confirmation"
+  },
+  "can_claim_field_accuracy": false,
+  "can_claim_operational_inflow": false,
+  "upstream_release_schedule_available": false,
+  "forecast": [
+    {
+      "lead_day": 1,
+      "window_start_wib": "2026-10-26T09:00:00+07:00",
+      "window_end_wib": "2026-10-27T09:00:00+07:00",
+      "rain_mean_mm": 2.1666666667,
+      "rain_p10_mm": 0.0125,
+      "rain_p90_mm": 6.275,
+      "model_count": 6,
+      "model_list": "CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",
+      "spatial_point_count": 4,
+      "valid_date": "2026-10-26",
+      "initial_discharge_proxy_m3s": 0.01,
+      "discharge_forecast_m3s": 0.8432952438,
+      "discharge_scenario_low_m3s": 0.0,
+      "discharge_scenario_high_m3s": 7.9069478708,
+      "glofas_reference_m3s": 0.01,
+      "glofas_reference_p25_m3s": 0.01,
+      "glofas_reference_p75_m3s": 0.01,
+      "hindcast_rmse_m3s": 6.6634021743,
+      "status": "provisional_proxy_calibrated",
+      "irrigation_reference_m3s": 3.0,
+      "ecological_release_reference_m3s": 0.6,
+      "indicative_plant_available_m3s": 0.0,
+      "design_discharge_m3s": 22.0,
+      "engineering_scenario_status": "indicative_without_upstream_release_schedule"
+    },
+    {
+      "lead_day": 2,
+      "window_start_wib": "2026-10-27T09:00:00+07:00",
+      "window_end_wib": "2026-10-28T09:00:00+07:00",
+      "rain_mean_mm": 7.8,
+      "rain_p10_mm": 0.2125,
+      "rain_p90_mm": 14.2625,
+      "model_count": 6,
+      "model_list": "CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",
+      "spatial_point_count": 4,
+      "valid_date": "2026-10-27",
+      "initial_discharge_proxy_m3s": 0.01,
+      "discharge_forecast_m3s": 2.1983990256,
+      "discharge_scenario_low_m3s": 0.0,
+      "discharge_scenario_high_m3s": 14.1171385066,
+      "glofas_reference_m3s": 0.12,
+      "glofas_reference_p25_m3s": 0.04,
+      "glofas_reference_p75_m3s": 0.14,
+      "hindcast_rmse_m3s": 10.9018613675,
+      "status": "provisional_proxy_calibrated",
+      "irrigation_reference_m3s": 3.0,
+      "ecological_release_reference_m3s": 0.6,
+      "indicative_plant_available_m3s": 0.0,
+      "design_discharge_m3s": 22.0,
+      "engineering_scenario_status": "indicative_without_upstream_release_schedule"
+    },
+    {
+      "lead_day": 3,
+      "window_start_wib": "2026-10-28T09:00:00+07:00",
+      "window_end_wib": "2026-10-29T09:00:00+07:00",
+      "rain_mean_mm": 17.2625,
+      "rain_p10_mm": 11.15,
+      "rain_p90_mm": 22.4125,
+      "model_count": 6,
+      "model_list": "CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",
+      "spatial_point_count": 4,
+      "valid_date": "2026-10-28",
+      "initial_discharge_proxy_m3s": 0.01,
+      "discharge_forecast_m3s": 4.4314483769,
+      "discharge_scenario_low_m3s": 0.0,
+      "discharge_scenario_high_m3s": 19.4987129144,
+      "glofas_reference_m3s": 0.71,
+      "glofas_reference_p25_m3s": 0.11,
+      "glofas_reference_p75_m3s": 0.85,
+      "hindcast_rmse_m3s": 13.5816175238,
+      "status": "provisional_proxy_calibrated",
+      "irrigation_reference_m3s": 3.0,
+      "ecological_release_reference_m3s": 0.6,
+      "indicative_plant_available_m3s": 0.8314483769,
+      "design_discharge_m3s": 22.0,
+      "engineering_scenario_status": "indicative_without_upstream_release_schedule"
+    }
+  ],
+  "validation": [
+    {
+      "lead_day": 1,
+      "n_samples": 2557,
+      "mae_m3s": 4.0709944534,
+      "rmse_m3s": 6.6634021743,
+      "bias_m3s": 0.1196503649,
+      "nse": 0.9414515271,
+      "kge": 0.9605667592,
+      "correlation": 0.9703022448
+    },
+    {
+      "lead_day": 2,
+      "n_samples": 2556,
+      "mae_m3s": 6.7472345033,
+      "rmse_m3s": 10.9018613675,
+      "bias_m3s": 0.2320276831,
+      "nse": 0.8433376915,
+      "kge": 0.9042716233,
+      "correlation": 0.9188875736
+    },
+    {
+      "lead_day": 3,
+      "n_samples": 2555,
+      "mae_m3s": 8.6770745265,
+      "rmse_m3s": 13.5816175238,
+      "bias_m3s": 0.3360632841,
+      "nse": 0.7569490934,
+      "kge": 0.8514454654,
+      "correlation": 0.8717803822
+    }
+  ],
+  "validation_scope": "historical rainfall-to-GloFAS transform hindcast; not field or end-to-end forecast accuracy",
+  "limitations": [
+    "No automated PLTA Besai 1 release schedule or on-site AWLR is available.",
+    "GloFAS is simulated gridded discharge and the selected river cell needs engineering confirmation.",
+    "NASA POWER is a gridded meteorological proxy, not the Sumberjaya gauge record.",
+    "Catchment area is documented, but the GIS boundary geometry is still pending."
+  ]
+}
