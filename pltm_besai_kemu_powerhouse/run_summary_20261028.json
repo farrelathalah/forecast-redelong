@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-10-26T13:17:56.512506+07:00",
+  "generated_at": "2026-10-27T09:10:46.694518+07:00",
   "location_slug": "pltm_besai_kemu_powerhouse",
   "location_name": "Powerhouse Besai Kemu",
   "bmkg_point_name": "Kemu",
@@ -58,14 +58,14 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "pltm_besai_kemu_powerhouse_20261028_20261026131756",
+    "run_id": "pltm_besai_kemu_powerhouse_20261028_20261027091046",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/command_center_sentinel_x.html",
     "report": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/sentinel_x_report.md",
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_powerhouse/sentinel_x_ledger.sqlite",
-    "daily_operational_status": "YELLOW",
-    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk Powerhouse Besai Kemu. Status operasional harian YELLOW. Risk window utama: 14:00–23:00. Failure risk tertinggi 37.9/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "daily_operational_status": "RED",
+    "autopilot_summary": "Forecast membaca hari ini sebagai RAIN_TRANSITION untuk Powerhouse Besai Kemu. Status operasional harian RED. Risk window utama: 06:00–23:00. Failure risk tertinggi 54.6/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
