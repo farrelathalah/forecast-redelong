@@ -1,0 +1,25 @@
+jam,sources_used,weight_total,coverage_status,source_list,dominant_category,confidence_score,confidence_label,temp_mean,temp_error,rh_mean,rh_error,rain_mean,rain_error,heat_index_mean,heat_index_error,%cerah,%cerah_berawan,%berawan,%hujan_ringan,%hujan_sedang,%hujan_lebat,temp_std,rh_std,rain_std,heat_index_std,sources_expected,coverage_fraction,gap_mean_minutes,gap_max_minutes
+00:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,76.7,Sedang,18.05,+/-1.36,98.17,+/-0.69,0.43,+/-0.62,18.05,+/-1.36,0.0,16.7,50.0,33.3,0.0,0.0,1.36,0.69,0.62,1.36,7,0.8571,0.0,0.0
+01:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,76.8,Sedang,17.88,+/-1.29,98.17,+/-0.9,0.28,+/-0.51,17.88,+/-1.29,0.0,16.7,50.0,33.3,0.0,0.0,1.29,0.9,0.51,1.29,7,0.8571,0.0,0.0
+02:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,81.4,Tinggi,17.52,+/-1.31,98.17,+/-0.9,0.0,+/-0.0,17.52,+/-1.31,0.0,33.3,66.7,0.0,0.0,0.0,1.31,0.9,0.0,1.31,7,0.8571,0.0,0.0
+03:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,81.2,Tinggi,17.17,+/-1.41,98.0,+/-1.41,0.02,+/-0.04,17.17,+/-1.41,0.0,16.7,66.7,16.7,0.0,0.0,1.41,1.41,0.04,1.41,7,0.8571,0.0,0.0
+04:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,81.2,Tinggi,16.93,+/-1.38,98.0,+/-1.41,0.02,+/-0.04,16.93,+/-1.38,0.0,16.7,66.7,16.7,0.0,0.0,1.38,1.41,0.04,1.38,7,0.8571,0.0,0.0
+05:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,77.1,Sedang,16.82,+/-1.31,98.0,+/-1.53,0.0,+/-0.0,16.82,+/-1.31,0.0,50.0,50.0,0.0,0.0,0.0,1.31,1.53,0.0,1.31,7,0.8571,0.0,0.0
+06:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,77.2,Sedang,16.8,+/-1.18,98.33,+/-1.8,0.0,+/-0.0,16.8,+/-1.18,0.0,50.0,50.0,0.0,0.0,0.0,1.18,1.8,0.0,1.18,7,0.8571,0.0,0.0
+07:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,81.4,Tinggi,17.43,+/-1.07,97.0,+/-2.0,0.0,+/-0.0,17.43,+/-1.07,16.7,16.7,66.7,0.0,0.0,0.0,1.07,2.0,0.0,1.07,7,0.8571,0.0,0.0
+08:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,73.1,Sedang,19.23,+/-0.99,91.0,+/-2.38,0.0,+/-0.0,19.23,+/-0.99,33.3,33.3,33.3,0.0,0.0,0.0,0.99,2.38,0.0,0.99,7,0.8571,0.0,0.0
+09:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Cerah Berawan,77.3,Sedang,21.5,+/-0.82,82.67,+/-2.81,0.0,+/-0.0,21.5,+/-0.82,16.7,50.0,33.3,0.0,0.0,0.0,0.82,2.81,0.0,0.82,7,0.8571,0.0,0.0
+10:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Berawan,77.3,Sedang,23.27,+/-0.82,76.33,+/-3.2,0.0,+/-0.0,23.27,+/-0.82,16.7,33.3,50.0,0.0,0.0,0.0,0.82,3.2,0.0,0.82,7,0.8571,0.0,0.0
+11:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,76.9,Sedang,24.3,+/-1.17,73.17,+/-5.3,0.03,+/-0.04,24.3,+/-1.17,0.0,50.0,0.0,50.0,0.0,0.0,1.17,5.3,0.04,1.17,7,0.8571,0.0,0.0
+12:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,80.5,Tinggi,24.7,+/-1.64,72.83,+/-8.9,0.2,+/-0.17,25.04,+/-2.16,0.0,33.3,0.0,66.7,0.0,0.0,1.64,8.9,0.17,2.16,7,0.8571,0.0,0.0
+13:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,80.4,Tinggi,24.42,+/-2.05,71.2,+/-6.97,0.22,+/-0.19,24.98,+/-2.83,0.0,33.3,0.0,66.7,0.0,0.0,2.05,6.97,0.19,2.83,7,0.8571,0.0,0.0
+14:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,84.0,Tinggi,23.83,+/-2.18,83.6,+/-7.26,0.75,+/-0.77,23.96,+/-2.38,0.0,16.7,0.0,83.3,0.0,0.0,2.18,7.26,0.77,2.38,7,0.8571,0.0,0.0
+15:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,84.5,Tinggi,23.18,+/-2.04,88.0,+/-5.62,0.4,+/-0.43,23.31,+/-2.28,0.0,16.7,0.0,83.3,0.0,0.0,2.04,5.62,0.43,2.28,7,0.8571,0.0,0.0
+16:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,84.3,Tinggi,22.33,+/-2.05,92.4,+/-4.5,0.78,+/-0.78,22.33,+/-2.05,0.0,16.7,0.0,83.3,0.0,0.0,2.05,4.5,0.78,2.05,7,0.8571,0.0,0.0
+17:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,84.5,Tinggi,21.57,+/-1.81,94.4,+/-3.5,0.8,+/-0.79,21.57,+/-1.81,0.0,16.7,0.0,83.3,0.0,0.0,1.81,3.5,0.79,1.81,7,0.8571,0.0,0.0
+18:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,84.3,Tinggi,20.72,+/-1.55,93.17,+/-7.2,0.75,+/-0.8,20.72,+/-1.55,0.0,16.7,0.0,83.3,0.0,0.0,1.55,7.2,0.8,1.55,7,0.8571,0.0,0.0
+19:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,84.9,Tinggi,20.02,+/-1.42,95.0,+/-4.51,0.38,+/-0.35,20.02,+/-1.42,0.0,16.7,0.0,83.3,0.0,0.0,1.42,4.51,0.35,1.42,7,0.8571,0.0,0.0
+20:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,89.2,Tinggi,19.6,+/-1.42,96.33,+/-2.92,0.34,+/-0.34,19.6,+/-1.42,0.0,0.0,0.0,100.0,0.0,0.0,1.42,2.92,0.34,1.42,7,0.8571,0.0,0.0
+21:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,89.3,Tinggi,19.28,+/-1.54,97.33,+/-1.7,0.34,+/-0.34,19.28,+/-1.54,0.0,0.0,0.0,100.0,0.0,0.0,1.54,1.7,0.34,1.54,7,0.8571,0.0,0.0
+22:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,89.3,Tinggi,18.98,+/-1.64,98.0,+/-0.82,0.34,+/-0.34,18.98,+/-1.64,0.0,0.0,0.0,100.0,0.0,0.0,1.64,0.82,0.34,1.64,7,0.8571,0.0,0.0
+23:00,6,6.0,cukup,"CMA,ECMWF,GFS,ICON,METEOFRANCE,UKMO",Hujan Ringan,76.9,Sedang,18.77,+/-1.74,98.17,+/-0.9,0.03,+/-0.04,18.77,+/-1.74,0.0,16.7,33.3,50.0,0.0,0.0,1.74,0.9,0.04,1.74,7,0.8571,0.0,0.0
