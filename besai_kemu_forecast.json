@@ -1,51 +1,11 @@
 [
   {
-    "date": "2026-11-02",
-    "rain_mean_mm": 2.0,
-    "rain_min_mm": 0.0,
-    "rain_max_mm": 6.0,
-    "temperature_mean_c": 26.3,
-    "wind_max_kmh": 17.6,
-    "model_count": 6,
-    "point_count": 4,
-    "gross_volume_m3": 993480,
-    "sources": [
-      "CMA",
-      "ECMWF",
-      "GFS",
-      "ICON",
-      "METEOFRANCE",
-      "UKMO"
-    ],
-    "status": "indikatif cukup"
-  },
-  {
     "date": "2026-11-03",
-    "rain_mean_mm": 5.8,
-    "rain_min_mm": 1.5,
-    "rain_max_mm": 10.3,
-    "temperature_mean_c": 25.6,
-    "wind_max_kmh": 18.0,
-    "model_count": 6,
-    "point_count": 4,
-    "gross_volume_m3": 2881092,
-    "sources": [
-      "CMA",
-      "ECMWF",
-      "GFS",
-      "ICON",
-      "METEOFRANCE",
-      "UKMO"
-    ],
-    "status": "indikatif cukup"
-  },
-  {
-    "date": "2026-11-04",
     "rain_mean_mm": 3.0,
-    "rain_min_mm": 0.0,
-    "rain_max_mm": 9.0,
-    "temperature_mean_c": 25.8,
-    "wind_max_kmh": 19.2,
+    "rain_min_mm": 0.1,
+    "rain_max_mm": 6.8,
+    "temperature_mean_c": 25.9,
+    "wind_max_kmh": 18.8,
     "model_count": 6,
     "point_count": 4,
     "gross_volume_m3": 1490220,
@@ -60,15 +20,55 @@
     "status": "indikatif cukup"
   },
   {
-    "date": "2026-11-05",
+    "date": "2026-11-04",
     "rain_mean_mm": 3.3,
-    "rain_min_mm": 0.4,
-    "rain_max_mm": 10.7,
-    "temperature_mean_c": 26.2,
-    "wind_max_kmh": 18.7,
+    "rain_min_mm": 0.0,
+    "rain_max_mm": 13.3,
+    "temperature_mean_c": 26.0,
+    "wind_max_kmh": 23.4,
     "model_count": 6,
     "point_count": 4,
     "gross_volume_m3": 1639242,
+    "sources": [
+      "CMA",
+      "ECMWF",
+      "GFS",
+      "ICON",
+      "METEOFRANCE",
+      "UKMO"
+    ],
+    "status": "indikatif cukup"
+  },
+  {
+    "date": "2026-11-05",
+    "rain_mean_mm": 5.1,
+    "rain_min_mm": 0.1,
+    "rain_max_mm": 14.1,
+    "temperature_mean_c": 26.0,
+    "wind_max_kmh": 17.0,
+    "model_count": 6,
+    "point_count": 4,
+    "gross_volume_m3": 2533374,
+    "sources": [
+      "CMA",
+      "ECMWF",
+      "GFS",
+      "ICON",
+      "METEOFRANCE",
+      "UKMO"
+    ],
+    "status": "indikatif cukup"
+  },
+  {
+    "date": "2026-11-06",
+    "rain_mean_mm": 0.5,
+    "rain_min_mm": 0.0,
+    "rain_max_mm": 2.2,
+    "temperature_mean_c": 26.6,
+    "wind_max_kmh": 18.1,
+    "model_count": 6,
+    "point_count": 4,
+    "gross_volume_m3": 248370,
     "sources": [
       "CMA",
       "ECMWF",
