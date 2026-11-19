@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-11-17T12:06:13.720018+07:00",
+  "generated_at": "2026-11-19T11:14:58.400284+07:00",
   "location_slug": "pltm_besai_kemu_headpond",
   "location_name": "Headpond Besai Kemu",
   "bmkg_point_name": "Kemu",
@@ -14,7 +14,7 @@
   "target_date": "2026-11-19",
   "sources_total": 7,
   "sources_success": 7,
-  "points_total": 168,
+  "points_total": 159,
   "sources_active": [
     "BMKG",
     "ECMWF",
@@ -58,7 +58,7 @@
   "run_status": "ok",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "pltm_besai_kemu_headpond_20261119_20261117120613",
+    "run_id": "pltm_besai_kemu_headpond_20261119_20261119111458",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/command_center_sentinel_x.html",
@@ -66,6 +66,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/pltm_besai_kemu_headpond/sentinel_x_ledger.sqlite",
     "daily_operational_status": "RED",
-    "autopilot_summary": "Forecast membaca hari ini sebagai MIXED_LOCAL_ATMOSPHERE untuk Headpond Besai Kemu. Status operasional harian RED. Risk window utama: 14:00–19:00. Failure risk tertinggi 42.3/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_STABLE_MORNING untuk Headpond Besai Kemu. Status operasional harian RED. Risk window utama: 00:00–19:00. Failure risk tertinggi 46.5/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
