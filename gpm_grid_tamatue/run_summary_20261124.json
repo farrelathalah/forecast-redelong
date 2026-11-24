@@ -1,6 +1,6 @@
 {
   "schema_version": "2026-06-03.sentinel-x.public-operational-v2",
-  "generated_at": "2026-11-23T10:44:14.487564+07:00",
+  "generated_at": "2026-11-24T13:58:19.789852+07:00",
   "location_slug": "gpm_grid_tamatue",
   "location_name": "GPM Grid TamaTue",
   "bmkg_point_name": "Bale Redelong",
@@ -13,8 +13,8 @@
   "timezone": "Asia/Jakarta",
   "target_date": "2026-11-24",
   "sources_total": 7,
-  "sources_success": 7,
-  "points_total": 168,
+  "sources_success": 5,
+  "points_total": 109,
   "sources_active": [
     "BMKG",
     "ECMWF",
@@ -54,11 +54,23 @@
   "health_file": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/source_health.json",
   "output_dir": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue",
   "retention_days": 30,
-  "low_coverage_slots": [],
-  "run_status": "ok",
+  "low_coverage_slots": [
+    "00:00",
+    "01:00",
+    "02:00",
+    "03:00",
+    "04:00",
+    "05:00",
+    "06:00",
+    "07:00",
+    "08:00",
+    "09:00",
+    "10:00"
+  ],
+  "run_status": "warning",
   "sentinel_x": {
     "version": "Forecast Redelong Public Weather v11",
-    "run_id": "gpm_grid_tamatue_20261124_20261123104414",
+    "run_id": "gpm_grid_tamatue_20261124_20261124135819",
     "csv": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x.csv",
     "json": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x.json",
     "dashboard": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/command_center_sentinel_x.html",
@@ -66,6 +78,6 @@
     "contract": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x_forecast_contract.json",
     "ledger": "/home/runner/work/forecast-redelong/forecast-redelong/outputs/gpm_grid_tamatue/sentinel_x_ledger.sqlite",
     "daily_operational_status": "RED",
-    "autopilot_summary": "Forecast membaca hari ini sebagai HUMID_CONVECTIVE_AFTERNOON untuk GPM Grid TamaTue. Status operasional harian RED. Risk window utama: 00:00–22:00. Failure risk tertinggi 39.0/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
+    "autopilot_summary": "Forecast membaca hari ini sebagai RAIN_TRANSITION untuk GPM Grid TamaTue. Status operasional harian RED. Risk window utama: 00:00–20:00. Failure risk tertinggi 49.4/100, sehingga bagian forecast yang perlu paling diragukan adalah timing/posisi hujan lokal. Personality lokasi: generic_hyperlocal; Profil generik; gunakan feedback lokal agar Forecast makin spesifik."
   }
 }
